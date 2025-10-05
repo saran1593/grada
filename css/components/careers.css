@@ -1,0 +1,225 @@
+/* css/components/careers.css - FIXED VERSION */
+.grad-careers-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    margin-top: -160px;
+}
+
+.grad-careers-form-container {
+    width: 100%;
+    max-width: 450px;
+    background: transparent;
+}
+
+.grad-careers-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: left;
+    width: 100%;
+}
+
+.grad-careers-input {
+    background-color: transparent !important;
+    color: rgb(0, 0, 0) !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0.75rem 0 !important;
+    transition: border-color 0.3s ease;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.grad-careers-input:focus {
+    border-bottom-color: rgb(0, 0, 0) !important;
+    background: transparent !important;
+    color: black !important;
+    outline: none;
+}
+
+.grad-careers-input::placeholder {
+    color: rgba(0, 0, 0, 0.7) !important;
+    opacity: 1;
+}
+
+.grad-careers-file-wrapper {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.grad-careers-file-wrapper:hover {
+    border-bottom-color: black;
+}
+
+.grad-careers-file-wrapper label {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 0;
+}
+
+.grad-careers-file-wrapper label i {
+    color: black;
+}
+
+.grad-careers-submit-btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    width: auto;
+    padding: 0.8rem 3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.grad-careers-submit-btn:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+/* FIXED: Careers image styles - matching contact section exactly */
+.grad-careers-image {
+    width: 70%;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-left: 90px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet Devices (768px - 992px) */
+@media (max-width: 992px) {
+    .grad-careers-section {
+        margin-top: -120px;
+        min-height: 80vh;
+    }
+    
+    .grad-careers-form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .grad-careers-image {
+        height: 70vh;
+        margin-left: 60px;
+    }
+}
+
+/* Mobile Devices (576px - 768px) */
+@media (max-width: 768px) {
+    .grad-careers-section {
+        margin-top: -100px;
+        min-height: auto;
+        padding: 80px 0;
+    }
+    
+    .grad-careers-form-container {
+        padding: 2rem 1.5rem !important;
+        max-width: 100%;
+    }
+    
+    .grad-careers-eyebrow {
+        font-size: 0.75rem;
+        text-align: center;
+        margin-bottom: 2rem !important;
+    }
+    
+    .grad-careers-input {
+        font-size: 0.9rem;
+        padding: 0.6rem 0 !important;
+    }
+    
+    .grad-careers-submit-btn {
+        width: 100%;
+        max-width: 250px;
+        padding: 0.7rem 2rem;
+        margin: 1.5rem auto 0;
+    }
+    
+    .grad-careers-image {
+        height: 50vh;
+        margin-left: 30px;
+    }
+}
+
+/* Small Mobile Devices (below 576px) */
+@media (max-width: 576px) {
+    .grad-careers-section {
+        margin-top: -80px;
+        padding: 60px 0;
+    }
+    
+    .grad-careers-form-container {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .grad-careers-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.8px;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .grad-careers-input {
+        font-size: 0.85rem;
+        padding: 0.5rem 0 !important;
+    }
+    
+    .grad-careers-submit-btn {
+        width: 100%;
+        max-width: 220px;
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
+        margin: 1rem auto 0;
+    }
+    
+    .grad-careers-image {
+        height: 40vh;
+        margin-left: 15px;
+    }
+}
+
+/* Extra Small Devices (below 400px) */
+@media (max-width: 400px) {
+    .grad-careers-section {
+        margin-top: -60px;
+        padding: 50px 0;
+    }
+    
+    .grad-careers-form-container {
+        padding: 1rem 0.8rem !important;
+    }
+    
+    .grad-careers-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.6px;
+    }
+    
+    .grad-careers-input {
+        font-size: 0.8rem;
+    }
+    
+    .grad-careers-submit-btn {
+        max-width: 200px;
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    .grad-careers-image {
+        height: 35vh;
+        margin-left: 0;
+        border-radius: 10px;
+    }
+}

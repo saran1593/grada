@@ -1,0 +1,333 @@
+/* services.css - Updated for hover functionality with single expanded service */
+.grad-services-section {
+    padding: 120px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -210px;
+}
+
+.grad-services-section h3 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* Flex container for all service columns */
+.grad-services-container {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    max-height: 700px;
+    min-height: 500px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+
+/* Individual service column styling */
+.grad-service-column {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+    min-width: 80px;
+    flex: 0 0 80px; /* Default collapsed state */
+}
+
+.grad-service-column:last-child {
+    border-right: none;
+}
+
+/* FIXED: Default expanded service - Architectural Design */
+.grad-service-column:first-child {
+    flex: 1 1 100% !important;
+    min-width: 200px !important;
+}
+
+.grad-service-column:first-child .grad-vertical-text {
+    opacity: 0 !important;
+    transform: rotate(180deg) scale(0.8) !important;
+}
+
+.grad-service-column:first-child .grad-service-content {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* COLLAPSED state for non-expanded services */
+.grad-service-column:not(:first-child) {
+    flex: 0 0 80px;
+}
+
+.grad-service-column:not(:first-child) .grad-vertical-text {
+    opacity: 1;
+}
+
+.grad-service-column:not(:first-child) .grad-service-content {
+    opacity: 0;
+}
+
+/* HOVER EFFECT - Expand on hover, collapse others */
+.grad-services-container:hover .grad-service-column:not(:hover) {
+    flex: 0 0 60px !important;
+    min-width: 60px !important;
+}
+
+.grad-services-container:hover .grad-service-column:hover {
+    flex: 1 1 100% !important;
+    min-width: 200px !important;
+}
+
+.grad-services-container:hover .grad-service-column:hover .grad-vertical-text {
+    opacity: 0 !important;
+}
+
+.grad-services-container:hover .grad-service-column:hover .grad-service-content {
+    opacity: 1 !important;
+}
+
+/* The vertical text label */
+.grad-vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #2c3e50;
+    transition: all 0.4s ease-in-out;
+    z-index: 100;
+    position: absolute;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+/* The content that appears when a column is expanded or hovered */
+.grad-service-content {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out 0.3s;
+    pointer-events: none;
+}
+
+/* FIXED: Image fitting to container */
+.grad-service-content img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transition: transform 0.5s ease;
+}
+
+.grad-service-column:first-child .grad-service-content img,
+.grad-services-container:hover .grad-service-column:hover .grad-service-content img {
+    transform: scale(1.05);
+}
+
+/* Overlay for text on the image */
+.grad-content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+    padding: 40px 30px 30px;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: transform 0.5s ease 0.4s;
+}
+
+.grad-service-column:first-child .grad-content-overlay,
+.grad-services-container:hover .grad-service-column:hover .grad-content-overlay {
+    transform: translateY(0);
+}
+
+.grad-content-overlay h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: white;
+    text-align: left;
+}
+
+.grad-service-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+    max-width: 500px;
+    color: white;
+    text-align: left;
+}
+
+/* Column effects for non-expanded services */
+.grad-service-column:not(:first-child) {
+    background-color: #f8f9fa;
+}
+
+.grad-service-column:not(:first-child) .grad-vertical-text {
+    color: #3498db;
+    transform: rotate(180deg) scale(1.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Hover effects for non-expanded services */
+.grad-service-column:not(:first-child):hover {
+    background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .grad-services-container {
+        height: 75vh;
+        max-height: 650px;
+    }
+}
+
+@media (max-width: 992px) {
+    .grad-services-section {
+        padding: 100px 0;
+    }
+    
+    .grad-services-container {
+        height: 70vh;
+        max-height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grad-services-section {
+        padding: 80px 0;
+        margin-top: -150px;
+    }
+    
+    .grad-services-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 600px;
+        max-height: none;
+    }
+    
+    .grad-service-column {
+        flex: 0 0 70px !important;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        min-width: 100% !important;
+    }
+    
+    .grad-service-column:first-child {
+        flex: 1 1 350px !important;
+    }
+    
+    .grad-service-column:last-child {
+        border-bottom: none;
+    }
+    
+    /* Disable hover effects on mobile */
+    .grad-services-container:hover .grad-service-column:not(:hover) {
+        flex: 0 0 70px !important;
+        min-width: 100% !important;
+    }
+    
+    .grad-services-container:hover .grad-service-column:hover {
+        flex: 1 1 350px !important;
+    }
+    
+    .grad-vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        padding: 5px 10px;
+    }
+    
+    .grad-service-column:not(:first-child) .grad-vertical-text {
+        transform: none;
+    }
+    
+    .grad-service-column:first-child .grad-vertical-text {
+        transform: scale(0.8);
+    }
+    
+    .grad-service-column:not(:first-child) .grad-vertical-text {
+        transform: scale(1.05);
+    }
+    
+    .grad-content-overlay {
+        padding: 30px 20px 20px;
+    }
+    
+    .grad-content-overlay h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* FIXED: Mobile image fitting */
+    .grad-service-content img {
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .grad-services-section {
+        padding: 60px 0;
+        margin-top: -120px;
+    }
+    
+    .grad-services-container {
+        min-height: 500px;
+    }
+    
+    .grad-service-column:first-child {
+        flex: 1 1 300px !important;
+    }
+    
+    .grad-services-container:hover .grad-service-column:hover {
+        flex: 1 1 300px !important;
+    }
+    
+    .grad-vertical-text {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .grad-content-overlay {
+        padding: 20px 15px 15px;
+    }
+    
+    .grad-content-overlay h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .grad-service-description {
+        font-size: 0.9rem;
+    }
+}
