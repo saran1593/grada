@@ -1,6 +1,53 @@
-<link rel="stylesheet" href="css/components/home.css">
+<link rel="stylesheet" href="/css/components/home.css">
+
+<!-- Mobile Responsive Internal CSS -->
+<style>
+/* HOME PAGE MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .home-hero-title {
+        font-size: 0.9rem !important;
+        letter-spacing: 0.2em !important;
+    }
+    
+    .home-hero-description {
+        font-size: 0.7rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .carousel-content {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-hero-title {
+        font-size: 0.8rem !important;
+        letter-spacing: 0.15em !important;
+    }
+    
+    .home-hero-description {
+        font-size: 0.65rem !important;
+    }
+    
+    .home-section .carousel {
+        height: 60vh !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .home-hero-title {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.1em !important;
+    }
+    
+    .home-hero-description {
+        font-size: 0.6rem !important;
+    }
+}
+</style>
 
 <section class="home-section">
+  <!-- Your existing home section content -->
   <div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
     <!-- Indicators -->
     <div class="carousel-indicators">

@@ -22,6 +22,15 @@
   width: 100%;
 }
 
+/* FIXED: Remove extra images in mobile view */
+.home-section .carousel-item .d-block.w-100:not(:first-child) {
+  display: none !important;
+}
+
+.home-section .carousel-item.active .d-block.w-100:first-child {
+  display: block !important;
+}
+
 /* Carousel Content Overlay */
 .carousel-content {
   position: absolute;
@@ -32,7 +41,6 @@
   color: white;
   padding: 4rem 2rem;
   text-align: center;
-  
 }
 
 .home-hero-title {
@@ -100,85 +108,3 @@
   opacity: 1;
 }
 
-/* Mobile Responsive - BETTER TEXT ALIGNMENT */
-@media (max-width: 1200px) {
-  .home-hero-title {
-    font-size: 2rem;
-  }
-  
-  .home-hero-description {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .home-section {
-    margin-top: -66px; /* Adjust for smaller navbar */
-  }
-  
-  .home-section .carousel {
-    height: 70vh;
-  }
-  
-  .carousel-content {
-    padding: 2rem 1rem;
-  }
-  
-  .home-hero-title {
-    font-size: 1.5rem;
-    letter-spacing: 0.2em;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .home-hero-description {
-    font-size: 0.9rem;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  /* Mobile image focus on bottom */
-  .home-section .carousel-item img {
-    object-position: center bottom;
-  }
-}
-
-@media (max-width: 576px) {
-  .home-section .carousel {
-    height: 60vh;
-  }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 20%;
-  }
-  
-  .home-hero-title {
-    font-size: 1.2rem;
-    letter-spacing: 0.15em;
-    text-align: center;
-  }
-  
-  .home-hero-description {
-    font-size: 0.8rem;
-    text-align: center;
-  }
-  
-  /* Small mobile image focus on bottom */
-  .home-section .carousel-item img {
-    object-position: center bottom;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 400px) {
-  .home-hero-title {
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-  }
-  
-  .home-hero-description {
-    font-size: 0.75rem;
-  }
-}

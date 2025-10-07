@@ -2,12 +2,17 @@
 :root {
     --projects-primary-color: #000000;
     --projects-secondary-color: #f8f9fa;
-    --projects-text-color: #333333;
+    --projects-text-color: #ffffff;
     --projects-light-gray: #e9ecef;
     --projects-border-color: #dddddd;
-    --projects-link-color: #666666;
+    --projects-link-color: #ffffff;
     --projects-link-hover-color: #000000;
 }
+
+
+  .project-item-description {
+        color: white;
+    }
 
 /* Reset margins and padding for full-width sections */
 * {
@@ -20,7 +25,6 @@
 .project-row {
     padding: 0;
     margin: 0;
-
 }
 
 /* Row 1: Full Width Hero Image - IMPROVED MOBILE COVERAGE */
@@ -84,10 +88,10 @@
 }
 
 .project-hero-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 0.3em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     line-height: 1.2;
     text-align: center;
@@ -95,13 +99,14 @@
 }
 
 .project-hero-description {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
     opacity: 0.9;
     text-align: center;
     width: 100%;
+    margin-bottom: -50px;
 }
 
 /* Kent Slider Styles (Matching Home Section) */
@@ -169,8 +174,8 @@
 
 /* Section Titles */
 .projects-section-title {
-    font-size: 1.8rem;
-    font-weight: 300;
+    font-size: 1.3rem;
+    font-weight: 400;
     letter-spacing: 0.3em;
     margin-bottom: 3rem;
     text-align: center;
@@ -190,6 +195,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
 }
 
 .project-item-card:hover {
@@ -230,7 +236,7 @@
 }
 
 .project-item-title {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 300;
     letter-spacing: 0.2em;
     margin-bottom: 1.2rem;
@@ -243,13 +249,24 @@
 
 .project-item-description {
     margin-bottom: 1.2rem;
-    color: #666666;
+    color: #303030;
     line-height: 1.6;
     font-size: 0.95rem;
     flex: 1;
-    text-align: center;
-    width: 100%;
+    text-align:justify;
+    width: 90%;
 }
+
+.project-item-description-img {
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    flex: 1;
+    text-align:justify;
+    width: 90%;
+}
+
 
 .project-item-tags {
     font-size: 0.85rem;
@@ -540,10 +557,10 @@
 }
 
 .soft-minimal-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 0.3em;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: white;
     text-transform: uppercase;
     text-align: center;
@@ -551,7 +568,7 @@
 }
 
 .soft-minimal-text {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     max-width: 800px;
     margin: 0 auto;
     color: white;
@@ -679,6 +696,33 @@
     .soft-minimal-section .project-item-image {
         height: 70vh !important; /* Force full coverage */
         min-height: 500px !important;
+        width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    
+    /* FIXED: Ensure full width containers */
+    .full-width-image,
+    .full-width-section,
+    .soft-minimal-section {
+        width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* FIXED: Full width container fluid */
+    .full-width-image .container-fluid,
+    .full-width-section .container-fluid,
+    .soft-minimal-section .container-fluid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     /* IMPROVED: Better content overlay for mobile */
@@ -690,16 +734,41 @@
     }
     
     .project-hero-title {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         letter-spacing: 0.2em;
     }
     
     .project-hero-description {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     
     .halves-row {
         flex-direction: column;
+    }
+    
+    /* FIXED: Reduced text size for mobile */
+    .project-item-title {
+        font-size: 0.9rem;
+    }
+    
+    .project-item-description {
+        font-size: 0.75rem;
+    }
+    
+    .projects-section-title {
+        font-size: 1rem;
+    }
+    
+    .project-item-tags {
+        font-size: 0.7rem;
+    }
+    
+    .soft-minimal-title {
+        font-size: 1.2rem;
+    }
+    
+    .soft-minimal-text {
+        font-size: 0.8rem;
     }
 }
 
@@ -730,12 +799,12 @@
     }
     
     .project-hero-title {
-        font-size: 1.5rem;
+        font-size: 1rem;
         letter-spacing: 0.15em;
     }
     
     .project-hero-description {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     
     .project-item-content {
@@ -743,7 +812,7 @@
     }
     
     .projects-section-title {
-        font-size: 1.5rem;
+        font-size: 0.9rem;
         letter-spacing: 0.2em;
     }
     
@@ -752,10 +821,28 @@
     .full-width-section .project-item-content {
         padding: 1.5rem 1rem;
     }
+    
+    /* FIXED: Reduced text size for small mobile */
+    .project-item-title {
+        font-size: 0.8rem;
+    }
+    
+    .project-item-description {
+        font-size: 0.7rem;
+    }
+    
+    .soft-minimal-title {
+        font-size: 1rem;
+    }
+    
+    .soft-minimal-text {
+        font-size: 0.7rem;
+    }
 }
 
 /* Extra small devices */
 @media (max-width: 400px) {
+    /* IMPROVED: Extra small mobile image heights */
     .grid-item .project-item-image {
         height: 250px;
         min-height: 250px;
@@ -772,49 +859,41 @@
         min-height: 300px;
     }
     
-    /* FIXED: Full coverage on extra small screens */
+    /* FIXED: Full coverage on extra small mobile */
     .full-width-image .project-item-image,
     .full-width-section .project-item-image,
     .soft-minimal-section .project-item-image {
-        height: 55vh !important;
+        height: 50vh !important;
         min-height: 350px !important;
     }
     
     .project-hero-title {
-        font-size: 1.3rem;
+        font-size: 0.9rem;
         letter-spacing: 0.1em;
     }
     
     .project-hero-description {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
     }
-}
-
-/* Ensure all text elements are properly centered */
-.project-item-card * {
-    text-align: center;
-}
-
-.project-item-content > * {
-    text-align: center !important;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Container fluid adjustments */
-.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-/* Force image dimensions and prevent overflow */
-.project-item-image {
-    position: relative;
-}
-
-.project-item-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center center !important;
+    
+    /* FIXED: Reduced text size for extra small mobile */
+    .project-item-title {
+        font-size: 0.75rem;
+    }
+    
+    .project-item-description {
+        font-size: 0.65rem;
+    }
+    
+    .projects-section-title {
+        font-size: 0.85rem;
+    }
+    
+    .soft-minimal-title {
+        font-size: 0.9rem;
+    }
+    
+    .soft-minimal-text {
+        font-size: 0.65rem;
+    }
 }

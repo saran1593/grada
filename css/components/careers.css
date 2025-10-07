@@ -92,7 +92,7 @@
 /* FIXED: Careers image styles - matching contact section exactly */
 .grad-careers-image {
     width: 70%;
-    height: 70vh;
+    height: 60vh;
     object-fit: cover;
     border-radius: 15px;
     margin-left: 90px;

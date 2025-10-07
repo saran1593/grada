@@ -330,9 +330,10 @@ img {
 .carousel-item img,
 .project-img,
 .grad-service-content img,
-.grad-careers-image,
+.grad-careers-image
 .grad-contact-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
