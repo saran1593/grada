@@ -1,4 +1,4 @@
-/* css/components/careers.css - FIXED VERSION */
+/* css/components/careers.css - UPDATED TO MATCH CONTACT PAGE */
 .grad-careers-section {
     min-height: 100vh;
     width: 100%;
@@ -7,7 +7,7 @@
     background-color: #ffffff;
     color: #000000;
     font-family: 'Inter', sans-serif;
-    margin-top: -160px;
+    margin-top: -140px;
 }
 
 .grad-careers-form-container {
@@ -89,10 +89,10 @@
     border: 1px solid #000000 !important;
 }
 
-/* FIXED: Careers image styles - matching contact section exactly */
+/* UPDATED: Careers image styles - matching contact section exactly */
 .grad-careers-image {
-    width: 70%;
-    height: 60vh;
+    width: 80%;
+    height: 70vh;
     object-fit: cover;
     border-radius: 15px;
     margin-left: 90px;
@@ -114,7 +114,10 @@
     
     .grad-careers-image {
         height: 70vh;
-        margin-left: 60px;
+    }
+    
+    .grad-careers-eyebrow {
+        text-align: center;
     }
 }
 
@@ -221,5 +224,21 @@
         height: 35vh;
         margin-left: 0;
         border-radius: 10px;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .grad-careers-section {
+        min-height: auto;
+        padding: 40px 0;
+    }
+    
+    .grad-careers-form-container {
+        padding: 1rem 1.5rem !important;
+    }
+    
+    .grad-careers-file-wrapper {
+        padding-bottom: 0.5rem;
     }
 }

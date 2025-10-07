@@ -80,7 +80,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\careers.html
 
             <!-- Image Column - Hidden on mobile (same structure as contact) -->
             <div class="col-lg-6 d-none d-lg-block">
-                <img src="/images/career.jpg" class="grad-careers-image" alt="Modern building exterior">
+                <img src="/images/career.jpg" class="grad-careers-img" alt="Modern building exterior">
             </div>
         </div>
     </div>
@@ -168,51 +168,131 @@ File: C:\Users\LENOVO\Desktop\gradb\components\contact.html
 File: C:\Users\LENOVO\Desktop\gradb\components\home.html
 ==================================================
 <link rel="stylesheet" href="/css/components/home.css">
-
-<!-- Mobile Responsive Internal CSS -->
 <style>
-/* HOME PAGE MOBILE RESPONSIVE */
+/* Tablet view (≤768px) */
 @media (max-width: 768px) {
-    .home-hero-title {
-        font-size: 0.9rem !important;
-        letter-spacing: 0.2em !important;
-    }
-    
-    .home-hero-description {
-        font-size: 0.7rem !important;
-        line-height: 1.4 !important;
-    }
-    
-    .carousel-content {
-        padding: 1.5rem 1rem !important;
-    }
+  .home-hero-title {
+    font-size: 1rem !important;
+    letter-spacing: 0.2em !important;
+  }
+
+  .home-hero-description {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .carousel-content {
+    padding: 0.8rem !important;
+    bottom: 30px;
+  }
+
+  /* Mobile dots adjustments */
+  .carousel-indicators {
+    display: inline-flex;
+    gap: 0;
+    margin: 0 auto;
+    padding: 0;
+    bottom: 5px;
+    border-radius: 50%;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    transform: scale(0.4);
+  }
+
+  .carousel-indicators .active {
+    transform: scale(0.6);
+  }
 }
 
+/* Mobile view (≤576px) */
 @media (max-width: 576px) {
-    .home-hero-title {
-        font-size: 0.8rem !important;
-        letter-spacing: 0.15em !important;
-    }
-    
-    .home-hero-description {
-        font-size: 0.65rem !important;
-    }
-    
-    .home-section .carousel {
-        height: 60vh !important;
-    }
+  .home-hero-title {
+    font-size: 0.8rem !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .home-hero-description {
+    font-size: 0.65rem !important;
+  }
+
+  .home-section .carousel {
+    height: 40vh !important;
+  }
+
+  .home-section .carousel-item img {
+    height: 40vh !important;
+    object-fit: cover;
+  }
+
+  .carousel-content {
+    bottom: 28px;
+    width: 92%;
+    padding: 0.6rem;
+  }
+
+  .carousel-indicators {
+    display: inline-flex;
+    gap: 0;
+    margin: 0 auto;
+    padding: 0;
+    bottom: 4px;
+    border-radius: 50%;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    transform: scale(0.35);
+  }
+
+  .carousel-indicators .active {
+    transform: scale(0.55);
+  }
 }
 
+/* Small mobile (≤400px) */
 @media (max-width: 400px) {
-    .home-hero-title {
-        font-size: 0.7rem !important;
-        letter-spacing: 0.1em !important;
-    }
-    
-    .home-hero-description {
-        font-size: 0.6rem !important;
-    }
+  .home-hero-title {
+    font-size: 0.8rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .home-hero-description {
+    font-size: 0.6rem !important;
+  }
+
+  .carousel-content {
+    padding: 0.5rem 0.4rem;
+    bottom: 0px;
+    width:  100%;
+  }
+
+.carousel-indicators {
+  display: inline-flex;
+  gap: 0;
+  margin: 30px auto 0 auto; /* Move the whole dot container down */
+  padding: 0;
+  bottom: auto;             /* Remove default bottom positioning */
+  border-radius: 50px;
+  position: relative;       /* So margin works properly */
 }
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0.2);
+}
+
+.carousel-indicators .active {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: scale(0.3);
+}
+
+
+}
+
 </style>
 
 <section class="home-section">
@@ -1899,6 +1979,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\home.css
 
 .home-section .carousel {
   height: 100vh;
+  
 }
 
 .home-section .carousel-inner,
