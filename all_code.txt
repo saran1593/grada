@@ -1,5 +1,5 @@
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\about.html
+File: D:\gradb\components\about.html
 ==================================================
 <link rel="stylesheet" href="/css/components/about.css">
 
@@ -34,7 +34,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\about.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\careers.html
+File: D:\gradb\components\careers.html
 ==================================================
 <link rel="stylesheet" href="/css/components/careers.css">
 
@@ -94,7 +94,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\careers.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\contact.html
+File: D:\gradb\components\contact.html
 ==================================================
 <link rel="stylesheet" href="css/components/contact.css">
 
@@ -174,7 +174,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\contact.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\home.html
+File: D:\gradb\components\home.html
 ==================================================
 <link rel="stylesheet" href="/css/components/home.css">
 <link rel="stylesheet" href="/css/components/home.css">
@@ -331,7 +331,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\home.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\philosophy.html
+File: D:\gradb\components\philosophy.html
 ==================================================
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -390,7 +390,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\philosophy.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
+File: D:\gradb\components\projects.html
 ==================================================
 <!DOCTYPE html>
 <html lang="en">
@@ -1025,7 +1025,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\services.html
+File: D:\gradb\components\services.html
 ==================================================
 <link rel="stylesheet" href="css/components/services.css">
 
@@ -1084,7 +1084,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\services.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
+File: D:\gradb\css\components\about.css
 ==================================================
 .about-section {
   padding: 100px 0;
@@ -1238,7 +1238,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
     justify-content: center;
     text-align: center;
     margin-top: -150px;
-    margin-bottom: -150px;
+    margin-bottom: -180px;
   }
 
   .about-section .section-title {
@@ -1391,7 +1391,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
+File: D:\gradb\css\components\careers.css
 ==================================================
 /* css/components/careers.css - UPDATED TO MATCH CONTACT PAGE */
 .grad-careers-section {
@@ -1641,7 +1641,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\contact.css
+File: D:\gradb\css\components\contact.css
 ==================================================
 /* Contact Section Styles - Matching Careers Section Design */
 .grad-contact-section {
@@ -2009,7 +2009,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\contact.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\home.css
+File: D:\gradb\css\components\home.css
 ==================================================
 .home-section {
   padding: 0;
@@ -2126,7 +2126,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\home.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\philosophy.css
+File: D:\gradb\css\components\philosophy.css
 ==================================================
 /* CSS Variables */
 :root {
@@ -2529,7 +2529,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\philosophy.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
+File: D:\gradb\css\components\projects.css
 ==================================================
 /* Projects Page Specific Styles */
 :root {
@@ -3438,7 +3438,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
+File: D:\gradb\css\components\services.css
 ==================================================
 /* services.css - Updated for hover functionality with single expanded service */
 .grad-services-section {
@@ -3668,6 +3668,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
     .grad-services-section {
         padding: 80px 0;
         margin-top: -150px;
+        margin-bottom: -300px;
     }
     
     .grad-services-container {
@@ -3777,7 +3778,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\style.css
+File: D:\gradb\css\style.css
 ==================================================
 /* Global Styles */
 :root {
@@ -4122,7 +4123,7 @@ img {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\careers.js
+File: D:\gradb\js\careers.js
 ==================================================
 // js/careers.js
 document.addEventListener('DOMContentLoaded', function() {
@@ -4150,7 +4151,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\contact.js
+File: D:\gradb\js\contact.js
 ==================================================
 // Contact Form JavaScript
 document.addEventListener('DOMContentLoaded', function() {
@@ -4197,7 +4198,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\home.js
+File: D:\gradb\js\home.js
 ==================================================
 
 
@@ -4244,7 +4245,7 @@ if (typeof window.initializeSlider === 'undefined') {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\kent-slider.js
+File: D:\gradb\js\kent-slider.js
 ==================================================
 // kent-slider.js - Auto-changing image slider for Kent Avenue Penthouse (Home Section Style)
 class KentSlider {
@@ -4344,7 +4345,7 @@ document.addEventListener('componentLoaded', function() {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\projects.js
+File: D:\gradb\js\projects.js
 ==================================================
 // Projects Page JavaScript
 class ProjectsManager {
@@ -4531,7 +4532,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\script.js
+File: D:\gradb\js\script.js
 ==================================================
 // Add this to the loadComponent calls
 loadComponent("careers", "components/careers.html", () => {
@@ -5053,7 +5054,7 @@ function loadComponent(sectionId, filePath, callback) {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\services.js
+File: D:\gradb\js\services.js
 ==================================================
 // services.js - Updated for single expanded service functionality
 
@@ -5102,7 +5103,7 @@ window.initializeGradServices = initializeGradServices;
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\index.html
+File: D:\gradb\index.html
 ==================================================
 <!DOCTYPE html>
 <html lang="en">

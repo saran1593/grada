@@ -1,43 +1,16 @@
-// Add this to the loadComponent calls
-loadComponent("careers", "components/careers.html", () => {
-    console.log("Careers component loaded successfully");
-});
-
-// ================================
-// Function to load HTML components into sections
-// ================================
-function loadComponent(sectionId, filePath, callback) {
-    fetch(filePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load ${filePath}: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.innerHTML = data;
-                
-                // Add the section ID to the loaded content's main container
-                const container = section.querySelector('div[class*="section"], section[class*="section"]');
-                if (container && !container.id) {
-                    container.id = sectionId + '-content';
-                }
-                
-                if (callback) callback();
-            }
-        })
-        .catch(error => console.error("Error loading " + filePath, error));
-}
-
-// ================================
-// Load all components on page load
-// ================================
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
     
-    // Load all components from the components/ directory
+    // Mark HTML as loaded to prevent FOUC
+    document.documentElement.classList.add('loaded');
+    
+    // Initialize core features first
+    navbarShrink();
+    initMobileNavigation();
+    preserveImageSizes();
+    forceLogoSizeReduction();
+    
+    // Load components
     loadComponent("home", "components/home.html");
     loadComponent("about", "components/about.html");
     loadComponent("philosophy", "components/philosophy.html");
@@ -47,23 +20,127 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     loadComponent("projects", "components/projects.html", () => {
         console.log("Projects component loaded successfully");
-        // Initialize projects after loading
         setTimeout(initializeProjects, 100);
     });
     loadComponent("contact", "components/contact.html", () => {
         console.log("Contact component loaded successfully");
     });
     
-    // Initialize features after a short delay to ensure content is loaded
+    // Initialize features after components are loaded
     setTimeout(() => {
-        navbarShrink();
         initScrollFeatures();
-        initMobileNavigation();
-        preserveImageSizes();
-        forceLogoSizeReduction(); // NEW: Force logo size reduction
         console.log("All components loaded and features initialized");
-    }, 500);
+    }, 800);
 });
+
+
+
+
+// Add this to the loadComponent calls
+loadComponent("careers", "components/careers.html", () => {
+    console.log("Careers component loaded successfully");
+});
+
+// ================================
+// Function to load HTML components into sections
+// ================================
+function loadComponent(sectionId, filePath, callback) {
+    const section = document.getElementById(sectionId);
+    if (!section) {
+        console.error(`Section ${sectionId} not found`);
+        return;
+    }
+
+    // Add loading state
+    section.classList.add('component-loading');
+    
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filePath}: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            section.innerHTML = data;
+            section.classList.remove('component-loading');
+            section.classList.add('loaded');
+            
+            // Add the section ID to the loaded content's main container
+            const container = section.querySelector('div[class*="section"], section[class*="section"]');
+            if (container && !container.id) {
+                container.id = sectionId + '-content';
+            }
+            
+            // Re-initialize navigation after content loads
+            setTimeout(() => {
+                initScrollFeatures();
+                navbarShrink();
+            }, 100);
+            
+            if (callback) callback();
+        })
+        .catch(error => {
+            console.error("Error loading " + filePath, error);
+            section.classList.remove('component-loading');
+            section.innerHTML = `<div class="alert alert-warning">Failed to load content. Please refresh the page.</div>`;
+        });
+}
+// ================================
+// Load all components on page load
+// ================================
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM loaded, starting to load components...");
+    
+    // Initialize core features first
+    navbarShrink();
+    initMobileNavigation();
+    preserveImageSizes();
+    forceLogoSizeReduction();
+    
+    // Load components with proper sequencing
+    const loadSequence = [
+        { id: "home", file: "components/home.html" },
+        { id: "about", file: "components/about.html" },
+        { id: "philosophy", file: "components/philosophy.html" },
+        { id: "services", file: "components/services.html" },
+        { id: "projects", file: "components/projects.html", callback: () => {
+            console.log("Projects component loaded successfully");
+            setTimeout(initializeProjects, 100);
+        }},
+        { id: "careers", file: "components/careers.html", callback: () => {
+            console.log("Careers component loaded successfully");
+        }},
+        { id: "contact", file: "components/contact.html", callback: () => {
+            console.log("Contact component loaded successfully");
+        }}
+    ];
+
+    // Load components sequentially to avoid race conditions
+    function loadNextComponent(index) {
+        if (index >= loadSequence.length) {
+            console.log("All components loaded");
+            // Final initialization after all components are loaded
+            setTimeout(() => {
+                initScrollFeatures();
+                enhanceResponsiveDesign();
+            }, 500);
+            return;
+        }
+        
+        const item = loadSequence[index];
+        loadComponent(item.id, item.file, item.callback);
+        
+        // Load next component after a short delay
+        setTimeout(() => loadNextComponent(index + 1), 100);
+    }
+    
+    // Start loading sequence
+    loadNextComponent(0);
+});
+
+
+
 
 // ================================
 // FORCE LOGO SIZE REDUCTION
@@ -214,9 +291,6 @@ function initializeProjects() {
     });
 }
 
-// ================================
-// Scroll-based active link highlighting & smooth scroll
-// ================================
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
     
@@ -234,30 +308,37 @@ function initScrollFeatures() {
         return;
     }
 
-    // IntersectionObserver to highlight nav links
+    // SINGLE IntersectionObserver to avoid conflicts
     const observer = new IntersectionObserver(
         (entries) => {
+            let mostVisibleSection = null;
+            let highestRatio = 0;
+
             entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const currentSection = entry.target.id;
-                    console.log("Section in view:", currentSection);
-                    
-                    navLinks.forEach(link => {
-                        const linkHref = link.getAttribute("href");
-                        if (linkHref === `#${currentSection}`) {
-                            // Remove active from all links
-                            navLinks.forEach(l => l.classList.remove("active"));
-                            // Add active to current link
-                            link.classList.add("active");
-                            console.log("Active link set to:", linkHref);
-                        }
-                    });
+                if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
+                    highestRatio = entry.intersectionRatio;
+                    mostVisibleSection = entry.target.id;
                 }
             });
+
+            if (mostVisibleSection && highestRatio > 0.3) {
+                console.log("Most visible section:", mostVisibleSection);
+                
+                navLinks.forEach(link => {
+                    const linkHref = link.getAttribute("href");
+                    if (linkHref === `#${mostVisibleSection}`) {
+                        // Remove active from all links
+                        navLinks.forEach(l => l.classList.remove("active"));
+                        // Add active to current link
+                        link.classList.add("active");
+                        console.log("Active link set to:", linkHref);
+                    }
+                });
+            }
         },
         { 
-            threshold: 0.5,
-            rootMargin: '-100px 0px -100px 0px'
+            threshold: [0.1, 0.3, 0.5, 0.7],
+            rootMargin: '-80px 0px -80px 0px'
         }
     );
 
@@ -269,7 +350,7 @@ function initScrollFeatures() {
         }
     });
 
-    // Smooth scroll for nav links
+    // Smooth scroll for nav links - SIMPLIFIED
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
@@ -298,36 +379,8 @@ function initScrollFeatures() {
         });
     });
 
-    // Update active link on scroll (fallback)
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const scrollPosition = window.scrollY + navbarHeight + 100;
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    current = section.id;
-                }
-            });
-
-            if (current) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        }, 150);
-    });
+    // REMOVED: The duplicate scroll event listener that was causing conflicts
 }
-
 // ================================
 // Handle page refresh and direct anchor links
 // ================================
