@@ -227,22 +227,50 @@ function navbarShrink() {
 }
 
 // ================================
-// Mobile Navigation Handler
+// Mobile Navigation Handler - UPDATED
 // ================================
 function initMobileNavigation() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
     
     if (navbarToggler && navbarCollapse) {
-        // Close mobile menu when clicking on a link
+        // Get all navigation links
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        // Add click event to each navigation link
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                        toggle: false
-                    });
-                    bsCollapse.hide();
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    // Close mobile menu first
+                    if (window.innerWidth < 768) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
+                                         new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                        bsCollapse.hide();
+                    }
+                    
+                    // Update active link
+                    const allNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                    allNavLinks.forEach(navLink => navLink.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Wait for menu to close, then scroll to section
+                    setTimeout(() => {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL
+                        window.history.pushState(null, null, `#${targetId}`);
+                    }, 300); // Wait for collapse animation
                 }
             });
         });
@@ -253,15 +281,22 @@ function initMobileNavigation() {
                 navbarCollapse.classList.contains('show') && 
                 !navbarToggler.contains(e.target) && 
                 !navbarCollapse.contains(e.target)) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
+                                 new bootstrap.Collapse(navbarCollapse, { toggle: false });
                 bsCollapse.hide();
             }
         });
+        
+        // Handle menu show/hide events
+        navbarCollapse.addEventListener('show.bs.collapse', function () {
+            console.log('Mobile menu opened');
+        });
+        
+        navbarCollapse.addEventListener('hide.bs.collapse', function () {
+            console.log('Mobile menu closed');
+        });
     }
 }
-
 // ================================
 // Preserve Original Image Sizes
 // ================================

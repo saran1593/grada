@@ -75,6 +75,7 @@
 
   .home-section .carousel {
     height: 45vh !important;
+    opacity: 0 !important;
   }
 
   .home-section .carousel-item img {
@@ -84,14 +85,16 @@
     min-height: 40vh;
   }
 
-  .carousel-content {
-    bottom: 28px;
-    width: 100%;
-    padding: 0.6rem;
-  }
+ 
 
   /* 🚫 Hide dots completely on mobile */
-  #homeCarousel .carousel-indicators {
+  #homeCarousel .carousel-indicators{
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .carousel-content{
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;

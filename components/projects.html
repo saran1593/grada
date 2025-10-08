@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Grad Architects</title>
-    
+
     <!-- Load all CSS upfront -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,161 +13,201 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/components/projects.css">
     <link rel="stylesheet" href="../css/components/p.css">
-    
+
     <!-- Mobile Responsive Styles -->
     <style>
-    /* =========================
+        /* =========================
        PROJECTS — CONSOLIDATED MOBILE RESPONSIVE STYLES
        ========================= */
-    
-    /* 1) Tablet / small desktop breakpoint */
-    @media (max-width: 768px) {
-      .full-width-image, .full-width-section, .soft-minimal-section {
-        width: 100vw !important;
-        left: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-      }
-    
-      .full-width-image .project-item-image,
-      .full-width-section .project-item-image,
-      .soft-minimal-section .project-item-image {
-        height: 70vh !important;
-        min-height: 420px !important;
-        width: 100vw !important;
-      }
-    
-      .kent-slider-container .carousel,
-      .kent-slider-container .carousel-inner,
-      .kent-slider-container .carousel-item {
-        height: 100% !important;
-      }
-      
-      .kent-slider-container .carousel-item img {
-        height: 70vh !important;
-        min-height: 420px !important;
-        object-fit: contain !important;
-        object-position: center center !important;
-        width: 100% !important;
-      }
-    
-      .full-width-image .project-item-content,
-      .full-width-section .project-item-content,
-      .soft-minimal-content.full-width {
-        padding: 1.25rem 1rem !important;
-        bottom: 14px !important;
-        background: linear-gradient(transparent, rgba(0,0,0,0.78)) !important;
-      }
-    
-      .project-hero-title {
-        font-size: 1.0rem !important;
-        font-weight: 300 !important;
-        letter-spacing: 0.12em !important;
-        margin-bottom: 0.6rem !important;
-      }
-    
-      .project-hero-description {
-        font-size: 0.82rem !important;
-        line-height: 1.45 !important;
-        max-width: 94% !important;
-      }
-    
-      .project-item-content { padding: 1rem !important; }
-      .project-item-title { font-size: 0.9rem !important; }
-      .project-item-description { font-size: 0.78rem !important; }
-    }
-    
-    /* 2) Mobile (≤576px) */
-    @media (max-width: 576px) {
-      .full-width-image .project-item-image,
-      .full-width-section .project-item-image,
-      .soft-minimal-section .project-item-image {
-        height: 65vh !important;
-        min-height: 320px !important;
-      }
-    
-      .kent-slider-container .carousel-item img {
-        height: 96vh !important;
-        min-height: 320px !important;
-      }
-    
-      .full-width-image .project-item-content,
-      .full-width-section .project-item-content,
-      .soft-minimal-content.full-width {
-        padding: 1rem 0.8rem !important;
-        bottom: 10px !important;
-        background: linear-gradient(transparent, rgba(0,0,0,0.86)) !important;
-      }
-    
-      .project-hero-title {
-        font-size: 0.92rem !important;
-        letter-spacing: 0.08em !important;
-        margin-bottom: 0.45rem !important;
-      }
-    
-      .project-hero-description {
-        font-size: 0.75rem !important;
-        line-height: 1.45 !important;
-        max-width: 96% !important;
-        padding: 0 6px !important;
-      }
-    
-      #kentCarousel .carousel-indicators {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-      }
-    
-      #kentCarousel .carousel-control-prev,
-      #kentCarousel .carousel-control-next {
-        width: 12% !important;
-        opacity: 0.6 !important;
-        margin-bottom: -250px;
-      }
-    
-      .project-item-content { text-align: center !important; }
-    }
-    
-    /* 3) Small mobile phones (≤400px) */
-    @media (max-width: 400px) {
-      .project-hero-title {
-        font-size: 0.82rem !important;
-        letter-spacing: 0.06em !important;
-      }
-      
-      .project-hero-description {
-        font-size: 0.68rem !important;
-        line-height: 1.35 !important;
-      }
-    
-      .full-width-image .project-item-content,
-      .full-width-section .project-item-content {
-        padding-left: 0.6rem !important;
-        padding-right: 0.6rem !important;
-      }
-    }
+
+        /* Section Title Size Reduction */
+        .projects-section-title {
+            font-size: 1.1rem !important;
+            letter-spacing: 0.25em !important;
+            margin-bottom: 2.5rem !important;
+        }
+
+        /* 1) Tablet / small desktop breakpoint */
+        @media (max-width: 768px) {
+            .projects-section-title {
+                font-size: 1.0rem !important;
+                letter-spacing: 0.2em !important;
+                margin-bottom: 2rem !important;
+            }
+
+            .full-width-image,
+            .full-width-section,
+            .soft-minimal-section {
+                width: 100vw !important;
+                left: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .full-width-image .project-item-image,
+            .full-width-section .project-item-image,
+            .soft-minimal-section .project-item-image {
+                height: 70vh !important;
+                min-height: 420px !important;
+                width: 100vw !important;
+            }
+
+            .kent-slider-container .carousel,
+            .kent-slider-container .carousel-inner,
+            .kent-slider-container .carousel-item {
+                height: 100% !important;
+            }
+
+            .kent-slider-container .carousel-item img {
+                height: 70vh !important;
+                min-height: 420px !important;
+                object-fit: contain !important;
+                object-position: center center !important;
+                width: 100% !important;
+            }
+
+            .full-width-image .project-item-content,
+            .full-width-section .project-item-content,
+            .soft-minimal-content.full-width {
+                padding: 1.25rem 1rem !important;
+                bottom: 14px !important;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.78)) !important;
+            }
+
+            .project-hero-title {
+                font-size: 1.0rem !important;
+                font-weight: 300 !important;
+                letter-spacing: 0.12em !important;
+                margin-bottom: 0.6rem !important;
+            }
+
+            .project-hero-description {
+                font-size: 0.82rem !important;
+                line-height: 1.45 !important;
+                max-width: 94% !important;
+            }
+
+            .project-item-content {
+                padding: 1rem !important;
+            }
+
+            .project-item-title {
+                font-size: 0.9rem !important;
+            }
+
+            .project-item-description {
+                font-size: 0.78rem !important;
+            }
+        }
+
+        /* 2) Mobile (≤576px) */
+        @media (max-width: 576px) {
+            .projects-section-title {
+                font-size: 0.9rem !important;
+                letter-spacing: 0.15em !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .full-width-image .project-item-image,
+            .full-width-section .project-item-image,
+            .soft-minimal-section .project-item-image {
+                height: 65vh !important;
+                min-height: 320px !important;
+            }
+
+            .kent-slider-container .carousel-item img {
+                height: 96vh !important;
+                min-height: 320px !important;
+            }
+
+            .full-width-image .project-item-content,
+            .full-width-section .project-item-content,
+            .soft-minimal-content.full-width {
+                padding: 1rem 0.8rem !important;
+                bottom: 10px !important;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.86)) !important;
+            }
+
+            .project-hero-title {
+                font-size: 0.92rem !important;
+                letter-spacing: 0.08em !important;
+                margin-bottom: 0.45rem !important;
+            }
+
+            .project-hero-description {
+                font-size: 0.75rem !important;
+                line-height: 1.45 !important;
+                max-width: 96% !important;
+                padding: 0 6px !important;
+            }
+
+            #kentCarousel .carousel-indicators {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+            }
+
+            #kentCarousel .carousel-control-prev,
+            #kentCarousel .carousel-control-next {
+                width: 12% !important;
+                opacity: 0.6 !important;
+                margin-bottom: -250px;
+            }
+
+            .project-item-content {
+                text-align: center !important;
+            }
+        }
+
+        /* 3) Small mobile phones (≤400px) */
+        @media (max-width: 400px) {
+            .projects-section-title {
+                font-size: 0.8rem !important;
+                letter-spacing: 0.1em !important;
+                margin-bottom: 1.2rem !important;
+            }
+
+            .project-hero-title {
+                font-size: 0.82rem !important;
+                letter-spacing: 0.06em !important;
+            }
+
+            .project-hero-description {
+                font-size: 0.68rem !important;
+                line-height: 1.35 !important;
+            }
+
+            .full-width-image .project-item-content,
+            .full-width-section .project-item-content {
+                padding-left: 0.6rem !important;
+                padding-right: 0.6rem !important;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<!-- Row 1: Full Width Image with Slider -->
-<section class="project-row full-width-image">
-    <div class="container-fluid">
-        <div class="project-item-card full-width">
-            <div class="project-item-image kent-slider-container">
-                <!-- Slider will be injected here by JavaScript -->
-                <img src="../images/P1/1.jpg" alt="Kent Avenue Penthouse" class="project-img">
-            </div>
-            <div class="project-item-content">
-                <h1 class="project-hero-title">K e n t A v e n u e P e n t h o u s e</h1>
-                <p class="project-hero-description">
-                    Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
-                    one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
-                </p>
+    <!-- Row 1: Full Width Image with Slider -->
+    <section class="project-row full-width-image">
+        <div class="container-fluid">
+            <div class="project-item-card full-width">
+                <div class="project-item-image kent-slider-container">
+                    <!-- Slider will be injected here by JavaScript -->
+                    <img src="../images/P1/1.jpg" alt="Kent Avenue Penthouse" class="project-img">
+                </div>
+                <div class="project-item-content">
+                    <h1 class="project-hero-title">K e n t A v e n u e P e n t h o u s e</h1>
+                    <p class="project-hero-description">
+                        Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the
+                        Kent Avenue penthouse apartment is
+                        one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this
+                        urban retreat above the vibrating city.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Row 2: Project Categories -->
     <section id="project-categories" class="project-categories-section">
@@ -176,10 +217,12 @@
                     <a href="#latest-work" class="project-category-link" data-category="residential">Residential</a>
                 </div>
                 <div class="project-category-item">
-                    <a href="#hospitality-projects" class="project-category-link" data-category="commercial">Commercial</a>
+                    <a href="#hospitality-projects" class="project-category-link"
+                        data-category="commercial">Commercial</a>
                 </div>
                 <div class="project-category-item">
-                    <a href="#in-residence" class="project-category-link" data-category="institutional">Institutional / Industrial</a>
+                    <a href="#in-residence" class="project-category-link" data-category="institutional">Institutional /
+                        Industrial</a>
                 </div>
                 <div class="project-category-item">
                     <a href="#objects-of-desire" class="project-category-link" data-category="interiors">Interiors</a>
@@ -195,17 +238,17 @@
     <section id="latest-work" class="latest-work-section">
         <div class="container">
             <h2 class="projects-section-title">L a t e s t w o r k</h2>
-            
+
             <!-- Vertical Text Left -->
             <div class="vertical-text-left">
                 <span>D E S I G N</span>
             </div>
-            
+
             <!-- Vertical Text Right -->
             <div class="vertical-text-right">
                 <span>R E C E N T</span>
             </div>
-            
+
             <div class="latest-work-grid">
                 <!-- Row 1 -->
                 <div class="project-item-card grid-item">
@@ -215,15 +258,17 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">A U D O H o u s e</h3>
                         <p class="project-item-description">
-                            In Copenhagen's evolving Nordhavn district, Audo House redefines how we live, work, and connect. Designed by Norm Architects, the historic 1918
+                            In Copenhagen's evolving Nordhavn district, Audo House redefines how we live, work, and
+                            connect. Designed by Norm Architects, the historic 1918
                             building has been carefully transformed into a fluid and welcoming destination.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2019</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span>
+                            | <span class="project-tag">2019</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
                         <img src="../images/P1/3.png" alt="Shore Collection" class="project-img">
@@ -236,11 +281,12 @@
                             harbours that define the Danish landscape.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2025</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
                         <img src="../images/P1/4.png" alt="Woven Tatami Rug" class="project-img">
@@ -248,14 +294,16 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">W o v e n T a t a m i R u g</h3>
                         <p class="project-item-description">
-                            A beautifully crafted rug that combines traditional Japanese tatami weaving techniques with modern Scandinavian design principles.
+                            A beautifully crafted rug that combines traditional Japanese tatami weaving techniques with
+                            modern Scandinavian design principles.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2025</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Row 2 -->
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
@@ -269,11 +317,12 @@
                             collaborations through a series of exhibitions across Copenhagen.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> | <span class="project-tag">2025</span>
+                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> |
+                            <span class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
                         <img src="../images/P1/6.png" alt="Karimoku Case Study" class="project-img">
@@ -286,11 +335,12 @@
                             design.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> | <span class="project-tag">2025</span>
+                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> |
+                            <span class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
                         <img src="../images/p1/7.png" alt="Collection 002" class="project-img">
@@ -298,7 +348,8 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">C o l l e c t i o n 0 0 2</h3>
                         <p class="project-item-description">
-                            Our second collection explores the intersection of traditional craftsmanship and contemporary design, featuring pieces that tell a story of heritage and innovation.
+                            Our second collection explores the intersection of traditional craftsmanship and
+                            contemporary design, featuring pieces that tell a story of heritage and innovation.
                         </p>
                         <div class="project-item-tags">
                             <span class="project-tag">Design</span> | <span class="project-tag">2025</span>
@@ -319,8 +370,10 @@
                 <div class="project-item-content">
                     <h3 class="project-item-title">Sjöparken</h3>
                     <p class="project-item-description-img">
-                        Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
-                        one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
+                        Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the
+                        Kent Avenue penthouse apartment is
+                        one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this
+                        urban retreat above the vibrating city.
                     </p>
                 </div>
             </div>
@@ -338,16 +391,19 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">T R U N K ( H O T E L ) Y O Y O G I P A R K</h3>
                         <p class="project-item-description">
-                            TRUNK(HOTEL) YOYOGI PARK is a calm retreat seamlessly woven into the vibrant tapestry of Tokyo. Here, amid the juxtaposition of modernity and
-                            tradition, the celebration of leisure and festivity, and the embrace of both the local community and cherished visitors, you'll discover the perfect
+                            TRUNK(HOTEL) YOYOGI PARK is a calm retreat seamlessly woven into the vibrant tapestry of
+                            Tokyo. Here, amid the juxtaposition of modernity and
+                            tradition, the celebration of leisure and festivity, and the embrace of both the local
+                            community and cherished visitors, you'll discover the perfect
                             blend of urban sophistication and natural beauty.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span>
+                            | <span class="project-tag">2023</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card half-width">
                     <div class="project-item-image">
                         <img src="../images/P2/3.png" alt="Restaurang ÄNG" class="project-img">
@@ -355,11 +411,13 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">Ä N G</h3>
                         <p class="project-item-description">
-                            Sitting as a solitary diamond in the undulating fields of Ästad Vingård – one of Sweden's largest vineyards – Restaurang ÄNG is a culinary experience
+                            Sitting as a solitary diamond in the undulating fields of Ästad Vingård – one of Sweden's
+                            largest vineyards – Restaurang ÄNG is a culinary experience
                             out of the ordinary that engages all senses.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2022</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span>
+                            | <span class="project-tag">2022</span>
                         </div>
                     </div>
                 </div>
@@ -412,7 +470,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P3/3.png" alt="Fjord Boat House" class="project-img">
@@ -429,7 +487,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P3/4.png" alt="Archipelago House" class="project-img">
@@ -447,7 +505,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P3/5.png" alt="Pavilion House" class="project-img">
@@ -465,7 +523,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/p3/6.png" alt="Coastal Residence" class="project-img">
@@ -473,7 +531,8 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">C o a s t a l R e s i d e n c e</h3>
                         <p class="project-item-description">
-                            A modern coastal home designed to embrace the ocean views while providing sustainable living solutions and seamless indoor-outdoor connectivity.
+                            A modern coastal home designed to embrace the ocean views while providing sustainable living
+                            solutions and seamless indoor-outdoor connectivity.
                         </p>
                         <div class="project-item-tags">
                             <span class="project-tag">Residential</span> | <span class="project-tag">2023</span>
@@ -494,7 +553,8 @@
                 <div class="soft-minimal-content full-width">
                     <h3 class="soft-minimal-title">S o f t M i n i m a l</h3>
                     <p class="soft-minimal-text">
-                        Through insightful essays and tactile imagery collected in Soft Minimal, we share the principles that underpin a human-centic design
+                        Through insightful essays and tactile imagery collected in Soft Minimal, we share the principles
+                        that underpin a human-centic design
                         philosophy honed over 15 years.
                     </p>
                 </div>
@@ -514,11 +574,12 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">O b j e c t 0 0 3</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2023</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card four-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P4/3.png" alt="Object 004" class="project-img">
@@ -526,11 +587,12 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">O b j e c t 0 0 4</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2023</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card four-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P4/4.png" alt="Object 005" class="project-img">
@@ -538,11 +600,12 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">O b j e c t 0 0 5</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2023</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card four-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P4/5.png" alt="Object 006" class="project-img">
@@ -550,7 +613,8 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">O b j e c t 0 0 6</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2024</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
@@ -569,14 +633,16 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">F i n a l P r o j e c t L e f t</h3>
                         <p class="project-item-description">
-                            Final project description on the left side with detailed information about the architectural design and concept.
+                            Final project description on the left side with detailed information about the architectural
+                            design and concept.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Residential</span> | <span class="project-tag">2024</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Residential</span>
+                            | <span class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card half-width">
                     <div class="project-item-image">
                         <img src="../images/P5/2.png" alt="Final Project Right" class="project-img">
@@ -584,10 +650,12 @@
                     <div class="project-item-content">
                         <h3 class="project-item-title">F i n a l P r o j e c t R i g h t</h3>
                         <p class="project-item-description">
-                            Final project description on the right side showcasing innovative design solutions and sustainable architecture practices.
+                            Final project description on the right side showcasing innovative design solutions and
+                            sustainable architecture practices.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Commercial</span> | <span class="project-tag">2024</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Commercial</span>
+                            | <span class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
@@ -599,4 +667,5 @@
     <script src="../js/projects.js"></script>
     <script src="../js/kent-slider.js"></script>
 </body>
+
 </html>

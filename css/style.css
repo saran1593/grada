@@ -1,3 +1,79 @@
+/* ================================
+   Mobile Navigation Enhancements
+   ================================ */
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        padding: 12px 20px !important;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 16px; /* Larger text for mobile */
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--secondary-color) !important;
+    }
+    
+    .navbar-nav .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: var(--secondary-color) !important;
+        font-weight: 600;
+    }
+    
+    /* Mobile menu backdrop */
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        margin-top: 10px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+    
+    /* Ensure navbar doesn't change height during collapse */
+    .navbar {
+        min-height: 60px;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        padding: 14px 20px !important;
+        min-height: 54px;
+        font-size: 15px;
+    }
+    
+    .navbar-collapse {
+        margin-top: 8px;
+    }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .navbar-collapse {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Loading state for smooth transitions */
+.navbar-collapse.collapsing {
+    transition: height 0.35s ease;
+}
+
+
 /* Add to css/style.css - Loading Optimization */
 html {
     visibility: hidden;
