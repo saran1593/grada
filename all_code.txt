@@ -1,0 +1,5205 @@
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\components\about.html
+==================================================
+<link rel="stylesheet" href="/css/components/about.css">
+
+<section class="about-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+  
+            <div class="col-lg-6 order-lg-2">
+                <div class="about-content">
+                    <h3 class="mb-4">ABOUT US</h3>
+                    <p class="mb-4">Grad Architects is led by <strong>Principal Architect Vishnu Priya</strong>, who brings rich experience in Residential, Commercial, and Industrial projects. Before founding the firm, she worked with leading practices such as A&E Architects and Engineers, Chennai.</p>
+                    
+                    <p class="mb-4">Since its inception, the firm has grown steadily, delivering projects that balance guidelines, aesthetics, and context. Our dedicated team ensures personalized care, from <strong>initial planning to detailed design</strong> and on-site execution.</p>
+                    
+                    <p class="mb-5">As a certified professional in <strong>Mud Architecture</strong> and a passionate advocate of <strong>Green Architecture</strong>, Vishnu Priya's philosophy drives Grad Architects' focus on sustainability, innovation, and timeless design.</p>
+                    
+                    <a href="#projects" class="btn btn-view-projects">VIEW ALL PROJECTS</a>
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1 position-relative">
+                <div class="about-image">
+                    <img src="/images/about.png" alt="About Grad Architects" class="img-fluid rounded shadow">
+                </div>
+                <div class="vertical-text">
+                    <span>BUILDING WITH PURPOSE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\components\careers.html
+==================================================
+<link rel="stylesheet" href="/css/components/careers.css">
+
+<section class="grad-careers-section">
+    <div class="container-fluid">
+        <div class="row g-0 align-items-center">
+
+            <!-- Image Column - Hidden on mobile (same structure as contact) -->
+            <div class="col-lg-5 d-none d-lg-block">
+                <img src="/images/career.jpg" class="grad-careers-image" alt="Modern building exterior">
+            </div>
+
+            <!-- Form Column -->
+            <div class="col-lg-7 d-flex justify-content-center">
+               
+                <div class="grad-careers-form-container text-dark p-4 p-md-5">
+                    <p class="grad-careers-eyebrow text-uppercase mb-4">WE'RE ALWAYS LOOKING FOR TALENT</p>
+                    
+                    <form id="careerForm" novalidate>
+                        <div class="mb-4">
+                            <input type="text" class="form-control grad-careers-input" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" class="form-control grad-careers-input" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" class="form-control grad-careers-input" id="interest" placeholder="Area of Interest / Role" required>
+                        </div>
+                        <div class="mb-4 grad-careers-file-wrapper">
+                            <label for="resume" class="d-flex justify-content-between align-items-center w-100">
+                                <span>Upload Resume</span>
+                                <i class="fas fa-paperclip"></i>
+                            </label>
+                            <input type="file" id="resume" class="d-none">
+                        </div>
+                        <div class="mb-5 grad-careers-file-wrapper">
+                            <label for="portfolio" class="d-flex justify-content-between align-items-center w-100">
+                                <span>Upload Portfolio</span>
+                                <i class="fas fa-paperclip"></i>
+                            </label>
+                            <input type="file" id="portfolio" class="d-none">
+                        </div>
+                        
+                        <!-- Centered Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-dark grad-careers-submit-btn text-uppercase fw-bold">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/careers.js"></script>
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\components\contact.html
+==================================================
+<link rel="stylesheet" href="css/components/contact.css">
+
+<section class="grad-contact-section">
+    <div class="container-fluid">
+        <div class="row g-0 align-items-center">
+
+            <!-- Form Column -->
+            <div class="col-lg-7 d-flex justify-content-center">
+
+                <div class="grad-contact-form-container text-dark p-4 p-md-5">
+                    <p class="grad-contact-eyebrow text-uppercase mb-4">GET IN TOUCH WITH US</p>
+
+                    <form id="contactForm" novalidate>
+                        <!-- Name Field -->
+                        <div class="mb-4">
+                            <input type="text" class="form-control grad-contact-input" id="name" placeholder="Name"
+                                required>
+                        </div>
+
+                        <!-- Phone Number Field -->
+                        <div class="mb-4">
+                            <input type="tel" class="form-control grad-contact-input" id="phone"
+                                placeholder="Phone Number" required>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="mb-4">
+                            <input type="email" class="form-control grad-contact-input" id="email" placeholder="Email"
+                                required>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="mb-4">
+                            <textarea class="form-control grad-contact-input" id="message" placeholder="Message"
+                                rows="4" required></textarea>
+                        </div>
+
+                        <!-- Centered Submit Button -->
+                        <div class="text-center">
+                            <button type="submit"
+                                class="btn btn-dark grad-contact-submit-btn text-uppercase fw-bold">Send
+                                Message</button>
+                        </div>
+                    </form>
+
+                    <div class="grad-contact-social mt-5">
+                        <div class="social-icons d-flex justify-content-center gap-4 mb-3">
+                            <a href="mailto:info@gradarchitects.com" class="social-icon">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </a>
+                            <a href="https://wa.me/919876543210" class="social-icon">
+                                <i class="fab fa-whatsapp fa-lg"></i>
+                            </a>
+                            <a href="tel:+919876543210" class="social-icon">
+                                <i class="fas fa-phone fa-lg"></i>
+                            </a>
+                        </div>
+                        <div class="contact-info text-center">
+                            <p class="mb-0">123 Architecture Street, Chennai.</p>
+                            <p class="mb-1">+91 98765 43210 | info@gradarchitects.com</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Image Column - Hidden on mobile -->
+            <div class="col-lg-5 d-none d-lg-block">
+                <img src="/images/contact.jpg" class="grad-contact-image" alt="Modern architecture building">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/contact.js"></script>
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\components\home.html
+==================================================
+<link rel="stylesheet" href="/css/components/home.css">
+<link rel="stylesheet" href="/css/components/home.css">
+<style>
+
+/* ===========================
+   TABLET VIEW (≤768px)
+=========================== */
+@media (max-width: 768px) {
+  .home-hero-title {
+    font-size: 1rem !important;
+    letter-spacing: 0.2em !important;
+  }
+
+  .home-hero-description {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .carousel-content {
+    padding: 0.8rem !important;
+    bottom: 30px;
+  }
+
+  /* Tablet dots (normal size) */
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin: 0 auto;
+    padding: 0;
+    bottom: 10px;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  .carousel-indicators .active {
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.2);
+  }
+
+  .home-section .carousel {
+    height: 42vh !important;
+    width: 100% !important;
+  }
+
+  .home-section .carousel-item img {
+    width: 100% !important;
+    height: 42vh !important;
+    object-fit: cover;
+  }
+}
+
+/* ===========================
+   MOBILE VIEW (≤576px)
+=========================== */
+@media (max-width: 576px) {
+  .home-hero-title {
+    font-size: 0.8rem !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 12%;
+  }
+
+  .home-hero-description {
+    font-size: 0.65rem !important;
+    margin-bottom: 10%;
+    margin-top: -10%;
+  }
+
+  .home-section .carousel {
+    height: 45vh !important;
+  }
+
+  .home-section .carousel-item img {
+    width: 100% !important;
+    height: 42vh !important;
+    object-fit: cover;
+    min-height: 40vh;
+  }
+
+  .carousel-content {
+    bottom: 28px;
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  /* 🚫 Hide dots completely on mobile */
+  #homeCarousel .carousel-indicators {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+</style>
+
+<section class="home-section">
+  <div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/P1/1.jpg" class="d-block w-100" alt="Architectural Design 1">
+        <div class="carousel-content">
+          <h1 class="home-hero-title">G R A D A R C H I T E C T S</h1>
+          <p class="home-hero-description">
+            Crafting timeless architectural solutions that blend innovation with sustainability,
+            creating spaces that inspire and endure.
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/h2.png" class="d-block w-100" alt="Architectural Design 2">
+        <div class="carousel-content">
+          <h1 class="home-hero-title">D E S I G N E X C E L L E N C E</h1>
+          <p class="home-hero-description">
+            Transforming visions into reality with meticulous attention to detail
+            and client-focused architectural solutions.
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/h3.png" class="d-block w-100" alt="Architectural Design 3">
+        <div class="carousel-content">
+          <h1 class="home-hero-title">S U S T A I N A B L E V I S I O N</h1>
+          <p class="home-hero-description">
+            Pioneering green architecture and mud construction techniques
+            for a sustainable future.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\components\philosophy.html
+==================================================
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/components/philosophy.css">
+
+<section class="philosophy-section">
+    <div class="container">
+        <div class="philosophy-container">
+
+            <div class="philosophy-left">
+                <h2 class="main-heading-stacked">WHAT<br>WE<br>STAND<br>FOR</h2>
+                <div class="philosophy-content">
+                    <h2 class="section-title">OUR PHILOSOPHY</h2>
+                    <p class="philosophy-text">
+                        At Grad Architects, our vision is to achieve sustainable excellence in design by ensuring safety,
+                        quality, and beauty in every detail. Guided by this, our mission is to deliver creative,
+                        client-focused architectural solutions that blend your preferences, budget, and timeline into
+                        inspiring spaces.
+                    </p>
+                    <hr class="content-divider">
+                    <div class="logo-container">
+                        <div class="logo-image">
+                            <img src="/images/logo.png" alt="Grad Architects" class="philosophy-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="philosophy-right">
+                <div class="philosophy-image-container">
+                    <img src="/images/ph.png" alt="Philosophy Image" class="philosophy-image">
+                </div>
+
+                <div class="key-values">
+                    <h4 class="values-title">KEY VALUES</h4>
+                    <div class="value-row">
+                        Balance | Sustainability | Innovation + Technology
+                    </div>
+                    <hr class="value-divider">
+                    <div class="value-row">
+                        Personalized Care
+                    </div>
+                    <hr class="value-divider">
+                    <div class="value-row">
+                        Excellence in Process | Collaboration
+                    </div>
+                    <hr class="value-divider">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
+==================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/components/projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/components/p.css">
+<!-- Replace the old "Mobile Responsive Internal CSS" block in projects.html with this -->
+<style>
+/* =========================
+   PROJECTS — CONSOLIDATED
+   MOBILE RESPONSIVE STYLES
+   (Only affects <=768 / <=576 / <=400)
+   ========================= */
+
+/* 1) Tablet / small desktop breakpoint (keeps PC untouched) */
+@media (max-width: 768px) {
+  /* Make full-width hero images better suit mobile screens */
+  .full-width-image,
+  .full-width-section,
+  .soft-minimal-section {
+    width: 100vw !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .full-width-image .project-item-image,
+  .full-width-section .project-item-image,
+  .soft-minimal-section .project-item-image {
+    /* slightly shorter than desktop so overlay text sits tighter */
+    height: 70vh !important;
+    min-height: 420px !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+  }
+
+  /* Kent slider image sizing (keeps fade intact) */
+  .kent-slider-container .carousel,
+  .kent-slider-container .carousel-inner,
+  .kent-slider-container .carousel-item {
+    height: 100% !important;
+  }
+  .kent-slider-container .carousel-item img {
+    height: 70vh !important;
+    min-height: 420px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    width: 100% !important;
+    /* display: block !important; */
+  }
+
+  /* Overlay content: tighter padding and position */
+  .full-width-image .project-item-content,
+  .full-width-section .project-item-content,
+  .soft-minimal-content.full-width {
+    padding: 1.25rem 1rem !important;
+    bottom: 14px !important;               /* brings text closer to image bottom */
+    background: linear-gradient(transparent, rgba(0,0,0,0.78)) !important;
+  }
+
+  /* Title + description adjustments */
+  .project-hero-title {
+    font-size: 1.0rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 0.6rem !important;
+    line-height: 1.15 !important;
+    text-transform: uppercase !important;
+  }
+
+  .project-hero-description {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    max-width: 94% !important;
+    margin: 0 auto !important;
+    opacity: 0.95 !important;
+    margin-bottom: 0 !important;
+    text-align: center !important;
+  }
+
+  /* General project cards (compact on tablet) */
+  .project-item-content {
+    padding: 1rem !important;
+  }
+  .project-item-title { font-size: 0.9rem !important; }
+  .project-item-description { font-size: 0.78rem !important; line-height: 1.4 !important; }
+
+  /* Remove duplicate small-dot rules: hide home-carousel dots here only if needed
+     (we scope below specifically to kentCarousel for the project page) */
+}
+
+/* 2) Mobile (≤576px): hide dots, tighten overlay, smaller type */
+@media (max-width: 576px) {
+  /* Image sizing for mobile — slightly shorter to keep text visible */
+  .full-width-image .project-item-image,
+  .full-width-section .project-item-image,
+  .soft-minimal-section .project-item-image {
+    height: 65vh !important;
+    min-height: 320px !important;
+  }
+
+  .kent-slider-container .carousel-item img {
+    height: 96vh !important;
+    min-height: 320px !important;
+    
+  }
+
+  /* Overlay: compact and stronger fade for legibility */
+  .full-width-image .project-item-content,
+  .full-width-section .project-item-content,
+  .soft-minimal-content.full-width {
+    padding: 1rem 0.8rem !important;
+    bottom: 10px !important;
+    background: linear-gradient(transparent, rgba(0,0,0,0.86)) !important;
+  }
+
+  .project-hero-title {
+    font-size: 0.92rem !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 0.45rem !important;
+  }
+
+  .project-hero-description {
+    font-size: 0.75rem !important;
+    line-height: 1.45 !important;
+    max-width: 96% !important;
+    padding: 0 6px !important;
+  }
+
+  /* === K E N T  P A G E  — hide carousel dots on mobile only === */
+  #kentCarousel .carousel-indicators {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  /* Keep arrows visible but smaller (optional); comment out if you want them hidden) */
+  #kentCarousel .carousel-control-prev,
+  #kentCarousel .carousel-control-next {
+    width: 12% !important;
+    opacity: 0.6 !important;
+    margin-bottom: -250px;
+  }
+
+  /* Ensure project item text remains centered and readable */
+  .project-item-content { text-align: center !important; }
+}
+
+/* 3) Small mobile phones (≤400px): final scale-down */
+@media (max-width: 400px) {
+  .project-hero-title {
+    font-size: 0.82rem !important;
+    letter-spacing: 0.06em !important;
+  }
+  .project-hero-description {
+    font-size: 0.68rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .full-width-image .project-item-content,
+  .full-width-section .project-item-content {
+    padding-left: 0.6rem !important;
+    padding-right: 0.6rem !important;
+  }
+}
+
+/* ===========================================
+   END - Projects mobile consolidated styles
+   =========================================== */
+</style>
+
+
+</head>
+<body>
+
+<!-- Row 1: Full Width Image with Slider -->
+<section class="project-row full-width-image">
+    <div class="container-fluid">
+        <div class="project-item-card full-width">
+            <div class="project-item-image kent-slider-container">
+                <!-- Slider will be injected here by JavaScript -->
+                <img src="../images/P1/1.jpg" alt="Kent Avenue Penthouse" class="project-img">
+            </div>
+            <div class="project-item-content">
+                <h1 class="project-hero-title">K e n t A v e n u e P e n t h o u s e</h1>
+                <p class="project-hero-description">
+                    Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
+                    one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Row 2: Project Categories -->
+    <section id="project-categories" class="project-categories-section">
+        <div class="container">
+            <div class="project-categories-nav">
+                <div class="project-category-item">
+                    <a href="#latest-work" class="project-category-link" data-category="residential">Residential</a>
+                </div>
+                <div class="project-category-item">
+                    <a href="#hospitality-projects" class="project-category-link" data-category="commercial">Commercial</a>
+                </div>
+                <div class="project-category-item">
+                    <a href="#in-residence" class="project-category-link" data-category="institutional">Institutional / Industrial</a>
+                </div>
+                <div class="project-category-item">
+                    <a href="#objects-of-desire" class="project-category-link" data-category="interiors">Interiors</a>
+                </div>
+                <div class="project-category-item">
+                    <button id="view-all-btn" class="project-view-all-btn">View All</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 3: Latest Work - 2x3 Grid with Vertical Text -->
+    <section id="latest-work" class="latest-work-section">
+        <div class="container">
+            <h2 class="projects-section-title">L a t e s t w o r k</h2>
+            
+            <!-- Vertical Text Left -->
+            <div class="vertical-text-left">
+                <span>D E S I G N</span>
+            </div>
+            
+            <!-- Vertical Text Right -->
+            <div class="vertical-text-right">
+                <span>R E C E N T</span>
+            </div>
+            
+            <div class="latest-work-grid">
+                <!-- Row 1 -->
+                <div class="project-item-card grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P1/2.png" alt="Audo House Copenhagen" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">A U D O H o u s e</h3>
+                        <p class="project-item-description">
+                            In Copenhagen's evolving Nordhavn district, Audo House redefines how we live, work, and connect. Designed by Norm Architects, the historic 1918
+                            building has been carefully transformed into a fluid and welcoming destination.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2019</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P1/3.png" alt="Shore Collection" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">S h o r e C o l l e c t i o n</h3>
+                        <p class="project-item-description">
+                            Inspired by the timeless allure of Denmark's coasts, Shore Collection
+                            celebrates the serene yet dynamic essence of the shoreline and bustling
+                            harbours that define the Danish landscape.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P1/4.png" alt="Woven Tatami Rug" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">W o v e n T a t a m i R u g</h3>
+                        <p class="project-item-description">
+                            A beautifully crafted rug that combines traditional Japanese tatami weaving techniques with modern Scandinavian design principles.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="project-item-card grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P1/5.png" alt="3 Days of Design 2025" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">3 d a y s 2 0 2 5</h3>
+                        <p class="project-item-description">
+                            The annual 3daysofdesign is a festival for dreamers, doers, and the
+                            design curious. This year, Norm Architects will present new designs and
+                            collaborations through a series of exhibitions across Copenhagen.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> | <span class="project-tag">2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P1/6.png" alt="Karimoku Case Study" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">K a r i m o k u · R h o F i e r a 2 0 2 5</h3>
+                        <p class="project-item-description">
+                            A study in contrasts and calm, 'A Sense of Serenity' presents Karimoku
+                            Case in a space defined by tactile richness, subdued tones, and timeless
+                            design.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> | <span class="project-tag">2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/p1/7.png" alt="Collection 002" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">C o l l e c t i o n 0 0 2</h3>
+                        <p class="project-item-description">
+                            Our second collection explores the intersection of traditional craftsmanship and contemporary design, featuring pieces that tell a story of heritage and innovation.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Design</span> | <span class="project-tag">2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 4: Full Width Image -->
+    <section class="full-width-section">
+        <div class="container-fluid">
+            <div class="project-item-card full-width">
+                <div class="project-item-image">
+                    <img src="../images/P2/1.jpg" alt="Kent Avenue Penthouse" class="project-img">
+                </div>
+                <div class="project-item-content">
+                    <h3 class="project-item-title">Sjöparken</h3>
+                    <p class="project-item-description-img">
+                        Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
+                        one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 5: Two Halves -->
+    <section class="halves-section">
+        <div class="container">
+            <div class="project-grid-row halves-row">
+                <div class="project-item-card half-width">
+                    <div class="project-item-image">
+                        <img src="../images/P2/2.png" alt="TRUNK HOTEL Yoyogi Park" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">T R U N K ( H O T E L ) Y O Y O G I P A R K</h3>
+                        <p class="project-item-description">
+                            TRUNK(HOTEL) YOYOGI PARK is a calm retreat seamlessly woven into the vibrant tapestry of Tokyo. Here, amid the juxtaposition of modernity and
+                            tradition, the celebration of leisure and festivity, and the embrace of both the local community and cherished visitors, you'll discover the perfect
+                            blend of urban sophistication and natural beauty.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card half-width">
+                    <div class="project-item-image">
+                        <img src="../images/P2/3.png" alt="Restaurang ÄNG" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">Ä N G</h3>
+                        <p class="project-item-description">
+                            Sitting as a solitary diamond in the undulating fields of Ästad Vingård – one of Sweden's largest vineyards – Restaurang ÄNG is a culinary experience
+                            out of the ordinary that engages all senses.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 6: Full Width Image -->
+    <section class="full-width-section">
+        <div class="container-fluid">
+            <div class="project-item-card full-width">
+                <div class="project-item-image">
+                    <img src="../images/P3/1.jpg" alt="Repulse Bay Residence" class="project-img">
+                </div>
+                <div class="project-item-content">
+                    <h3 class="project-item-title">R e p u l s e B a y R e s i d e n c e</h3>
+                    <p class="project-item-description-img">
+                        The Repulse Bay Residence is envisioned as a living
+                        gallery that continuously evolve and adapt to a variety
+                        of everyday needs. This thoughtful design creates a
+                        tranquil environment, where each…
+                    </p>
+                    <div class="project-item-tags">
+                        <span class="project-tag">Residential</span> | <span class="project-tag">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 7: Five Images Grid for In Residence -->
+    <section id="in-residence" class="residence-section">
+        <div class="container">
+            <h2 class="projects-section-title">I n R e s i d e n c e</h2>
+            <div class="five-images-grid">
+                <div class="project-item-card five-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P3/2.png" alt="Kent Avenue Penthouse" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">K e n t A v e n u e P e n t h o u s e</h3>
+                        <p class="project-item-description">
+                            Nestled along the Brooklyn Waterfront, overlooking the
+                            East River and Manhattan Skyline, the Kent Avenue
+                            penthouse apartment is one of its kind; New York's
+                            industrial vibe meets soft minimalism and…
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Residential</span> | <span class="project-tag">2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card five-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P3/3.png" alt="Fjord Boat House" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">F j o r d B o a t H o u s e</h3>
+                        <p class="project-item-description">
+                            Uniquely located close to the water's edge on the border
+                            of Denmark & Germany, The Fjord Boat House is used as
+                            a guest house or peaceful retreat when needed.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Residential</span> | <span class="project-tag">2020</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card five-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P3/4.png" alt="Archipelago House" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">A r c h i p e l a g o H o u s e</h3>
+                        <p class="project-item-description">
+                            Located on the unspoiled and rocky coast of Sweden, the
+                            Archipelago summer house is a modernized holiday
+                            home embracing all aspects of family life – blending
+                            functionality with an architecture…
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Residential</span> | <span class="project-tag">2020</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card five-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P3/5.png" alt="Pavilion House" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">P a v i l l i o n H o u s e</h3>
+                        <p class="project-item-description">
+                            Elegantly set in the beautiful East Anglian landscape, on
+                            the border of a working farm in Suffolk, the Pavilion
+                            House is a real inside-out construction. The shapes and
+                            materials of…
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Residential</span> | <span class="project-tag">2021</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card five-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/p3/6.png" alt="Coastal Residence" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">C o a s t a l R e s i d e n c e</h3>
+                        <p class="project-item-description">
+                            A modern coastal home designed to embrace the ocean views while providing sustainable living solutions and seamless indoor-outdoor connectivity.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Residential</span> | <span class="project-tag">2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 8: Full Width Soft Minimal with Image -->
+    <section id="soft-minimal" class="soft-minimal-section">
+        <div class="container-fluid">
+            <div class="project-item-card full-width">
+                <div class="project-item-image">
+                    <img src="../images/P4/1.jpg" alt="Soft Minimal" class="project-img">
+                </div>
+                <div class="soft-minimal-content full-width">
+                    <h3 class="soft-minimal-title">S o f t M i n i m a l</h3>
+                    <p class="soft-minimal-text">
+                        Through insightful essays and tactile imagery collected in Soft Minimal, we share the principles that underpin a human-centic design
+                        philosophy honed over 15 years.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 9: Four Images Objects of Desire -->
+    <section id="objects-of-desire" class="objects-section">
+        <div class="container">
+            <h2 class="projects-section-title">O b j e c t s o f D e s i r e</h2>
+            <div class="four-images-grid">
+                <div class="project-item-card four-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P4/2.png" alt="Object 003" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">O b j e c t 0 0 3</h3>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card four-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P4/3.png" alt="Object 004" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">O b j e c t 0 0 4</h3>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card four-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P4/4.png" alt="Object 005" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">O b j e c t 0 0 5</h3>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card four-grid-item">
+                    <div class="project-item-image">
+                        <img src="../images/P4/5.png" alt="Object 006" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">O b j e c t 0 0 6</h3>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 10: Two Halves -->
+    <section class="halves-section final-section">
+        <div class="container">
+            <div class="project-grid-row halves-row">
+                <div class="project-item-card half-width">
+                    <div class="project-item-image">
+                        <img src="../images/P5/1.png" alt="Final Project Left" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">F i n a l P r o j e c t L e f t</h3>
+                        <p class="project-item-description">
+                            Final project description on the left side with detailed information about the architectural design and concept.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Residential</span> | <span class="project-tag">2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item-card half-width">
+                    <div class="project-item-image">
+                        <img src="../images/P5/2.png" alt="Final Project Right" class="project-img">
+                    </div>
+                    <div class="project-item-content">
+                        <h3 class="project-item-title">F i n a l P r o j e c t R i g h t</h3>
+                        <p class="project-item-description">
+                            Final project description on the right side showcasing innovative design solutions and sustainable architecture practices.
+                        </p>
+                        <div class="project-item-tags">
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Commercial</span> | <span class="project-tag">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/projects.js"></script>
+    <script src="../js/kent-slider.js"></script>
+</body>
+</html>
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\components\services.html
+==================================================
+<link rel="stylesheet" href="css/components/services.css">
+
+<section class="grad-services-section" id="grad-services">
+    <div class="container-fluid px-md-5">
+        <h4 class="text-center mb-4">OUR SERVICES</h4>
+        
+        <div class="grad-services-container">
+            <div class="grad-service-column">
+                <span class="grad-vertical-text">ARCHITECTURAL DESIGN</span>
+                <div class="grad-service-content">
+                    <img src="/images/Services/1.jpg" alt="Architectural Design">
+                    <div class="grad-content-overlay">
+                        <h3>Architectural Design</h3>
+                        <p class="grad-service-description">Comprehensive architectural solutions from concept to completion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grad-service-column">
+                <span class="grad-vertical-text">STRUCTURAL DESIGNING</span>
+                <div class="grad-service-content">
+                    <img src="/images/Services/4.jpg" alt="Structural Designing">
+                    <div class="grad-content-overlay">
+                        <h3>Structural Designing</h3>
+                        <p class="grad-service-description">Engineering excellence ensuring structural integrity and safety.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grad-service-column">
+                <span class="grad-vertical-text">INTERIOR DESIGNING</span>
+                <div class="grad-service-content">
+                    <img src="/images/Services/3.jpg" alt="Interior Designing">
+                    <div class="grad-content-overlay">
+                        <h3>Interior Designing</h3>
+                        <p class="grad-service-description">Creating inspiring interior spaces that reflect your personality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grad-service-column">
+                <span class="grad-vertical-text">PLANS & ESTIMATIONS</span>
+                <div class="grad-service-content">
+                    <img src="/images/Services/6.png" alt="Plans & Estimations">
+                    <div class="grad-content-overlay">
+                        <h3>Plans & Estimations</h3>
+                        <p class="grad-service-description">Detailed project planning and accurate cost estimations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
+==================================================
+.about-section {
+  padding: 100px 0;
+  background-color: var(--white);
+  margin-top: -200px;
+  margin-bottom: -200px;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about-section .section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: var(--primary-color);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-content {
+  margin-left: 30px;
+  text-align: justify;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.about-content strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 30px;
+}
+
+.about-image img {
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.about-image img:hover {
+  transform: scale(1.02);
+}
+
+/* Updated Button Styles with unique class */
+.btn-view-projects {
+  background-color: #FFC107 !important;
+  color: #ffffff !important;
+  border: 2px solid #FFC107 !important;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-view-projects:hover {
+  background-color: #e0a800 !important;
+  border-color: #e0a800 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* VERTICAL TEXT POSITIONED TO LEFT OF IMAGE */
+.vertical-text {
+  position: absolute;
+  left: -220px;
+  top: 40%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+  white-space: nowrap;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .vertical-text {
+    left: -120px;
+  }
+  
+  .about-image img {
+    height: 380px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .vertical-text {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    text-align: center;
+    margin: 2rem auto 1rem;
+    display: block;
+    width: 100%;
+  }
+
+  .vertical-text::before {
+    display: none;
+  }
+  
+  .about-content {
+    text-align: center;
+    margin-left: 0;
+  }
+  
+  .about-content p {
+    text-align: center;
+  }
+  
+  .about-image img {
+    height: 350px;
+    max-width: 400px;
+    margin-left: 0;
+  }
+}
+
+/* FIXED: Mobile Responsive - Perfect Centering */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -150px;
+    margin-bottom: -150px;
+  }
+
+  .about-section .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .about-content {
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+    margin-left: 0;
+  }
+
+  .about-content p {
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+    margin-left: 0;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .btn-view-projects {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Ensure the row and columns are perfectly centered */
+  .about-section .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .about-section .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  /* Fixed vertical text centering */
+  .vertical-text {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none !important;
+    text-align: center;
+    margin: 2rem auto 1rem;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    order: -1;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section {
+    padding: 60px 0;
+    margin-top: -100px;
+    margin-bottom: -100px;
+  }
+
+  .about-section .section-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+  }
+
+  .btn-view-projects {
+    width: 80%;
+    max-width: 250px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Ensure vertical text is perfectly centered */
+  .vertical-text {
+    margin: 1.5rem auto;
+    font-size: 1.2rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .about-section .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+  }
+
+  .about-image img {
+    height: 220px;
+    max-width: 300px;
+  }
+
+  .btn-view-projects {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .vertical-text {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
+==================================================
+/* css/components/careers.css - UPDATED TO MATCH CONTACT PAGE */
+.grad-careers-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    margin-top: -140px;
+}
+
+.grad-careers-form-container {
+    width: 100%;
+    max-width: 450px;
+    background: transparent;
+}
+
+.grad-careers-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: left;
+    width: 100%;
+}
+
+.grad-careers-input {
+    background-color: transparent !important;
+    color: rgb(0, 0, 0) !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0.75rem 0 !important;
+    transition: border-color 0.3s ease;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.grad-careers-input:focus {
+    border-bottom-color: rgb(0, 0, 0) !important;
+    background: transparent !important;
+    color: black !important;
+    outline: none;
+}
+
+.grad-careers-input::placeholder {
+    color: rgba(0, 0, 0, 0.7) !important;
+    opacity: 1;
+}
+
+.grad-careers-file-wrapper {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.grad-careers-file-wrapper:hover {
+    border-bottom-color: black;
+}
+
+.grad-careers-file-wrapper label {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 0;
+}
+
+.grad-careers-file-wrapper label i {
+    color: black;
+}
+
+.grad-careers-submit-btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    width: auto;
+    padding: 0.8rem 3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.grad-careers-submit-btn:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+/* UPDATED: Careers image styles - matching contact section exactly */
+.grad-careers-image {
+    width: 80%;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-left: 90px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet Devices (768px - 992px) */
+@media (max-width: 992px) {
+    .grad-careers-section {
+        margin-top: -120px;
+        min-height: 80vh;
+    }
+    
+    .grad-careers-form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .grad-careers-image {
+        height: 70vh;
+    }
+    
+    .grad-careers-eyebrow {
+        text-align: center;
+    }
+}
+
+/* Mobile Devices (576px - 768px) */
+@media (max-width: 768px) {
+    .grad-careers-section {
+        margin-top: -100px;
+        min-height: auto;
+        padding: 80px 0;
+    }
+    
+    .grad-careers-form-container {
+        padding: 2rem 1.5rem !important;
+        max-width: 100%;
+    }
+    
+    .grad-careers-eyebrow {
+        font-size: 0.75rem;
+        text-align: center;
+        margin-bottom: 2rem !important;
+    }
+    
+    .grad-careers-input {
+        font-size: 0.9rem;
+        padding: 0.6rem 0 !important;
+    }
+    
+    .grad-careers-submit-btn {
+        width: 100%;
+        max-width: 250px;
+        padding: 0.7rem 2rem;
+        margin: 1.5rem auto 0;
+    }
+    
+    .grad-careers-image {
+        height: 50vh;
+        margin-left: 30px;
+    }
+}
+
+/* Small Mobile Devices (below 576px) */
+@media (max-width: 576px) {
+    .grad-careers-section {
+        margin-top: -80px;
+        padding: 60px 0;
+    }
+    
+    .grad-careers-form-container {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .grad-careers-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.8px;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .grad-careers-input {
+        font-size: 0.85rem;
+        padding: 0.5rem 0 !important;
+    }
+    
+    .grad-careers-submit-btn {
+        width: 100%;
+        max-width: 220px;
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
+        margin: 1rem auto 0;
+    }
+    
+    .grad-careers-image {
+        height: 40vh;
+        margin-left: 15px;
+    }
+}
+
+/* Extra Small Devices (below 400px) */
+@media (max-width: 400px) {
+    .grad-careers-section {
+        margin-top: -60px;
+        padding: 50px 0;
+    }
+    
+    .grad-careers-form-container {
+        padding: 1rem 0.8rem !important;
+    }
+    
+    .grad-careers-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.6px;
+    }
+    
+    .grad-careers-input {
+        font-size: 0.8rem;
+    }
+    
+    .grad-careers-submit-btn {
+        max-width: 200px;
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    .grad-careers-image {
+        height: 35vh;
+        margin-left: 0;
+        border-radius: 10px;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .grad-careers-section {  
+        min-height: auto;
+        padding: 40px 0;
+    }
+    
+    .grad-careers-form-container {
+        padding: 1rem 1.5rem !important;
+    }
+    
+    .grad-careers-file-wrapper {
+        padding-bottom: 0.5rem;
+    }
+}
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\css\components\contact.css
+==================================================
+/* Contact Section Styles - Matching Careers Section Design */
+.grad-contact-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    margin-top: -140px;
+}
+
+.grad-contact-form-container {
+    width: 100%;
+    max-width: 450px;
+    background: transparent;
+}
+
+.grad-contact-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: left;
+    width: 100%;
+}
+
+.grad-contact-input {
+    background-color: transparent !important;
+    color: rgb(0, 0, 0) !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0.75rem 0 !important;
+    transition: border-color 0.3s ease;
+    font-size: 1rem;
+    width: 100%;
+    resize: none;
+}
+
+.grad-contact-input:focus {
+    border-bottom-color: rgb(0, 0, 0) !important;
+    background: transparent !important;
+    color: black !important;
+    outline: none;
+}
+
+.grad-contact-input::placeholder {
+    color: rgba(0, 0, 0, 0.7) !important;
+    opacity: 1;
+}
+
+.grad-contact-input textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.grad-contact-submit-btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    width: auto;
+    padding: 0.8rem 3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.grad-contact-submit-btn:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+.grad-contact-image {
+    width: 80%;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 15px;
+    
+    position: relative;
+    text-align: center;
+    margin-left: -60px;
+    margin-right: 60px;
+
+}
+
+/* Social Icons */
+.grad-contact-social {
+    margin-top: 3rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.social-icons {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #000000;
+    background-color: #000000;
+    border-color: #000000;
+    text-decoration: none;
+}
+
+.social-icon:hover i {
+    color: #ffffff !important;
+}
+
+/* Contact info alignment */
+.contact-info {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet Devices (768px - 992px) */
+@media (max-width: 992px) {
+    .grad-contact-section {
+        margin-top: -120px;
+        min-height: 80vh;
+    }
+    
+    .grad-contact-form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .grad-contact-image {
+        height: 70vh;
+    }
+    
+    .grad-contact-eyebrow {
+        text-align: center;
+    }
+}
+
+/* Mobile Devices (576px - 768px) */
+@media (max-width: 768px) {
+    .grad-contact-section {
+        margin-top: -100px;
+        min-height: auto;
+        padding: 80px 0;
+    }
+    
+    .grad-contact-form-container {
+        padding: 2rem 1.5rem !important;
+        max-width: 100%;
+    }
+    
+    .grad-contact-eyebrow {
+        font-size: 0.75rem;
+        text-align: center;
+        margin-bottom: 2rem !important;
+    }
+    
+    .grad-contact-input {
+        font-size: 0.9rem;
+        padding: 0.6rem 0 !important;
+    }
+    
+    .grad-contact-input textarea {
+        min-height: 80px;
+    }
+    
+    .grad-contact-submit-btn {
+        width: 100%;
+        max-width: 250px;
+        padding: 0.7rem 2rem;
+        margin: 1.5rem auto 0;
+    }
+    
+    .grad-contact-social {
+        margin-top: 2.5rem;
+    }
+    
+    .social-icons {
+        gap: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .social-icon {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .contact-info {
+        font-size: 0.85rem;
+    }
+    
+    .contact-info p {
+        margin-bottom: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+/* Small Mobile Devices (below 576px) */
+@media (max-width: 576px) {
+    .grad-contact-section {
+        margin-top: -80px;
+        padding: 60px 0;
+    }
+    
+    .grad-contact-form-container {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .grad-contact-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.8px;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .grad-contact-input {
+        font-size: 0.85rem;
+        padding: 0.5rem 0 !important;
+    }
+    
+    .grad-contact-input textarea {
+        min-height: 70px;
+        font-size: 0.85rem;
+    }
+    
+    .grad-contact-submit-btn {
+        width: 100%;
+        max-width: 220px;
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
+        margin: 1rem auto 0;
+    }
+    
+    .grad-contact-social {
+        margin-top: 2rem;
+    }
+    
+    .social-icons {
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .social-icon i {
+        font-size: 0.9rem !important;
+    }
+    
+    .contact-info {
+        font-size: 0.8rem;
+    }
+    
+    .contact-info p {
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+}
+
+/* Extra Small Devices (below 400px) */
+@media (max-width: 400px) {
+    .grad-contact-section {
+        margin-top: -60px;
+        padding: 50px 0;
+    }
+    
+    .grad-contact-form-container {
+        padding: 1rem 0.8rem !important;
+    }
+    
+    .grad-contact-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.6px;
+    }
+    
+    .grad-contact-input {
+        font-size: 0.8rem;
+    }
+    
+    .grad-contact-submit-btn {
+        max-width: 200px;
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    .social-icons {
+        gap: 0.5rem;
+    }
+    
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .social-icon i {
+        font-size: 0.8rem !important;
+    }
+    
+    .contact-info {
+        font-size: 0.75rem;
+    }
+    
+    .contact-info p {
+        margin-bottom: 0.4rem;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .grad-contact-section {
+        min-height: auto;
+        padding: 40px 0;
+    }
+    
+    .grad-contact-form-container {
+        padding: 1rem 1.5rem !important;
+    }
+    
+    .grad-contact-input textarea {
+        min-height: 60px;
+    }
+    
+    .grad-contact-social {
+        margin-top: 1.5rem;
+    }
+}
+
+
+
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\css\components\home.css
+==================================================
+.home-section {
+  padding: 0;
+  margin-top: -76px; /* Adjust for fixed navbar */
+  position: relative;
+}
+
+.home-section .carousel {
+  height: 100vh;
+  
+}
+
+.home-section .carousel-inner,
+.home-section .carousel-item {
+  height: 100%;
+  position: relative;
+}
+
+/* HOME IMAGES - COVER BOTTOM OF IMAGE (CROP TOP) */
+.home-section .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom; /* Focus on bottom of image */
+  width: 100%;
+}
+
+/* FIXED: Remove extra images in mobile view */
+.home-section .carousel-item .d-block.w-100:not(:first-child) {
+  display: none !important;
+}
+
+.home-section .carousel-item.active .d-block.w-100:first-child {
+  display: block !important;
+}
+
+/* Carousel Content Overlay */
+.carousel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.home-hero-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: white;
+}
+
+.home-hero-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Custom carousel styles */
+.carousel-indicators button {
+  width: 30px;
+  height: 3px;
+  margin: 0 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 0;
+  transition: opacity 0.6s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 15%;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 0.9;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Fade transition */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  transform: none;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\css\components\philosophy.css
+==================================================
+/* CSS Variables */
+:root {
+    --primary-color: #333333;
+    --secondary-color: #666666;
+    --accent-color: #9acd32;
+    --background-color: #ffffff;
+    --border-color: #dddddd;
+}
+
+/* Main Section Container */
+.philosophy-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 20px;
+    background-color: var(--background-color);
+    margin-top: -140px;
+    margin-bottom: -150px;
+}
+
+.philosophy-container {
+    display: flex;
+    gap: 80px;
+    width: 100%;
+    max-width: 1200px;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* Left Column */
+.philosophy-left {
+    flex: 1;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.main-heading-stacked {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--primary-color);
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.philosophy-content {
+    flex: 1;
+    padding-top: 0;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.philosophy-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+    text-align: justify;
+}
+
+.content-divider {
+    border: 0;
+    height: 1.5px;
+    background-color: var(--primary-color);
+    width: 300px;
+    margin: 0 0 2.5rem 0;
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    display: flex;
+    align-items: center;
+}
+
+.philosophy-logo {
+    height: 70px !important;
+    width: auto !important;
+    max-height: 70px !important;
+    transition: transform 0.3s ease;
+}
+
+.philosophy-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Right Column */
+.philosophy-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+}
+
+.philosophy-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.philosophy-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.values-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: left;
+    width: 100%;
+}
+
+.value-row {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    text-align: left;
+    width: 500px;
+}
+
+.value-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 1rem 0;
+    opacity: 0.5;
+    width: 100%;
+}
+
+/* FIXED: Responsive Design with Perfect Centering */
+@media (max-width: 1200px) {
+    .philosophy-container {
+        gap: 60px;
+        max-width: 1100px;
+    }
+    
+    .main-heading-stacked {
+        font-size: 3rem;
+    }
+    
+    .value-row {
+        width: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .philosophy-container {
+        flex-direction: column;
+        gap: 50px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .philosophy-left {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .main-heading-stacked {
+        font-size: 2.5rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .philosophy-content {
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .philosophy-text {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .section-title {
+        text-align: center;
+    }
+    
+    .content-divider {
+        margin: 2rem auto;
+    }
+    
+    .logo-container {
+        justify-content: center;
+    }
+    
+    .philosophy-right {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        margin-left: 0;
+    }
+    
+    .philosophy-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 30px;
+    }
+    
+    .values-title {
+        text-align: center;
+    }
+    
+    .value-row {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .philosophy-logo {
+        height: 60px !important;
+        max-height: 60px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .philosophy-section {
+        padding: 60px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .philosophy-container {
+        gap: 40px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .philosophy-left {
+        gap: 25px;
+        align-items: center;
+    }
+    
+    .main-heading-stacked {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        text-align: center;
+        /* FIXED: Add margin top for mobile */
+        margin-top: 30px;
+    }
+    
+    .philosophy-text, .value-row {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .philosophy-image {
+        width: 100%;
+        margin: 0 auto 25px;
+        max-width: 350px;
+    }
+    
+    .key-values {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .value-row {
+        padding: 0 10px;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    .philosophy-logo {
+        height: 55px !important;
+        max-height: 55px !important;
+    }
+    
+    .content-divider {
+        margin: 1.5rem auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .philosophy-section {
+        padding: 50px 15px;
+        text-align: center;
+    }
+    
+    .philosophy-container {
+        gap: 35px;
+        text-align: center;
+    }
+    
+    .main-heading-stacked {
+        font-size: 2rem;
+        text-align: center;
+        /* FIXED: Add margin top for small mobile */
+        margin-top: 30px;
+    }
+    
+    .section-title {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .philosophy-text {
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .philosophy-image {
+        margin-bottom: 20px;
+        max-width: 300px;
+    }
+    
+    .values-title {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+    
+    .value-row {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+    
+    .logo-container {
+        justify-content: center;
+    }
+    
+    .philosophy-content {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .philosophy-logo {
+        height: 50px !important;
+        max-height: 50px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .philosophy-section {
+        padding: 40px 10px;
+    }
+    
+    .main-heading-stacked {
+        font-size: 1.8rem;
+        /* FIXED: Add margin top for extra small mobile */
+        margin-top: 30px;
+    }
+    
+    .philosophy-text {
+        font-size: 0.8rem;
+    }
+    
+    .philosophy-logo {
+        height: 45px !important;
+        max-height: 45px !important;
+    }
+    
+    .philosophy-image {
+        max-width: 280px;
+    }
+    
+    .value-row {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
+==================================================
+/* Projects Page Specific Styles */
+:root {
+    --projects-primary-color: #000000;
+    --projects-secondary-color: #f8f9fa;
+    --projects-text-color: #ffffff;
+    --projects-light-gray: #e9ecef;
+    --projects-border-color: #dddddd;
+    --projects-link-color: #ffffff;
+    --projects-link-hover-color: #000000;
+}
+
+
+  .project-item-description {
+        color: white;
+    }
+
+/* Reset margins and padding for full-width sections */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Section Styles */
+.project-row {
+    padding: 0;
+    margin: 0;
+}
+
+/* Row 1: Full Width Hero Image - IMPROVED MOBILE COVERAGE */
+.full-width-image {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -100px;
+}
+
+.full-width-image .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+}
+
+.full-width-image .project-item-card {
+    border: none;
+    position: relative;
+    margin: 0;
+    width: 100%;
+}
+
+.full-width-image .project-item-image {
+    height: 90vh;
+    min-height: 700px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.full-width-image .project-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* IMPROVED: Carousel Content Overlay for full coverage */
+.full-width-image .project-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.project-hero-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+}
+
+.project-hero-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+    text-align: center;
+    width: 100%;
+    margin-bottom: -50px;
+}
+
+/* Kent Slider Styles (Matching Home Section) */
+.kent-slider-container .carousel {
+    height: 100%;
+}
+
+.kent-slider-container .carousel-inner,
+.kent-slider-container .carousel-item {
+    height: 100%;
+    position: relative;
+}
+
+.kent-slider-container .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+}
+
+/* Custom carousel styles matching home section */
+.kent-slider-container .carousel-indicators button {
+    width: 30px;
+    height: 3px;
+    margin: 0 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 0;
+    transition: opacity 0.6s ease;
+}
+
+.kent-slider-container .carousel-indicators .active {
+    background-color: #fff;
+    opacity: 1;
+}
+
+.kent-slider-container .carousel-control-prev,
+.kent-slider-container .carousel-control-next {
+    width: 15%;
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
+}
+
+.kent-slider-container .carousel-control-prev:hover,
+.kent-slider-container .carousel-control-next:hover {
+    opacity: 0.9;
+}
+
+.kent-slider-container .carousel-control-prev-icon,
+.kent-slider-container .carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Fade transition */
+.kent-slider-container .carousel-fade .carousel-item {
+    opacity: 0;
+    transition-property: opacity;
+    transform: none;
+}
+
+.kent-slider-container .carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+
+/* Section Titles */
+.projects-section-title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--projects-primary-color);
+    text-transform: uppercase;
+    line-height: 1.3;
+    width: 100%;
+}
+
+/* Common Project Item Styles */
+.project-item-card {
+    background-color: #ffffff;
+    border: 1px solid var(--projects-border-color);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.project-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: var(--projects-primary-color);
+}
+
+.project-item-image {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    background-color: #f8f9fa; /* Fallback background */
+}
+
+/* IMPROVED: Better image handling with forced dimensions */
+.project-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.project-item-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.project-item-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-item-title {
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.2rem;
+    color: var(--projects-primary-color);
+    text-transform: uppercase;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+}
+
+.project-item-description {
+    margin-bottom: 1.2rem;
+    color: #303030;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    flex: 1;
+    text-align:justify;
+    width: 90%;
+}
+
+.project-item-description-img {
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    flex: 1;
+    text-align:justify;
+    width: 90%;
+    max-width: 800px;
+}
+
+
+.project-item-tags {
+    font-size: 0.85rem;
+    color: #888888;
+    letter-spacing: 0.04em;
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.project-tag {
+    display: inline-block;
+    margin: 0 0.15rem;
+}
+
+/* Row 2: Project Categories */
+.project-categories-section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--projects-border-color);
+}
+
+.project-categories-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    color: var(--projects-primary-color);
+}
+
+.project-category-item {
+    position: relative;
+}
+
+.project-category-link {
+    color: var(--projects-primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-align: center;
+}
+
+.project-category-link:hover,
+.project-category-link.active {
+    color: var(--projects-link-hover-color);
+}
+
+.project-view-all-btn {
+    background: transparent;
+    border: 1px solid var(--projects-primary-color);
+    color: var(--projects-primary-color);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.project-view-all-btn:hover {
+    background: var(--projects-primary-color);
+    color: white;
+}
+
+/* Latest Work Section - 2x3 Grid with Vertical Text */
+.latest-work-section {
+    padding: 4rem 0;
+    position: relative;
+}
+
+.latest-work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Grid item image heights */
+.grid-item .project-item-image {
+    height: 400px;
+    min-height: 400px;
+}
+
+.grid-item .project-item-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Vertical Text Styles */
+.vertical-text-left,
+.vertical-text-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: var(--projects-primary-color);
+    text-transform: uppercase;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.vertical-text-left {
+    left: -80px;
+}
+
+.vertical-text-right {
+    right: -80px;
+}
+
+/* Full Width Sections - IMPROVED MOBILE COVERAGE */
+.full-width-section {
+    padding: 0;
+    margin: 4rem 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.full-width-section .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+}
+
+.full-width-section .project-item-card {
+    border: none;
+    margin: 0;
+    width: 100%;
+}
+
+.full-width-section .project-item-image {
+    height: 700px;
+    min-height: 700px;
+    width: 100%;
+}
+
+.full-width-section .project-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.full-width-section .project-item-title,
+.full-width-section .project-item-tags {
+    color: white;
+    text-align: center;
+}
+
+/* Five Images Grid for In Residence */
+.residence-section {
+    padding: 4rem 0;
+}
+
+.five-images-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Five grid image heights */
+.five-grid-item .project-item-image {
+    height: 350px;
+    min-height: 350px;
+}
+
+.five-grid-item .project-item-content {
+    text-align: center;
+    align-items: center;
+}
+
+/* Objects of Desire - 4 Images Grid */
+.objects-section {
+    padding: 4rem 0;
+}
+
+.four-images-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Four grid image heights */
+.four-grid-item .project-item-image {
+    height: 350px;
+    min-height: 350px;
+}
+
+.four-grid-item .project-item-content {
+    text-align: center;
+    align-items: center;
+}
+
+/* Two Halves Layout */
+.halves-section {
+    padding: 4rem 0;
+}
+
+.halves-row {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.half-width {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Halves image heights */
+.half-width .project-item-image {
+    height: 600px;
+    min-height: 600px;
+}
+
+.half-width .project-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Soft Minimal Section */
+.soft-minimal-section {
+    padding: 0;
+    margin: 4rem 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.soft-minimal-section .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.soft-minimal-section .project-item-card {
+    border: none;
+    position: relative;
+}
+
+.soft-minimal-section .project-item-image {
+    height: 700px;
+    min-height: 700px;
+}
+
+.soft-minimal-content.full-width {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.soft-minimal-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    margin-bottom: 1rem;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+
+.soft-minimal-text {
+    font-size: 0.9rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    line-height: 1.6;
+    text-align: center;
+    width: 100%;
+    opacity: 0.9;
+}
+
+/* Final Section */
+.final-section {
+    margin-bottom: 4rem;
+}
+
+/* Responsive Design - IMPROVED MOBILE COVERAGE */
+@media (max-width: 1200px) {
+    .latest-work-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .five-images-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .four-images-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .vertical-text-left {
+        left: -60px;
+    }
+    
+    .vertical-text-right {
+        right: -60px;
+    }
+    
+    /* Adjusted heights for tablet */
+    .grid-item .project-item-image {
+        height: 350px;
+        min-height: 350px;
+    }
+    
+    .five-grid-item .project-item-image,
+    .four-grid-item .project-item-image {
+        height: 300px;
+        min-height: 300px;
+    }
+    
+    .half-width .project-item-image {
+        height: 500px;
+        min-height: 500px;
+    }
+    
+    .full-width-image .project-item-image,
+    .full-width-section .project-item-image,
+    .soft-minimal-section .project-item-image {
+        height: 80vh;
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 992px) {
+    .vertical-text-left,
+    .vertical-text-right {
+        display: none;
+    }
+    
+    .five-images-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Adjusted heights for smaller tablets */
+    .grid-item .project-item-image {
+        height: 320px;
+        min-height: 320px;
+    }
+    
+    .five-grid-item .project-item-image,
+    .four-grid-item .project-item-image {
+        height: 280px;
+        min-height: 280px;
+    }
+    
+    .half-width .project-item-image {
+        height: 450px;
+        min-height: 450px;
+    }
+    
+    .full-width-image .project-item-image,
+    .full-width-section .project-item-image,
+    .soft-minimal-section .project-item-image {
+        height: 70vh;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .latest-work-grid,
+    .five-images-grid,
+    .four-images-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* IMPROVED: Mobile image heights for full coverage */
+    .grid-item .project-item-image {
+        height: 350px;
+        min-height: 350px;
+    }
+    
+    .five-grid-item .project-item-image,
+    .four-grid-item .project-item-image {
+        height: 320px;
+        min-height: 320px;
+    }
+    
+    .half-width .project-item-image {
+        height: 400px;
+        min-height: 400px;
+    }
+    
+    /* FIXED: Full width images cover entire mobile screen */
+    .full-width-image .project-item-image,
+    .full-width-section .project-item-image,
+    .soft-minimal-section .project-item-image {
+        height: 70vh !important; /* Force full coverage */
+        min-height: 500px !important;
+        width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    
+    /* FIXED: Ensure full width containers */
+    .full-width-image,
+    .full-width-section,
+    .soft-minimal-section {
+        width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* FIXED: Full width container fluid */
+    .full-width-image .container-fluid,
+    .full-width-section .container-fluid,
+    .soft-minimal-section .container-fluid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* IMPROVED: Better content overlay for mobile */
+    .full-width-image .project-item-content,
+    .full-width-section .project-item-content,
+    .soft-minimal-section .project-item-content {
+        padding: 2rem 1rem;
+        background: linear-gradient(transparent, rgba(0,0,0,0.9)); /* Darker for better readability */
+    }
+    
+    .project-hero-title {
+        font-size: 1.2rem;
+        letter-spacing: 0.2em;
+    }
+    
+    .project-hero-description {
+        font-size: 0.8rem;
+    }
+    
+    .halves-row {
+        flex-direction: column;
+    }
+    
+    /* FIXED: Reduced text size for mobile */
+    .project-item-title {
+        font-size: 0.9rem;
+    }
+    
+    .project-item-description {
+        font-size: 0.75rem;
+    }
+    
+    .projects-section-title {
+        font-size: 1rem;
+    }
+    
+    .project-item-tags {
+        font-size: 0.7rem;
+    }
+    
+    .soft-minimal-title {
+        font-size: 1.2rem;
+    }
+    
+    .soft-minimal-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* IMPROVED: Mobile image heights */
+    .grid-item .project-item-image {
+        height: 300px;
+        min-height: 300px;
+    }
+    
+    .five-grid-item .project-item-image,
+    .four-grid-item .project-item-image {
+        height: 280px;
+        min-height: 280px;
+    }
+    
+    .half-width .project-item-image {
+        height: 350px;
+        min-height: 350px;
+    }
+    
+    /* FIXED: Full coverage on small mobile */
+    .full-width-image .project-item-image,
+    .full-width-section .project-item-image,
+    .soft-minimal-section .project-item-image {
+        height: 60vh !important;
+        min-height: 400px !important;
+    }
+    
+    .project-hero-title {
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+        margin-bottom: -10%;
+     }
+    
+    .project-hero-description {
+        font-size: 0.7rem;
+        margin-top: 0;
+    }
+    
+    .project-item-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .projects-section-title {
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+    }
+    
+    /* IMPROVED: Better overlay text for small screens */
+    .full-width-image .project-item-content,
+    .full-width-section .project-item-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    /* FIXED: Reduced text size for small mobile */
+    .project-item-title {
+        font-size: 0.8rem;
+    }
+    
+    .project-item-description {
+        font-size: 0.7rem;
+    }
+    
+    .soft-minimal-title {
+        font-size: 1rem;
+    }
+    
+    .soft-minimal-text {
+        font-size: 0.7rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    /* IMPROVED: Extra small mobile image heights */
+    .grid-item .project-item-image {
+        height: 250px;
+        min-height: 250px;
+    }
+    
+    .five-grid-item .project-item-image,
+    .four-grid-item .project-item-image {
+        height: 220px;
+        min-height: 220px;
+    }
+    
+    .half-width .project-item-image {
+        height: 300px;
+        min-height: 300px;
+    }
+    
+    /* FIXED: Full coverage on extra small mobile */
+    .full-width-image .project-item-image,
+    .full-width-section .project-item-image,
+    .soft-minimal-section .project-item-image {
+        height: 50vh !important;
+        min-height: 350px !important;
+    }
+    
+    .project-hero-title {
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .project-hero-description {
+        font-size: 0.65rem;
+    }
+    
+    /* FIXED: Reduced text size for extra small mobile */
+    .project-item-title {
+        font-size: 0.75rem;
+    }
+    
+    .project-item-description {
+        font-size: 0.65rem;
+    }
+    
+    .projects-section-title {
+        font-size: 0.85rem;
+    }
+    
+    .soft-minimal-title {
+        font-size: 0.9rem;
+    }
+    
+    .soft-minimal-text {
+        font-size: 0.65rem;
+    }
+}
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
+==================================================
+/* services.css - Updated for hover functionality with single expanded service */
+.grad-services-section {
+    padding: 120px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -210px;
+}
+
+.grad-services-section h3 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* Flex container for all service columns */
+.grad-services-container {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    max-height: 700px;
+    min-height: 500px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+
+/* Individual service column styling */
+.grad-service-column {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+    min-width: 80px;
+    flex: 0 0 80px; /* Default collapsed state */
+}
+
+.grad-service-column:last-child {
+    border-right: none;
+}
+
+/* FIXED: Default expanded service - Architectural Design */
+.grad-service-column:first-child {
+    flex: 1 1 100% !important;
+    min-width: 200px !important;
+}
+
+.grad-service-column:first-child .grad-vertical-text {
+    opacity: 0 !important;
+    transform: rotate(180deg) scale(0.8) !important;
+}
+
+.grad-service-column:first-child .grad-service-content {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* COLLAPSED state for non-expanded services */
+.grad-service-column:not(:first-child) {
+    flex: 0 0 80px;
+}
+
+.grad-service-column:not(:first-child) .grad-vertical-text {
+    opacity: 1;
+}
+
+.grad-service-column:not(:first-child) .grad-service-content {
+    opacity: 0;
+}
+
+/* HOVER EFFECT - Expand on hover, collapse others */
+.grad-services-container:hover .grad-service-column:not(:hover) {
+    flex: 0 0 60px !important;
+    min-width: 60px !important;
+}
+
+.grad-services-container:hover .grad-service-column:hover {
+    flex: 1 1 100% !important;
+    min-width: 200px !important;
+}
+
+.grad-services-container:hover .grad-service-column:hover .grad-vertical-text {
+    opacity: 0 !important;
+}
+
+.grad-services-container:hover .grad-service-column:hover .grad-service-content {
+    opacity: 1 !important;
+}
+
+/* The vertical text label */
+.grad-vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #2c3e50;
+    transition: all 0.4s ease-in-out;
+    z-index: 100;
+    position: absolute;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+/* The content that appears when a column is expanded or hovered */
+.grad-service-content {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out 0.3s;
+    pointer-events: none;
+}
+
+/* FIXED: Image fitting to container */
+.grad-service-content img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transition: transform 0.5s ease;
+}
+
+.grad-service-column:first-child .grad-service-content img,
+.grad-services-container:hover .grad-service-column:hover .grad-service-content img {
+    transform: scale(1.05);
+}
+
+/* Overlay for text on the image */
+.grad-content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+    padding: 40px 30px 30px;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: transform 0.5s ease 0.4s;
+}
+
+.grad-service-column:first-child .grad-content-overlay,
+.grad-services-container:hover .grad-service-column:hover .grad-content-overlay {
+    transform: translateY(0);
+}
+
+.grad-content-overlay h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: white;
+    text-align: left;
+}
+
+.grad-service-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+    max-width: 500px;
+    color: white;
+    text-align: left;
+}
+
+/* Column effects for non-expanded services */
+.grad-service-column:not(:first-child) {
+    background-color: #f8f9fa;
+}
+
+.grad-service-column:not(:first-child) .grad-vertical-text {
+    color: #3498db;
+    transform: rotate(180deg) scale(1.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Hover effects for non-expanded services */
+.grad-service-column:not(:first-child):hover {
+    background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .grad-services-container {
+        height: 75vh;
+        max-height: 650px;
+    }
+}
+
+@media (max-width: 992px) {
+    .grad-services-section {
+        padding: 100px 0;
+    }
+    
+    .grad-services-container {
+        height: 70vh;
+        max-height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grad-services-section {
+        padding: 80px 0;
+        margin-top: -150px;
+    }
+    
+    .grad-services-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 600px;
+        max-height: none;
+    }
+    
+    .grad-service-column {
+        flex: 0 0 70px !important;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        min-width: 100% !important;
+    }
+    
+    .grad-service-column:first-child {
+        flex: 1 1 350px !important;
+    }
+    
+    .grad-service-column:last-child {
+        border-bottom: none;
+    }
+    
+    /* Disable hover effects on mobile */
+    .grad-services-container:hover .grad-service-column:not(:hover) {
+        flex: 0 0 70px !important;
+        min-width: 100% !important;
+    }
+    
+    .grad-services-container:hover .grad-service-column:hover {
+        flex: 1 1 350px !important;
+    }
+    
+    .grad-vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        padding: 5px 10px;
+    }
+    
+    .grad-service-column:not(:first-child) .grad-vertical-text {
+        transform: none;
+    }
+    
+    .grad-service-column:first-child .grad-vertical-text {
+        transform: scale(0.8);
+    }
+    
+    .grad-service-column:not(:first-child) .grad-vertical-text {
+        transform: scale(1.05);
+    }
+    
+    .grad-content-overlay {
+        padding: 30px 20px 20px;
+    }
+    
+    .grad-content-overlay h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* FIXED: Mobile image fitting */
+    .grad-service-content img {
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .grad-services-section {
+        padding: 60px 0;
+        margin-top: -120px;
+    }
+    
+    .grad-services-container {
+        min-height: 500px;
+    }
+    
+    .grad-service-column:first-child {
+        flex: 1 1 300px !important;
+    }
+    
+    .grad-services-container:hover .grad-service-column:hover {
+        flex: 1 1 300px !important;
+    }
+    
+    .grad-vertical-text {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .grad-content-overlay {
+        padding: 20px 15px 15px;
+    }
+    
+    .grad-content-overlay h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .grad-service-description {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\css\style.css
+==================================================
+/* Global Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --yellow-accent: #FFC107;
+    --yellow-accent-dark: #e0a800;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --dark-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+    background-color: var(--white);
+}
+
+/* Global Button Styles */
+.btn-primary-custom {
+    background-color: var(--yellow-accent);
+    color: #ffffff;
+    border: 2px solid var(--yellow-accent);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--yellow-accent-dark);
+    border-color: var(--yellow-accent-dark);
+    color: #ffffff;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-secondary-custom {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-secondary-custom:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+    padding: 100px 0;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.full-height-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation - INCREASED LOGO SIZE */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    padding: 0.6rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1030;
+    min-height: 70px;
+}
+
+.navbar.scrolled {
+    padding: 0.4rem 0;
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 50px;
+    padding: 0 !important;
+}
+
+/* INCREASED LOGO SIZE */
+.navbar-logo {
+    height: 32px !important; /* Increased from 25px */
+    width: auto !important;
+    max-height: 32px !important;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .navbar-logo {
+    transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    margin: 0 0.3rem;
+    padding: 0.4rem 0.7rem !important;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 80%;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--secondary-color) !important;
+    font-weight: 700;
+}
+
+/* Mobile Navigation Fixes */
+.navbar-toggler {
+    border: none;
+    padding: 0.2rem 0.3rem;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.1em;
+    height: 1.1em;
+}
+
+/* Mobile Collapse Menu */
+.navbar-collapse {
+    transition: all 0.3s ease;
+}
+
+/* Image Size Preservation */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.preserve-original-size {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+        min-height: 60px;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        padding: 0.8rem 0;
+        background: rgba(255, 255, 255, 0.98);
+        margin-top: 0.8rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0.4rem 0;
+        padding: 0.6rem 0.8rem !important;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        font-size: 0.85rem;
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+        height: 45px;
+    }
+    
+    /* INCREASED MOBILE LOGO SIZE */
+    .navbar-logo {
+        height: 26px !important;
+        max-height: 26px !important;
+    }
+    
+    /* Mobile-specific spacing */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+        height: 40px;
+    }
+    
+    /* INCREASED SMALL MOBILE LOGO SIZE */
+    .navbar-logo {
+        height: 24px !important;
+        max-height: 24px !important;
+    }
+    
+    .btn-primary-custom,
+    .btn-secondary-custom {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 250px;
+        margin: 0.5rem 0;
+    }
+    
+    /* Mobile text adjustments */
+    h1, .h1 { font-size: 2rem !important; }
+    h2, .h2 { font-size: 1.75rem !important; }
+    h3, .h3 { font-size: 1.5rem !important; }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .navbar-brand {
+        font-size: 1rem;
+        height: 38px;
+    }
+    
+    /* INCREASED EXTRA SMALL LOGO SIZE */
+    .navbar-logo {
+        height: 22px !important;
+        max-height: 22px !important;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.6rem !important;
+    }
+}
+
+/* Utility classes for mobile */
+.mobile-hidden {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+}
+
+/* Consistent Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Ensure consistent image display */
+.carousel-item img,
+.project-img,
+.grad-service-content img,
+.grad-careers-image
+.grad-contact-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\js\careers.js
+==================================================
+// js/careers.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if the career form is on the page to avoid errors
+    const careerForm = document.getElementById('careerForm');
+    
+    if (careerForm) {
+        careerForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            
+            if (name && phone && interest) {
+                alert('Thank you for your application! We will be in touch soon.');
+                careerForm.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    }
+});
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\js\contact.js
+==================================================
+// Contact Form JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && phone && service && message) {
+                // Here you would typically send the form data to a server
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    }
+    
+    // Add social media link handlers
+    const socialLinks = document.querySelectorAll('.social-link');
+    socialLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('mailto:')) {
+                // Mail link - let it work naturally
+                return true;
+            }
+            if (this.getAttribute('href').startsWith('tel:')) {
+                // Phone link - let it work naturally
+                return true;
+            }
+            // For other links, you might want to track analytics
+            console.log('Social link clicked:', this.getAttribute('href'));
+        });
+    });
+});
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\js\home.js
+==================================================
+
+
+function initializeSlider() {
+    const slides = document.querySelectorAll('.slider-image');
+    
+    // If no slider images are found on the page, do nothing.
+    if (slides.length === 0) {
+        return null; // Return null if slider doesn't exist
+    }
+
+    let currentSlide = 0;
+    const slideInterval = 5000; // 5 seconds
+
+    function nextSlide() {
+        // Hide current slide
+        if (slides[currentSlide]) {
+            slides[currentSlide].classList.remove('active');
+        }
+        
+        // Move to next slide
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Show new slide
+        if (slides[currentSlide]) {
+            slides[currentSlide].classList.add('active');
+        }
+    }
+
+    // Start with first slide visible
+    if (slides[currentSlide]) {
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Return the interval ID so it can be managed by the main script
+    return setInterval(nextSlide, slideInterval);
+}
+
+// This checks if the slider functionality is already defined to avoid errors
+if (typeof window.initializeSlider === 'undefined') {
+    window.initializeSlider = initializeSlider;
+}
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\js\kent-slider.js
+==================================================
+// kent-slider.js - Auto-changing image slider for Kent Avenue Penthouse (Home Section Style)
+class KentSlider {
+    constructor() {
+        this.sliderContainer = document.querySelector('.kent-slider-container');
+        this.slides = [];
+        this.currentSlide = 0;
+        this.slideInterval = null;
+        this.intervalTime = 5000; // 5 seconds
+        
+        this.init();
+    }
+    
+    init() {
+        // Only initialize if we're on the Kent Avenue section
+        if (!this.sliderContainer) return;
+        
+        this.createSlider();
+        this.startSlider();
+        this.addEventListeners();
+    }
+    
+    createSlider() {
+        // Kent Avenue Penthouse images
+        this.slides = [
+            '/images/P1/1.jpg',
+            '/images/P2/1.jpg',
+            '/images/P3/1.jpg',
+            '/images/P4/1.jpg',
+        ];
+        
+        // Create slider HTML structure matching home section style
+        this.sliderContainer.innerHTML = `
+            <div id="kentCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    ${this.slides.map((_, index) => `
+                        <button type="button" data-bs-target="#kentCarousel" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}"></button>
+                    `).join('')}
+                </div>
+                
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    ${this.slides.map((slide, index) => `
+                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                            <img src="${slide}" class="d-block w-100" alt="Kent Avenue Penthouse View ${index + 1}">
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#kentCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#kentCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        `;
+        
+        // Initialize Bootstrap carousel
+        this.initializeBootstrapCarousel();
+    }
+    
+    initializeBootstrapCarousel() {
+        // Bootstrap will handle the carousel functionality automatically
+        // due to the data-bs-ride and data-bs-interval attributes
+    }
+    
+    startSlider() {
+        // Bootstrap handles auto-sliding automatically
+    }
+    
+    addEventListeners() {
+        // Bootstrap handles all interactions automatically
+    }
+    
+    destroy() {
+        if (this.slideInterval) {
+            clearInterval(this.slideInterval);
+        }
+    }
+}
+
+// Initialize the slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    new KentSlider();
+});
+
+// Also initialize when projects section is loaded dynamically
+document.addEventListener('componentLoaded', function() {
+    setTimeout(() => {
+        new KentSlider();
+    }, 500);
+});
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\js\projects.js
+==================================================
+// Projects Page JavaScript
+class ProjectsManager {
+    constructor() {
+        this.categoryLinks = document.querySelectorAll('.project-category-link');
+        this.projectItems = document.querySelectorAll('.project-item-card');
+        
+        // Maps the data-category attribute to the corresponding section ID
+        this.sections = {
+            'all': 'latest-work',
+            'residential': 'in-residence',
+            'commercial': 'hospitality-projects', 
+            'institutional': 'in-residence', // Both residential and institutional link to the same section
+            'interiors': 'objects-of-desire'
+        };
+        
+        this.init();
+    }
+    
+    init() {
+        this.setupCategoryNavigation();
+        this.setupAnimations();
+        this.setupScrollSpy();
+        this.optimizeImageContainers();
+    }
+    
+    // Optimize image container sizes based on actual image dimensions
+    optimizeImageContainers() {
+        const projectImages = document.querySelectorAll('.project-img');
+        
+        projectImages.forEach(img => {
+            // Check if image is already loaded
+            if (img.complete) {
+                this.adjustImageContainer(img);
+            } else {
+                img.addEventListener('load', () => {
+                    this.adjustImageContainer(img);
+                });
+            }
+            
+            // Fallback for images that might fail to load
+            img.addEventListener('error', () => {
+                console.warn('Image failed to load:', img.src);
+            });
+        });
+    }
+    
+    // Adjust image container based on actual image dimensions
+    adjustImageContainer(img) {
+        const container = img.closest('.project-item-image');
+        const card = img.closest('.project-item-card');
+        
+        if (!container || !card) return;
+        
+        const imgAspectRatio = img.naturalWidth / img.naturalHeight;
+        const containerAspectRatio = container.offsetWidth / container.offsetHeight;
+        
+        // If image is significantly smaller than container, adjust display
+        if (img.naturalWidth < container.offsetWidth * 0.8) {
+            container.classList.add('auto-size');
+            card.classList.add('auto-height');
+        }
+        
+        // Apply object-fit based on aspect ratio
+        if (imgAspectRatio > containerAspectRatio) {
+            img.style.objectFit = 'cover';
+        } else {
+            img.style.objectFit = 'contain';
+        }
+    }
+    
+    // Handles clicks on the category navigation buttons
+    setupCategoryNavigation() {
+        this.categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const category = link.dataset.category;
+                this.navigateToCategory(category);
+                this.setActiveCategoryLink(link);
+            });
+        });
+    }
+    
+    // Scrolls smoothly to the target section
+    navigateToCategory(category) {
+        const targetSectionId = this.sections[category];
+        if (targetSectionId) {
+            this.scrollToSection(targetSectionId);
+        }
+    }
+    
+    scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            // Calculates the position, leaving a small offset from the top
+            const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+    
+    // Automatically highlights the category link corresponding to the section in view
+    setupScrollSpy() {
+        const sections = document.querySelectorAll('.section-target');
+        const observerOptions = {
+            rootMargin: '-20% 0px -70% 0px', // Defines when a section is considered "active"
+            threshold: 0
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    this.updateActiveNavLink(sectionId);
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    }
+    
+    updateActiveNavLink(activeSectionId) {
+        this.resetActiveCategoryLinks();
+        
+        // Find all categories that link to the currently active section
+        const correspondingCategories = Object.keys(this.sections).filter(
+            key => this.sections[key] === activeSectionId
+        );
+
+        // Activate the link for each corresponding category
+        correspondingCategories.forEach(category => {
+            const activeLink = document.querySelector(`.project-category-link[data-category="${category}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        });
+    }
+    
+    // Sets the visual "active" state on a clicked link
+    setActiveCategoryLink(activeLink) {
+        this.resetActiveCategoryLinks();
+        activeLink.classList.add('active');
+    }
+    
+    // Removes the "active" class from all category links
+    resetActiveCategoryLinks() {
+        this.categoryLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+    }
+    
+    // Sets up the fade-in animation for project cards as they are scrolled into view
+    setupAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing after animation
+                }
+            });
+        }, observerOptions);
+        
+        this.projectItems.forEach(item => {
+            item.classList.add('project-fade-in');
+            observer.observe(item);
+        });
+    }
+}
+
+// Initialize the script once the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    new ProjectsManager();
+});
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\js\script.js
+==================================================
+// Add this to the loadComponent calls
+loadComponent("careers", "components/careers.html", () => {
+    console.log("Careers component loaded successfully");
+});
+
+// ================================
+// Function to load HTML components into sections
+// ================================
+function loadComponent(sectionId, filePath, callback) {
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filePath}: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.innerHTML = data;
+                
+                // Add the section ID to the loaded content's main container
+                const container = section.querySelector('div[class*="section"], section[class*="section"]');
+                if (container && !container.id) {
+                    container.id = sectionId + '-content';
+                }
+                
+                if (callback) callback();
+            }
+        })
+        .catch(error => console.error("Error loading " + filePath, error));
+}
+
+// ================================
+// Load all components on page load
+// ================================
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM loaded, starting to load components...");
+    
+    // Load all components from the components/ directory
+    loadComponent("home", "components/home.html");
+    loadComponent("about", "components/about.html");
+    loadComponent("philosophy", "components/philosophy.html");
+    loadComponent("services", "components/services.html");
+    loadComponent("careers", "components/careers.html", () => {
+        console.log("Careers component loaded successfully");
+    });
+    loadComponent("projects", "components/projects.html", () => {
+        console.log("Projects component loaded successfully");
+        // Initialize projects after loading
+        setTimeout(initializeProjects, 100);
+    });
+    loadComponent("contact", "components/contact.html", () => {
+        console.log("Contact component loaded successfully");
+    });
+    
+    // Initialize features after a short delay to ensure content is loaded
+    setTimeout(() => {
+        navbarShrink();
+        initScrollFeatures();
+        initMobileNavigation();
+        preserveImageSizes();
+        forceLogoSizeReduction(); // NEW: Force logo size reduction
+        console.log("All components loaded and features initialized");
+    }, 500);
+});
+
+// ================================
+// FORCE LOGO SIZE REDUCTION
+// ================================
+function forceLogoSizeReduction() {
+    console.log('Forcing logo size reduction...');
+    
+    // Force navbar logo size
+    const navbarLogo = document.querySelector('.navbar-logo');
+    if (navbarLogo) {
+        navbarLogo.style.height = '25px';
+        navbarLogo.style.maxHeight = '25px';
+        navbarLogo.style.width = 'auto';
+        console.log('Navbar logo size forced to 25px');
+    }
+    
+    // Force philosophy logo size
+    const philosophyLogo = document.querySelector('.philosophy-logo');
+    if (philosophyLogo) {
+        philosophyLogo.style.height = '35px';
+        philosophyLogo.style.maxHeight = '35px';
+        philosophyLogo.style.width = 'auto';
+        console.log('Philosophy logo size forced to 35px');
+    }
+    
+    // Apply responsive sizes
+    if (window.innerWidth <= 768) {
+        if (navbarLogo) {
+            navbarLogo.style.height = '20px';
+            navbarLogo.style.maxHeight = '20px';
+        }
+        if (philosophyLogo) {
+            philosophyLogo.style.height = '28px';
+            philosophyLogo.style.maxHeight = '28px';
+        }
+    }
+    
+    if (window.innerWidth <= 576) {
+        if (navbarLogo) {
+            navbarLogo.style.height = '18px';
+            navbarLogo.style.maxHeight = '18px';
+        }
+        if (philosophyLogo) {
+            philosophyLogo.style.height = '25px';
+            philosophyLogo.style.maxHeight = '25px';
+        }
+    }
+    
+    if (window.innerWidth <= 400) {
+        if (navbarLogo) {
+            navbarLogo.style.height = '16px';
+            navbarLogo.style.maxHeight = '16px';
+        }
+        if (philosophyLogo) {
+            philosophyLogo.style.height = '22px';
+            philosophyLogo.style.maxHeight = '22px';
+        }
+    }
+}
+
+// ================================
+// Navbar shrink on scroll
+// ================================
+function navbarShrink() {
+    const navbar = document.querySelector(".navbar");
+    if (!navbar) {
+        console.log("Navbar not found");
+        return;
+    }
+    
+    const shrinkNavbar = () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    };
+    
+    // Initial check
+    shrinkNavbar();
+    
+    // Listen for scroll events
+    window.addEventListener("scroll", shrinkNavbar);
+}
+
+// ================================
+// Mobile Navigation Handler
+// ================================
+function initMobileNavigation() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarToggler && navbarCollapse) {
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                        toggle: false
+                    });
+                    bsCollapse.hide();
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 768 && 
+                navbarCollapse.classList.contains('show') && 
+                !navbarToggler.contains(e.target) && 
+                !navbarCollapse.contains(e.target)) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+        });
+    }
+}
+
+// ================================
+// Preserve Original Image Sizes
+// ================================
+function preserveImageSizes() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        // Remove any forced dimensions and let images display at natural size
+        img.style.width = 'auto';
+        img.style.height = 'auto';
+        img.style.maxWidth = '100%';
+        
+        // Add loading optimization
+        img.loading = 'lazy';
+    });
+}
+
+// ================================
+// Projects Section Initialization
+// ================================
+function initializeProjects() {
+    const projectImages = document.querySelectorAll('.project-img');
+    projectImages.forEach(img => {
+        // Ensure project images maintain aspect ratio
+        img.style.objectFit = 'cover';
+        img.style.width = '100%';
+        img.style.height = '100%';
+    });
+}
+
+// ================================
+// Scroll-based active link highlighting & smooth scroll
+// ================================
+function initScrollFeatures() {
+    console.log("Initializing scroll features...");
+    
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+    console.log("Sections found:", sections.length);
+    console.log("Nav links found:", navLinks.length);
+    
+    // Remove active class from all links initially
+    navLinks.forEach(link => link.classList.remove("active"));
+
+    if (sections.length === 0) {
+        console.warn("No sections found for intersection observer");
+        return;
+    }
+
+    // IntersectionObserver to highlight nav links
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const currentSection = entry.target.id;
+                    console.log("Section in view:", currentSection);
+                    
+                    navLinks.forEach(link => {
+                        const linkHref = link.getAttribute("href");
+                        if (linkHref === `#${currentSection}`) {
+                            // Remove active from all links
+                            navLinks.forEach(l => l.classList.remove("active"));
+                            // Add active to current link
+                            link.classList.add("active");
+                            console.log("Active link set to:", linkHref);
+                        }
+                    });
+                }
+            });
+        },
+        { 
+            threshold: 0.5,
+            rootMargin: '-100px 0px -100px 0px'
+        }
+    );
+
+    // Observe all sections that have IDs
+    sections.forEach(section => {
+        if (section.id && section.id !== '') {
+            observer.observe(section);
+            console.log("Observing section:", section.id);
+        }
+    });
+
+    // Smooth scroll for nav links
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            console.log("Nav link clicked, target:", targetId);
+            
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // Update active class immediately
+                navLinks.forEach(l => l.classList.remove("active"));
+                this.classList.add("active");
+                
+                // Smooth scroll to section
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+                
+                // Update URL hash
+                window.history.pushState(null, null, `#${targetId}`);
+            }
+        });
+    });
+
+    // Update active link on scroll (fallback)
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const scrollPosition = window.scrollY + navbarHeight + 100;
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.id;
+                }
+            });
+
+            if (current) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        }, 150);
+    });
+}
+
+// ================================
+// Handle page refresh and direct anchor links
+// ================================
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash) {
+        const targetId = hash.substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            setTimeout(() => {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update active link
+                const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === hash) {
+                        link.classList.add('active');
+                    }
+                });
+            }, 800);
+        }
+    }
+});
+
+// ================================
+// Handle browser back/forward navigation
+// ================================
+window.addEventListener('hashchange', () => {
+    const hash = window.location.hash;
+    if (hash) {
+        const targetSection = document.querySelector(hash);
+        if (targetSection) {
+            setTimeout(() => {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
+    }
+});
+
+// ================================
+// Error handling for missing components
+// ================================
+window.addEventListener('error', (event) => {
+    console.error('Global error:', event.error);
+});
+
+// ================================
+// Mobile viewport height fix for iOS
+// ================================
+function setViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Listen for window resize to update logo sizes
+window.addEventListener('resize', () => {
+    forceLogoSizeReduction();
+    setViewportHeight();
+});
+
+window.addEventListener('orientationchange', setViewportHeight);
+setViewportHeight();
+
+
+// Enhanced responsive design for all sections
+function enhanceResponsiveDesign() {
+    // Improve mobile navigation
+    improveMobileNav();
+    
+    // Enhance image responsiveness
+    enhanceImageResponsiveness();
+    
+    // Improve touch interactions
+    improveTouchInteractions();
+    
+    // Optimize performance on mobile
+    optimizeMobilePerformance();
+}
+
+function improveMobileNav() {
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    if (window.innerWidth <= 768) {
+        // Add mobile-specific classes
+        navbar.classList.add('mobile-nav');
+        
+        // Improve touch targets
+        navLinks.forEach(link => {
+            link.style.padding = '12px 15px';
+            link.style.minHeight = '44px'; // Apple's recommended minimum touch target
+        });
+    }
+}
+
+function enhanceImageResponsiveness() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        // Ensure images are responsive
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
+        
+        // Add loading optimization
+        if (!img.getAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+}
+
+function improveTouchInteractions() {
+    // Improve button touch targets
+    const buttons = document.querySelectorAll('button, .btn, [role="button"]');
+    
+    buttons.forEach(button => {
+        if (window.innerWidth <= 768) {
+            button.style.minHeight = '44px';
+            button.style.minWidth = '44px';
+        }
+    });
+}
+
+function optimizeMobilePerformance() {
+    // Reduce animations on low-performance devices
+    if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.documentElement.style.setProperty('--transition-speed', '0.2s');
+    }
+}
+
+// Call this function in your main initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // ... your existing code ...
+    
+    // Add responsive enhancements
+    enhanceResponsiveDesign();
+    
+    // Re-run on resize
+    window.addEventListener('resize', enhanceResponsiveDesign);
+});
+
+// Add to your loadComponent function to handle dynamically loaded content
+function loadComponent(sectionId, filePath, callback) {
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filePath}: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.innerHTML = data;
+                
+                // Add the section ID to the loaded content's main container
+                const container = section.querySelector('div[class*="section"], section[class*="section"]');
+                if (container && !container.id) {
+                    container.id = sectionId + '-content';
+                }
+                
+                // Apply responsive enhancements to new content
+                setTimeout(() => {
+                    enhanceResponsiveDesign();
+                    // Trigger custom event for slider initialization
+                    const event = new CustomEvent('componentLoaded', { detail: { sectionId } });
+                    document.dispatchEvent(event);
+                }, 100);
+                
+                if (callback) callback();
+            }
+        })
+        .catch(error => console.error("Error loading " + filePath, error));
+}
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\js\services.js
+==================================================
+// services.js - Updated for single expanded service functionality
+
+function initializeGradServices() {
+    console.log('Initializing Grad Services with single expanded service...');
+    
+    const serviceColumns = document.querySelectorAll('.grad-service-column');
+    console.log('Found service columns:', serviceColumns.length);
+    
+    if (serviceColumns.length === 0) {
+        console.error('No service columns found!');
+        return;
+    }
+    
+    // Expand first service by default
+    if (!document.querySelector('.grad-expanded')) {
+        serviceColumns[0].classList.add('grad-expanded');
+    }
+    
+    // Add click event listeners to all service columns
+    serviceColumns.forEach(column => {
+        column.addEventListener('click', function() {
+            console.log('Service column clicked');
+            
+            // Remove expanded class from all columns
+            serviceColumns.forEach(col => col.classList.remove('grad-expanded'));
+            
+            // Add expanded class to clicked column
+            this.classList.add('grad-expanded');
+        });
+    });
+    
+    console.log('Grad Services single expanded service functionality initialized successfully');
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeGradServices);
+} else {
+    initializeGradServices();
+}
+
+// Make function available globally for dynamic loading
+window.initializeGradServices = initializeGradServices;
+
+
+
+==================================================
+File: C:\Users\LENOVO\Desktop\gradb\index.html
+==================================================
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grad Architects</title>
+
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">
+        <img src="/images/logo.png" alt="Grad Architects" class="navbar-logo">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="#philosophy">PHILOSOPHY</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#careers">CAREERS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
+
+  <section id="about" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
+
+  <section id="philosophy" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
+
+  <section id="services" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
+
+  <section id="projects" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
+
+  <section id="careers" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
+
+  <section id="contact" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p>&copy; 2025 Grad Architects. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+
+  <!-- Kent Slider JS -->
+<script src="js/kent-slider.js"></script>
+<link rel="stylesheet" href="css/kent-header.css">
+</body>
+
+</html>
+
+
+

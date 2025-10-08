@@ -258,7 +258,7 @@
 }
 
 .project-item-description-img {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     color: #ffffff;
     line-height: 1.6;
     font-size: 0.95rem;
@@ -803,10 +803,12 @@
     .project-hero-title {
         font-size: 1rem;
         letter-spacing: 0.15em;
-    }
+        margin-bottom: -10%;
+     }
     
     .project-hero-description {
         font-size: 0.7rem;
+        margin-top: 0;
     }
     
     .project-item-content {

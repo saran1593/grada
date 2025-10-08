@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="/css/components/home.css">
+<link rel="stylesheet" href="/css/components/home.css">
 <style>
-/* Tablet view (≤768px) */
+
+/* ===========================
+   TABLET VIEW (≤768px)
+=========================== */
 @media (max-width: 768px) {
   .home-hero-title {
     font-size: 1rem !important;
@@ -17,132 +21,96 @@
     bottom: 30px;
   }
 
-  /* Mobile dots adjustments */
+  /* Tablet dots (normal size) */
   .carousel-indicators {
-    display: inline-flex;
-    gap: 0;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
     margin: 0 auto;
     padding: 0;
-    bottom: 5px;
-    border-radius: 50%;
+    bottom: 10px;
   }
 
   .carousel-indicators [data-bs-target] {
-    transform: scale(0.4);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
   }
 
   .carousel-indicators .active {
-    transform: scale(0.6);
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.2);
+  }
+
+  .home-section .carousel {
+    height: 42vh !important;
+    width: 100% !important;
+  }
+
+  .home-section .carousel-item img {
+    width: 100% !important;
+    height: 42vh !important;
+    object-fit: cover;
   }
 }
 
-/* Mobile view (≤576px) */
+/* ===========================
+   MOBILE VIEW (≤576px)
+=========================== */
 @media (max-width: 576px) {
   .home-hero-title {
     font-size: 0.8rem !important;
     letter-spacing: 0.15em !important;
+    margin-bottom: 12%;
   }
 
   .home-hero-description {
     font-size: 0.65rem !important;
+    margin-bottom: 10%;
+    margin-top: -10%;
   }
 
   .home-section .carousel {
-    height: 40vh !important;
+    height: 45vh !important;
   }
 
   .home-section .carousel-item img {
-    height: 40vh !important;
+    width: 100% !important;
+    height: 42vh !important;
     object-fit: cover;
+    min-height: 40vh;
   }
 
   .carousel-content {
     bottom: 28px;
-    width: 92%;
+    width: 100%;
     padding: 0.6rem;
   }
 
-  .carousel-indicators {
-    display: inline-flex;
-    gap: 0;
-    margin: 0 auto;
-    padding: 0;
-    bottom: 4px;
-    border-radius: 50%;
+  /* 🚫 Hide dots completely on mobile */
+  #homeCarousel .carousel-indicators {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
-
-  .carousel-indicators [data-bs-target] {
-    transform: scale(0.35);
-  }
-
-  .carousel-indicators .active {
-    transform: scale(0.55);
-  }
-}
-
-/* Small mobile (≤400px) */
-@media (max-width: 400px) {
-  .home-hero-title {
-    font-size: 0.8rem !important;
-    letter-spacing: 0.1em !important;
-  }
-
-  .home-hero-description {
-    font-size: 0.6rem !important;
-  }
-
-  .carousel-content {
-    padding: 0.5rem 0.4rem;
-    bottom: 0px;
-    width:  100%;
-  }
-
-.carousel-indicators {
-  display: inline-flex;
-  gap: 0;
-  margin: 30px auto 0 auto; /* Move the whole dot container down */
-  padding: 0;
-  bottom: auto;             /* Remove default bottom positioning */
-  border-radius: 50px;
-  position: relative;       /* So margin works properly */
-}
-
-.carousel-indicators [data-bs-target] {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  transform: scale(0.2);
-}
-
-.carousel-indicators .active {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  transform: scale(0.3);
-}
-
-
 }
 
 </style>
 
 <section class="home-section">
-  <!-- Your existing home section content -->
   <div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-    <!-- Indicators -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
       <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
       <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
     </div>
 
-    <!-- Slides -->
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="/images/P1/1.jpg" class="d-block w-100" alt="Architectural Design 1">
-        <img src="/images/P2/1.jpg" class="d-block w-100" alt="Architectural Design 2">
-        <img src="/images/P3/1.jpg" class="d-block w-100" alt="Architectural Design 3">
-        <img src="/images/P4/1.jpg" class="d-block w-100" alt="Architectural Design 4">
         <div class="carousel-content">
           <h1 class="home-hero-title">G R A D A R C H I T E C T S</h1>
           <p class="home-hero-description">
@@ -173,7 +141,6 @@
       </div>
     </div>
 
-    <!-- Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </button>
