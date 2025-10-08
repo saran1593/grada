@@ -229,7 +229,7 @@
 
 /* Landscape Orientation for Mobile */
 @media (max-height: 600px) and (orientation: landscape) {
-    .grad-careers-section {
+    .grad-careers-section {  
         min-height: auto;
         padding: 40px 0;
     }
