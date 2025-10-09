@@ -103,7 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "home", file: "components/home.html" },
         { id: "about", file: "components/about.html" },
         { id: "philosophy", file: "components/philosophy.html" },
-        { id: "services", file: "components/services.html" },
+        { id: "services", file: "components/services.html", callback: () => {
+            console.log("Services component loaded successfully");
+            // Initialize services functionality after component loads
+            setTimeout(() => {
+                if (typeof initializeGradServices === 'function') {
+                    initializeGradServices();
+                }
+            }, 100);
+        }},
         { id: "projects", file: "components/projects.html", callback: () => {
             console.log("Projects component loaded successfully");
             setTimeout(initializeProjects, 100);
@@ -138,8 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start loading sequence
     loadNextComponent(0);
 });
-
-
 
 
 // ================================

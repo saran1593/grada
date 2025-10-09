@@ -9,9 +9,11 @@
         min-height: 50px;
         display: flex;
         align-items: center;
+        justify-content: center; /* Center align text */
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 16px; /* Larger text for mobile */
+        font-size: 16px;
         transition: all 0.3s ease;
+        text-align: center; /* Ensure text is centered */
     }
     
     .navbar-nav .nav-link:last-child {
@@ -28,6 +30,21 @@
         background-color: rgba(255, 255, 255, 0.15);
         color: var(--secondary-color) !important;
         font-weight: 600;
+    }
+    
+    /* Center align the entire nav */
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     
     /* Mobile menu backdrop */
@@ -54,6 +71,8 @@
         padding: 14px 20px !important;
         min-height: 54px;
         font-size: 15px;
+        justify-content: center; /* Center align */
+        text-align: center;
     }
     
     .navbar-collapse {
@@ -72,7 +91,6 @@
 .navbar-collapse.collapsing {
     transition: height 0.35s ease;
 }
-
 
 /* Add to css/style.css - Loading Optimization */
 html {
@@ -105,7 +123,6 @@ section[id].component-loaded {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
 
 /* Global Styles */
 :root {
@@ -196,7 +213,7 @@ body {
     align-items: center;
 }
 
-/* Navigation - INCREASED LOGO SIZE */
+/* Navigation - INCREASED LOGO SIZE FOR DESKTOP */
 .navbar {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -223,11 +240,11 @@ body {
     padding: 0 !important;
 }
 
-/* INCREASED LOGO SIZE */
+/* INCREASED DESKTOP LOGO SIZE */
 .navbar-logo {
-    height: 32px !important; /* Increased from 25px */
+    height: 40px !important; /* INCREASED from 32px to 40px */
     width: auto !important;
-    max-height: 32px !important;
+    max-height: 40px !important;
     transition: transform 0.3s ease;
 }
 
@@ -324,6 +341,9 @@ img {
         margin-top: 0.8rem;
         border-radius: 8px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .navbar-nav .nav-link {
@@ -331,6 +351,9 @@ img {
         padding: 0.6rem 0.8rem !important;
         border-bottom: 1px solid rgba(0,0,0,0.1);
         font-size: 0.85rem;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
     }
     
     .navbar-nav .nav-link:last-child {
@@ -344,8 +367,8 @@ img {
     
     /* INCREASED MOBILE LOGO SIZE */
     .navbar-logo {
-        height: 26px !important;
-        max-height: 26px !important;
+        height: 35px !important; /* INCREASED from 26px to 35px */
+        max-height: 35px !important;
     }
     
     /* Mobile-specific spacing */
@@ -367,8 +390,8 @@ img {
     
     /* INCREASED SMALL MOBILE LOGO SIZE */
     .navbar-logo {
-        height: 24px !important;
-        max-height: 24px !important;
+        height: 32px !important; /* INCREASED from 24px to 32px */
+        max-height: 32px !important;
     }
     
     .btn-primary-custom,
@@ -395,8 +418,8 @@ img {
     
     /* INCREASED EXTRA SMALL LOGO SIZE */
     .navbar-logo {
-        height: 22px !important;
-        max-height: 22px !important;
+        height: 30px !important; /* INCREASED from 22px to 30px */
+        max-height: 30px !important;
     }
     
     .navbar-nav .nav-link {
@@ -445,4 +468,3 @@ img {
     height: 100%;
     object-fit: cover;
 }
-

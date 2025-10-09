@@ -66,7 +66,7 @@
 .philosophy-text {
     font-size: 1rem;
     line-height: 1.8;
-    color: var(--secondary-color);
+    color: #000000; /* CHANGED: From var(--secondary-color) to black */
     margin-bottom: 2.5rem;
     max-width: 100%;
     text-align: justify;
@@ -138,7 +138,7 @@
 
 .value-row {
     font-size: 0.9rem;
-    color: var(--secondary-color);
+    color: #000000; /* CHANGED: From var(--secondary-color) to black */
     font-weight: 500;
     text-align: left;
     width: 500px;
@@ -202,6 +202,7 @@
     .philosophy-text {
         max-width: 100%;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on tablet */
     }
     
     .section-title {
@@ -237,6 +238,7 @@
     .value-row {
         text-align: center;
         width: 100%;
+        color: #000000; /* CHANGED: Maintain black color on tablet */
     }
     
     .philosophy-logo {
@@ -275,6 +277,7 @@
     .philosophy-text, .value-row {
         font-size: 0.9rem;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on mobile */
     }
     
     .philosophy-image {
@@ -289,12 +292,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: var(--primary-color);
     }
     
     .value-row {
         padding: 0 10px;
         line-height: 1.5;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on mobile */
     }
     
     .philosophy-logo {
@@ -335,6 +340,7 @@
         font-size: 0.85rem;
         margin-bottom: 2rem;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on small mobile */
     }
     
     .philosophy-image {
@@ -350,6 +356,7 @@
     .value-row {
         font-size: 0.85rem;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on small mobile */
     }
     
     .logo-container {
@@ -364,6 +371,9 @@
     .philosophy-logo {
         height: 50px !important;
         max-height: 50px !important;
+    }
+    .key-values{
+        color: var(--primary-color);
     }
 }
 
@@ -380,6 +390,7 @@
     
     .philosophy-text {
         font-size: 0.8rem;
+        color: #000000; /* CHANGED: Maintain black color on extra small mobile */
     }
     
     .philosophy-logo {
@@ -393,5 +404,6 @@
     
     .value-row {
         font-size: 0.8rem;
+        color: #000000; /* CHANGED: Maintain black color on extra small mobile */
     }
 }

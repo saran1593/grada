@@ -1,1 +1,11 @@
 npx http-server -a 0.0.0.0 -p 8080
+
+
+
+Get-ChildItem -Recurse -Include *.html, *.css, *.js | ForEach-Object {
+    Add-Content -Path "all_code.txt" -Value "=================================================="
+    Add-Content -Path "all_code.txt" -Value "File: $($_.FullName)"
+    Add-Content -Path "all_code.txt" -Value "=================================================="
+    Add-Content -Path "all_code.txt" -Value (Get-Content $_.FullName | Out-String)
+    Add-Content -Path "all_code.txt" -Value "`n"
+}

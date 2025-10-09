@@ -36,7 +36,7 @@ File: D:\gradb\components\about.html
 ==================================================
 File: D:\gradb\components\careers.html
 ==================================================
-<link rel="stylesheet" href="/css/components/careers.css">
+<!-- <link rel="stylesheet" href="/css/components/careers.css"> -->
 
 <section class="grad-careers-section">
     <div class="container-fluid">
@@ -96,7 +96,7 @@ File: D:\gradb\components\careers.html
 ==================================================
 File: D:\gradb\components\contact.html
 ==================================================
-<link rel="stylesheet" href="css/components/contact.css">
+<!-- <link rel="stylesheet" href="css/components/contact.css"> -->
 
 <section class="grad-contact-section">
     <div class="container-fluid">
@@ -176,8 +176,8 @@ File: D:\gradb\components\contact.html
 ==================================================
 File: D:\gradb\components\home.html
 ==================================================
-<link rel="stylesheet" href="/css/components/home.css">
-<link rel="stylesheet" href="/css/components/home.css">
+<!-- <link rel="stylesheet" href="/css/components/home.css"> -->
+
 <style>
 
 /* ===========================
@@ -253,6 +253,7 @@ File: D:\gradb\components\home.html
 
   .home-section .carousel {
     height: 45vh !important;
+    
   }
 
   .home-section .carousel-item img {
@@ -262,18 +263,16 @@ File: D:\gradb\components\home.html
     min-height: 40vh;
   }
 
-  .carousel-content {
-    bottom: 28px;
-    width: 100%;
-    padding: 0.6rem;
-  }
+ 
 
   /* 🚫 Hide dots completely on mobile */
-  #homeCarousel .carousel-indicators {
+  #homeCarousel .carousel-indicators{
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
   }
+
+
 }
 
 </style>
@@ -333,10 +332,10 @@ File: D:\gradb\components\home.html
 ==================================================
 File: D:\gradb\components\philosophy.html
 ==================================================
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/components/philosophy.css">
+<link rel="stylesheet" href="/css/components/philosophy.css"> -->
 
 <section class="philosophy-section">
     <div class="container">
@@ -394,200 +393,214 @@ File: D:\gradb\components\projects.html
 ==================================================
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Grad Architects</title>
+
+    <!-- Load all CSS upfront -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/components/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components/projects.css">
     <link rel="stylesheet" href="../css/components/p.css">
-<!-- Replace the old "Mobile Responsive Internal CSS" block in projects.html with this -->
-<style>
-/* =========================
-   PROJECTS — CONSOLIDATED
-   MOBILE RESPONSIVE STYLES
-   (Only affects <=768 / <=576 / <=400)
-   ========================= */
 
-/* 1) Tablet / small desktop breakpoint (keeps PC untouched) */
-@media (max-width: 768px) {
-  /* Make full-width hero images better suit mobile screens */
-  .full-width-image,
-  .full-width-section,
-  .soft-minimal-section {
-    width: 100vw !important;
-    left: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+    <!-- Mobile Responsive Styles -->
+    <style>
+        /* =========================
+       PROJECTS — CONSOLIDATED MOBILE RESPONSIVE STYLES
+       ========================= */
 
-  .full-width-image .project-item-image,
-  .full-width-section .project-item-image,
-  .soft-minimal-section .project-item-image {
-    /* slightly shorter than desktop so overlay text sits tighter */
-    height: 70vh !important;
-    min-height: 420px !important;
-    width: 100vw !important;
-    overflow: hidden !important;
-  }
+        /* Section Title Size Reduction */
+        .projects-section-title {
+            font-size: 1.1rem !important;
+            letter-spacing: 0.25em !important;
+            margin-bottom: 2.5rem !important;
+        }
 
-  /* Kent slider image sizing (keeps fade intact) */
-  .kent-slider-container .carousel,
-  .kent-slider-container .carousel-inner,
-  .kent-slider-container .carousel-item {
-    height: 100% !important;
-  }
-  .kent-slider-container .carousel-item img {
-    height: 70vh !important;
-    min-height: 420px !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    width: 100% !important;
-    /* display: block !important; */
-  }
+        /* 1) Tablet / small desktop breakpoint */
+        @media (max-width: 768px) {
+            .projects-section-title {
+                font-size: 1.0rem !important;
+                letter-spacing: 0.2em !important;
+                margin-bottom: 2rem !important;
+            }
 
-  /* Overlay content: tighter padding and position */
-  .full-width-image .project-item-content,
-  .full-width-section .project-item-content,
-  .soft-minimal-content.full-width {
-    padding: 1.25rem 1rem !important;
-    bottom: 14px !important;               /* brings text closer to image bottom */
-    background: linear-gradient(transparent, rgba(0,0,0,0.78)) !important;
-  }
+            .full-width-image,
+            .full-width-section,
+            .soft-minimal-section {
+                width: 100vw !important;
+                left: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
 
-  /* Title + description adjustments */
-  .project-hero-title {
-    font-size: 1.0rem !important;
-    font-weight: 300 !important;
-    letter-spacing: 0.12em !important;
-    margin-bottom: 0.6rem !important;
-    line-height: 1.15 !important;
-    text-transform: uppercase !important;
-  }
+            .full-width-image .project-item-image,
+            .full-width-section .project-item-image,
+            .soft-minimal-section .project-item-image {
+                height: 70vh !important;
+                min-height: 420px !important;
+                width: 100vw !important;
+            }
 
-  .project-hero-description {
-    font-size: 0.82rem !important;
-    line-height: 1.45 !important;
-    max-width: 94% !important;
-    margin: 0 auto !important;
-    opacity: 0.95 !important;
-    margin-bottom: 0 !important;
-    text-align: center !important;
-  }
+            .kent-slider-container .carousel,
+            .kent-slider-container .carousel-inner,
+            .kent-slider-container .carousel-item {
+                height: 100% !important;
+            }
 
-  /* General project cards (compact on tablet) */
-  .project-item-content {
-    padding: 1rem !important;
-  }
-  .project-item-title { font-size: 0.9rem !important; }
-  .project-item-description { font-size: 0.78rem !important; line-height: 1.4 !important; }
+            .kent-slider-container .carousel-item img {
+                height: 70vh !important;
+                min-height: 420px !important;
+                object-fit: contain !important;
+                object-position: center center !important;
+                width: 100% !important;
+            }
 
-  /* Remove duplicate small-dot rules: hide home-carousel dots here only if needed
-     (we scope below specifically to kentCarousel for the project page) */
-}
+            .full-width-image .project-item-content,
+            .full-width-section .project-item-content,
+            .soft-minimal-content.full-width {
+                padding: 1.25rem 1rem !important;
+                bottom: 14px !important;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.78)) !important;
+            }
 
-/* 2) Mobile (≤576px): hide dots, tighten overlay, smaller type */
-@media (max-width: 576px) {
-  /* Image sizing for mobile — slightly shorter to keep text visible */
-  .full-width-image .project-item-image,
-  .full-width-section .project-item-image,
-  .soft-minimal-section .project-item-image {
-    height: 65vh !important;
-    min-height: 320px !important;
-  }
+            .project-hero-title {
+                font-size: 1.0rem !important;
+                font-weight: 300 !important;
+                letter-spacing: 0.12em !important;
+                margin-bottom: 0.6rem !important;
+            }
 
-  .kent-slider-container .carousel-item img {
-    height: 96vh !important;
-    min-height: 320px !important;
-    
-  }
+            .project-hero-description {
+                font-size: 0.82rem !important;
+                line-height: 1.45 !important;
+                max-width: 94% !important;
+            }
 
-  /* Overlay: compact and stronger fade for legibility */
-  .full-width-image .project-item-content,
-  .full-width-section .project-item-content,
-  .soft-minimal-content.full-width {
-    padding: 1rem 0.8rem !important;
-    bottom: 10px !important;
-    background: linear-gradient(transparent, rgba(0,0,0,0.86)) !important;
-  }
+            .project-item-content {
+                padding: 1rem !important;
+            }
 
-  .project-hero-title {
-    font-size: 0.92rem !important;
-    letter-spacing: 0.08em !important;
-    margin-bottom: 0.45rem !important;
-  }
+            .project-item-title {
+                font-size: 0.9rem !important;
+            }
 
-  .project-hero-description {
-    font-size: 0.75rem !important;
-    line-height: 1.45 !important;
-    max-width: 96% !important;
-    padding: 0 6px !important;
-  }
+            .project-item-description {
+                font-size: 0.78rem !important;
+            }
+        }
 
-  /* === K E N T  P A G E  — hide carousel dots on mobile only === */
-  #kentCarousel .carousel-indicators {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-  }
+        /* 2) Mobile (≤576px) */
+        @media (max-width: 576px) {
+            .projects-section-title {
+                font-size: 0.9rem !important;
+                letter-spacing: 0.15em !important;
+                margin-bottom: 1.5rem !important;
+            }
 
-  /* Keep arrows visible but smaller (optional); comment out if you want them hidden) */
-  #kentCarousel .carousel-control-prev,
-  #kentCarousel .carousel-control-next {
-    width: 12% !important;
-    opacity: 0.6 !important;
-    margin-bottom: -250px;
-  }
+            .full-width-image .project-item-image,
+            .full-width-section .project-item-image,
+            .soft-minimal-section .project-item-image {
+                height: 65vh !important;
+                min-height: 320px !important;
+            }
 
-  /* Ensure project item text remains centered and readable */
-  .project-item-content { text-align: center !important; }
-}
+            .kent-slider-container .carousel-item img {
+                height: 96vh !important;
+                min-height: 320px !important;
+            }
 
-/* 3) Small mobile phones (≤400px): final scale-down */
-@media (max-width: 400px) {
-  .project-hero-title {
-    font-size: 0.82rem !important;
-    letter-spacing: 0.06em !important;
-  }
-  .project-hero-description {
-    font-size: 0.68rem !important;
-    line-height: 1.35 !important;
-  }
+            .full-width-image .project-item-content,
+            .full-width-section .project-item-content,
+            .soft-minimal-content.full-width {
+                padding: 1rem 0.8rem !important;
+                bottom: 10px !important;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.86)) !important;
+            }
 
-  .full-width-image .project-item-content,
-  .full-width-section .project-item-content {
-    padding-left: 0.6rem !important;
-    padding-right: 0.6rem !important;
-  }
-}
+            .project-hero-title {
+                font-size: 0.92rem !important;
+                letter-spacing: 0.08em !important;
+                margin-bottom: 0.45rem !important;
+            }
 
-/* ===========================================
-   END - Projects mobile consolidated styles
-   =========================================== */
-</style>
+            .project-hero-description {
+                font-size: 0.75rem !important;
+                line-height: 1.45 !important;
+                max-width: 96% !important;
+                padding: 0 6px !important;
+            }
 
+            #kentCarousel .carousel-indicators {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+            }
 
+            #kentCarousel .carousel-control-prev,
+            #kentCarousel .carousel-control-next {
+                width: 12% !important;
+                opacity: 0.6 !important;
+                margin-bottom: -250px;
+            }
+
+            .project-item-content {
+                text-align: center !important;
+            }
+        }
+
+        /* 3) Small mobile phones (≤400px) */
+        @media (max-width: 400px) {
+            .projects-section-title {
+                font-size: 0.8rem !important;
+                letter-spacing: 0.1em !important;
+                margin-bottom: 1.2rem !important;
+            }
+
+            .project-hero-title {
+                font-size: 0.82rem !important;
+                letter-spacing: 0.06em !important;
+            }
+
+            .project-hero-description {
+                font-size: 0.68rem !important;
+                line-height: 1.35 !important;
+            }
+
+            .full-width-image .project-item-content,
+            .full-width-section .project-item-content {
+                padding-left: 0.6rem !important;
+                padding-right: 0.6rem !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Row 1: Full Width Image with Slider -->
-<section class="project-row full-width-image">
-    <div class="container-fluid">
-        <div class="project-item-card full-width">
-            <div class="project-item-image kent-slider-container">
-                <!-- Slider will be injected here by JavaScript -->
-                <img src="../images/P1/1.jpg" alt="Kent Avenue Penthouse" class="project-img">
-            </div>
-            <div class="project-item-content">
-                <h1 class="project-hero-title">K e n t A v e n u e P e n t h o u s e</h1>
-                <p class="project-hero-description">
-                    Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
-                    one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
-                </p>
+    <!-- Row 1: Full Width Image with Slider -->
+    <section class="project-row full-width-image">
+        <div class="container-fluid">
+            <div class="project-item-card full-width">
+                <div class="project-item-image kent-slider-container">
+                    <!-- Slider will be injected here by JavaScript -->
+                    <img src="../images/P1/1.jpg" alt="Kent Avenue Penthouse" class="project-img">
+                </div>
+                <div class="project-item-content">
+                    <h1 class="project-hero-title">K e n t A v e n u e P e n t h o u s e</h1>
+                    <p class="project-hero-description">
+                        Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the
+                        Kent Avenue penthouse apartment is
+                        one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this
+                        urban retreat above the vibrating city.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Row 2: Project Categories -->
     <section id="project-categories" class="project-categories-section">
@@ -597,10 +610,12 @@ File: D:\gradb\components\projects.html
                     <a href="#latest-work" class="project-category-link" data-category="residential">Residential</a>
                 </div>
                 <div class="project-category-item">
-                    <a href="#hospitality-projects" class="project-category-link" data-category="commercial">Commercial</a>
+                    <a href="#hospitality-projects" class="project-category-link"
+                        data-category="commercial">Commercial</a>
                 </div>
                 <div class="project-category-item">
-                    <a href="#in-residence" class="project-category-link" data-category="institutional">Institutional / Industrial</a>
+                    <a href="#in-residence" class="project-category-link" data-category="institutional">Institutional /
+                        Industrial</a>
                 </div>
                 <div class="project-category-item">
                     <a href="#objects-of-desire" class="project-category-link" data-category="interiors">Interiors</a>
@@ -616,17 +631,17 @@ File: D:\gradb\components\projects.html
     <section id="latest-work" class="latest-work-section">
         <div class="container">
             <h2 class="projects-section-title">L a t e s t w o r k</h2>
-            
+
             <!-- Vertical Text Left -->
             <div class="vertical-text-left">
                 <span>D E S I G N</span>
             </div>
-            
+
             <!-- Vertical Text Right -->
             <div class="vertical-text-right">
                 <span>R E C E N T</span>
             </div>
-            
+
             <div class="latest-work-grid">
                 <!-- Row 1 -->
                 <div class="project-item-card grid-item">
@@ -636,15 +651,17 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">A U D O H o u s e</h3>
                         <p class="project-item-description">
-                            In Copenhagen's evolving Nordhavn district, Audo House redefines how we live, work, and connect. Designed by Norm Architects, the historic 1918
+                            In Copenhagen's evolving Nordhavn district, Audo House redefines how we live, work, and
+                            connect. Designed by Norm Architects, the historic 1918
                             building has been carefully transformed into a fluid and welcoming destination.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2019</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span>
+                            | <span class="project-tag">2019</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
                         <img src="../images/P1/3.png" alt="Shore Collection" class="project-img">
@@ -657,11 +674,12 @@ File: D:\gradb\components\projects.html
                             harbours that define the Danish landscape.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2025</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
                         <img src="../images/P1/4.png" alt="Woven Tatami Rug" class="project-img">
@@ -669,14 +687,16 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">W o v e n T a t a m i R u g</h3>
                         <p class="project-item-description">
-                            A beautifully crafted rug that combines traditional Japanese tatami weaving techniques with modern Scandinavian design principles.
+                            A beautifully crafted rug that combines traditional Japanese tatami weaving techniques with
+                            modern Scandinavian design principles.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2025</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Row 2 -->
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
@@ -690,11 +710,12 @@ File: D:\gradb\components\projects.html
                             collaborations through a series of exhibitions across Copenhagen.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> | <span class="project-tag">2025</span>
+                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> |
+                            <span class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
                         <img src="../images/P1/6.png" alt="Karimoku Case Study" class="project-img">
@@ -707,11 +728,12 @@ File: D:\gradb\components\projects.html
                             design.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> | <span class="project-tag">2025</span>
+                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> |
+                            <span class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card grid-item">
                     <div class="project-item-image">
                         <img src="../images/p1/7.png" alt="Collection 002" class="project-img">
@@ -719,7 +741,8 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">C o l l e c t i o n 0 0 2</h3>
                         <p class="project-item-description">
-                            Our second collection explores the intersection of traditional craftsmanship and contemporary design, featuring pieces that tell a story of heritage and innovation.
+                            Our second collection explores the intersection of traditional craftsmanship and
+                            contemporary design, featuring pieces that tell a story of heritage and innovation.
                         </p>
                         <div class="project-item-tags">
                             <span class="project-tag">Design</span> | <span class="project-tag">2025</span>
@@ -740,8 +763,10 @@ File: D:\gradb\components\projects.html
                 <div class="project-item-content">
                     <h3 class="project-item-title">Sjöparken</h3>
                     <p class="project-item-description-img">
-                        Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
-                        one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
+                        Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the
+                        Kent Avenue penthouse apartment is
+                        one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this
+                        urban retreat above the vibrating city.
                     </p>
                 </div>
             </div>
@@ -759,16 +784,19 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">T R U N K ( H O T E L ) Y O Y O G I P A R K</h3>
                         <p class="project-item-description">
-                            TRUNK(HOTEL) YOYOGI PARK is a calm retreat seamlessly woven into the vibrant tapestry of Tokyo. Here, amid the juxtaposition of modernity and
-                            tradition, the celebration of leisure and festivity, and the embrace of both the local community and cherished visitors, you'll discover the perfect
+                            TRUNK(HOTEL) YOYOGI PARK is a calm retreat seamlessly woven into the vibrant tapestry of
+                            Tokyo. Here, amid the juxtaposition of modernity and
+                            tradition, the celebration of leisure and festivity, and the embrace of both the local
+                            community and cherished visitors, you'll discover the perfect
                             blend of urban sophistication and natural beauty.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span>
+                            | <span class="project-tag">2023</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card half-width">
                     <div class="project-item-image">
                         <img src="../images/P2/3.png" alt="Restaurang ÄNG" class="project-img">
@@ -776,11 +804,13 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">Ä N G</h3>
                         <p class="project-item-description">
-                            Sitting as a solitary diamond in the undulating fields of Ästad Vingård – one of Sweden's largest vineyards – Restaurang ÄNG is a culinary experience
+                            Sitting as a solitary diamond in the undulating fields of Ästad Vingård – one of Sweden's
+                            largest vineyards – Restaurang ÄNG is a culinary experience
                             out of the ordinary that engages all senses.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2022</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span>
+                            | <span class="project-tag">2022</span>
                         </div>
                     </div>
                 </div>
@@ -833,7 +863,7 @@ File: D:\gradb\components\projects.html
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P3/3.png" alt="Fjord Boat House" class="project-img">
@@ -850,7 +880,7 @@ File: D:\gradb\components\projects.html
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P3/4.png" alt="Archipelago House" class="project-img">
@@ -868,7 +898,7 @@ File: D:\gradb\components\projects.html
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P3/5.png" alt="Pavilion House" class="project-img">
@@ -886,7 +916,7 @@ File: D:\gradb\components\projects.html
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/p3/6.png" alt="Coastal Residence" class="project-img">
@@ -894,7 +924,8 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">C o a s t a l R e s i d e n c e</h3>
                         <p class="project-item-description">
-                            A modern coastal home designed to embrace the ocean views while providing sustainable living solutions and seamless indoor-outdoor connectivity.
+                            A modern coastal home designed to embrace the ocean views while providing sustainable living
+                            solutions and seamless indoor-outdoor connectivity.
                         </p>
                         <div class="project-item-tags">
                             <span class="project-tag">Residential</span> | <span class="project-tag">2023</span>
@@ -915,7 +946,8 @@ File: D:\gradb\components\projects.html
                 <div class="soft-minimal-content full-width">
                     <h3 class="soft-minimal-title">S o f t M i n i m a l</h3>
                     <p class="soft-minimal-text">
-                        Through insightful essays and tactile imagery collected in Soft Minimal, we share the principles that underpin a human-centic design
+                        Through insightful essays and tactile imagery collected in Soft Minimal, we share the principles
+                        that underpin a human-centic design
                         philosophy honed over 15 years.
                     </p>
                 </div>
@@ -935,11 +967,12 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">O b j e c t 0 0 3</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2023</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card four-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P4/3.png" alt="Object 004" class="project-img">
@@ -947,11 +980,12 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">O b j e c t 0 0 4</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2023</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card four-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P4/4.png" alt="Object 005" class="project-img">
@@ -959,11 +993,12 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">O b j e c t 0 0 5</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2023</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card four-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P4/5.png" alt="Object 006" class="project-img">
@@ -971,7 +1006,8 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">O b j e c t 0 0 6</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2024</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
+                                class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
@@ -990,14 +1026,16 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">F i n a l P r o j e c t L e f t</h3>
                         <p class="project-item-description">
-                            Final project description on the left side with detailed information about the architectural design and concept.
+                            Final project description on the left side with detailed information about the architectural
+                            design and concept.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Residential</span> | <span class="project-tag">2024</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Residential</span>
+                            | <span class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-item-card half-width">
                     <div class="project-item-image">
                         <img src="../images/P5/2.png" alt="Final Project Right" class="project-img">
@@ -1005,10 +1043,12 @@ File: D:\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">F i n a l P r o j e c t R i g h t</h3>
                         <p class="project-item-description">
-                            Final project description on the right side showcasing innovative design solutions and sustainable architecture practices.
+                            Final project description on the right side showcasing innovative design solutions and
+                            sustainable architecture practices.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Commercial</span> | <span class="project-tag">2024</span>
+                            <span class="project-tag">Architecture</span> | <span class="project-tag">Commercial</span>
+                            | <span class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
@@ -1020,6 +1060,7 @@ File: D:\gradb\components\projects.html
     <script src="../js/projects.js"></script>
     <script src="../js/kent-slider.js"></script>
 </body>
+
 </html>
 
 
@@ -1027,7 +1068,7 @@ File: D:\gradb\components\projects.html
 ==================================================
 File: D:\gradb\components\services.html
 ==================================================
-<link rel="stylesheet" href="css/components/services.css">
+<!-- <link rel="stylesheet" href="css/components/services.css"> -->
 
 <section class="grad-services-section" id="grad-services">
     <div class="container-fluid px-md-5">
@@ -1259,8 +1300,10 @@ File: D:\gradb\css\components\about.css
     margin-left: 0;
   }
 
+  /* FIXED: Mobile paragraph alignment - changed to justify */
   .about-content p {
-    text-align: center;
+    text-align: justify !important;
+    text-align-last: left;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -1336,9 +1379,11 @@ File: D:\gradb\css\components\about.css
     text-align: center;
   }
 
+  /* FIXED: Small mobile paragraph alignment - changed to justify */
   .about-content p {
     font-size: 1rem;
-    text-align: center;
+    text-align: justify !important;
+    text-align-last: left;
     max-width: 100%;
   }
 
@@ -1368,8 +1413,11 @@ File: D:\gradb\css\components\about.css
     font-size: 1.8rem;
   }
 
+  /* FIXED: Extra small mobile paragraph alignment - changed to justify */
   .about-content p {
     font-size: 0.95rem;
+    text-align: justify !important;
+    text-align-last: left;
   }
 
   .about-image img {
@@ -2196,7 +2244,7 @@ File: D:\gradb\css\components\philosophy.css
 .philosophy-text {
     font-size: 1rem;
     line-height: 1.8;
-    color: var(--secondary-color);
+    color: #000000; /* CHANGED: From var(--secondary-color) to black */
     margin-bottom: 2.5rem;
     max-width: 100%;
     text-align: justify;
@@ -2268,7 +2316,7 @@ File: D:\gradb\css\components\philosophy.css
 
 .value-row {
     font-size: 0.9rem;
-    color: var(--secondary-color);
+    color: #000000; /* CHANGED: From var(--secondary-color) to black */
     font-weight: 500;
     text-align: left;
     width: 500px;
@@ -2332,6 +2380,7 @@ File: D:\gradb\css\components\philosophy.css
     .philosophy-text {
         max-width: 100%;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on tablet */
     }
     
     .section-title {
@@ -2367,6 +2416,7 @@ File: D:\gradb\css\components\philosophy.css
     .value-row {
         text-align: center;
         width: 100%;
+        color: #000000; /* CHANGED: Maintain black color on tablet */
     }
     
     .philosophy-logo {
@@ -2405,6 +2455,7 @@ File: D:\gradb\css\components\philosophy.css
     .philosophy-text, .value-row {
         font-size: 0.9rem;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on mobile */
     }
     
     .philosophy-image {
@@ -2419,12 +2470,14 @@ File: D:\gradb\css\components\philosophy.css
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: var(--primary-color);
     }
     
     .value-row {
         padding: 0 10px;
         line-height: 1.5;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on mobile */
     }
     
     .philosophy-logo {
@@ -2465,6 +2518,7 @@ File: D:\gradb\css\components\philosophy.css
         font-size: 0.85rem;
         margin-bottom: 2rem;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on small mobile */
     }
     
     .philosophy-image {
@@ -2480,6 +2534,7 @@ File: D:\gradb\css\components\philosophy.css
     .value-row {
         font-size: 0.85rem;
         text-align: center;
+        color: #000000; /* CHANGED: Maintain black color on small mobile */
     }
     
     .logo-container {
@@ -2494,6 +2549,9 @@ File: D:\gradb\css\components\philosophy.css
     .philosophy-logo {
         height: 50px !important;
         max-height: 50px !important;
+    }
+    .key-values{
+        color: var(--primary-color);
     }
 }
 
@@ -2510,6 +2568,7 @@ File: D:\gradb\css\components\philosophy.css
     
     .philosophy-text {
         font-size: 0.8rem;
+        color: #000000; /* CHANGED: Maintain black color on extra small mobile */
     }
     
     .philosophy-logo {
@@ -2523,6 +2582,7 @@ File: D:\gradb\css\components\philosophy.css
     
     .value-row {
         font-size: 0.8rem;
+        color: #000000; /* CHANGED: Maintain black color on extra small mobile */
     }
 }
 
@@ -3524,22 +3584,17 @@ File: D:\gradb\css\components\services.css
     opacity: 0;
 }
 
-/* HOVER EFFECT - Expand on hover, collapse others */
-.grad-services-container:hover .grad-service-column:not(:hover) {
-    flex: 0 0 60px !important;
-    min-width: 60px !important;
-}
-
-.grad-services-container:hover .grad-service-column:hover {
+/* FIXED HOVER EFFECT - Only expand on hover, keep default expanded */
+.grad-services-container .grad-service-column:not(:first-child):hover {
     flex: 1 1 100% !important;
     min-width: 200px !important;
 }
 
-.grad-services-container:hover .grad-service-column:hover .grad-vertical-text {
+.grad-services-container .grad-service-column:not(:first-child):hover .grad-vertical-text {
     opacity: 0 !important;
 }
 
-.grad-services-container:hover .grad-service-column:hover .grad-service-content {
+.grad-services-container .grad-service-column:not(:first-child):hover .grad-service-content {
     opacity: 1 !important;
 }
 
@@ -3586,7 +3641,7 @@ File: D:\gradb\css\components\services.css
 }
 
 .grad-service-column:first-child .grad-service-content img,
-.grad-services-container:hover .grad-service-column:hover .grad-service-content img {
+.grad-services-container .grad-service-column:not(:first-child):hover .grad-service-content img {
     transform: scale(1.05);
 }
 
@@ -3605,7 +3660,7 @@ File: D:\gradb\css\components\services.css
 }
 
 .grad-service-column:first-child .grad-content-overlay,
-.grad-services-container:hover .grad-service-column:hover .grad-content-overlay {
+.grad-services-container .grad-service-column:not(:first-child):hover .grad-content-overlay {
     transform: translateY(0);
 }
 
@@ -3685,22 +3740,49 @@ File: D:\gradb\css\components\services.css
         min-width: 100% !important;
     }
     
+    /* Default expanded service on mobile */
     .grad-service-column:first-child {
         flex: 1 1 350px !important;
     }
     
+    .grad-service-column:first-child .grad-vertical-text {
+        opacity: 0 !important;
+    }
+    
+    .grad-service-column:first-child .grad-service-content {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Click-expanded services on mobile */
+    .grad-service-column.grad-expanded {
+        flex: 1 1 350px !important;
+    }
+    
+    .grad-service-column.grad-expanded .grad-vertical-text {
+        opacity: 0 !important;
+    }
+    
+    .grad-service-column.grad-expanded .grad-service-content {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Disable ALL hover effects on mobile */
+    .grad-services-container .grad-service-column:hover {
+        flex: 0 0 70px !important;
+    }
+    
+    .grad-services-container .grad-service-column:hover .grad-vertical-text {
+        opacity: 1 !important;
+    }
+    
+    .grad-services-container .grad-service-column:hover .grad-service-content {
+        opacity: 0 !important;
+    }
+    
     .grad-service-column:last-child {
         border-bottom: none;
-    }
-    
-    /* Disable hover effects on mobile */
-    .grad-services-container:hover .grad-service-column:not(:hover) {
-        flex: 0 0 70px !important;
-        min-width: 100% !important;
-    }
-    
-    .grad-services-container:hover .grad-service-column:hover {
-        flex: 1 1 350px !important;
     }
     
     .grad-vertical-text {
@@ -3711,18 +3793,6 @@ File: D:\gradb\css\components\services.css
         padding: 5px 10px;
     }
     
-    .grad-service-column:not(:first-child) .grad-vertical-text {
-        transform: none;
-    }
-    
-    .grad-service-column:first-child .grad-vertical-text {
-        transform: scale(0.8);
-    }
-    
-    .grad-service-column:not(:first-child) .grad-vertical-text {
-        transform: scale(1.05);
-    }
-    
     .grad-content-overlay {
         padding: 30px 20px 20px;
     }
@@ -3731,7 +3801,6 @@ File: D:\gradb\css\components\services.css
         font-size: 1.5rem;
     }
     
-    /* FIXED: Mobile image fitting */
     .grad-service-content img {
         object-fit: cover !important;
         object-position: center center !important;
@@ -3741,7 +3810,7 @@ File: D:\gradb\css\components\services.css
 @media (max-width: 576px) {
     .grad-services-section {
         padding: 60px 0;
-        margin-top: -120px;
+        margin-top: -80px;
     }
     
     .grad-services-container {
@@ -3752,7 +3821,7 @@ File: D:\gradb\css\components\services.css
         flex: 1 1 300px !important;
     }
     
-    .grad-services-container:hover .grad-service-column:hover {
+    .grad-service-column.grad-expanded {
         flex: 1 1 300px !important;
     }
     
@@ -3780,6 +3849,132 @@ File: D:\gradb\css\components\services.css
 ==================================================
 File: D:\gradb\css\style.css
 ==================================================
+/* ================================
+   Mobile Navigation Enhancements
+   ================================ */
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        padding: 12px 20px !important;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center align text */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 16px;
+        transition: all 0.3s ease;
+        text-align: center; /* Ensure text is centered */
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--secondary-color) !important;
+    }
+    
+    .navbar-nav .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: var(--secondary-color) !important;
+        font-weight: 600;
+    }
+    
+    /* Center align the entire nav */
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* Mobile menu backdrop */
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        margin-top: 10px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+    
+    /* Ensure navbar doesn't change height during collapse */
+    .navbar {
+        min-height: 60px;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        padding: 14px 20px !important;
+        min-height: 54px;
+        font-size: 15px;
+        justify-content: center; /* Center align */
+        text-align: center;
+    }
+    
+    .navbar-collapse {
+        margin-top: 8px;
+    }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .navbar-collapse {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Loading state for smooth transitions */
+.navbar-collapse.collapsing {
+    transition: height 0.35s ease;
+}
+
+/* Add to css/style.css - Loading Optimization */
+html {
+    visibility: hidden;
+    opacity: 0;
+}
+
+html.loaded {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Prevent FOUC for navbar */
+.navbar {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Loading state for components */
+section[id] {
+    min-height: 50vh;
+}
+
+section[id].component-loaded {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Global Styles */
 :root {
     --primary-color: #2c3e50;
@@ -3869,7 +4064,7 @@ body {
     align-items: center;
 }
 
-/* Navigation - INCREASED LOGO SIZE */
+/* Navigation - INCREASED LOGO SIZE FOR DESKTOP */
 .navbar {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -3896,11 +4091,11 @@ body {
     padding: 0 !important;
 }
 
-/* INCREASED LOGO SIZE */
+/* INCREASED DESKTOP LOGO SIZE */
 .navbar-logo {
-    height: 32px !important; /* Increased from 25px */
+    height: 40px !important; /* INCREASED from 32px to 40px */
     width: auto !important;
-    max-height: 32px !important;
+    max-height: 40px !important;
     transition: transform 0.3s ease;
 }
 
@@ -3997,6 +4192,9 @@ img {
         margin-top: 0.8rem;
         border-radius: 8px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .navbar-nav .nav-link {
@@ -4004,6 +4202,9 @@ img {
         padding: 0.6rem 0.8rem !important;
         border-bottom: 1px solid rgba(0,0,0,0.1);
         font-size: 0.85rem;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
     }
     
     .navbar-nav .nav-link:last-child {
@@ -4017,8 +4218,8 @@ img {
     
     /* INCREASED MOBILE LOGO SIZE */
     .navbar-logo {
-        height: 26px !important;
-        max-height: 26px !important;
+        height: 35px !important; /* INCREASED from 26px to 35px */
+        max-height: 35px !important;
     }
     
     /* Mobile-specific spacing */
@@ -4040,8 +4241,8 @@ img {
     
     /* INCREASED SMALL MOBILE LOGO SIZE */
     .navbar-logo {
-        height: 24px !important;
-        max-height: 24px !important;
+        height: 32px !important; /* INCREASED from 24px to 32px */
+        max-height: 32px !important;
     }
     
     .btn-primary-custom,
@@ -4068,8 +4269,8 @@ img {
     
     /* INCREASED EXTRA SMALL LOGO SIZE */
     .navbar-logo {
-        height: 22px !important;
-        max-height: 22px !important;
+        height: 30px !important; /* INCREASED from 22px to 30px */
+        max-height: 30px !important;
     }
     
     .navbar-nav .nav-link {
@@ -4118,7 +4319,6 @@ img {
     height: 100%;
     object-fit: cover;
 }
-
 
 
 
@@ -4350,15 +4550,31 @@ File: D:\gradb\js\projects.js
 // Projects Page JavaScript
 class ProjectsManager {
     constructor() {
+        // Check if we're on the main page or projects page
+        // Main page has components loaded dynamically, projects page is standalone
+        this.isMainPage = window.location.pathname.includes('index.html') || 
+                         document.querySelector('section#projects') !== null;
+        
+        console.log('ProjectsManager initialized - Main page:', this.isMainPage);
+        
+        if (this.isMainPage) {
+            console.log('Projects manager running in main page context - limiting scope to image optimization only');
+            // On main page, only optimize images, don't initialize full projects functionality
+            this.optimizeImageContainers();
+            return;
+        }
+        
+        // Full initialization for standalone projects page
         this.categoryLinks = document.querySelectorAll('.project-category-link');
         this.projectItems = document.querySelectorAll('.project-item-card');
+        this.viewAllBtn = document.getElementById('view-all-btn');
         
         // Maps the data-category attribute to the corresponding section ID
         this.sections = {
             'all': 'latest-work',
             'residential': 'in-residence',
             'commercial': 'hospitality-projects', 
-            'institutional': 'in-residence', // Both residential and institutional link to the same section
+            'institutional': 'in-residence',
             'interiors': 'objects-of-desire'
         };
         
@@ -4366,15 +4582,29 @@ class ProjectsManager {
     }
     
     init() {
+        console.log('Initializing full ProjectsManager functionality');
         this.setupCategoryNavigation();
         this.setupAnimations();
         this.setupScrollSpy();
         this.optimizeImageContainers();
+        this.setupViewAllButton();
+    }
+    
+    // Setup View All button functionality
+    setupViewAllButton() {
+        if (this.viewAllBtn) {
+            this.viewAllBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.navigateToCategory('all');
+                this.setActiveCategoryLink(this.viewAllBtn);
+            });
+        }
     }
     
     // Optimize image container sizes based on actual image dimensions
     optimizeImageContainers() {
         const projectImages = document.querySelectorAll('.project-img');
+        console.log('Optimizing image containers:', projectImages.length);
         
         projectImages.forEach(img => {
             // Check if image is already loaded
@@ -4389,6 +4619,8 @@ class ProjectsManager {
             // Fallback for images that might fail to load
             img.addEventListener('error', () => {
                 console.warn('Image failed to load:', img.src);
+                // Apply default styling for broken images
+                img.style.objectFit = 'cover';
             });
         });
     }
@@ -4400,6 +4632,17 @@ class ProjectsManager {
         
         if (!container || !card) return;
         
+        // Ensure consistent image display
+        img.style.objectFit = 'cover';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        
+        // Only proceed with advanced adjustments if we have natural dimensions
+        if (img.naturalWidth === 0 || img.naturalHeight === 0) {
+            console.warn('Image natural dimensions not available:', img.src);
+            return;
+        }
+        
         const imgAspectRatio = img.naturalWidth / img.naturalHeight;
         const containerAspectRatio = container.offsetWidth / container.offsetHeight;
         
@@ -4409,11 +4652,13 @@ class ProjectsManager {
             card.classList.add('auto-height');
         }
         
-        // Apply object-fit based on aspect ratio
-        if (imgAspectRatio > containerAspectRatio) {
+        // Apply object-fit based on aspect ratio for better visual results
+        if (imgAspectRatio > containerAspectRatio * 1.2) {
+            img.style.objectFit = 'cover';
+        } else if (imgAspectRatio < containerAspectRatio * 0.8) {
             img.style.objectFit = 'cover';
         } else {
-            img.style.objectFit = 'contain';
+            img.style.objectFit = 'cover';
         }
     }
     
@@ -4423,6 +4668,7 @@ class ProjectsManager {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const category = link.dataset.category;
+                console.log('Category navigation clicked:', category);
                 this.navigateToCategory(category);
                 this.setActiveCategoryLink(link);
             });
@@ -4433,27 +4679,37 @@ class ProjectsManager {
     navigateToCategory(category) {
         const targetSectionId = this.sections[category];
         if (targetSectionId) {
+            console.log('Navigating to section:', targetSectionId);
             this.scrollToSection(targetSectionId);
+        } else {
+            console.warn('No section found for category:', category);
         }
     }
     
     scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
         if (section) {
-            // Calculates the position, leaving a small offset from the top
-            const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - 80;
+            // Calculate the position, leaving a small offset from the top
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 80;
+            const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
             });
+        } else {
+            console.warn('Section not found:', sectionId);
         }
     }
     
     // Automatically highlights the category link corresponding to the section in view
     setupScrollSpy() {
-        const sections = document.querySelectorAll('.section-target');
+        const sections = document.querySelectorAll('.latest-work-section, .residence-section, .objects-section');
+        console.log('Setting up scroll spy for sections:', sections.length);
+        
         const observerOptions = {
-            rootMargin: '-20% 0px -70% 0px', // Defines when a section is considered "active"
+            rootMargin: '-20% 0px -70% 0px',
             threshold: 0
         };
         
@@ -4461,13 +4717,16 @@ class ProjectsManager {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const sectionId = entry.target.id;
+                    console.log('Section in view:', sectionId);
                     this.updateActiveNavLink(sectionId);
                 }
             });
         }, observerOptions);
         
         sections.forEach(section => {
-            observer.observe(section);
+            if (section.id) {
+                observer.observe(section);
+            }
         });
     }
     
@@ -4479,19 +4738,31 @@ class ProjectsManager {
             key => this.sections[key] === activeSectionId
         );
 
+        console.log('Active section:', activeSectionId, 'Corresponding categories:', correspondingCategories);
+
         // Activate the link for each corresponding category
         correspondingCategories.forEach(category => {
             const activeLink = document.querySelector(`.project-category-link[data-category="${category}"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
+                console.log('Activated category link:', category);
             }
         });
+        
+        // Special case for "all" category when viewing latest-work
+        if (activeSectionId === 'latest-work') {
+            const allLink = document.querySelector('.project-category-link[data-category="all"]');
+            if (allLink) {
+                allLink.classList.add('active');
+            }
+        }
     }
     
     // Sets the visual "active" state on a clicked link
     setActiveCategoryLink(activeLink) {
         this.resetActiveCategoryLinks();
         activeLink.classList.add('active');
+        console.log('Manually activated link:', activeLink.textContent);
     }
     
     // Removes the "active" class from all category links
@@ -4499,6 +4770,9 @@ class ProjectsManager {
         this.categoryLinks.forEach(link => {
             link.classList.remove('active');
         });
+        if (this.viewAllBtn) {
+            this.viewAllBtn.classList.remove('active');
+        }
     }
     
     // Sets up the fade-in animation for project cards as they are scrolled into view
@@ -4512,7 +4786,7 @@ class ProjectsManager {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Stop observing after animation
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -4522,58 +4796,100 @@ class ProjectsManager {
             observer.observe(item);
         });
     }
+    
+    // Cleanup method to remove event listeners if needed
+    destroy() {
+        if (this.categoryLinks) {
+            this.categoryLinks.forEach(link => {
+                link.removeEventListener('click', this.categoryClickHandler);
+            });
+        }
+        
+        if (this.viewAllBtn) {
+            this.viewAllBtn.removeEventListener('click', this.viewAllClickHandler);
+        }
+    }
 }
 
 // Initialize the script once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    new ProjectsManager();
+    // Only initialize ProjectsManager if we're on a page that needs it
+    const projectsSection = document.getElementById('projects');
+    const projectsPage = document.querySelector('body.projects-page') || 
+                        window.location.pathname.includes('projects.html') ||
+                        document.querySelector('.project-categories-section') !== null;
+    
+    if (projectsSection || projectsPage) {
+        console.log('Initializing ProjectsManager');
+        window.projectsManager = new ProjectsManager();
+    } else {
+        console.log('ProjectsManager not needed on this page');
+    }
 });
+
+// Handle dynamic loading in main site
+document.addEventListener('componentLoaded', function(event) {
+    if (event.detail.sectionId === 'projects') {
+        console.log('Projects component loaded dynamically');
+        setTimeout(() => {
+            window.projectsManager = new ProjectsManager();
+        }, 100);
+    }
+});
+
+// CSS for animations - add this to your projects.css if not already present
+const style = document.createElement('style');
+style.textContent = `
+    .project-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .project-fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .project-category-link.active {
+        color: #000000 !important;
+        font-weight: 600;
+    }
+    
+    .project-view-all-btn.active {
+        background: #000000 !important;
+        color: white !important;
+    }
+    
+    /* Image optimization classes */
+    .auto-size img {
+        object-fit: contain !important;
+    }
+    
+    .auto-height {
+        height: auto !important;
+    }
+`;
+document.head.appendChild(style);
 
 
 
 ==================================================
 File: D:\gradb\js\script.js
 ==================================================
-// Add this to the loadComponent calls
-loadComponent("careers", "components/careers.html", () => {
-    console.log("Careers component loaded successfully");
-});
-
-// ================================
-// Function to load HTML components into sections
-// ================================
-function loadComponent(sectionId, filePath, callback) {
-    fetch(filePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load ${filePath}: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.innerHTML = data;
-                
-                // Add the section ID to the loaded content's main container
-                const container = section.querySelector('div[class*="section"], section[class*="section"]');
-                if (container && !container.id) {
-                    container.id = sectionId + '-content';
-                }
-                
-                if (callback) callback();
-            }
-        })
-        .catch(error => console.error("Error loading " + filePath, error));
-}
-
-// ================================
-// Load all components on page load
-// ================================
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
     
-    // Load all components from the components/ directory
+    // Mark HTML as loaded to prevent FOUC
+    document.documentElement.classList.add('loaded');
+    
+    // Initialize core features first
+    navbarShrink();
+    initMobileNavigation();
+    preserveImageSizes();
+    forceLogoSizeReduction();
+    
+    // Load components
     loadComponent("home", "components/home.html");
     loadComponent("about", "components/about.html");
     loadComponent("philosophy", "components/philosophy.html");
@@ -4583,23 +4899,127 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     loadComponent("projects", "components/projects.html", () => {
         console.log("Projects component loaded successfully");
-        // Initialize projects after loading
         setTimeout(initializeProjects, 100);
     });
     loadComponent("contact", "components/contact.html", () => {
         console.log("Contact component loaded successfully");
     });
     
-    // Initialize features after a short delay to ensure content is loaded
+    // Initialize features after components are loaded
     setTimeout(() => {
-        navbarShrink();
         initScrollFeatures();
-        initMobileNavigation();
-        preserveImageSizes();
-        forceLogoSizeReduction(); // NEW: Force logo size reduction
         console.log("All components loaded and features initialized");
-    }, 500);
+    }, 800);
 });
+
+
+
+
+// Add this to the loadComponent calls
+loadComponent("careers", "components/careers.html", () => {
+    console.log("Careers component loaded successfully");
+});
+
+// ================================
+// Function to load HTML components into sections
+// ================================
+function loadComponent(sectionId, filePath, callback) {
+    const section = document.getElementById(sectionId);
+    if (!section) {
+        console.error(`Section ${sectionId} not found`);
+        return;
+    }
+
+    // Add loading state
+    section.classList.add('component-loading');
+    
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filePath}: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            section.innerHTML = data;
+            section.classList.remove('component-loading');
+            section.classList.add('loaded');
+            
+            // Add the section ID to the loaded content's main container
+            const container = section.querySelector('div[class*="section"], section[class*="section"]');
+            if (container && !container.id) {
+                container.id = sectionId + '-content';
+            }
+            
+            // Re-initialize navigation after content loads
+            setTimeout(() => {
+                initScrollFeatures();
+                navbarShrink();
+            }, 100);
+            
+            if (callback) callback();
+        })
+        .catch(error => {
+            console.error("Error loading " + filePath, error);
+            section.classList.remove('component-loading');
+            section.innerHTML = `<div class="alert alert-warning">Failed to load content. Please refresh the page.</div>`;
+        });
+}
+// ================================
+// Load all components on page load
+// ================================
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM loaded, starting to load components...");
+    
+    // Initialize core features first
+    navbarShrink();
+    initMobileNavigation();
+    preserveImageSizes();
+    forceLogoSizeReduction();
+    
+    // Load components with proper sequencing
+    const loadSequence = [
+        { id: "home", file: "components/home.html" },
+        { id: "about", file: "components/about.html" },
+        { id: "philosophy", file: "components/philosophy.html" },
+        { id: "services", file: "components/services.html" },
+        { id: "projects", file: "components/projects.html", callback: () => {
+            console.log("Projects component loaded successfully");
+            setTimeout(initializeProjects, 100);
+        }},
+        { id: "careers", file: "components/careers.html", callback: () => {
+            console.log("Careers component loaded successfully");
+        }},
+        { id: "contact", file: "components/contact.html", callback: () => {
+            console.log("Contact component loaded successfully");
+        }}
+    ];
+
+    // Load components sequentially to avoid race conditions
+    function loadNextComponent(index) {
+        if (index >= loadSequence.length) {
+            console.log("All components loaded");
+            // Final initialization after all components are loaded
+            setTimeout(() => {
+                initScrollFeatures();
+                enhanceResponsiveDesign();
+            }, 500);
+            return;
+        }
+        
+        const item = loadSequence[index];
+        loadComponent(item.id, item.file, item.callback);
+        
+        // Load next component after a short delay
+        setTimeout(() => loadNextComponent(index + 1), 100);
+    }
+    
+    // Start loading sequence
+    loadNextComponent(0);
+});
+
+
+
 
 // ================================
 // FORCE LOGO SIZE REDUCTION
@@ -4686,22 +5106,50 @@ function navbarShrink() {
 }
 
 // ================================
-// Mobile Navigation Handler
+// Mobile Navigation Handler - UPDATED
 // ================================
 function initMobileNavigation() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
     
     if (navbarToggler && navbarCollapse) {
-        // Close mobile menu when clicking on a link
+        // Get all navigation links
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        // Add click event to each navigation link
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                        toggle: false
-                    });
-                    bsCollapse.hide();
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    // Close mobile menu first
+                    if (window.innerWidth < 768) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
+                                         new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                        bsCollapse.hide();
+                    }
+                    
+                    // Update active link
+                    const allNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                    allNavLinks.forEach(navLink => navLink.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Wait for menu to close, then scroll to section
+                    setTimeout(() => {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL
+                        window.history.pushState(null, null, `#${targetId}`);
+                    }, 300); // Wait for collapse animation
                 }
             });
         });
@@ -4712,15 +5160,22 @@ function initMobileNavigation() {
                 navbarCollapse.classList.contains('show') && 
                 !navbarToggler.contains(e.target) && 
                 !navbarCollapse.contains(e.target)) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
+                                 new bootstrap.Collapse(navbarCollapse, { toggle: false });
                 bsCollapse.hide();
             }
         });
+        
+        // Handle menu show/hide events
+        navbarCollapse.addEventListener('show.bs.collapse', function () {
+            console.log('Mobile menu opened');
+        });
+        
+        navbarCollapse.addEventListener('hide.bs.collapse', function () {
+            console.log('Mobile menu closed');
+        });
     }
 }
-
 // ================================
 // Preserve Original Image Sizes
 // ================================
@@ -4750,9 +5205,6 @@ function initializeProjects() {
     });
 }
 
-// ================================
-// Scroll-based active link highlighting & smooth scroll
-// ================================
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
     
@@ -4770,30 +5222,37 @@ function initScrollFeatures() {
         return;
     }
 
-    // IntersectionObserver to highlight nav links
+    // SINGLE IntersectionObserver to avoid conflicts
     const observer = new IntersectionObserver(
         (entries) => {
+            let mostVisibleSection = null;
+            let highestRatio = 0;
+
             entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const currentSection = entry.target.id;
-                    console.log("Section in view:", currentSection);
-                    
-                    navLinks.forEach(link => {
-                        const linkHref = link.getAttribute("href");
-                        if (linkHref === `#${currentSection}`) {
-                            // Remove active from all links
-                            navLinks.forEach(l => l.classList.remove("active"));
-                            // Add active to current link
-                            link.classList.add("active");
-                            console.log("Active link set to:", linkHref);
-                        }
-                    });
+                if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
+                    highestRatio = entry.intersectionRatio;
+                    mostVisibleSection = entry.target.id;
                 }
             });
+
+            if (mostVisibleSection && highestRatio > 0.3) {
+                console.log("Most visible section:", mostVisibleSection);
+                
+                navLinks.forEach(link => {
+                    const linkHref = link.getAttribute("href");
+                    if (linkHref === `#${mostVisibleSection}`) {
+                        // Remove active from all links
+                        navLinks.forEach(l => l.classList.remove("active"));
+                        // Add active to current link
+                        link.classList.add("active");
+                        console.log("Active link set to:", linkHref);
+                    }
+                });
+            }
         },
         { 
-            threshold: 0.5,
-            rootMargin: '-100px 0px -100px 0px'
+            threshold: [0.1, 0.3, 0.5, 0.7],
+            rootMargin: '-80px 0px -80px 0px'
         }
     );
 
@@ -4805,7 +5264,7 @@ function initScrollFeatures() {
         }
     });
 
-    // Smooth scroll for nav links
+    // Smooth scroll for nav links - SIMPLIFIED
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
@@ -4834,36 +5293,8 @@ function initScrollFeatures() {
         });
     });
 
-    // Update active link on scroll (fallback)
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const scrollPosition = window.scrollY + navbarHeight + 100;
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    current = section.id;
-                }
-            });
-
-            if (current) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        }, 150);
-    });
+    // REMOVED: The duplicate scroll event listener that was causing conflicts
 }
-
 // ================================
 // Handle page refresh and direct anchor links
 // ================================
@@ -5059,7 +5490,7 @@ File: D:\gradb\js\services.js
 // services.js - Updated for single expanded service functionality
 
 function initializeGradServices() {
-    console.log('Initializing Grad Services with single expanded service...');
+    console.log('Initializing Grad Services...');
     
     const serviceColumns = document.querySelectorAll('.grad-service-column');
     console.log('Found service columns:', serviceColumns.length);
@@ -5069,25 +5500,79 @@ function initializeGradServices() {
         return;
     }
     
-    // Expand first service by default
-    if (!document.querySelector('.grad-expanded')) {
-        serviceColumns[0].classList.add('grad-expanded');
+    // Check if we're on mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
     }
     
-    // Add click event listeners to all service columns
+    // Add click event listeners for mobile only
     serviceColumns.forEach(column => {
         column.addEventListener('click', function() {
-            console.log('Service column clicked');
-            
-            // Remove expanded class from all columns
-            serviceColumns.forEach(col => col.classList.remove('grad-expanded'));
-            
-            // Add expanded class to clicked column
-            this.classList.add('grad-expanded');
+            if (isMobile()) {
+                console.log('Mobile: Service column clicked');
+                
+                // If already expanded (first service or clicked expanded), do nothing
+                if (this.classList.contains('grad-expanded') || this === serviceColumns[0]) {
+                    return;
+                }
+                
+                // Remove expanded class from all columns except first
+                serviceColumns.forEach(col => {
+                    if (col !== serviceColumns[0]) {
+                        col.classList.remove('grad-expanded');
+                    }
+                });
+                
+                // Add expanded class to clicked column
+                this.classList.add('grad-expanded');
+            }
+        });
+        
+        // Add touch event for better mobile support
+        column.addEventListener('touchend', function(e) {
+            if (isMobile()) {
+                e.preventDefault();
+                console.log('Mobile: Service column touched');
+                
+                // If already expanded (first service or clicked expanded), do nothing
+                if (this.classList.contains('grad-expanded') || this === serviceColumns[0]) {
+                    return;
+                }
+                
+                // Remove expanded class from all columns except first
+                serviceColumns.forEach(col => {
+                    if (col !== serviceColumns[0]) {
+                        col.classList.remove('grad-expanded');
+                    }
+                });
+                
+                // Add expanded class to clicked column
+                this.classList.add('grad-expanded');
+            }
         });
     });
     
-    console.log('Grad Services single expanded service functionality initialized successfully');
+    // Handle window resize to update mobile/desktop behavior
+    let isCurrentlyMobile = isMobile();
+    window.addEventListener('resize', function() {
+        const nowMobile = isMobile();
+        
+        // Only reinitialize if mobile state changed
+        if (nowMobile !== isCurrentlyMobile) {
+            isCurrentlyMobile = nowMobile;
+            
+            if (!nowMobile) {
+                // Reset to default state on desktop - remove all grad-expanded classes
+                serviceColumns.forEach(col => {
+                    if (col !== serviceColumns[0]) {
+                        col.classList.remove('grad-expanded');
+                    }
+                });
+            }
+        }
+    });
+    
+    console.log('Grad Services functionality initialized successfully');
 }
 
 // Initialize when DOM is ready
@@ -5107,13 +5592,11 @@ File: D:\gradb\index.html
 ==================================================
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grad Architects</title>
 
-  
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -5121,37 +5604,43 @@ File: D:\gradb\index.html
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
+  <!-- ALL CSS FILES LOADED UPFRONT - NO MORE DYNAMIC LOADING -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components/about.css">
+  <link rel="stylesheet" href="css/components/careers.css">
+  <link rel="stylesheet" href="css/components/contact.css">
+  <link rel="stylesheet" href="css/components/home.css">
+  <link rel="stylesheet" href="css/components/philosophy.css">
+  <link rel="stylesheet" href="css/components/projects.css">
+  <link rel="stylesheet" href="css/components/services.css">
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#home">
-        <img src="/images/logo.png" alt="Grad Architects" class="navbar-logo">
-
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
-          <li class="nav-item"><a class="nav-link" href="#philosophy">PHILOSOPHY</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#careers">CAREERS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
-        </ul>
-      </div>
+        <a class="navbar-brand fw-bold" href="#home">
+            <img src="/images/logo.png" alt="Grad Architects" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="#philosophy">PHILOSOPHY</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#careers">CAREERS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 
   <!-- Sections -->
   <section id="home" class="section">
