@@ -287,6 +287,8 @@
 .project-categories-section {
     padding: 3rem 0;
     border-bottom: 1px solid var(--projects-border-color);
+    margin-bottom: -160px;
+
 }
 
 .project-categories-nav {
@@ -824,7 +826,9 @@
         font-size: 0.9rem;
         letter-spacing: 0.2em;
     }
-    
+    .project-categories-section{
+        margin-bottom: -160px;
+    }
     /* IMPROVED: Better overlay text for small screens */
     .full-width-image .project-item-content,
     .full-width-section .project-item-content {
