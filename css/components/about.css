@@ -171,14 +171,15 @@
     margin-left: 0;
   }
 
-  /* FIXED: Mobile paragraph alignment - changed to justify */
-  .about-content p {
-    text-align: justify !important;
-    text-align-last: left;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.about-content p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: justify; /* This ensures the text is justified */
+  text-justify: inter-word; /* This is optional and improves justification on some browsers */
+}
+
 
   .about-image {
     display: flex;
@@ -250,13 +251,15 @@
     text-align: center;
   }
 
-  /* FIXED: Small mobile paragraph alignment - changed to justify */
-  .about-content p {
-    font-size: 1rem;
-    text-align: justify !important;
-    text-align-last: left;
-    max-width: 100%;
-  }
+.about-content p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: justify; /* This ensures the text is justified */
+  text-justify: inter-word; /* This is optional and improves justification on some browsers */
+}
+
 
   .about-image img {
     width: 100%;
@@ -284,11 +287,8 @@
     font-size: 1.8rem;
   }
 
-  /* FIXED: Extra small mobile paragraph alignment - changed to justify */
   .about-content p {
     font-size: 0.95rem;
-    text-align: justify !important;
-    text-align-last: left;
   }
 
   .about-image img {

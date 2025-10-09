@@ -674,7 +674,12 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+    .project-categories-section{
+        margin-bottom: -160px;
+    }
+
+
+
     /* IMPROVED: Mobile image heights for full coverage */
     .grid-item .project-item-image {
         height: 350px;
@@ -750,11 +755,11 @@
     
     /* FIXED: Reduced text size for mobile */
     .project-item-title {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     
     .project-item-description {
-        font-size: 0.75rem;
+        font-size: 0.3rem;
     }
     
     .projects-section-title {
@@ -801,13 +806,13 @@
     }
     
     .project-hero-title {
-        font-size: 1rem;
+        font-size: 0.7rem;
         letter-spacing: 0.15em;
         margin-bottom: -10%;
      }
     
     .project-hero-description {
-        font-size: 0.7rem;
+        font-size: 0.3rem;
         margin-top: 0;
     }
     

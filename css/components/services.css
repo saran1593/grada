@@ -8,6 +8,8 @@
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     margin-top: -210px;
+  
+   
 }
 
 .grad-services-section h3 {
@@ -225,7 +227,8 @@
 @media (max-width: 768px) {
     .grad-services-section {
         padding: 80px 0;
-        margin-top: -150px;
+        margin-top: 10px;
+        margin-top: -120px;
     }
     
     .grad-services-container {
@@ -298,7 +301,8 @@
 @media (max-width: 576px) {
     .grad-services-section {
         padding: 60px 0;
-        margin-top: -120px;
+        margin-top: 10px;
+        margin-top: -80px;
     }
     
     .grad-services-container {
