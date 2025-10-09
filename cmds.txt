@@ -9,3 +9,6 @@ Get-ChildItem -Recurse -Include *.html, *.css, *.js | ForEach-Object {
     Add-Content -Path "all_code.txt" -Value (Get-Content $_.FullName | Out-String)
     Add-Content -Path "all_code.txt" -Value "`n"
 }
+
+git config --global user.name "Bala9840"
+git config --global user.email "barathbalaji9840@gmail.com"

@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
-    
+
     // Mark HTML as loaded to prevent FOUC
     document.documentElement.classList.add('loaded');
-    
+
     // Initialize core features first
     navbarShrink();
     initMobileNavigation();
     preserveImageSizes();
     forceLogoSizeReduction();
-    
+
     // Load components
     loadComponent("home", "components/home.html");
     loadComponent("about", "components/about.html");
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComponent("contact", "components/contact.html", () => {
         console.log("Contact component loaded successfully");
     });
-    
+
     // Initialize features after components are loaded
     setTimeout(() => {
         initScrollFeatures();
@@ -53,7 +53,7 @@ function loadComponent(sectionId, filePath, callback) {
 
     // Add loading state
     section.classList.add('component-loading');
-    
+
     fetch(filePath)
         .then(response => {
             if (!response.ok) {
@@ -65,19 +65,19 @@ function loadComponent(sectionId, filePath, callback) {
             section.innerHTML = data;
             section.classList.remove('component-loading');
             section.classList.add('loaded');
-            
+
             // Add the section ID to the loaded content's main container
             const container = section.querySelector('div[class*="section"], section[class*="section"]');
             if (container && !container.id) {
                 container.id = sectionId + '-content';
             }
-            
+
             // Re-initialize navigation after content loads
             setTimeout(() => {
                 initScrollFeatures();
                 navbarShrink();
             }, 100);
-            
+
             if (callback) callback();
         })
         .catch(error => {
@@ -91,37 +91,58 @@ function loadComponent(sectionId, filePath, callback) {
 // ================================
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
-    
+
     // Initialize core features first
     navbarShrink();
     initMobileNavigation();
     preserveImageSizes();
     forceLogoSizeReduction();
-    
+
     // Load components with proper sequencing
     const loadSequence = [
         { id: "home", file: "components/home.html" },
         { id: "about", file: "components/about.html" },
         { id: "philosophy", file: "components/philosophy.html" },
-        { id: "services", file: "components/services.html", callback: () => {
-            console.log("Services component loaded successfully");
-            // Initialize services functionality after component loads
-            setTimeout(() => {
-                if (typeof initializeGradServices === 'function') {
-                    initializeGradServices();
-                }
-            }, 100);
-        }},
-        { id: "projects", file: "components/projects.html", callback: () => {
-            console.log("Projects component loaded successfully");
-            setTimeout(initializeProjects, 100);
-        }},
-        { id: "careers", file: "components/careers.html", callback: () => {
-            console.log("Careers component loaded successfully");
-        }},
-        { id: "contact", file: "components/contact.html", callback: () => {
-            console.log("Contact component loaded successfully");
-        }}
+{ id: "services", file: "components/services.html", callback: () => {
+    console.log("✅ Services component loaded successfully");
+    
+    // Force services initialization with multiple fallbacks
+    const initServices = () => {
+        console.log("🔄 Force initializing services...");
+        
+        if (typeof ServicesManager !== 'undefined') {
+            console.log("🎯 Using ServicesManager class");
+            window.servicesManager = new ServicesManager();
+        } else if (typeof initializeServices !== 'undefined') {
+            console.log("🎯 Using initializeServices function");
+            window.servicesManager = initializeServices();
+        } else {
+            console.log("❌ Services functions not found, retrying...");
+            setTimeout(initServices, 500);
+        }
+    };
+    
+    // Try multiple times with increasing delays
+    setTimeout(initServices, 300);
+    setTimeout(initServices, 1000);
+    setTimeout(initServices, 2000);
+}},
+        {
+            id: "projects", file: "components/projects.html", callback: () => {
+                console.log("Projects component loaded successfully");
+                setTimeout(initializeProjects, 100);
+            }
+        },
+        {
+            id: "careers", file: "components/careers.html", callback: () => {
+                console.log("Careers component loaded successfully");
+            }
+        },
+        {
+            id: "contact", file: "components/contact.html", callback: () => {
+                console.log("Contact component loaded successfully");
+            }
+        }
     ];
 
     // Load components sequentially to avoid race conditions
@@ -135,14 +156,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 500);
             return;
         }
-        
+
         const item = loadSequence[index];
         loadComponent(item.id, item.file, item.callback);
-        
+
         // Load next component after a short delay
         setTimeout(() => loadNextComponent(index + 1), 100);
     }
-    
+
     // Start loading sequence
     loadNextComponent(0);
 });
@@ -153,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ================================
 function forceLogoSizeReduction() {
     console.log('Forcing logo size reduction...');
-    
+
     // Force navbar logo size
     const navbarLogo = document.querySelector('.navbar-logo');
     if (navbarLogo) {
@@ -162,7 +183,7 @@ function forceLogoSizeReduction() {
         navbarLogo.style.width = 'auto';
         console.log('Navbar logo size forced to 25px');
     }
-    
+
     // Force philosophy logo size
     const philosophyLogo = document.querySelector('.philosophy-logo');
     if (philosophyLogo) {
@@ -171,7 +192,7 @@ function forceLogoSizeReduction() {
         philosophyLogo.style.width = 'auto';
         console.log('Philosophy logo size forced to 35px');
     }
-    
+
     // Apply responsive sizes
     if (window.innerWidth <= 768) {
         if (navbarLogo) {
@@ -183,7 +204,7 @@ function forceLogoSizeReduction() {
             philosophyLogo.style.maxHeight = '28px';
         }
     }
-    
+
     if (window.innerWidth <= 576) {
         if (navbarLogo) {
             navbarLogo.style.height = '18px';
@@ -194,7 +215,7 @@ function forceLogoSizeReduction() {
             philosophyLogo.style.maxHeight = '25px';
         }
     }
-    
+
     if (window.innerWidth <= 400) {
         if (navbarLogo) {
             navbarLogo.style.height = '16px';
@@ -216,7 +237,7 @@ function navbarShrink() {
         console.log("Navbar not found");
         return;
     }
-    
+
     const shrinkNavbar = () => {
         if (window.scrollY > 50) {
             navbar.classList.add("scrolled");
@@ -224,10 +245,10 @@ function navbarShrink() {
             navbar.classList.remove("scrolled");
         }
     };
-    
+
     // Initial check
     shrinkNavbar();
-    
+
     // Listen for scroll events
     window.addEventListener("scroll", shrinkNavbar);
 }
@@ -238,66 +259,66 @@ function navbarShrink() {
 function initMobileNavigation() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
+
     if (navbarToggler && navbarCollapse) {
         // Get all navigation links
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        
+
         // Add click event to each navigation link
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                
+
                 const targetId = link.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
-                
+
                 if (targetSection) {
                     // Close mobile menu first
                     if (window.innerWidth < 768) {
-                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
-                                         new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
+                            new bootstrap.Collapse(navbarCollapse, { toggle: false });
                         bsCollapse.hide();
                     }
-                    
+
                     // Update active link
                     const allNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
                     allNavLinks.forEach(navLink => navLink.classList.remove('active'));
                     link.classList.add('active');
-                    
+
                     // Wait for menu to close, then scroll to section
                     setTimeout(() => {
                         const navbarHeight = document.querySelector('.navbar').offsetHeight;
                         const targetPosition = targetSection.offsetTop - navbarHeight;
-                        
+
                         window.scrollTo({
                             top: targetPosition,
                             behavior: 'smooth'
                         });
-                        
+
                         // Update URL
                         window.history.pushState(null, null, `#${targetId}`);
                     }, 300); // Wait for collapse animation
                 }
             });
         });
-        
+
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (window.innerWidth < 768 && 
-                navbarCollapse.classList.contains('show') && 
-                !navbarToggler.contains(e.target) && 
+            if (window.innerWidth < 768 &&
+                navbarCollapse.classList.contains('show') &&
+                !navbarToggler.contains(e.target) &&
                 !navbarCollapse.contains(e.target)) {
-                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
-                                 new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
+                    new bootstrap.Collapse(navbarCollapse, { toggle: false });
                 bsCollapse.hide();
             }
         });
-        
+
         // Handle menu show/hide events
         navbarCollapse.addEventListener('show.bs.collapse', function () {
             console.log('Mobile menu opened');
         });
-        
+
         navbarCollapse.addEventListener('hide.bs.collapse', function () {
             console.log('Mobile menu closed');
         });
@@ -313,7 +334,7 @@ function preserveImageSizes() {
         img.style.width = 'auto';
         img.style.height = 'auto';
         img.style.maxWidth = '100%';
-        
+
         // Add loading optimization
         img.loading = 'lazy';
     });
@@ -334,13 +355,13 @@ function initializeProjects() {
 
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
-    
+
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
     console.log("Sections found:", sections.length);
     console.log("Nav links found:", navLinks.length);
-    
+
     // Remove active class from all links initially
     navLinks.forEach(link => link.classList.remove("active"));
 
@@ -364,7 +385,7 @@ function initScrollFeatures() {
 
             if (mostVisibleSection && highestRatio > 0.3) {
                 console.log("Most visible section:", mostVisibleSection);
-                
+
                 navLinks.forEach(link => {
                     const linkHref = link.getAttribute("href");
                     if (linkHref === `#${mostVisibleSection}`) {
@@ -377,7 +398,7 @@ function initScrollFeatures() {
                 });
             }
         },
-        { 
+        {
             threshold: [0.1, 0.3, 0.5, 0.7],
             rootMargin: '-80px 0px -80px 0px'
         }
@@ -397,23 +418,23 @@ function initScrollFeatures() {
             event.preventDefault();
             const targetId = this.getAttribute("href").substring(1);
             console.log("Nav link clicked, target:", targetId);
-            
+
             const targetSection = document.getElementById(targetId);
-            
+
             if (targetSection) {
                 // Update active class immediately
                 navLinks.forEach(l => l.classList.remove("active"));
                 this.classList.add("active");
-                
+
                 // Smooth scroll to section
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = targetSection.offsetTop - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: "smooth"
                 });
-                
+
                 // Update URL hash
                 window.history.pushState(null, null, `#${targetId}`);
             }
@@ -434,12 +455,12 @@ window.addEventListener('load', () => {
             setTimeout(() => {
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = targetSection.offsetTop - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-                
+
                 // Update active link
                 const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
                 navLinks.forEach(link => {
@@ -464,7 +485,7 @@ window.addEventListener('hashchange', () => {
             setTimeout(() => {
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = targetSection.offsetTop - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -503,13 +524,13 @@ setViewportHeight();
 function enhanceResponsiveDesign() {
     // Improve mobile navigation
     improveMobileNav();
-    
+
     // Enhance image responsiveness
     enhanceImageResponsiveness();
-    
+
     // Improve touch interactions
     improveTouchInteractions();
-    
+
     // Optimize performance on mobile
     optimizeMobilePerformance();
 }
@@ -517,11 +538,11 @@ function enhanceResponsiveDesign() {
 function improveMobileNav() {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    
+
     if (window.innerWidth <= 768) {
         // Add mobile-specific classes
         navbar.classList.add('mobile-nav');
-        
+
         // Improve touch targets
         navLinks.forEach(link => {
             link.style.padding = '12px 15px';
@@ -532,12 +553,12 @@ function improveMobileNav() {
 
 function enhanceImageResponsiveness() {
     const images = document.querySelectorAll('img');
-    
+
     images.forEach(img => {
         // Ensure images are responsive
         img.style.maxWidth = '100%';
         img.style.height = 'auto';
-        
+
         // Add loading optimization
         if (!img.getAttribute('loading')) {
             img.setAttribute('loading', 'lazy');
@@ -548,7 +569,7 @@ function enhanceImageResponsiveness() {
 function improveTouchInteractions() {
     // Improve button touch targets
     const buttons = document.querySelectorAll('button, .btn, [role="button"]');
-    
+
     buttons.forEach(button => {
         if (window.innerWidth <= 768) {
             button.style.minHeight = '44px';
@@ -565,12 +586,12 @@ function optimizeMobilePerformance() {
 }
 
 // Call this function in your main initialization
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // ... your existing code ...
-    
+
     // Add responsive enhancements
     enhanceResponsiveDesign();
-    
+
     // Re-run on resize
     window.addEventListener('resize', enhanceResponsiveDesign);
 });
@@ -588,13 +609,13 @@ function loadComponent(sectionId, filePath, callback) {
             const section = document.getElementById(sectionId);
             if (section) {
                 section.innerHTML = data;
-                
+
                 // Add the section ID to the loaded content's main container
                 const container = section.querySelector('div[class*="section"], section[class*="section"]');
                 if (container && !container.id) {
                     container.id = sectionId + '-content';
                 }
-                
+
                 // Apply responsive enhancements to new content
                 setTimeout(() => {
                     enhanceResponsiveDesign();
@@ -602,7 +623,7 @@ function loadComponent(sectionId, filePath, callback) {
                     const event = new CustomEvent('componentLoaded', { detail: { sectionId } });
                     document.dispatchEvent(event);
                 }, 100);
-                
+
                 if (callback) callback();
             }
         })

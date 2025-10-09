@@ -1,180 +1,7 @@
-==================================================
-File: D:\gradb\components\about.html
-==================================================
-<link rel="stylesheet" href="/css/components/about.css">
-
-<section class="about-section">
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-  
-            <div class="col-lg-6 order-lg-2">
-                <div class="about-content">
-                    <h3 class="mb-4">ABOUT US</h3>
-                    <p class="mb-4">Grad Architects is led by <strong>Principal Architect Vishnu Priya</strong>, who brings rich experience in Residential, Commercial, and Industrial projects. Before founding the firm, she worked with leading practices such as A&E Architects and Engineers, Chennai.</p>
-                    
-                    <p class="mb-4">Since its inception, the firm has grown steadily, delivering projects that balance guidelines, aesthetics, and context. Our dedicated team ensures personalized care, from <strong>initial planning to detailed design</strong> and on-site execution.</p>
-                    
-                    <p class="mb-5">As a certified professional in <strong>Mud Architecture</strong> and a passionate advocate of <strong>Green Architecture</strong>, Vishnu Priya's philosophy drives Grad Architects' focus on sustainability, innovation, and timeless design.</p>
-                    
-                    <a href="#projects" class="btn btn-view-projects">VIEW ALL PROJECTS</a>
-                </div>
-            </div>
-            <div class="col-lg-6 order-lg-1 position-relative">
-                <div class="about-image">
-                    <img src="/images/about.png" alt="About Grad Architects" class="img-fluid rounded shadow">
-                </div>
-                <div class="vertical-text">
-                    <span>BUILDING WITH PURPOSE</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 
 ==================================================
-File: D:\gradb\components\careers.html
-==================================================
-<!-- <link rel="stylesheet" href="/css/components/careers.css"> -->
-
-<section class="grad-careers-section">
-    <div class="container-fluid">
-        <div class="row g-0 align-items-center">
-
-            <!-- Image Column - Hidden on mobile (same structure as contact) -->
-            <div class="col-lg-5 d-none d-lg-block">
-                <img src="/images/career.jpg" class="grad-careers-image" alt="Modern building exterior">
-            </div>
-
-            <!-- Form Column -->
-            <div class="col-lg-7 d-flex justify-content-center">
-               
-                <div class="grad-careers-form-container text-dark p-4 p-md-5">
-                    <p class="grad-careers-eyebrow text-uppercase mb-4">WE'RE ALWAYS LOOKING FOR TALENT</p>
-                    
-                    <form id="careerForm" novalidate>
-                        <div class="mb-4">
-                            <input type="text" class="form-control grad-careers-input" id="name" placeholder="Name" required>
-                        </div>
-                        <div class="mb-4">
-                            <input type="tel" class="form-control grad-careers-input" id="phone" placeholder="Phone Number" required>
-                        </div>
-                        <div class="mb-4">
-                            <input type="text" class="form-control grad-careers-input" id="interest" placeholder="Area of Interest / Role" required>
-                        </div>
-                        <div class="mb-4 grad-careers-file-wrapper">
-                            <label for="resume" class="d-flex justify-content-between align-items-center w-100">
-                                <span>Upload Resume</span>
-                                <i class="fas fa-paperclip"></i>
-                            </label>
-                            <input type="file" id="resume" class="d-none">
-                        </div>
-                        <div class="mb-5 grad-careers-file-wrapper">
-                            <label for="portfolio" class="d-flex justify-content-between align-items-center w-100">
-                                <span>Upload Portfolio</span>
-                                <i class="fas fa-paperclip"></i>
-                            </label>
-                            <input type="file" id="portfolio" class="d-none">
-                        </div>
-                        
-                        <!-- Centered Submit Button -->
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-dark grad-careers-submit-btn text-uppercase fw-bold">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script src="js/careers.js"></script>
-
-
-
-==================================================
-File: D:\gradb\components\contact.html
-==================================================
-<!-- <link rel="stylesheet" href="css/components/contact.css"> -->
-
-<section class="grad-contact-section">
-    <div class="container-fluid">
-        <div class="row g-0 align-items-center">
-
-            <!-- Form Column -->
-            <div class="col-lg-7 d-flex justify-content-center">
-
-                <div class="grad-contact-form-container text-dark p-4 p-md-5">
-                    <p class="grad-contact-eyebrow text-uppercase mb-4">GET IN TOUCH WITH US</p>
-
-                    <form id="contactForm" novalidate>
-                        <!-- Name Field -->
-                        <div class="mb-4">
-                            <input type="text" class="form-control grad-contact-input" id="name" placeholder="Name"
-                                required>
-                        </div>
-
-                        <!-- Phone Number Field -->
-                        <div class="mb-4">
-                            <input type="tel" class="form-control grad-contact-input" id="phone"
-                                placeholder="Phone Number" required>
-                        </div>
-
-                        <!-- Email Field -->
-                        <div class="mb-4">
-                            <input type="email" class="form-control grad-contact-input" id="email" placeholder="Email"
-                                required>
-                        </div>
-
-                        <!-- Message Field -->
-                        <div class="mb-4">
-                            <textarea class="form-control grad-contact-input" id="message" placeholder="Message"
-                                rows="4" required></textarea>
-                        </div>
-
-                        <!-- Centered Submit Button -->
-                        <div class="text-center">
-                            <button type="submit"
-                                class="btn btn-dark grad-contact-submit-btn text-uppercase fw-bold">Send
-                                Message</button>
-                        </div>
-                    </form>
-
-                    <div class="grad-contact-social mt-5">
-                        <div class="social-icons d-flex justify-content-center gap-4 mb-3">
-                            <a href="mailto:info@gradarchitects.com" class="social-icon">
-                                <i class="fas fa-envelope fa-lg"></i>
-                            </a>
-                            <a href="https://wa.me/919876543210" class="social-icon">
-                                <i class="fab fa-whatsapp fa-lg"></i>
-                            </a>
-                            <a href="tel:+919876543210" class="social-icon">
-                                <i class="fas fa-phone fa-lg"></i>
-                            </a>
-                        </div>
-                        <div class="contact-info text-center">
-                            <p class="mb-0">123 Architecture Street, Chennai.</p>
-                            <p class="mb-1">+91 98765 43210 | info@gradarchitects.com</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- Image Column - Hidden on mobile -->
-            <div class="col-lg-5 d-none d-lg-block">
-                <img src="/images/contact.jpg" class="grad-contact-image" alt="Modern architecture building">
-            </div>
-        </div>
-    </div>
-</section>
-
-<script src="js/contact.js"></script>
-
-
-
-==================================================
-File: D:\gradb\components\home.html
+File: C:\Users\LENOVO\Desktop\gradb\components\home.html
 ==================================================
 <!-- <link rel="stylesheet" href="/css/components/home.css"> -->
 
@@ -330,7 +157,7 @@ File: D:\gradb\components\home.html
 
 
 ==================================================
-File: D:\gradb\components\philosophy.html
+File: C:\Users\LENOVO\Desktop\gradb\components\philosophy.html
 ==================================================
 <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -389,7 +216,7 @@ File: D:\gradb\components\philosophy.html
 
 
 ==================================================
-File: D:\gradb\components\projects.html
+File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
 ==================================================
 <!DOCTYPE html>
 <html lang="en">
@@ -1066,14 +893,13 @@ File: D:\gradb\components\projects.html
 
 
 ==================================================
-File: D:\gradb\components\services.html
+File: C:\Users\LENOVO\Desktop\gradb\components\services.html
 ==================================================
-<!-- <link rel="stylesheet" href="css/components/services.css"> -->
-
+<!-- Services Section -->
 <section class="grad-services-section" id="grad-services">
     <div class="container-fluid px-md-5">
         <h4 class="text-center mb-4">OUR SERVICES</h4>
-        
+
         <div class="grad-services-container">
             <div class="grad-service-column">
                 <span class="grad-vertical-text">ARCHITECTURAL DESIGN</span>
@@ -1125,7 +951,7 @@ File: D:\gradb\components\services.html
 
 
 ==================================================
-File: D:\gradb\css\components\about.css
+File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
 ==================================================
 .about-section {
   padding: 100px 0;
@@ -1439,7 +1265,7 @@ File: D:\gradb\css\components\about.css
 
 
 ==================================================
-File: D:\gradb\css\components\careers.css
+File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
 ==================================================
 /* css/components/careers.css - UPDATED TO MATCH CONTACT PAGE */
 .grad-careers-section {
@@ -1689,7 +1515,7 @@ File: D:\gradb\css\components\careers.css
 
 
 ==================================================
-File: D:\gradb\css\components\contact.css
+File: C:\Users\LENOVO\Desktop\gradb\css\components\contact.css
 ==================================================
 /* Contact Section Styles - Matching Careers Section Design */
 .grad-contact-section {
@@ -2057,7 +1883,7 @@ File: D:\gradb\css\components\contact.css
 
 
 ==================================================
-File: D:\gradb\css\components\home.css
+File: C:\Users\LENOVO\Desktop\gradb\css\components\home.css
 ==================================================
 .home-section {
   padding: 0;
@@ -2174,7 +2000,7 @@ File: D:\gradb\css\components\home.css
 
 
 ==================================================
-File: D:\gradb\css\components\philosophy.css
+File: C:\Users\LENOVO\Desktop\gradb\css\components\philosophy.css
 ==================================================
 /* CSS Variables */
 :root {
@@ -2589,7 +2415,7 @@ File: D:\gradb\css\components\philosophy.css
 
 
 ==================================================
-File: D:\gradb\css\components\projects.css
+File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
 ==================================================
 /* Projects Page Specific Styles */
 :root {
@@ -3498,7 +3324,7 @@ File: D:\gradb\css\components\projects.css
 
 
 ==================================================
-File: D:\gradb\css\components\services.css
+File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
 ==================================================
 /* services.css - Updated for hover functionality with single expanded service */
 .grad-services-section {
@@ -3584,17 +3410,22 @@ File: D:\gradb\css\components\services.css
     opacity: 0;
 }
 
-/* FIXED HOVER EFFECT - Only expand on hover, keep default expanded */
-.grad-services-container .grad-service-column:not(:first-child):hover {
+/* HOVER EFFECT - Expand on hover, collapse others */
+.grad-services-container:hover .grad-service-column:not(:hover) {
+    flex: 0 0 60px !important;
+    min-width: 60px !important;
+}
+
+.grad-services-container:hover .grad-service-column:hover {
     flex: 1 1 100% !important;
     min-width: 200px !important;
 }
 
-.grad-services-container .grad-service-column:not(:first-child):hover .grad-vertical-text {
+.grad-services-container:hover .grad-service-column:hover .grad-vertical-text {
     opacity: 0 !important;
 }
 
-.grad-services-container .grad-service-column:not(:first-child):hover .grad-service-content {
+.grad-services-container:hover .grad-service-column:hover .grad-service-content {
     opacity: 1 !important;
 }
 
@@ -3641,7 +3472,7 @@ File: D:\gradb\css\components\services.css
 }
 
 .grad-service-column:first-child .grad-service-content img,
-.grad-services-container .grad-service-column:not(:first-child):hover .grad-service-content img {
+.grad-services-container:hover .grad-service-column:hover .grad-service-content img {
     transform: scale(1.05);
 }
 
@@ -3660,7 +3491,7 @@ File: D:\gradb\css\components\services.css
 }
 
 .grad-service-column:first-child .grad-content-overlay,
-.grad-services-container .grad-service-column:not(:first-child):hover .grad-content-overlay {
+.grad-services-container:hover .grad-service-column:hover .grad-content-overlay {
     transform: translateY(0);
 }
 
@@ -3740,49 +3571,22 @@ File: D:\gradb\css\components\services.css
         min-width: 100% !important;
     }
     
-    /* Default expanded service on mobile */
     .grad-service-column:first-child {
         flex: 1 1 350px !important;
     }
     
-    .grad-service-column:first-child .grad-vertical-text {
-        opacity: 0 !important;
-    }
-    
-    .grad-service-column:first-child .grad-service-content {
-        opacity: 1 !important;
-        pointer-events: auto !important;
-    }
-    
-    /* Click-expanded services on mobile */
-    .grad-service-column.grad-expanded {
-        flex: 1 1 350px !important;
-    }
-    
-    .grad-service-column.grad-expanded .grad-vertical-text {
-        opacity: 0 !important;
-    }
-    
-    .grad-service-column.grad-expanded .grad-service-content {
-        opacity: 1 !important;
-        pointer-events: auto !important;
-    }
-    
-    /* Disable ALL hover effects on mobile */
-    .grad-services-container .grad-service-column:hover {
-        flex: 0 0 70px !important;
-    }
-    
-    .grad-services-container .grad-service-column:hover .grad-vertical-text {
-        opacity: 1 !important;
-    }
-    
-    .grad-services-container .grad-service-column:hover .grad-service-content {
-        opacity: 0 !important;
-    }
-    
     .grad-service-column:last-child {
         border-bottom: none;
+    }
+    
+    /* Disable hover effects on mobile */
+    .grad-services-container:hover .grad-service-column:not(:hover) {
+        flex: 0 0 70px !important;
+        min-width: 100% !important;
+    }
+    
+    .grad-services-container:hover .grad-service-column:hover {
+        flex: 1 1 350px !important;
     }
     
     .grad-vertical-text {
@@ -3793,6 +3597,18 @@ File: D:\gradb\css\components\services.css
         padding: 5px 10px;
     }
     
+    .grad-service-column:not(:first-child) .grad-vertical-text {
+        transform: none;
+    }
+    
+    .grad-service-column:first-child .grad-vertical-text {
+        transform: scale(0.8);
+    }
+    
+    .grad-service-column:not(:first-child) .grad-vertical-text {
+        transform: scale(1.05);
+    }
+    
     .grad-content-overlay {
         padding: 30px 20px 20px;
     }
@@ -3801,6 +3617,7 @@ File: D:\gradb\css\components\services.css
         font-size: 1.5rem;
     }
     
+    /* FIXED: Mobile image fitting */
     .grad-service-content img {
         object-fit: cover !important;
         object-position: center center !important;
@@ -3811,6 +3628,7 @@ File: D:\gradb\css\components\services.css
     .grad-services-section {
         padding: 60px 0;
         margin-top: -80px;
+
     }
     
     .grad-services-container {
@@ -3821,7 +3639,7 @@ File: D:\gradb\css\components\services.css
         flex: 1 1 300px !important;
     }
     
-    .grad-service-column.grad-expanded {
+    .grad-services-container:hover .grad-service-column:hover {
         flex: 1 1 300px !important;
     }
     
@@ -3847,7 +3665,7 @@ File: D:\gradb\css\components\services.css
 
 
 ==================================================
-File: D:\gradb\css\style.css
+File: C:\Users\LENOVO\Desktop\gradb\css\style.css
 ==================================================
 /* ================================
    Mobile Navigation Enhancements
@@ -4323,7 +4141,7 @@ img {
 
 
 ==================================================
-File: D:\gradb\js\careers.js
+File: C:\Users\LENOVO\Desktop\gradb\js\careers.js
 ==================================================
 // js/careers.js
 document.addEventListener('DOMContentLoaded', function() {
@@ -4351,7 +4169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 ==================================================
-File: D:\gradb\js\contact.js
+File: C:\Users\LENOVO\Desktop\gradb\js\contact.js
 ==================================================
 // Contact Form JavaScript
 document.addEventListener('DOMContentLoaded', function() {
@@ -4398,7 +4216,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 ==================================================
-File: D:\gradb\js\home.js
+File: C:\Users\LENOVO\Desktop\gradb\js\home.js
 ==================================================
 
 
@@ -4445,7 +4263,7 @@ if (typeof window.initializeSlider === 'undefined') {
 
 
 ==================================================
-File: D:\gradb\js\kent-slider.js
+File: C:\Users\LENOVO\Desktop\gradb\js\kent-slider.js
 ==================================================
 // kent-slider.js - Auto-changing image slider for Kent Avenue Penthouse (Home Section Style)
 class KentSlider {
@@ -4545,7 +4363,7 @@ document.addEventListener('componentLoaded', function() {
 
 
 ==================================================
-File: D:\gradb\js\projects.js
+File: C:\Users\LENOVO\Desktop\gradb\js\projects.js
 ==================================================
 // Projects Page JavaScript
 class ProjectsManager {
@@ -4875,7 +4693,7 @@ document.head.appendChild(style);
 
 
 ==================================================
-File: D:\gradb\js\script.js
+File: C:\Users\LENOVO\Desktop\gradb\js\script.js
 ==================================================
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
@@ -4982,7 +4800,15 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "home", file: "components/home.html" },
         { id: "about", file: "components/about.html" },
         { id: "philosophy", file: "components/philosophy.html" },
-        { id: "services", file: "components/services.html" },
+        { id: "services", file: "components/services.html", callback: () => {
+            console.log("Services component loaded successfully");
+            // Initialize services functionality after component loads
+            setTimeout(() => {
+                if (typeof initializeGradServices === 'function') {
+                    initializeGradServices();
+                }
+            }, 100);
+        }},
         { id: "projects", file: "components/projects.html", callback: () => {
             console.log("Projects component loaded successfully");
             setTimeout(initializeProjects, 100);
@@ -5017,8 +4843,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start loading sequence
     loadNextComponent(0);
 });
-
-
 
 
 // ================================
@@ -5485,12 +5309,12 @@ function loadComponent(sectionId, filePath, callback) {
 
 
 ==================================================
-File: D:\gradb\js\services.js
+File: C:\Users\LENOVO\Desktop\gradb\js\services.js
 ==================================================
 // services.js - Updated for single expanded service functionality
 
 function initializeGradServices() {
-    console.log('Initializing Grad Services...');
+    console.log('Initializing Grad Services with single expanded service...');
     
     const serviceColumns = document.querySelectorAll('.grad-service-column');
     console.log('Found service columns:', serviceColumns.length);
@@ -5500,79 +5324,25 @@ function initializeGradServices() {
         return;
     }
     
-    // Check if we're on mobile
-    function isMobile() {
-        return window.innerWidth <= 768;
+    // Expand first service by default
+    if (!document.querySelector('.grad-expanded')) {
+        serviceColumns[0].classList.add('grad-expanded');
     }
     
-    // Add click event listeners for mobile only
+    // Add click event listeners to all service columns
     serviceColumns.forEach(column => {
         column.addEventListener('click', function() {
-            if (isMobile()) {
-                console.log('Mobile: Service column clicked');
-                
-                // If already expanded (first service or clicked expanded), do nothing
-                if (this.classList.contains('grad-expanded') || this === serviceColumns[0]) {
-                    return;
-                }
-                
-                // Remove expanded class from all columns except first
-                serviceColumns.forEach(col => {
-                    if (col !== serviceColumns[0]) {
-                        col.classList.remove('grad-expanded');
-                    }
-                });
-                
-                // Add expanded class to clicked column
-                this.classList.add('grad-expanded');
-            }
-        });
-        
-        // Add touch event for better mobile support
-        column.addEventListener('touchend', function(e) {
-            if (isMobile()) {
-                e.preventDefault();
-                console.log('Mobile: Service column touched');
-                
-                // If already expanded (first service or clicked expanded), do nothing
-                if (this.classList.contains('grad-expanded') || this === serviceColumns[0]) {
-                    return;
-                }
-                
-                // Remove expanded class from all columns except first
-                serviceColumns.forEach(col => {
-                    if (col !== serviceColumns[0]) {
-                        col.classList.remove('grad-expanded');
-                    }
-                });
-                
-                // Add expanded class to clicked column
-                this.classList.add('grad-expanded');
-            }
-        });
-    });
-    
-    // Handle window resize to update mobile/desktop behavior
-    let isCurrentlyMobile = isMobile();
-    window.addEventListener('resize', function() {
-        const nowMobile = isMobile();
-        
-        // Only reinitialize if mobile state changed
-        if (nowMobile !== isCurrentlyMobile) {
-            isCurrentlyMobile = nowMobile;
+            console.log('Service column clicked');
             
-            if (!nowMobile) {
-                // Reset to default state on desktop - remove all grad-expanded classes
-                serviceColumns.forEach(col => {
-                    if (col !== serviceColumns[0]) {
-                        col.classList.remove('grad-expanded');
-                    }
-                });
-            }
-        }
+            // Remove expanded class from all columns
+            serviceColumns.forEach(col => col.classList.remove('grad-expanded'));
+            
+            // Add expanded class to clicked column
+            this.classList.add('grad-expanded');
+        });
     });
     
-    console.log('Grad Services functionality initialized successfully');
+    console.log('Grad Services single expanded service functionality initialized successfully');
 }
 
 // Initialize when DOM is ready
@@ -5588,7 +5358,7 @@ window.initializeGradServices = initializeGradServices;
 
 
 ==================================================
-File: D:\gradb\index.html
+File: C:\Users\LENOVO\Desktop\gradb\index.html
 ==================================================
 <!DOCTYPE html>
 <html lang="en">
