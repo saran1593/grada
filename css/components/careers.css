@@ -1,4 +1,4 @@
-/* css/components/careers.css - UPDATED TO MATCH CONTACT PAGE */
+/* css/components/careers.css - UPDATED WITH VALIDATION STYLES */
 .grad-careers-section {
     min-height: 100vh;
     width: 100%;
@@ -32,9 +32,10 @@
     border-radius: 0 !important;
     box-shadow: none !important;
     padding: 0.75rem 0 !important;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 1rem;
     width: 100%;
+    resize: none;
 }
 
 .grad-careers-input:focus {
@@ -49,25 +50,41 @@
     opacity: 1;
 }
 
-.grad-careers-file-wrapper {
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: border-color 0.3s ease;
+/* Textarea specific styles */
+.grad-careers-input textarea {
+    resize: vertical;
+    min-height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.5) !important;
+    border-radius: 4px !important;
+    padding: 0.75rem !important;
+    background: transparent !important;
+    transition: all 0.3s ease;
 }
 
-.grad-careers-file-wrapper:hover {
-    border-bottom-color: black;
+.grad-careers-input textarea:focus {
+    border-color: rgb(0, 0, 0) !important;
+    background: transparent !important;
 }
 
-.grad-careers-file-wrapper label {
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 0;
+/* Validation Styles */
+.grad-careers-input.is-invalid {
+    border-bottom-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.05) !important;
 }
 
-.grad-careers-file-wrapper label i {
-    color: black;
+.grad-careers-input.is-valid {
+    border-bottom-color: #28a745 !important;
+    background-color: rgba(40, 167, 69, 0.05) !important;
+}
+
+.grad-careers-input textarea.is-invalid {
+    border-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.05) !important;
+}
+
+.grad-careers-input textarea.is-valid {
+    border-color: #28a745 !important;
+    background-color: rgba(40, 167, 69, 0.05) !important;
 }
 
 .grad-careers-submit-btn {
@@ -89,7 +106,32 @@
     border: 1px solid #000000 !important;
 }
 
-/* UPDATED: Careers image styles - matching contact section exactly */
+/* Success message styles */
+.alert-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 1rem 1.25rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.alert-success strong {
+    color: #0f5132;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* UPDATED: Careers image styles */
 .grad-careers-image {
     width: 80%;
     height: 70vh;
@@ -145,6 +187,10 @@
         padding: 0.6rem 0 !important;
     }
     
+    .grad-careers-input textarea {
+        min-height: 80px;
+    }
+    
     .grad-careers-submit-btn {
         width: 100%;
         max-width: 250px;
@@ -178,6 +224,11 @@
     .grad-careers-input {
         font-size: 0.85rem;
         padding: 0.5rem 0 !important;
+    }
+    
+    .grad-careers-input textarea {
+        min-height: 70px;
+        font-size: 0.85rem;
     }
     
     .grad-careers-submit-btn {
@@ -238,7 +289,7 @@
         padding: 1rem 1.5rem !important;
     }
     
-    .grad-careers-file-wrapper {
-        padding-bottom: 0.5rem;
+    .grad-careers-input textarea {
+        min-height: 60px;
     }
 }

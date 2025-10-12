@@ -1,7 +1,169 @@
+==================================================
+File: D:\gradb\components\about.html
+==================================================
+<link rel="stylesheet" href="/css/components/about.css">
+
+<section class="about-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+  
+            <div class="col-lg-6 order-lg-2">
+                <div class="about-content">
+                    <h3 class="mb-4">ABOUT US</h3>
+                    <p class="mb-4">Grad Architects is led by <strong>Principal Architect Vishnu Priya</strong>, who brings rich experience in Residential, Commercial, and Industrial projects. Before founding the firm, she worked with leading practices such as A&E Architects and Engineers, Chennai.</p>
+                    
+                    <p class="mb-4">Since its inception, the firm has grown steadily, delivering projects that balance guidelines, aesthetics, and context. Our dedicated team ensures personalized care, from <strong>initial planning to detailed design</strong> and <strong>on-site execution.</strong></p>
+                    
+                    <p class="mb-5">As a certified professional in <strong>Mud Architecture</strong> and a passionate advocate of <strong>Green Architecture</strong>, Vishnu Priya's philosophy drives Grad Architects' focus on sustainability, innovation, and timeless design.</p>
+                    
+                    <a href="#projects" class="btn btn-view-projects">VIEW ALL PROJECTS</a>
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1 position-relative">
+                <div class="about-image">
+                    <img src="/images/about.png" alt="About Grad Architects" class="img-fluid rounded shadow">
+                </div>
+                <div class="vertical-text">
+                    <span>BUILDING WITH PURPOSE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\home.html
+File: D:\gradb\components\careers.html
+==================================================
+<!-- <link rel="stylesheet" href="/css/components/careers.css"> -->
+
+<section class="grad-careers-section">
+    <div class="container-fluid">
+        <div class="row g-0 align-items-center">
+
+            <!-- Image Column - Hidden on mobile (same structure as contact) -->
+            <div class="col-lg-5 d-none d-lg-block">
+                <img src="/images/career.jpg" class="grad-careers-image" alt="Modern building exterior">
+            </div>
+
+            <!-- Form Column -->
+            <div class="col-lg-7 d-flex justify-content-center">
+               
+                <div class="grad-careers-form-container text-dark p-4 p-md-5">
+                    <p class="grad-careers-eyebrow text-uppercase mb-4">WE'RE ALWAYS LOOKING FOR TALENT</p>
+                    
+                    <form id="careerForm" novalidate>
+                        <div class="mb-4">
+                            <input type="text" class="form-control grad-careers-input" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" class="form-control grad-careers-input" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" class="form-control grad-careers-input" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control grad-careers-input" id="message" placeholder="Write your message" rows="4" required></textarea>
+                        </div>
+                        
+                        <!-- Centered Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-dark grad-careers-submit-btn text-uppercase fw-bold">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/careers.js"></script> 
+
+
+
+==================================================
+File: D:\gradb\components\contact.html
+==================================================
+<!-- <link rel="stylesheet" href="css/components/contact.css"> -->
+
+<section class="grad-contact-section">
+    <div class="container-fluid">
+        <div class="row g-0 align-items-center">
+
+            <!-- Form Column -->
+            <div class="col-lg-7 d-flex justify-content-center">
+
+                <div class="grad-contact-form-container text-dark p-4 p-md-5">
+                    <p class="grad-contact-eyebrow text-uppercase mb-4">GET IN TOUCH WITH US</p>
+
+                    <form id="contactForm" novalidate>
+                        <!-- Name Field -->
+                        <div class="mb-4">
+                            <input type="text" class="form-control grad-contact-input" id="name" placeholder="Name"
+                                required>
+                        </div>
+
+                        <!-- Phone Number Field -->
+                        <div class="mb-4">
+                            <input type="tel" class="form-control grad-contact-input" id="phone"
+                                placeholder="Phone Number" required>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="mb-4">
+                            <input type="email" class="form-control grad-contact-input" id="email" placeholder="Email"
+                                required>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="mb-4">
+                            <textarea class="form-control grad-contact-input" id="message" placeholder="Message"
+                                rows="4" required></textarea>
+                        </div>
+
+                        <!-- Centered Submit Button -->
+                        <div class="text-center">
+                            <button type="submit"
+                                class="btn btn-dark grad-contact-submit-btn text-uppercase fw-bold">Send
+                                Message</button>
+                        </div>
+                    </form>
+
+                    <div class="grad-contact-social mt-5">
+                        <div class="social-icons d-flex justify-content-center gap-4 mb-3">
+                            <a href="mailto:info@gradarchitects.com" class="social-icon">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </a>
+                            <a href="https://wa.me/919876543210" class="social-icon">
+                                <i class="fab fa-whatsapp fa-lg"></i>
+                            </a>
+                            <a href="tel:+919876543210" class="social-icon">
+                                <i class="fas fa-phone fa-lg"></i>
+                            </a>
+                        </div>
+                        <div class="contact-info text-center">
+                            <p class="mb-0">123 Architecture Street, Chennai.</p>
+                            <p class="mb-1">+91 98765 43210 | info@gradarchitects.com</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Image Column - Hidden on mobile -->
+            <div class="col-lg-5 d-none d-lg-block">
+                <img src="/images/contact.jpg" class="grad-contact-image" alt="Modern architecture building">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/contact.js"></script>
+
+
+
+==================================================
+File: D:\gradb\components\home.html
 ==================================================
 <!-- <link rel="stylesheet" href="/css/components/home.css"> -->
 
@@ -116,33 +278,36 @@ File: C:\Users\LENOVO\Desktop\gradb\components\home.html
       <div class="carousel-item active">
         <img src="/images/P1/1.jpg" class="d-block w-100" alt="Architectural Design 1">
         <div class="carousel-content">
-          <h1 class="home-hero-title">G R A D A R C H I T E C T S</h1>
+          <h1 class="home-hero-title">KENT AVENUE PENTHOUSE</h1>
           <p class="home-hero-description">
-            Crafting timeless architectural solutions that blend innovation with sustainability,
-            creating spaces that inspire and endure.
+           Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
+one of its kind; New York’s industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
           </p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/images/h2.png" class="d-block w-100" alt="Architectural Design 2">
+        <img src="/images/P2/1.jpg" class="d-block w-100" alt="Architectural Design 2">
         <div class="carousel-content">
-          <h1 class="home-hero-title">D E S I G N E X C E L L E N C E</h1>
+          <h1 class="home-hero-title">Sjöparken</h1>
           <p class="home-hero-description">
-            Transforming visions into reality with meticulous attention to detail
-            and client-focused architectural solutions.
+Sjöparken, a sanctuary of understated luxury immersed in the embrace of nature, invites you on an extraordinary retreat. Drawing
+inspiration from the elegance of Nordic simplicity, the timeless traditions of Japanese design, and the tropical allure of resort living,
+this architectural gem emerges as a unique hybrid – a harmonious blend of distinct influences that converge seamlessly within its
+walls.
           </p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/images/h3.png" class="d-block w-100" alt="Architectural Design 3">
+        <img src="/images/P3/1.jpg" class="d-block w-100" alt="Architectural Design 3">
         <div class="carousel-content">
-          <h1 class="home-hero-title">S U S T A I N A B L E V I S I O N</h1>
+          <h1 class="home-hero-title">Soft Minimal</h1>
           <p class="home-hero-description">
-            Pioneering green architecture and mud construction techniques
-            for a sustainable future.
+Through insightful essays and tactile imagery collected in Soft Minimal, we share the principles that underpin a human-centic design
+philosophy honed over 15 years.
           </p>
         </div>
       </div>
+
     </div>
 
     <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
@@ -157,7 +322,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\home.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\philosophy.html
+File: D:\gradb\components\philosophy.html
 ==================================================
 <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,7 +381,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\philosophy.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
+File: D:\gradb\components\projects.html
 ==================================================
 <!DOCTYPE html>
 <html lang="en">
@@ -242,9 +407,9 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
 
         /* Section Title Size Reduction */
         .projects-section-title {
-            font-size: 1.1rem !important;
-            letter-spacing: 0.25em !important;
-            margin-bottom: 2.5rem !important;
+            font-size: 1rem !important;
+            letter-spacing: 0.2em !important;
+            margin-bottom: 3rem !important;
         }
 
         /* 1) Tablet / small desktop breakpoint */
@@ -279,7 +444,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
             }
 
             .kent-slider-container .carousel-item img {
-                height: 70vh !important;
+                height: 60vh !important;
                 min-height: 420px !important;
                 object-fit: contain !important;
                 object-position: center center !important;
@@ -290,7 +455,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
             .full-width-section .project-item-content,
             .soft-minimal-content.full-width {
                 padding: 1.25rem 1rem !important;
-                bottom: 14px !important;
+                bottom: 20px !important;
                 background: linear-gradient(transparent, rgba(0, 0, 0, 0.78)) !important;
             }
 
@@ -312,11 +477,11 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
             }
 
             .project-item-title {
-                font-size: 0.9rem !important;
+                font-size: 0.7rem !important;
             }
 
-            .project-item-description {
-                font-size: 0.78rem !important;
+            .project-item-description-img {
+                font-size: 0.5rem !important;
             }
         }
 
@@ -326,6 +491,14 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                 font-size: 0.9rem !important;
                 letter-spacing: 0.15em !important;
                 margin-bottom: 1.5rem !important;
+            }
+
+            .project-item-title {
+                font-size: 0.7rem !important;
+            }
+
+            .project-item-description-img {
+                font-size: 0.5rem !important;
             }
 
             .full-width-image .project-item-image,
@@ -377,6 +550,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
             .project-item-content {
                 text-align: center !important;
             }
+
         }
 
         /* 3) Small mobile phones (≤400px) */
@@ -417,7 +591,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                     <img src="../images/P1/1.jpg" alt="Kent Avenue Penthouse" class="project-img">
                 </div>
                 <div class="project-item-content">
-                    <h1 class="project-hero-title">K e n t A v e n u e P e n t h o u s e</h1>
+                    <h1 class="project-hero-title">K e n t  A v e n u e  P e n t h o u s e</h1>
                     <p class="project-hero-description">
                         Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the
                         Kent Avenue penthouse apartment is
@@ -457,7 +631,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
     <!-- Row 3: Latest Work - 2x3 Grid with Vertical Text -->
     <section id="latest-work" class="latest-work-section">
         <div class="container">
-            <h2 class="projects-section-title">L a t e s t w o r k</h2>
+            <h2 class="projects-section-title">L a t e s t  w o r k</h2>
 
             <!-- Vertical Text Left -->
             <div class="vertical-text-left">
@@ -476,11 +650,13 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P1/2.png" alt="Audo House Copenhagen" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">A U D O H o u s e</h3>
+                        <h3 class="project-item-title">A U D O  H O U S E</h3>
                         <p class="project-item-description">
-                            In Copenhagen's evolving Nordhavn district, Audo House redefines how we live, work, and
+                            In Copenhagen’s evolving Nordhavn district, Audo House redefines how we live, work, and
                             connect. Designed by Norm Architects, the historic 1918
-                            building has been carefully transformed into a fluid and welcoming destination.
+                            building has been carefully transformed into a fluid and welcoming destination – uniting
+                            café, restaurant, concept shop, event spaces and exclusive
+                            residences under one roof.
                         </p>
                         <div class="project-item-tags">
                             <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span>
@@ -494,7 +670,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P1/3.png" alt="Shore Collection" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">S h o r e C o l l e c t i o n</h3>
+                        <h3 class="project-item-title">S h o r e  C o l l e c t i o n</h3>
                         <p class="project-item-description">
                             Inspired by the timeless allure of Denmark's coasts, Shore Collection
                             celebrates the serene yet dynamic essence of the shoreline and bustling
@@ -512,10 +688,9 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P1/4.png" alt="Woven Tatami Rug" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">W o v e n T a t a m i R u g</h3>
+                        <h3 class="project-item-title">W o v e n  T a t a m i  R u g</h3>
                         <p class="project-item-description">
-                            A beautifully crafted rug that combines traditional Japanese tatami weaving techniques with
-                            modern Scandinavian design principles.
+
                         </p>
                         <div class="project-item-tags">
                             <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
@@ -530,7 +705,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P1/5.png" alt="3 Days of Design 2025" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">3 d a y s 2 0 2 5</h3>
+                        <h3 class="project-item-title">3  d a y s  2 0 2 5</h3>
                         <p class="project-item-description">
                             The annual 3daysofdesign is a festival for dreamers, doers, and the
                             design curious. This year, Norm Architects will present new designs and
@@ -548,7 +723,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P1/6.png" alt="Karimoku Case Study" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">K a r i m o k u · R h o F i e r a 2 0 2 5</h3>
+                        <h3 class="project-item-title">K a r i m o k u  · R h o F i e r a  2 0 2 5</h3>
                         <p class="project-item-description">
                             A study in contrasts and calm, 'A Sense of Serenity' presents Karimoku
                             Case in a space defined by tactile richness, subdued tones, and timeless
@@ -566,11 +741,8 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/p1/7.png" alt="Collection 002" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">C o l l e c t i o n 0 0 2</h3>
-                        <p class="project-item-description">
-                            Our second collection explores the intersection of traditional craftsmanship and
-                            contemporary design, featuring pieces that tell a story of heritage and innovation.
-                        </p>
+                        <h3 class="project-item-title">C o l l e c t i o n  0 0 2</h3>
+                        <p class="project-item-description"></p>
                         <div class="project-item-tags">
                             <span class="project-tag">Design</span> | <span class="project-tag">2025</span>
                         </div>
@@ -590,31 +762,38 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                 <div class="project-item-content">
                     <h3 class="project-item-title">Sjöparken</h3>
                     <p class="project-item-description-img">
-                        Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the
-                        Kent Avenue penthouse apartment is
-                        one of its kind; New York's industrial vibe meets soft minimalism and tactile materials in this
-                        urban retreat above the vibrating city.
+                        Sjöparken, a sanctuary of understated luxury immersed in the embrace of nature, invites you on
+                        an extraordinary retreat. Drawing
+                        inspiration from the elegance of Nordic simplicity, the timeless traditions of Japanese design,
+                        and the tropical allure of resort living,
+                        this architectural gem emerges as a unique hybrid – a harmonious blend of distinct influences
+                        that converge seamlessly within its
+                        walls.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <h2 class="projects-section-title">H o s p i t a l i t y  P r o j e c t s</h2>
+
+
     <!-- Row 5: Two Halves -->
     <section class="halves-section">
         <div class="container">
+
             <div class="project-grid-row halves-row">
                 <div class="project-item-card half-width">
                     <div class="project-item-image">
                         <img src="../images/P2/2.png" alt="TRUNK HOTEL Yoyogi Park" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">T R U N K ( H O T E L ) Y O Y O G I P A R K</h3>
+                        <h3 class="project-item-title">T R U N K ( H O T E L )  Y O Y O G I  P A R K</h3>
                         <p class="project-item-description">
                             TRUNK(HOTEL) YOYOGI PARK is a calm retreat seamlessly woven into the vibrant tapestry of
                             Tokyo. Here, amid the juxtaposition of modernity and
                             tradition, the celebration of leisure and festivity, and the embrace of both the local
-                            community and cherished visitors, you'll discover the perfect
+                            community and cherished visitors, you’ll discover the perfect
                             blend of urban sophistication and natural beauty.
                         </p>
                         <div class="project-item-tags">
@@ -631,7 +810,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                     <div class="project-item-content">
                         <h3 class="project-item-title">Ä N G</h3>
                         <p class="project-item-description">
-                            Sitting as a solitary diamond in the undulating fields of Ästad Vingård – one of Sweden's
+                            Sitting as a solitary diamond in the undulating fields of Ästad Vingård – one of Sweden’s
                             largest vineyards – Restaurang ÄNG is a culinary experience
                             out of the ordinary that engages all senses.
                         </p>
@@ -653,15 +832,13 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                     <img src="../images/P3/1.jpg" alt="Repulse Bay Residence" class="project-img">
                 </div>
                 <div class="project-item-content">
-                    <h3 class="project-item-title">R e p u l s e B a y R e s i d e n c e</h3>
+                    <h3 class="project-item-title">Soft Minimal</h3>
                     <p class="project-item-description-img">
-                        The Repulse Bay Residence is envisioned as a living
-                        gallery that continuously evolve and adapt to a variety
-                        of everyday needs. This thoughtful design creates a
-                        tranquil environment, where each…
+                        Through insightful essays and tactile imagery collected in Soft Minimal, we share the principles that underpin a human-centic design
+philosophy honed over 15 years.
                     </p>
                     <div class="project-item-tags">
-                        <span class="project-tag">Residential</span> | <span class="project-tag">2024</span>
+                        <span class="project-tag"></span>
                     </div>
                 </div>
             </div>
@@ -671,19 +848,19 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
     <!-- Row 7: Five Images Grid for In Residence -->
     <section id="in-residence" class="residence-section">
         <div class="container">
-            <h2 class="projects-section-title">I n R e s i d e n c e</h2>
+            <h2 class="projects-section-title">I n   R e s i d e n c e</h2>
             <div class="five-images-grid">
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P3/2.png" alt="Kent Avenue Penthouse" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">K e n t A v e n u e P e n t h o u s e</h3>
+                        <h3 class="project-item-title">Repulse  Bay  Residence</h3>
                         <p class="project-item-description">
-                            Nestled along the Brooklyn Waterfront, overlooking the
-                            East River and Manhattan Skyline, the Kent Avenue
-                            penthouse apartment is one of its kind; New York's
-                            industrial vibe meets soft minimalism and…
+The Repulse Bay Residence is envisioned as a living
+gallery that continuously evolve and adapt to a variety
+of everyday needs. This thoughtful design creates a
+tranquil environment, where each…
                         </p>
                         <div class="project-item-tags">
                             <span class="project-tag">Residential</span> | <span class="project-tag">2024</span>
@@ -696,14 +873,15 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P3/3.png" alt="Fjord Boat House" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">F j o r d B o a t H o u s e</h3>
+                        <h3 class="project-item-title">Kent  Avenue  Penthouse</h3>
                         <p class="project-item-description">
-                            Uniquely located close to the water's edge on the border
-                            of Denmark & Germany, The Fjord Boat House is used as
-                            a guest house or peaceful retreat when needed.
+Nestled along the Brooklyn Waterfront, overlooking the
+East River and Manhattan Skyline, the Kent Avenue
+penthouse apartment is one of its kind; New York’s
+industrial vibe meets soft minimalism and…
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Residential</span> | <span class="project-tag">2020</span>
+                            <span class="project-tag">Residential</span> | <span class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
@@ -713,12 +891,11 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P3/4.png" alt="Archipelago House" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">A r c h i p e l a g o H o u s e</h3>
+                        <h3 class="project-item-title">Fjord  Boat  House</h3>
                         <p class="project-item-description">
-                            Located on the unspoiled and rocky coast of Sweden, the
-                            Archipelago summer house is a modernized holiday
-                            home embracing all aspects of family life – blending
-                            functionality with an architecture…
+Uniquely located close to the water’s edge on the border
+of Denmark & Germany, The Fjord Boat House is used as
+a guest house or peaceful retreat when needed.
                         </p>
                         <div class="project-item-tags">
                             <span class="project-tag">Residential</span> | <span class="project-tag">2020</span>
@@ -731,15 +908,15 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P3/5.png" alt="Pavilion House" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">P a v i l l i o n H o u s e</h3>
+                        <h3 class="project-item-title">Archipelago  House</h3>
                         <p class="project-item-description">
-                            Elegantly set in the beautiful East Anglian landscape, on
-                            the border of a working farm in Suffolk, the Pavilion
-                            House is a real inside-out construction. The shapes and
-                            materials of…
+Located on the unspoiled and rocky coast of Sweden, the
+Archipelago summer house is a modernized holiday
+home embracing all aspects of family life – blending
+functionality with an architecture…
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Residential</span> | <span class="project-tag">2021</span>
+                            <span class="project-tag">Residential</span> | <span class="project-tag">2020</span>
                         </div>
                     </div>
                 </div>
@@ -749,13 +926,15 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/p3/6.png" alt="Coastal Residence" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">C o a s t a l R e s i d e n c e</h3>
+                        <h3 class="project-item-title">Pavillion  House</h3>
                         <p class="project-item-description">
-                            A modern coastal home designed to embrace the ocean views while providing sustainable living
-                            solutions and seamless indoor-outdoor connectivity.
+Elegantly set in the beautiful East Anglian landscape, on
+the border of a working farm in Suffolk, the Pavilion
+House is a real inside-out construction. The shapes and
+materials of…
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Residential</span> | <span class="project-tag">2023</span>
+                            <span class="project-tag">Residential</span> | <span class="project-tag">2021</span>
                         </div>
                     </div>
                 </div>
@@ -771,11 +950,10 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                     <img src="../images/P4/1.jpg" alt="Soft Minimal" class="project-img">
                 </div>
                 <div class="soft-minimal-content full-width">
-                    <h3 class="soft-minimal-title">S o f t M i n i m a l</h3>
+                    <h3 class="soft-minimal-title">Kent  Avenue  Penthouse</h3>
                     <p class="soft-minimal-text">
-                        Through insightful essays and tactile imagery collected in Soft Minimal, we share the principles
-                        that underpin a human-centic design
-                        philosophy honed over 15 years.
+Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
+one of its kind; New York’s industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
                     </p>
                 </div>
             </div>
@@ -785,17 +963,17 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
     <!-- Row 9: Four Images Objects of Desire -->
     <section id="objects-of-desire" class="objects-section">
         <div class="container">
-            <h2 class="projects-section-title">O b j e c t s o f D e s i r e</h2>
+            <h2 class="projects-section-title">take  a  seat</h2>
             <div class="four-images-grid">
                 <div class="project-item-card four-grid-item">
                     <div class="project-item-image">
                         <img src="../images/P4/2.png" alt="Object 003" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">O b j e c t 0 0 3</h3>
+                        <h3 class="project-item-title">Track  Sofa</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
-                                class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Furniture</span> | <span
+                                class="project-tag">2022</span>
                         </div>
                     </div>
                 </div>
@@ -805,10 +983,10 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P4/3.png" alt="Object 004" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">O b j e c t 0 0 4</h3>
+                        <h3 class="project-item-title">N-SW01  Swivel  Chair</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
-                                class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Furniture</span> | <span
+                                class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
@@ -818,10 +996,10 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P4/4.png" alt="Object 005" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">O b j e c t 0 0 5</h3>
+                        <h3 class="project-item-title">Co  Task  Chair</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
-                                class="project-tag">2023</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Furniture</span> | <span
+                                class="project-tag">2024</span>
                         </div>
                     </div>
                 </div>
@@ -831,10 +1009,10 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P4/5.png" alt="Object 006" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">O b j e c t 0 0 6</h3>
+                        <h3 class="project-item-title">MG406 Stool & Side Table</h3>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
-                                class="project-tag">2024</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Furniture</span> | <span
+                                class="project-tag">2022</span>
                         </div>
                     </div>
                 </div>
@@ -851,14 +1029,13 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P5/1.png" alt="Final Project Left" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">F i n a l P r o j e c t L e f t</h3>
+                        <h3 class="project-item-title">Emi  Tray</h3>
                         <p class="project-item-description">
-                            Final project description on the left side with detailed information about the architectural
-                            design and concept.
+
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Residential</span>
-                            | <span class="project-tag">2024</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span>
+                            | <span class="project-tag">2022</span>
                         </div>
                     </div>
                 </div>
@@ -868,13 +1045,13 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
                         <img src="../images/P5/2.png" alt="Final Project Right" class="project-img">
                     </div>
                     <div class="project-item-content">
-                        <h3 class="project-item-title">F i n a l P r o j e c t R i g h t</h3>
+                        <h3 class="project-item-title">Brandt  Collective</h3>
                         <p class="project-item-description">
-                            Final project description on the right side showcasing innovative design solutions and
-                            sustainable architecture practices.
+The four hardware collections for BRANDT Collective takes the familiar and transforms it into something extraordinary, exploring the interplay
+between form, materiality, and spatial context.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Commercial</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span>
                             | <span class="project-tag">2024</span>
                         </div>
                     </div>
@@ -893,13 +1070,14 @@ File: C:\Users\LENOVO\Desktop\gradb\components\projects.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\components\services.html
+File: D:\gradb\components\services.html
 ==================================================
-<!-- Services Section -->
+<link rel="stylesheet" href="css/components/services.css">
+
 <section class="grad-services-section" id="grad-services">
     <div class="container-fluid px-md-5">
         <h4 class="text-center mb-4">OUR SERVICES</h4>
-
+        
         <div class="grad-services-container">
             <div class="grad-service-column">
                 <span class="grad-vertical-text">ARCHITECTURAL DESIGN</span>
@@ -951,7 +1129,7 @@ File: C:\Users\LENOVO\Desktop\gradb\components\services.html
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
+File: D:\gradb\css\components\about.css
 ==================================================
 .about-section {
   padding: 100px 0;
@@ -1126,14 +1304,15 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
     margin-left: 0;
   }
 
-  /* FIXED: Mobile paragraph alignment - changed to justify */
-  .about-content p {
-    text-align: justify !important;
-    text-align-last: left;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.about-content p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: justify; /* This ensures the text is justified */
+  text-justify: inter-word; /* This is optional and improves justification on some browsers */
+}
+
 
   .about-image {
     display: flex;
@@ -1205,13 +1384,15 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
     text-align: center;
   }
 
-  /* FIXED: Small mobile paragraph alignment - changed to justify */
-  .about-content p {
-    font-size: 1rem;
-    text-align: justify !important;
-    text-align-last: left;
-    max-width: 100%;
-  }
+.about-content p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: justify; /* This ensures the text is justified */
+  text-justify: inter-word; /* This is optional and improves justification on some browsers */
+}
+
 
   .about-image img {
     width: 100%;
@@ -1239,11 +1420,8 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
     font-size: 1.8rem;
   }
 
-  /* FIXED: Extra small mobile paragraph alignment - changed to justify */
   .about-content p {
     font-size: 0.95rem;
-    text-align: justify !important;
-    text-align-last: left;
   }
 
   .about-image img {
@@ -1265,9 +1443,9 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\about.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
+File: D:\gradb\css\components\careers.css
 ==================================================
-/* css/components/careers.css - UPDATED TO MATCH CONTACT PAGE */
+/* css/components/careers.css - UPDATED WITH VALIDATION STYLES */
 .grad-careers-section {
     min-height: 100vh;
     width: 100%;
@@ -1301,9 +1479,10 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
     border-radius: 0 !important;
     box-shadow: none !important;
     padding: 0.75rem 0 !important;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 1rem;
     width: 100%;
+    resize: none;
 }
 
 .grad-careers-input:focus {
@@ -1318,25 +1497,41 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
     opacity: 1;
 }
 
-.grad-careers-file-wrapper {
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: border-color 0.3s ease;
+/* Textarea specific styles */
+.grad-careers-input textarea {
+    resize: vertical;
+    min-height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.5) !important;
+    border-radius: 4px !important;
+    padding: 0.75rem !important;
+    background: transparent !important;
+    transition: all 0.3s ease;
 }
 
-.grad-careers-file-wrapper:hover {
-    border-bottom-color: black;
+.grad-careers-input textarea:focus {
+    border-color: rgb(0, 0, 0) !important;
+    background: transparent !important;
 }
 
-.grad-careers-file-wrapper label {
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 0;
+/* Validation Styles */
+.grad-careers-input.is-invalid {
+    border-bottom-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.05) !important;
 }
 
-.grad-careers-file-wrapper label i {
-    color: black;
+.grad-careers-input.is-valid {
+    border-bottom-color: #28a745 !important;
+    background-color: rgba(40, 167, 69, 0.05) !important;
+}
+
+.grad-careers-input textarea.is-invalid {
+    border-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.05) !important;
+}
+
+.grad-careers-input textarea.is-valid {
+    border-color: #28a745 !important;
+    background-color: rgba(40, 167, 69, 0.05) !important;
 }
 
 .grad-careers-submit-btn {
@@ -1358,7 +1553,32 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
     border: 1px solid #000000 !important;
 }
 
-/* UPDATED: Careers image styles - matching contact section exactly */
+/* Success message styles */
+.alert-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 1rem 1.25rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.alert-success strong {
+    color: #0f5132;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* UPDATED: Careers image styles */
 .grad-careers-image {
     width: 80%;
     height: 70vh;
@@ -1414,6 +1634,10 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
         padding: 0.6rem 0 !important;
     }
     
+    .grad-careers-input textarea {
+        min-height: 80px;
+    }
+    
     .grad-careers-submit-btn {
         width: 100%;
         max-width: 250px;
@@ -1447,6 +1671,11 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
     .grad-careers-input {
         font-size: 0.85rem;
         padding: 0.5rem 0 !important;
+    }
+    
+    .grad-careers-input textarea {
+        min-height: 70px;
+        font-size: 0.85rem;
     }
     
     .grad-careers-submit-btn {
@@ -1507,15 +1736,15 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\careers.css
         padding: 1rem 1.5rem !important;
     }
     
-    .grad-careers-file-wrapper {
-        padding-bottom: 0.5rem;
+    .grad-careers-input textarea {
+        min-height: 60px;
     }
 }
 
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\contact.css
+File: D:\gradb\css\components\contact.css
 ==================================================
 /* Contact Section Styles - Matching Careers Section Design */
 .grad-contact-section {
@@ -1883,7 +2112,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\contact.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\home.css
+File: D:\gradb\css\components\home.css
 ==================================================
 .home-section {
   padding: 0;
@@ -2000,7 +2229,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\home.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\philosophy.css
+File: D:\gradb\css\components\philosophy.css
 ==================================================
 /* CSS Variables */
 :root {
@@ -2058,7 +2287,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\philosophy.css
 }
 
 .section-title {
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -2415,7 +2644,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\philosophy.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
+File: D:\gradb\css\components\projects.css
 ==================================================
 /* Projects Page Specific Styles */
 :root {
@@ -2706,6 +2935,8 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
 .project-categories-section {
     padding: 3rem 0;
     border-bottom: 1px solid var(--projects-border-color);
+    margin-bottom: -160px;
+
 }
 
 .project-categories-nav {
@@ -3093,7 +3324,12 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+    .project-categories-section{
+        margin-bottom: -160px;
+    }
+
+
+
     /* IMPROVED: Mobile image heights for full coverage */
     .grid-item .project-item-image {
         height: 350px;
@@ -3169,11 +3405,11 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
     
     /* FIXED: Reduced text size for mobile */
     .project-item-title {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     
     .project-item-description {
-        font-size: 0.75rem;
+        font-size: 0.3rem;
     }
     
     .projects-section-title {
@@ -3220,13 +3456,13 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
     }
     
     .project-hero-title {
-        font-size: 1rem;
+        font-size: 0.7rem;
         letter-spacing: 0.15em;
         margin-bottom: -10%;
      }
     
     .project-hero-description {
-        font-size: 0.7rem;
+        font-size: 0.3rem;
         margin-top: 0;
     }
     
@@ -3238,7 +3474,9 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
         font-size: 0.9rem;
         letter-spacing: 0.2em;
     }
-    
+    .project-categories-section{
+        margin-bottom: -160px;
+    }
     /* IMPROVED: Better overlay text for small screens */
     .full-width-image .project-item-content,
     .full-width-section .project-item-content {
@@ -3324,7 +3562,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\projects.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
+File: D:\gradb\css\components\services.css
 ==================================================
 /* services.css - Updated for hover functionality with single expanded service */
 .grad-services-section {
@@ -3336,6 +3574,8 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     margin-top: -210px;
+  
+   
 }
 
 .grad-services-section h3 {
@@ -3553,8 +3793,8 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
 @media (max-width: 768px) {
     .grad-services-section {
         padding: 80px 0;
-        margin-top: -150px;
-        margin-bottom: -300px;
+        margin-top: 10px;
+        margin-top: -120px;
     }
     
     .grad-services-container {
@@ -3627,8 +3867,8 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
 @media (max-width: 576px) {
     .grad-services-section {
         padding: 60px 0;
+        margin-top: 10px;
         margin-top: -80px;
-
     }
     
     .grad-services-container {
@@ -3665,7 +3905,7 @@ File: C:\Users\LENOVO\Desktop\gradb\css\components\services.css
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\css\style.css
+File: D:\gradb\css\style.css
 ==================================================
 /* ================================
    Mobile Navigation Enhancements
@@ -4141,35 +4381,48 @@ img {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\careers.js
+File: D:\gradb\js\careers.js
 ==================================================
-// js/careers.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if the career form is on the page to avoid errors
-    const careerForm = document.getElementById('careerForm');
-    
-    if (careerForm) {
-        careerForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const interest = document.getElementById('interest').value;
-            
-            if (name && phone && interest) {
-                alert('Thank you for your application! We will be in touch soon.');
-                careerForm.reset();
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        });
+// ✅ Single DOMContentLoaded Block
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("✅ Careers JS Loaded");
+
+    const form = document.getElementById('careerForm');
+
+    if (!form) {
+        console.error("❌ Form not found. Check ID.");
+        return;
     }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        console.log("✅ Submit Clicked");
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !phone || !email || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        const mailto = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent("Career Application - " + name)}&body=${encodeURIComponent(
+            `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`
+        )}`;
+
+        console.log("📨 Mailto: ", mailto);
+
+        window.location.href = mailto;
+    });
 });
 
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\contact.js
+File: D:\gradb\js\contact.js
 ==================================================
 // Contact Form JavaScript
 document.addEventListener('DOMContentLoaded', function() {
@@ -4216,7 +4469,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\home.js
+File: D:\gradb\js\home.js
 ==================================================
 
 
@@ -4263,7 +4516,7 @@ if (typeof window.initializeSlider === 'undefined') {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\kent-slider.js
+File: D:\gradb\js\kent-slider.js
 ==================================================
 // kent-slider.js - Auto-changing image slider for Kent Avenue Penthouse (Home Section Style)
 class KentSlider {
@@ -4363,7 +4616,7 @@ document.addEventListener('componentLoaded', function() {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\projects.js
+File: D:\gradb\js\projects.js
 ==================================================
 // Projects Page JavaScript
 class ProjectsManager {
@@ -4693,20 +4946,20 @@ document.head.appendChild(style);
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\script.js
+File: D:\gradb\js\script.js
 ==================================================
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
-    
+
     // Mark HTML as loaded to prevent FOUC
     document.documentElement.classList.add('loaded');
-    
+
     // Initialize core features first
     navbarShrink();
     initMobileNavigation();
     preserveImageSizes();
     forceLogoSizeReduction();
-    
+
     // Load components
     loadComponent("home", "components/home.html");
     loadComponent("about", "components/about.html");
@@ -4722,7 +4975,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComponent("contact", "components/contact.html", () => {
         console.log("Contact component loaded successfully");
     });
-    
+
     // Initialize features after components are loaded
     setTimeout(() => {
         initScrollFeatures();
@@ -4750,7 +5003,7 @@ function loadComponent(sectionId, filePath, callback) {
 
     // Add loading state
     section.classList.add('component-loading');
-    
+
     fetch(filePath)
         .then(response => {
             if (!response.ok) {
@@ -4762,19 +5015,19 @@ function loadComponent(sectionId, filePath, callback) {
             section.innerHTML = data;
             section.classList.remove('component-loading');
             section.classList.add('loaded');
-            
+
             // Add the section ID to the loaded content's main container
             const container = section.querySelector('div[class*="section"], section[class*="section"]');
             if (container && !container.id) {
                 container.id = sectionId + '-content';
             }
-            
+
             // Re-initialize navigation after content loads
             setTimeout(() => {
                 initScrollFeatures();
                 navbarShrink();
             }, 100);
-            
+
             if (callback) callback();
         })
         .catch(error => {
@@ -4788,37 +5041,58 @@ function loadComponent(sectionId, filePath, callback) {
 // ================================
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
-    
+
     // Initialize core features first
     navbarShrink();
     initMobileNavigation();
     preserveImageSizes();
     forceLogoSizeReduction();
-    
+
     // Load components with proper sequencing
     const loadSequence = [
         { id: "home", file: "components/home.html" },
         { id: "about", file: "components/about.html" },
         { id: "philosophy", file: "components/philosophy.html" },
-        { id: "services", file: "components/services.html", callback: () => {
-            console.log("Services component loaded successfully");
-            // Initialize services functionality after component loads
-            setTimeout(() => {
-                if (typeof initializeGradServices === 'function') {
-                    initializeGradServices();
-                }
-            }, 100);
-        }},
-        { id: "projects", file: "components/projects.html", callback: () => {
-            console.log("Projects component loaded successfully");
-            setTimeout(initializeProjects, 100);
-        }},
-        { id: "careers", file: "components/careers.html", callback: () => {
-            console.log("Careers component loaded successfully");
-        }},
-        { id: "contact", file: "components/contact.html", callback: () => {
-            console.log("Contact component loaded successfully");
-        }}
+{ id: "services", file: "components/services.html", callback: () => {
+    console.log("✅ Services component loaded successfully");
+    
+    // Force services initialization with multiple fallbacks
+    const initServices = () => {
+        console.log("🔄 Force initializing services...");
+        
+        if (typeof ServicesManager !== 'undefined') {
+            console.log("🎯 Using ServicesManager class");
+            window.servicesManager = new ServicesManager();
+        } else if (typeof initializeServices !== 'undefined') {
+            console.log("🎯 Using initializeServices function");
+            window.servicesManager = initializeServices();
+        } else {
+            console.log("❌ Services functions not found, retrying...");
+            setTimeout(initServices, 500);
+        }
+    };
+    
+    // Try multiple times with increasing delays
+    setTimeout(initServices, 300);
+    setTimeout(initServices, 1000);
+    setTimeout(initServices, 2000);
+}},
+        {
+            id: "projects", file: "components/projects.html", callback: () => {
+                console.log("Projects component loaded successfully");
+                setTimeout(initializeProjects, 100);
+            }
+        },
+        {
+            id: "careers", file: "components/careers.html", callback: () => {
+                console.log("Careers component loaded successfully");
+            }
+        },
+        {
+            id: "contact", file: "components/contact.html", callback: () => {
+                console.log("Contact component loaded successfully");
+            }
+        }
     ];
 
     // Load components sequentially to avoid race conditions
@@ -4832,14 +5106,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 500);
             return;
         }
-        
+
         const item = loadSequence[index];
         loadComponent(item.id, item.file, item.callback);
-        
+
         // Load next component after a short delay
         setTimeout(() => loadNextComponent(index + 1), 100);
     }
-    
+
     // Start loading sequence
     loadNextComponent(0);
 });
@@ -4850,7 +5124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ================================
 function forceLogoSizeReduction() {
     console.log('Forcing logo size reduction...');
-    
+
     // Force navbar logo size
     const navbarLogo = document.querySelector('.navbar-logo');
     if (navbarLogo) {
@@ -4859,7 +5133,7 @@ function forceLogoSizeReduction() {
         navbarLogo.style.width = 'auto';
         console.log('Navbar logo size forced to 25px');
     }
-    
+
     // Force philosophy logo size
     const philosophyLogo = document.querySelector('.philosophy-logo');
     if (philosophyLogo) {
@@ -4868,7 +5142,7 @@ function forceLogoSizeReduction() {
         philosophyLogo.style.width = 'auto';
         console.log('Philosophy logo size forced to 35px');
     }
-    
+
     // Apply responsive sizes
     if (window.innerWidth <= 768) {
         if (navbarLogo) {
@@ -4880,7 +5154,7 @@ function forceLogoSizeReduction() {
             philosophyLogo.style.maxHeight = '28px';
         }
     }
-    
+
     if (window.innerWidth <= 576) {
         if (navbarLogo) {
             navbarLogo.style.height = '18px';
@@ -4891,7 +5165,7 @@ function forceLogoSizeReduction() {
             philosophyLogo.style.maxHeight = '25px';
         }
     }
-    
+
     if (window.innerWidth <= 400) {
         if (navbarLogo) {
             navbarLogo.style.height = '16px';
@@ -4913,7 +5187,7 @@ function navbarShrink() {
         console.log("Navbar not found");
         return;
     }
-    
+
     const shrinkNavbar = () => {
         if (window.scrollY > 50) {
             navbar.classList.add("scrolled");
@@ -4921,10 +5195,10 @@ function navbarShrink() {
             navbar.classList.remove("scrolled");
         }
     };
-    
+
     // Initial check
     shrinkNavbar();
-    
+
     // Listen for scroll events
     window.addEventListener("scroll", shrinkNavbar);
 }
@@ -4935,66 +5209,66 @@ function navbarShrink() {
 function initMobileNavigation() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
+
     if (navbarToggler && navbarCollapse) {
         // Get all navigation links
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        
+
         // Add click event to each navigation link
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                
+
                 const targetId = link.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
-                
+
                 if (targetSection) {
                     // Close mobile menu first
                     if (window.innerWidth < 768) {
-                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
-                                         new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
+                            new bootstrap.Collapse(navbarCollapse, { toggle: false });
                         bsCollapse.hide();
                     }
-                    
+
                     // Update active link
                     const allNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
                     allNavLinks.forEach(navLink => navLink.classList.remove('active'));
                     link.classList.add('active');
-                    
+
                     // Wait for menu to close, then scroll to section
                     setTimeout(() => {
                         const navbarHeight = document.querySelector('.navbar').offsetHeight;
                         const targetPosition = targetSection.offsetTop - navbarHeight;
-                        
+
                         window.scrollTo({
                             top: targetPosition,
                             behavior: 'smooth'
                         });
-                        
+
                         // Update URL
                         window.history.pushState(null, null, `#${targetId}`);
                     }, 300); // Wait for collapse animation
                 }
             });
         });
-        
+
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (window.innerWidth < 768 && 
-                navbarCollapse.classList.contains('show') && 
-                !navbarToggler.contains(e.target) && 
+            if (window.innerWidth < 768 &&
+                navbarCollapse.classList.contains('show') &&
+                !navbarToggler.contains(e.target) &&
                 !navbarCollapse.contains(e.target)) {
-                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
-                                 new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
+                    new bootstrap.Collapse(navbarCollapse, { toggle: false });
                 bsCollapse.hide();
             }
         });
-        
+
         // Handle menu show/hide events
         navbarCollapse.addEventListener('show.bs.collapse', function () {
             console.log('Mobile menu opened');
         });
-        
+
         navbarCollapse.addEventListener('hide.bs.collapse', function () {
             console.log('Mobile menu closed');
         });
@@ -5010,7 +5284,7 @@ function preserveImageSizes() {
         img.style.width = 'auto';
         img.style.height = 'auto';
         img.style.maxWidth = '100%';
-        
+
         // Add loading optimization
         img.loading = 'lazy';
     });
@@ -5031,13 +5305,13 @@ function initializeProjects() {
 
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
-    
+
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
     console.log("Sections found:", sections.length);
     console.log("Nav links found:", navLinks.length);
-    
+
     // Remove active class from all links initially
     navLinks.forEach(link => link.classList.remove("active"));
 
@@ -5061,7 +5335,7 @@ function initScrollFeatures() {
 
             if (mostVisibleSection && highestRatio > 0.3) {
                 console.log("Most visible section:", mostVisibleSection);
-                
+
                 navLinks.forEach(link => {
                     const linkHref = link.getAttribute("href");
                     if (linkHref === `#${mostVisibleSection}`) {
@@ -5074,7 +5348,7 @@ function initScrollFeatures() {
                 });
             }
         },
-        { 
+        {
             threshold: [0.1, 0.3, 0.5, 0.7],
             rootMargin: '-80px 0px -80px 0px'
         }
@@ -5094,23 +5368,23 @@ function initScrollFeatures() {
             event.preventDefault();
             const targetId = this.getAttribute("href").substring(1);
             console.log("Nav link clicked, target:", targetId);
-            
+
             const targetSection = document.getElementById(targetId);
-            
+
             if (targetSection) {
                 // Update active class immediately
                 navLinks.forEach(l => l.classList.remove("active"));
                 this.classList.add("active");
-                
+
                 // Smooth scroll to section
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = targetSection.offsetTop - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: "smooth"
                 });
-                
+
                 // Update URL hash
                 window.history.pushState(null, null, `#${targetId}`);
             }
@@ -5131,12 +5405,12 @@ window.addEventListener('load', () => {
             setTimeout(() => {
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = targetSection.offsetTop - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-                
+
                 // Update active link
                 const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
                 navLinks.forEach(link => {
@@ -5161,7 +5435,7 @@ window.addEventListener('hashchange', () => {
             setTimeout(() => {
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = targetSection.offsetTop - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -5200,13 +5474,13 @@ setViewportHeight();
 function enhanceResponsiveDesign() {
     // Improve mobile navigation
     improveMobileNav();
-    
+
     // Enhance image responsiveness
     enhanceImageResponsiveness();
-    
+
     // Improve touch interactions
     improveTouchInteractions();
-    
+
     // Optimize performance on mobile
     optimizeMobilePerformance();
 }
@@ -5214,11 +5488,11 @@ function enhanceResponsiveDesign() {
 function improveMobileNav() {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    
+
     if (window.innerWidth <= 768) {
         // Add mobile-specific classes
         navbar.classList.add('mobile-nav');
-        
+
         // Improve touch targets
         navLinks.forEach(link => {
             link.style.padding = '12px 15px';
@@ -5229,12 +5503,12 @@ function improveMobileNav() {
 
 function enhanceImageResponsiveness() {
     const images = document.querySelectorAll('img');
-    
+
     images.forEach(img => {
         // Ensure images are responsive
         img.style.maxWidth = '100%';
         img.style.height = 'auto';
-        
+
         // Add loading optimization
         if (!img.getAttribute('loading')) {
             img.setAttribute('loading', 'lazy');
@@ -5245,7 +5519,7 @@ function enhanceImageResponsiveness() {
 function improveTouchInteractions() {
     // Improve button touch targets
     const buttons = document.querySelectorAll('button, .btn, [role="button"]');
-    
+
     buttons.forEach(button => {
         if (window.innerWidth <= 768) {
             button.style.minHeight = '44px';
@@ -5262,12 +5536,12 @@ function optimizeMobilePerformance() {
 }
 
 // Call this function in your main initialization
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // ... your existing code ...
-    
+
     // Add responsive enhancements
     enhanceResponsiveDesign();
-    
+
     // Re-run on resize
     window.addEventListener('resize', enhanceResponsiveDesign);
 });
@@ -5285,13 +5559,13 @@ function loadComponent(sectionId, filePath, callback) {
             const section = document.getElementById(sectionId);
             if (section) {
                 section.innerHTML = data;
-                
+
                 // Add the section ID to the loaded content's main container
                 const container = section.querySelector('div[class*="section"], section[class*="section"]');
                 if (container && !container.id) {
                     container.id = sectionId + '-content';
                 }
-                
+
                 // Apply responsive enhancements to new content
                 setTimeout(() => {
                     enhanceResponsiveDesign();
@@ -5299,7 +5573,7 @@ function loadComponent(sectionId, filePath, callback) {
                     const event = new CustomEvent('componentLoaded', { detail: { sectionId } });
                     document.dispatchEvent(event);
                 }, 100);
-                
+
                 if (callback) callback();
             }
         })
@@ -5309,7 +5583,7 @@ function loadComponent(sectionId, filePath, callback) {
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\js\services.js
+File: D:\gradb\js\services.js
 ==================================================
 // services.js - Updated for single expanded service functionality
 
@@ -5358,7 +5632,7 @@ window.initializeGradServices = initializeGradServices;
 
 
 ==================================================
-File: C:\Users\LENOVO\Desktop\gradb\index.html
+File: D:\gradb\index.html
 ==================================================
 <!DOCTYPE html>
 <html lang="en">
@@ -5451,14 +5725,15 @@ File: C:\Users\LENOVO\Desktop\gradb\index.html
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom JS -->
+  <!-- Load ALL JavaScript files upfront -->
+  <script src="js/home.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/kent-slider.js"></script>
+  <script src="js/careers.js"></script>
+  <script src="js/contact.js"></script>
   <script src="js/script.js"></script>
-
-  <!-- Kent Slider JS -->
-<script src="js/kent-slider.js"></script>
-<link rel="stylesheet" href="css/kent-header.css">
 </body>
-
 </html>
 
 

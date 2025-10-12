@@ -1,3 +1,6 @@
+// ================================
+// Main Initialization
+// ================================
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
 
@@ -10,35 +13,110 @@ document.addEventListener("DOMContentLoaded", () => {
     preserveImageSizes();
     forceLogoSizeReduction();
 
-    // Load components
-    loadComponent("home", "components/home.html");
-    loadComponent("about", "components/about.html");
-    loadComponent("philosophy", "components/philosophy.html");
-    loadComponent("services", "components/services.html");
-    loadComponent("careers", "components/careers.html", () => {
-        console.log("Careers component loaded successfully");
-    });
-    loadComponent("projects", "components/projects.html", () => {
-        console.log("Projects component loaded successfully");
-        setTimeout(initializeProjects, 100);
-    });
-    loadComponent("contact", "components/contact.html", () => {
-        console.log("Contact component loaded successfully");
-    });
+    // Load components with proper sequencing
+    const loadSequence = [
+        { id: "home", file: "components/home.html" },
+        { id: "about", file: "components/about.html" },
+        { id: "philosophy", file: "components/philosophy.html" },
+        { 
+            id: "services", 
+            file: "components/services.html", 
+            callback: () => {
+                console.log("✅ Services component loaded successfully");
+                
+                // Force services initialization with multiple fallbacks
+                const initServices = () => {
+                    console.log("🔄 Force initializing services...");
+                    
+                    if (typeof ServicesManager !== 'undefined') {
+                        console.log("🎯 Using ServicesManager class");
+                        window.servicesManager = new ServicesManager();
+                    } else if (typeof initializeServices !== 'undefined') {
+                        console.log("🎯 Using initializeServices function");
+                        window.servicesManager = initializeServices();
+                    } else if (typeof initializeGradServices !== 'undefined') {
+                        console.log("🎯 Using initializeGradServices function");
+                        window.servicesManager = initializeGradServices();
+                    } else {
+                        console.log("❌ Services functions not found, retrying...");
+                        setTimeout(initServices, 500);
+                    }
+                };
+                
+                // Try multiple times with increasing delays
+                setTimeout(initServices, 300);
+                setTimeout(initServices, 1000);
+                setTimeout(initServices, 2000);
+            }
+        },
+        {
+            id: "projects", 
+            file: "components/projects.html", 
+            callback: () => {
+                console.log("Projects component loaded successfully");
+                setTimeout(initializeProjects, 100);
+            }
+        },
+        {
+            id: "careers", 
+            file: "components/careers.html", 
+            callback: () => {
+                console.log("Careers component loaded successfully");
+                // Initialize careers form with retry mechanism
+                const initCareers = () => {
+                    if (typeof initializeCareersForm === 'function') {
+                        console.log("✅ Initializing careers form");
+                        initializeCareersForm();
+                    } else {
+                        console.log("🔄 Careers form function not ready, retrying...");
+                        setTimeout(initCareers, 300);
+                    }
+                };
+                setTimeout(initCareers, 200);
+            }
+        },
+        {
+            id: "contact", 
+            file: "components/contact.html", 
+            callback: () => {
+                console.log("Contact component loaded successfully");
+                // Initialize contact form with retry mechanism
+                const initContact = () => {
+                    if (typeof initializeContactForm === 'function') {
+                        console.log("✅ Initializing contact form");
+                        initializeContactForm();
+                    } else {
+                        console.log("🔄 Contact form function not ready, retrying...");
+                        setTimeout(initContact, 300);
+                    }
+                };
+                setTimeout(initContact, 200);
+            }
+        }
+    ];
 
-    // Initialize features after components are loaded
-    setTimeout(() => {
-        initScrollFeatures();
-        console.log("All components loaded and features initialized");
-    }, 800);
-});
+    // Load components sequentially to avoid race conditions
+    function loadNextComponent(index) {
+        if (index >= loadSequence.length) {
+            console.log("All components loaded");
+            // Final initialization after all components are loaded
+            setTimeout(() => {
+                initScrollFeatures();
+                enhanceResponsiveDesign();
+                initializeAllForms(); // Ensure all forms are initialized
+            }, 500);
+            return;
+        }
 
+        const item = loadSequence[index];
+        loadComponent(item.id, item.file, item.callback);
 
+        // Load next component after a short delay
+        setTimeout(() => loadNextComponent(index + 1), 100);
+    }
 
-
-// Add this to the loadComponent calls
-loadComponent("careers", "components/careers.html", () => {
-    console.log("Careers component loaded successfully");
+    // Start loading sequence
+    loadNextComponent(0);
 });
 
 // ================================
@@ -76,6 +154,11 @@ function loadComponent(sectionId, filePath, callback) {
             setTimeout(() => {
                 initScrollFeatures();
                 navbarShrink();
+                
+                // Initialize forms for this section
+                if (sectionId === 'careers' || sectionId === 'contact') {
+                    initializeFormsForSection(sectionId);
+                }
             }, 100);
 
             if (callback) callback();
@@ -86,88 +169,215 @@ function loadComponent(sectionId, filePath, callback) {
             section.innerHTML = `<div class="alert alert-warning">Failed to load content. Please refresh the page.</div>`;
         });
 }
+
 // ================================
-// Load all components on page load
+// Form Initialization Functions
 // ================================
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded, starting to load components...");
+function initializeAllForms() {
+    console.log("🔄 Initializing all forms...");
+    initializeCareersForm();
+    initializeContactForm();
+}
 
-    // Initialize core features first
-    navbarShrink();
-    initMobileNavigation();
-    preserveImageSizes();
-    forceLogoSizeReduction();
-
-    // Load components with proper sequencing
-    const loadSequence = [
-        { id: "home", file: "components/home.html" },
-        { id: "about", file: "components/about.html" },
-        { id: "philosophy", file: "components/philosophy.html" },
-{ id: "services", file: "components/services.html", callback: () => {
-    console.log("✅ Services component loaded successfully");
+function initializeFormsForSection(sectionId) {
+    console.log(`🔄 Initializing forms for section: ${sectionId}`);
     
-    // Force services initialization with multiple fallbacks
-    const initServices = () => {
-        console.log("🔄 Force initializing services...");
-        
-        if (typeof ServicesManager !== 'undefined') {
-            console.log("🎯 Using ServicesManager class");
-            window.servicesManager = new ServicesManager();
-        } else if (typeof initializeServices !== 'undefined') {
-            console.log("🎯 Using initializeServices function");
-            window.servicesManager = initializeServices();
-        } else {
-            console.log("❌ Services functions not found, retrying...");
-            setTimeout(initServices, 500);
-        }
-    };
-    
-    // Try multiple times with increasing delays
-    setTimeout(initServices, 300);
-    setTimeout(initServices, 1000);
-    setTimeout(initServices, 2000);
-}},
-        {
-            id: "projects", file: "components/projects.html", callback: () => {
-                console.log("Projects component loaded successfully");
-                setTimeout(initializeProjects, 100);
-            }
-        },
-        {
-            id: "careers", file: "components/careers.html", callback: () => {
-                console.log("Careers component loaded successfully");
-            }
-        },
-        {
-            id: "contact", file: "components/contact.html", callback: () => {
-                console.log("Contact component loaded successfully");
-            }
-        }
-    ];
+    if (sectionId === 'careers') {
+        initializeCareersForm();
+    } else if (sectionId === 'contact') {
+        initializeContactForm();
+    }
+}
 
-    // Load components sequentially to avoid race conditions
-    function loadNextComponent(index) {
-        if (index >= loadSequence.length) {
-            console.log("All components loaded");
-            // Final initialization after all components are loaded
-            setTimeout(() => {
-                initScrollFeatures();
-                enhanceResponsiveDesign();
-            }, 500);
+// ================================
+// Careers Form Handler (Email)
+// ================================
+function initializeCareersForm() {
+    const form = document.getElementById('careerForm');
+
+    if (!form) {
+        console.log("❌ Career form not found (may not be on current page)");
+        return;
+    }
+
+    console.log("✅ Career form found, attaching event listener");
+
+    // Remove any existing event listeners to prevent duplicates
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    const currentForm = document.getElementById('careerForm');
+
+    currentForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        console.log("✅ Careers form submit triggered");
+
+        // Get form values
+        const name = document.getElementById('careerName') ? document.getElementById('careerName').value.trim() : '';
+        const phone = document.getElementById('careerPhone') ? document.getElementById('careerPhone').value.trim() : '';
+        const email = document.getElementById('careerEmail') ? document.getElementById('careerEmail').value.trim() : '';
+        const message = document.getElementById('careerMessage') ? document.getElementById('careerMessage').value.trim() : '';
+
+        // Validation
+        if (!name || !phone || !email || !message) {
+            showAlert("Please fill in all fields.", "error");
             return;
         }
 
-        const item = loadSequence[index];
-        loadComponent(item.id, item.file, item.callback);
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showAlert("Please enter a valid email address.", "error");
+            return;
+        }
 
-        // Load next component after a short delay
-        setTimeout(() => loadNextComponent(index + 1), 100);
+        // Phone validation
+        const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+        if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
+            showAlert("Please enter a valid phone number.", "error");
+            return;
+        }
+
+        // Create mailto link
+        const subject = `Career Application - ${name}`;
+        const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Careers page.`;
+        
+        const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        console.log("📨 Opening mail client:", mailtoLink);
+        
+        // Show loading state
+        const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening Email...';
+        submitBtn.disabled = true;
+
+        // Open default email client in new tab
+        setTimeout(() => {
+            window.open(mailtoLink, '_blank');
+            
+            // Reset form and button after a delay
+            setTimeout(() => {
+                currentForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                showAlert("Thank you for your application! Please send the pre-filled email to complete your application.", "success");
+            }, 2000);
+        }, 1000);
+    });
+
+    console.log("✅ Careers form handler attached successfully");
+}
+
+// ================================
+// Contact Form Handler (WhatsApp)
+// ================================
+function initializeContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (!contactForm) {
+        console.log("❌ Contact form not found (may not be on current page)");
+        return;
+    }
+    
+    console.log("✅ Contact form found, attaching event listener");
+
+    // Remove any existing event listeners
+    const newForm = contactForm.cloneNode(true);
+    contactForm.parentNode.replaceChild(newForm, contactForm);
+    const currentForm = document.getElementById('contactForm');
+
+    currentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log("✅ Contact form submit triggered");
+        
+        const name = document.getElementById('contactName') ? document.getElementById('contactName').value.trim() : '';
+        const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
+        const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
+        const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
+        
+        // Validation
+        if (!name || !email || !phone || !message) {
+            showAlert('Please fill in all required fields.', 'error');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showAlert('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Create WhatsApp message
+        const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
+        
+        // WhatsApp phone number (replace with your actual number)
+        const whatsappNumber = '919840904236'; // Remove any + or spaces
+        
+        // Create WhatsApp URL
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        console.log("📱 WhatsApp URL:", whatsappUrl);
+        
+        // Show loading state
+        const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening WhatsApp...';
+        submitBtn.disabled = true;
+
+        // Open WhatsApp in new tab
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form and button after a delay
+            setTimeout(() => {
+                currentForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                showAlert("Thank you for your message! WhatsApp should open with a pre-filled message. Please send it to complete your inquiry.", "success");
+            }, 2000);
+        }, 1000);
+    });
+    
+    console.log("✅ Contact form handler attached successfully");
+}
+
+// ================================
+// Alert System
+// ================================
+function showAlert(message, type = "info") {
+    // Remove any existing alerts
+    const existingAlert = document.querySelector('.custom-alert');
+    if (existingAlert) {
+        existingAlert.remove();
     }
 
-    // Start loading sequence
-    loadNextComponent(0);
-});
+    // Create alert element
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `custom-alert alert alert-${type === 'error' ? 'danger' : 'success'} fade show`;
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        z-index: 9999;
+        min-width: 300px;
+        max-width: 500px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    `;
+    alertDiv.innerHTML = `
+        <strong>${type === 'error' ? 'Error!' : 'Success!'}</strong> ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
 
+    document.body.appendChild(alertDiv);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (alertDiv.parentNode) {
+            alertDiv.remove();
+        }
+    }, 5000);
+}
 
 // ================================
 // FORCE LOGO SIZE REDUCTION
@@ -324,6 +534,7 @@ function initMobileNavigation() {
         });
     }
 }
+
 // ================================
 // Preserve Original Image Sizes
 // ================================
@@ -353,6 +564,9 @@ function initializeProjects() {
     });
 }
 
+// ================================
+// Scroll Features
+// ================================
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
 
@@ -440,9 +654,8 @@ function initScrollFeatures() {
             }
         });
     });
-
-    // REMOVED: The duplicate scroll event listener that was causing conflicts
 }
+
 // ================================
 // Handle page refresh and direct anchor links
 // ================================
@@ -496,31 +709,8 @@ window.addEventListener('hashchange', () => {
 });
 
 // ================================
-// Error handling for missing components
+// Enhanced Responsive Design
 // ================================
-window.addEventListener('error', (event) => {
-    console.error('Global error:', event.error);
-});
-
-// ================================
-// Mobile viewport height fix for iOS
-// ================================
-function setViewportHeight() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-// Listen for window resize to update logo sizes
-window.addEventListener('resize', () => {
-    forceLogoSizeReduction();
-    setViewportHeight();
-});
-
-window.addEventListener('orientationchange', setViewportHeight);
-setViewportHeight();
-
-
-// Enhanced responsive design for all sections
 function enhanceResponsiveDesign() {
     // Improve mobile navigation
     improveMobileNav();
@@ -585,47 +775,39 @@ function optimizeMobilePerformance() {
     }
 }
 
-// Call this function in your main initialization
-document.addEventListener('DOMContentLoaded', function () {
-    // ... your existing code ...
+// ================================
+// Mobile viewport height fix for iOS
+// ================================
+function setViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
 
-    // Add responsive enhancements
+// ================================
+// Event Listeners
+// ================================
+window.addEventListener('resize', () => {
+    forceLogoSizeReduction();
+    setViewportHeight();
     enhanceResponsiveDesign();
-
-    // Re-run on resize
-    window.addEventListener('resize', enhanceResponsiveDesign);
 });
 
-// Add to your loadComponent function to handle dynamically loaded content
-function loadComponent(sectionId, filePath, callback) {
-    fetch(filePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load ${filePath}: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.innerHTML = data;
+window.addEventListener('orientationchange', setViewportHeight);
 
-                // Add the section ID to the loaded content's main container
-                const container = section.querySelector('div[class*="section"], section[class*="section"]');
-                if (container && !container.id) {
-                    container.id = sectionId + '-content';
-                }
+// Initial viewport height setup
+setViewportHeight();
 
-                // Apply responsive enhancements to new content
-                setTimeout(() => {
-                    enhanceResponsiveDesign();
-                    // Trigger custom event for slider initialization
-                    const event = new CustomEvent('componentLoaded', { detail: { sectionId } });
-                    document.dispatchEvent(event);
-                }, 100);
+// ================================
+// Error handling for missing components
+// ================================
+window.addEventListener('error', (event) => {
+    console.error('Global error:', event.error);
+});
 
-                if (callback) callback();
-            }
-        })
-        .catch(error => console.error("Error loading " + filePath, error));
-}
+// ================================
+// Make functions available globally
+// ================================
+window.initializeCareersForm = initializeCareersForm;
+window.initializeContactForm = initializeContactForm;
+window.initializeAllForms = initializeAllForms;
+window.initializeFormsForSection = initializeFormsForSection;

@@ -13,33 +13,34 @@
                     <form id="contactForm" novalidate>
                         <!-- Name Field -->
                         <div class="mb-4">
-                            <input type="text" class="form-control grad-contact-input" id="name" placeholder="Name"
+                            <input type="text" class="form-control grad-contact-input" id="contactName" placeholder="Name"
                                 required>
                         </div>
 
                         <!-- Phone Number Field -->
                         <div class="mb-4">
-                            <input type="tel" class="form-control grad-contact-input" id="phone"
+                            <input type="tel" class="form-control grad-contact-input" id="contactPhone"
                                 placeholder="Phone Number" required>
                         </div>
 
                         <!-- Email Field -->
                         <div class="mb-4">
-                            <input type="email" class="form-control grad-contact-input" id="email" placeholder="Email"
+                            <input type="email" class="form-control grad-contact-input" id="contactEmail" placeholder="Email"
                                 required>
                         </div>
 
                         <!-- Message Field -->
                         <div class="mb-4">
-                            <textarea class="form-control grad-contact-input" id="message" placeholder="Message"
+                            <textarea class="form-control grad-contact-input" id="contactMessage" placeholder="Message"
                                 rows="4" required></textarea>
                         </div>
 
                         <!-- Centered Submit Button -->
                         <div class="text-center">
                             <button type="submit"
-                                class="btn btn-dark grad-contact-submit-btn text-uppercase fw-bold">Send
-                                Message</button>
+                                class="btn btn-dark grad-contact-submit-btn text-uppercase fw-bold">
+                                <i class="fab fa-whatsapp me-2"></i>Send via WhatsApp
+                            </button>
                         </div>
                     </form>
 
@@ -71,4 +72,79 @@
     </div>
 </section>
 
-<script src="js/contact.js"></script>
+<script>
+// Contact form handler - embedded directly in the component for WhatsApp
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("✅ Contact component loaded");
+    initializeContactForm();
+});
+
+function initializeContactForm() {
+    const form = document.getElementById('contactForm');
+    
+    if (!form) {
+        console.error("❌ Contact form not found");
+        return;
+    }
+    
+    console.log("✅ Contact form found, attaching event listener");
+    
+    // Remove any existing event listeners
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    const currentForm = document.getElementById('contactForm');
+    
+    currentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log("✅ Contact form submit triggered");
+        
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const phone = document.getElementById('contactPhone').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+        
+        // Validation
+        if (!name || !email || !phone || !message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        // Create WhatsApp message
+        const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
+        
+        // WhatsApp phone number (replace with your actual number)
+        const whatsappNumber = '919840904236'; // Remove any + or spaces
+        
+        // Create WhatsApp URL
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        console.log("📱 WhatsApp URL:", whatsappUrl);
+        
+        // Show loading state
+        const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening WhatsApp...';
+        submitBtn.disabled = true;
+
+        // Open WhatsApp
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form and button
+            setTimeout(() => {
+                currentForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                alert("Thank you for your message! WhatsApp should open with a pre-filled message. Please send it to complete your inquiry.");
+            }, 2000);
+        }, 1000);
+    });
+}
+
+// Also initialize when component is loaded dynamically
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeContactForm);
+} else {
+    initializeContactForm();
+}
+</script>

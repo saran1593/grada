@@ -17,27 +17,16 @@
                     
                     <form id="careerForm" novalidate>
                         <div class="mb-4">
-                            <input type="text" class="form-control grad-careers-input" id="name" placeholder="Name" required>
+                            <input type="text" class="form-control grad-careers-input" id="careerName" placeholder="Name" required>
                         </div>
                         <div class="mb-4">
-                            <input type="tel" class="form-control grad-careers-input" id="phone" placeholder="Phone Number" required>
+                            <input type="tel" class="form-control grad-careers-input" id="careerPhone" placeholder="Phone Number" required>
                         </div>
                         <div class="mb-4">
-                            <input type="text" class="form-control grad-careers-input" id="interest" placeholder="Area of Interest / Role" required>
+                            <input type="email" class="form-control grad-careers-input" id="careerEmail" placeholder="Email" required>
                         </div>
-                        <div class="mb-4 grad-careers-file-wrapper">
-                            <label for="resume" class="d-flex justify-content-between align-items-center w-100">
-                                <span>Upload Resume</span>
-                                <i class="fas fa-paperclip"></i>
-                            </label>
-                            <input type="file" id="resume" class="d-none">
-                        </div>
-                        <div class="mb-5 grad-careers-file-wrapper">
-                            <label for="portfolio" class="d-flex justify-content-between align-items-center w-100">
-                                <span>Upload Portfolio</span>
-                                <i class="fas fa-paperclip"></i>
-                            </label>
-                            <input type="file" id="portfolio" class="d-none">
+                        <div class="mb-4">
+                            <textarea class="form-control grad-careers-input" id="careerMessage" placeholder="Write your message" rows="4" required></textarea>
                         </div>
                         
                         <!-- Centered Submit Button -->
@@ -51,4 +40,77 @@
     </div>
 </section>
 
-<script src="js/careers.js"></script>
+<script>
+// Careers form handler - embedded directly in the component
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("✅ Careers component loaded");
+    initializeCareersForm();
+});
+
+function initializeCareersForm() {
+    const form = document.getElementById('careerForm');
+    
+    if (!form) {
+        console.error("❌ Career form not found");
+        return;
+    }
+    
+    console.log("✅ Career form found, attaching event listener");
+    
+    // Remove any existing event listeners
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    const currentForm = document.getElementById('careerForm');
+    
+    currentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log("✅ Form submit triggered");
+
+        // Get form values
+        const name = document.getElementById('careerName').value.trim();
+        const phone = document.getElementById('careerPhone').value.trim();
+        const email = document.getElementById('careerEmail').value.trim();
+        const message = document.getElementById('careerMessage').value.trim();
+
+        // Basic validation
+        if (!name || !phone || !email || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Create mailto link
+        const subject = `Career Application - ${name}`;
+        const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Careers page.`;
+        
+        const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        console.log("📨 Mailto link:", mailtoLink);
+        
+        // Show loading state
+        const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening Email...';
+        submitBtn.disabled = true;
+
+        // Open default email client
+        setTimeout(() => {
+            window.open(mailtoLink, '_blank');
+            
+            // Reset form and button
+            setTimeout(() => {
+                currentForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                alert("Thank you for your application! Please send the pre-filled email to complete your application.");
+            }, 2000);
+        }, 1000);
+    });
+}
+
+// Also initialize when component is loaded dynamically
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeCareersForm);
+} else {
+    initializeCareersForm();
+}
+</script>
