@@ -1,7 +1,7 @@
 .about-section {
   padding: 100px 0;
   background-color: var(--white);
-  margin-top: -200px;
+  margin-top: -180px;
   margin-bottom: -200px;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
 
 .about-content p {
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.5;
   color: #555;
   margin-bottom: 2rem;
   text-align: justify;
@@ -35,24 +35,16 @@
   color: var(--primary-color);
   font-weight: 600;
 }
-
-.about-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-left: 30px;
-}
-
+/* Apply !important to ensure styles are not overridden */
 .about-image img {
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  width: 100%;
-  max-width: 500px;
-  height: 300px;
-  object-fit: cover;
+  max-width: 600px !important; /* Ensures the max-width is applied */
+  width: 100% !important;
+  height: 590px !important;
+  object-fit: cover !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
+
 
 .about-image img:hover {
   transform: scale(1.02);
@@ -60,9 +52,9 @@
 
 /* Updated Button Styles with unique class */
 .btn-view-projects {
-  background-color: #FFC107 !important;
+  background-color: #c5d92f !important;
   color: #ffffff !important;
-  border: 2px solid #FFC107 !important;
+  border: 2px solid #c5d92f !important;
   padding: 12px 30px;
   border-radius: 25px;
   font-weight: 600;
@@ -84,15 +76,15 @@
 /* VERTICAL TEXT POSITIONED TO LEFT OF IMAGE */
 .vertical-text {
   position: absolute;
-  left: -220px;
-  top: 40%;
+  left: -250px;
+  top: 42%;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: center;
   white-space: nowrap;
   font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  letter-spacing: 2px;
+  font-weight: 400;
+  color: grey;
+  letter-spacing: 4px;
   text-transform: uppercase;
 }
 

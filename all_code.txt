@@ -21,7 +21,7 @@ File: D:\gradb\components\about.html
             </div>
             <div class="col-lg-6 order-lg-1 position-relative">
                 <div class="about-image">
-                    <img src="/images/about.png" alt="About Grad Architects" class="img-fluid rounded shadow">
+                    <img src="/images/about.png" alt="About Grad Architects" class="rounded shadow">
                 </div>
                 <div class="vertical-text">
                     <span>BUILDING WITH PURPOSE</span>
@@ -55,16 +55,16 @@ File: D:\gradb\components\careers.html
                     
                     <form id="careerForm" novalidate>
                         <div class="mb-4">
-                            <input type="text" class="form-control grad-careers-input" id="name" placeholder="Name" required>
+                            <input type="text" class="form-control grad-careers-input" id="careerName" placeholder="Name" required>
                         </div>
                         <div class="mb-4">
-                            <input type="tel" class="form-control grad-careers-input" id="phone" placeholder="Phone Number" required>
+                            <input type="tel" class="form-control grad-careers-input" id="careerPhone" placeholder="Phone Number" required>
                         </div>
                         <div class="mb-4">
-                            <input type="email" class="form-control grad-careers-input" id="email" placeholder="Email" required>
+                            <input type="email" class="form-control grad-careers-input" id="careerEmail" placeholder="Email" required>
                         </div>
                         <div class="mb-4">
-                            <textarea class="form-control grad-careers-input" id="message" placeholder="Write your message" rows="4" required></textarea>
+                            <textarea class="form-control grad-careers-input" id="careerMessage" placeholder="Write your message" rows="4" required></textarea>
                         </div>
                         
                         <!-- Centered Submit Button -->
@@ -78,7 +78,80 @@ File: D:\gradb\components\careers.html
     </div>
 </section>
 
-<script src="js/careers.js"></script> 
+<script>
+// Careers form handler - embedded directly in the component
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("✅ Careers component loaded");
+    initializeCareersForm();
+});
+
+function initializeCareersForm() {
+    const form = document.getElementById('careerForm');
+    
+    if (!form) {
+        console.error("❌ Career form not found");
+        return;
+    }
+    
+    console.log("✅ Career form found, attaching event listener");
+    
+    // Remove any existing event listeners
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    const currentForm = document.getElementById('careerForm');
+    
+    currentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log("✅ Form submit triggered");
+
+        // Get form values
+        const name = document.getElementById('careerName').value.trim();
+        const phone = document.getElementById('careerPhone').value.trim();
+        const email = document.getElementById('careerEmail').value.trim();
+        const message = document.getElementById('careerMessage').value.trim();
+
+        // Basic validation
+        if (!name || !phone || !email || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Create mailto link
+        const subject = `Career Application - ${name}`;
+        const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Careers page.`;
+        
+        const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        console.log("📨 Mailto link:", mailtoLink);
+        
+        // Show loading state
+        const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening Email...';
+        submitBtn.disabled = true;
+
+        // Open default email client
+        setTimeout(() => {
+            window.open(mailtoLink, '_blank');
+            
+            // Reset form and button
+            setTimeout(() => {
+                currentForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                alert("Thank you for your application! Please send the pre-filled email to complete your application.");
+            }, 2000);
+        }, 1000);
+    });
+}
+
+// Also initialize when component is loaded dynamically
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeCareersForm);
+} else {
+    initializeCareersForm();
+}
+</script>
 
 
 
@@ -100,33 +173,34 @@ File: D:\gradb\components\contact.html
                     <form id="contactForm" novalidate>
                         <!-- Name Field -->
                         <div class="mb-4">
-                            <input type="text" class="form-control grad-contact-input" id="name" placeholder="Name"
+                            <input type="text" class="form-control grad-contact-input" id="contactName" placeholder="Name"
                                 required>
                         </div>
 
                         <!-- Phone Number Field -->
                         <div class="mb-4">
-                            <input type="tel" class="form-control grad-contact-input" id="phone"
+                            <input type="tel" class="form-control grad-contact-input" id="contactPhone"
                                 placeholder="Phone Number" required>
                         </div>
 
                         <!-- Email Field -->
                         <div class="mb-4">
-                            <input type="email" class="form-control grad-contact-input" id="email" placeholder="Email"
+                            <input type="email" class="form-control grad-contact-input" id="contactEmail" placeholder="Email"
                                 required>
                         </div>
 
                         <!-- Message Field -->
                         <div class="mb-4">
-                            <textarea class="form-control grad-contact-input" id="message" placeholder="Message"
+                            <textarea class="form-control grad-contact-input" id="contactMessage" placeholder="Message"
                                 rows="4" required></textarea>
                         </div>
 
                         <!-- Centered Submit Button -->
                         <div class="text-center">
                             <button type="submit"
-                                class="btn btn-dark grad-contact-submit-btn text-uppercase fw-bold">Send
-                                Message</button>
+                                class="btn btn-dark grad-contact-submit-btn text-uppercase fw-bold">
+                                <i class="fab fa-whatsapp me-2"></i>Send via WhatsApp
+                            </button>
                         </div>
                     </form>
 
@@ -158,7 +232,322 @@ File: D:\gradb\components\contact.html
     </div>
 </section>
 
-<script src="js/contact.js"></script>
+<script>
+// Contact form handler - embedded directly in the component for WhatsApp
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("✅ Contact component loaded");
+    initializeContactForm();
+});
+
+function initializeContactForm() {
+    const form = document.getElementById('contactForm');
+    
+    if (!form) {
+        console.error("❌ Contact form not found");
+        return;
+    }
+    
+    console.log("✅ Contact form found, attaching event listener");
+    
+    // Remove any existing event listeners
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    const currentForm = document.getElementById('contactForm');
+    
+    currentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log("✅ Contact form submit triggered");
+        
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const phone = document.getElementById('contactPhone').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+        
+        // Validation
+        if (!name || !email || !phone || !message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        // Create WhatsApp message
+        const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
+        
+        // WhatsApp phone number (replace with your actual number)
+        const whatsappNumber = '919840904236'; // Remove any + or spaces
+        
+        // Create WhatsApp URL
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        console.log("📱 WhatsApp URL:", whatsappUrl);
+        
+        // Show loading state
+        const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening WhatsApp...';
+        submitBtn.disabled = true;
+
+        // Open WhatsApp
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form and button
+            setTimeout(() => {
+                currentForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                alert("Thank you for your message! WhatsApp should open with a pre-filled message. Please send it to complete your inquiry.");
+            }, 2000);
+        }, 1000);
+    });
+}
+
+// Also initialize when component is loaded dynamically
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeContactForm);
+} else {
+    initializeContactForm();
+}
+</script>
+
+
+
+==================================================
+File: D:\gradb\components\footer.html
+==================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Architects Footer</title>
+    <style>
+        
+        .main-content {
+            flex: 1;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        
+        .footer {
+            width: 100%;
+            background-color: #fff;
+            padding: 5px;
+            height: auto;
+            min-height: 5vh;
+            margin-bottom: -150px;
+
+        }
+        
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .footer-logo {
+            flex: 0 0 200px;
+            margin-right: 60px;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .logo-img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 5px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: grey;
+            margin-bottom: 5px;
+        }
+        
+        .logo-subtitle {
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+        
+        .footer-section h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            color: #000000;
+            font-weight: 500;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 5px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: grey;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #000000;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 5px;
+        }
+        
+        .social-icon {
+            width: 25px;
+            height: 25px;
+            border-spacing: 10%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #e0e0e0;
+            color: #222;
+        }
+        
+        .copyright {
+            margin-top: 0px;
+            padding-top: 0px;
+            border-top: 0px solid #eee;
+            font-size: 12px;
+            color: #888;
+            text-align: left;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+            }
+            
+            .footer-logo {
+                margin-right: 0;
+                margin-bottom: 30px;
+                flex: 0 0 auto;
+            }
+            
+            .logo-container {
+                flex-direction: row;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .logo-img {
+                width: 80px;
+                margin-bottom: 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer {
+                padding: 30px 20px;
+                min-height: 40vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .logo-img {
+                width: 70px;
+            }
+            
+            .footer {
+                min-height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-container">
+                    <!-- Logo image added here -->
+                    <img src="/images/logo.png" alt="Great Architects Logo" class="logo-img">
+                </div>
+            </div>
+            
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Work</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Architecture</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Creative</a></li>
+                        <li><a href="#">Ethics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Studio</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Payup</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Prints</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 Great Architects. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
 
 
 
@@ -176,11 +565,15 @@ File: D:\gradb\components\home.html
   .home-hero-title {
     font-size: 1rem !important;
     letter-spacing: 0.2em !important;
+    margin-bottom: 2%;
   }
 
   .home-hero-description {
     font-size: 0.75rem !important;
     line-height: 1.4 !important;
+    margin-bottom: 1%;
+    justify-items: center;
+    max-width: 98%;
   }
 
   .carousel-content {
@@ -213,7 +606,7 @@ File: D:\gradb\components\home.html
   }
 
   .home-section .carousel {
-    height: 42vh !important;
+    height: 48vh !important;
     width: 100% !important;
   }
 
@@ -221,6 +614,7 @@ File: D:\gradb\components\home.html
     width: 100% !important;
     height: 42vh !important;
     object-fit: cover;
+    transform: scale(1.1);
   }
 }
 
@@ -231,17 +625,18 @@ File: D:\gradb\components\home.html
   .home-hero-title {
     font-size: 0.8rem !important;
     letter-spacing: 0.15em !important;
-    margin-bottom: 12%;
+    margin-bottom: 2%;
   }
 
   .home-hero-description {
     font-size: 0.65rem !important;
-    margin-bottom: 10%;
-    margin-top: -10%;
+    margin-bottom: 1%;
+
   }
 
   .home-section .carousel {
-    height: 45vh !important;
+    height: 48vh !important;
+
     
   }
 
@@ -249,7 +644,8 @@ File: D:\gradb\components\home.html
     width: 100% !important;
     height: 42vh !important;
     object-fit: cover;
-    min-height: 40vh;
+    transform: scale(1.1);
+
   }
 
  
@@ -357,21 +753,21 @@ File: D:\gradb\components\philosophy.html
                     <img src="/images/ph.png" alt="Philosophy Image" class="philosophy-image">
                 </div>
 
-                <div class="key-values">
-                    <h4 class="values-title">KEY VALUES</h4>
-                    <div class="value-row">
-                        Balance | Sustainability | Innovation + Technology
-                    </div>
-                    <hr class="value-divider">
-                    <div class="value-row">
-                        Personalized Care
-                    </div>
-                    <hr class="value-divider">
-                    <div class="value-row">
-                        Excellence in Process | Collaboration
-                    </div>
-                    <hr class="value-divider">
-                </div>
+<div class="key-values">
+    <h4 class="values-title">KEY VALUES</h4>
+    <div class="value-row">
+        Balance <span style="color: #c5d92f; margin: 0 8px;">|</span> Sustainability <span style="color: #c5d92f; margin: 0 8px;">|</span> Innovation + Technology
+    </div>
+    <hr class="value-divider">
+    <div class="value-row">
+        Personalized Care
+    </div>
+    <hr class="value-divider">
+    <div class="value-row">
+        Excellence in Process <span style="color: #c5d92f; margin: 0 8px;">|</span> Collaboration
+    </div>
+    <hr class="value-divider">
+</div>
             </div>
 
         </div>
@@ -397,7 +793,7 @@ File: D:\gradb\components\projects.html
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/components/projects.css">
-    <link rel="stylesheet" href="../css/components/p.css">
+  
 
     <!-- Mobile Responsive Styles -->
     <style>
@@ -427,6 +823,8 @@ File: D:\gradb\components\projects.html
                 left: 0 !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
+                
+
             }
 
             .full-width-image .project-item-image,
@@ -435,12 +833,15 @@ File: D:\gradb\components\projects.html
                 height: 70vh !important;
                 min-height: 420px !important;
                 width: 100vw !important;
+                
+
             }
 
             .kent-slider-container .carousel,
             .kent-slider-container .carousel-inner,
             .kent-slider-container .carousel-item {
                 height: 100% !important;
+                transform: scale(1.2);
             }
 
             .kent-slider-container .carousel-item img {
@@ -470,6 +871,7 @@ File: D:\gradb\components\projects.html
                 font-size: 0.82rem !important;
                 line-height: 1.45 !important;
                 max-width: 94% !important;
+                margin-bottom: 5px;
             }
 
             .project-item-content {
@@ -480,7 +882,7 @@ File: D:\gradb\components\projects.html
                 font-size: 0.7rem !important;
             }
 
-            .project-item-description-img {
+            .project-item-description-img, .soft-minimal-title {
                 font-size: 0.5rem !important;
             }
         }
@@ -532,6 +934,7 @@ File: D:\gradb\components\projects.html
                 line-height: 1.45 !important;
                 max-width: 96% !important;
                 padding: 0 6px !important;
+                 margin-bottom: 5px;
             }
 
             #kentCarousel .carousel-indicators {
@@ -544,7 +947,7 @@ File: D:\gradb\components\projects.html
             #kentCarousel .carousel-control-next {
                 width: 12% !important;
                 opacity: 0.6 !important;
-                margin-bottom: -250px;
+                margin-bottom: -240px;
             }
 
             .project-item-content {
@@ -591,7 +994,7 @@ File: D:\gradb\components\projects.html
                     <img src="../images/P1/1.jpg" alt="Kent Avenue Penthouse" class="project-img">
                 </div>
                 <div class="project-item-content">
-                    <h1 class="project-hero-title">K e n t  A v e n u e  P e n t h o u s e</h1>
+                    <h3 class="project-hero-title">K e n t  A v e n u e  P e n t h o u s e</h3>
                     <p class="project-hero-description">
                         Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the
                         Kent Avenue penthouse apartment is
@@ -631,7 +1034,7 @@ File: D:\gradb\components\projects.html
     <!-- Row 3: Latest Work - 2x3 Grid with Vertical Text -->
     <section id="latest-work" class="latest-work-section">
         <div class="container">
-            <h2 class="projects-section-title">L a t e s t  w o r k</h2>
+            <h2 class="projects-section-title"><strong>L a t e s t  W o r k</strong></h2>
 
             <!-- Vertical Text Left -->
             <div class="vertical-text-left">
@@ -651,7 +1054,7 @@ File: D:\gradb\components\projects.html
                     </div>
                     <div class="project-item-content">
                         <h3 class="project-item-title">A U D O  H O U S E</h3>
-                        <p class="project-item-description">
+                        <p class="project-item-description-img">
                             In Copenhagen’s evolving Nordhavn district, Audo House redefines how we live, work, and
                             connect. Designed by Norm Architects, the historic 1918
                             building has been carefully transformed into a fluid and welcoming destination – uniting
@@ -775,7 +1178,7 @@ File: D:\gradb\components\projects.html
         </div>
     </section>
 
-    <h2 class="projects-section-title">H o s p i t a l i t y  P r o j e c t s</h2>
+    <h2 class="projects-section-title"><strong>H o s p i t a l i t y   P r o j e c t s</strong></h2>
 
 
     <!-- Row 5: Two Halves -->
@@ -848,7 +1251,7 @@ philosophy honed over 15 years.
     <!-- Row 7: Five Images Grid for In Residence -->
     <section id="in-residence" class="residence-section">
         <div class="container">
-            <h2 class="projects-section-title">I n   R e s i d e n c e</h2>
+            <h2 class="projects-section-title"><strong>I n   R e s i d e n c e</strong></h2>
             <div class="five-images-grid">
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
@@ -950,8 +1353,8 @@ materials of…
                     <img src="../images/P4/1.jpg" alt="Soft Minimal" class="project-img">
                 </div>
                 <div class="soft-minimal-content full-width">
-                    <h3 class="soft-minimal-title">Kent  Avenue  Penthouse</h3>
-                    <p class="soft-minimal-text">
+                    <h6 class="soft-minimal-title">Kent  Avenue  Penthouse</h6>
+                    <p class="project-item-description-img">
 Nestled along the Brooklyn Waterfront, overlooking the East River and Manhattan Skyline, the Kent Avenue penthouse apartment is
 one of its kind; New York’s industrial vibe meets soft minimalism and tactile materials in this urban retreat above the vibrating city.
                     </p>
@@ -963,7 +1366,7 @@ one of its kind; New York’s industrial vibe meets soft minimalism and tactile 
     <!-- Row 9: Four Images Objects of Desire -->
     <section id="objects-of-desire" class="objects-section">
         <div class="container">
-            <h2 class="projects-section-title">take  a  seat</h2>
+            <h2 class="projects-section-title"><strong>take  a  seat</strong></h2>
             <div class="four-images-grid">
                 <div class="project-item-card four-grid-item">
                     <div class="project-item-image">
@@ -1093,7 +1496,7 @@ File: D:\gradb\components\services.html
             <div class="grad-service-column">
                 <span class="grad-vertical-text">STRUCTURAL DESIGNING</span>
                 <div class="grad-service-content">
-                    <img src="/images/Services/4.jpg" alt="Structural Designing">
+                    <img src="/images/Services/4.1.png" alt="Structural Designing">
                     <div class="grad-content-overlay">
                         <h3>Structural Designing</h3>
                         <p class="grad-service-description">Engineering excellence ensuring structural integrity and safety.</p>
@@ -1134,7 +1537,7 @@ File: D:\gradb\css\components\about.css
 .about-section {
   padding: 100px 0;
   background-color: var(--white);
-  margin-top: -200px;
+  margin-top: -180px;
   margin-bottom: -200px;
   display: flex;
   align-items: center;
@@ -1158,7 +1561,7 @@ File: D:\gradb\css\components\about.css
 
 .about-content p {
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.5;
   color: #555;
   margin-bottom: 2rem;
   text-align: justify;
@@ -1168,24 +1571,16 @@ File: D:\gradb\css\components\about.css
   color: var(--primary-color);
   font-weight: 600;
 }
-
-.about-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-left: 30px;
-}
-
+/* Apply !important to ensure styles are not overridden */
 .about-image img {
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  width: 100%;
-  max-width: 500px;
-  height: 300px;
-  object-fit: cover;
+  max-width: 600px !important; /* Ensures the max-width is applied */
+  width: 100% !important;
+  height: 590px !important;
+  object-fit: cover !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
+
 
 .about-image img:hover {
   transform: scale(1.02);
@@ -1193,9 +1588,9 @@ File: D:\gradb\css\components\about.css
 
 /* Updated Button Styles with unique class */
 .btn-view-projects {
-  background-color: #FFC107 !important;
+  background-color: #c5d92f !important;
   color: #ffffff !important;
-  border: 2px solid #FFC107 !important;
+  border: 2px solid #c5d92f !important;
   padding: 12px 30px;
   border-radius: 25px;
   font-weight: 600;
@@ -1217,15 +1612,15 @@ File: D:\gradb\css\components\about.css
 /* VERTICAL TEXT POSITIONED TO LEFT OF IMAGE */
 .vertical-text {
   position: absolute;
-  left: -220px;
-  top: 40%;
+  left: -250px;
+  top: 42%;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: center;
   white-space: nowrap;
   font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  letter-spacing: 2px;
+  font-weight: 400;
+  color: grey;
+  letter-spacing: 4px;
   text-transform: uppercase;
 }
 
@@ -1421,7 +1816,8 @@ File: D:\gradb\css\components\about.css
   }
 
   .about-content p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .about-image img {
@@ -2248,7 +2644,7 @@ File: D:\gradb\css\components\philosophy.css
     min-height: 100vh;
     padding: 80px 20px;
     background-color: var(--background-color);
-    margin-top: -140px;
+    margin-top: -160px;
     margin-bottom: -150px;
 }
 
@@ -2272,11 +2668,11 @@ File: D:\gradb\css\components\philosophy.css
 
 .main-heading-stacked {
     font-size: 3.5rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.1;
     letter-spacing: 2px;
     margin: 0;
-    color: var(--primary-color);
+    color:black;
     text-align: left;
     flex-shrink: 0;
 }
@@ -2284,22 +2680,25 @@ File: D:\gradb\css\components\philosophy.css
 .philosophy-content {
     flex: 1;
     padding-top: 0;
+    
 }
 
 .section-title {
-    font-size: 1.6rem;
-    font-weight: 400;
+    font-size: 1.7rem;
+    font-weight: 450;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--primary-color);
+    letter-spacing: 2px;
+    color:black;
     margin-bottom: 2rem;
     text-align: left;
+
+    
 }
 
 .philosophy-text {
     font-size: 1rem;
     line-height: 1.8;
-    color: #000000; /* CHANGED: From var(--secondary-color) to black */
+    color: grey;
     margin-bottom: 2.5rem;
     max-width: 100%;
     text-align: justify;
@@ -2308,7 +2707,7 @@ File: D:\gradb\css\components\philosophy.css
 .content-divider {
     border: 0;
     height: 1.5px;
-    background-color: var(--primary-color);
+    background-color: grey;
     width: 300px;
     margin: 0 0 2.5rem 0;
 }
@@ -2361,8 +2760,8 @@ File: D:\gradb\css\components\philosophy.css
 .values-title {
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    color: black;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: left;
@@ -2371,7 +2770,7 @@ File: D:\gradb\css\components\philosophy.css
 
 .value-row {
     font-size: 0.9rem;
-    color: #000000; /* CHANGED: From var(--secondary-color) to black */
+    color: grey;
     font-weight: 500;
     text-align: left;
     width: 500px;
@@ -2379,7 +2778,7 @@ File: D:\gradb\css\components\philosophy.css
 
 .value-divider {
     height: 1px;
-    background-color: var(--border-color);
+    background-color: grey;
     margin: 1rem 0;
     opacity: 0.5;
     width: 100%;
@@ -2530,7 +2929,7 @@ File: D:\gradb\css\components\philosophy.css
     
     .value-row {
         padding: 0 10px;
-        line-height: 1.5;
+        line-height: 0.1;
         text-align: center;
         color: #000000; /* CHANGED: Maintain black color on mobile */
     }
@@ -2993,6 +3392,7 @@ File: D:\gradb\css\components\projects.css
 .latest-work-section {
     padding: 4rem 0;
     position: relative;
+    
 }
 
 .latest-work-grid {
@@ -3564,7 +3964,7 @@ File: D:\gradb\css\components\projects.css
 ==================================================
 File: D:\gradb\css\components\services.css
 ==================================================
-/* services.css - Updated for hover functionality with single expanded service */
+/* services.css - Fixed text size and background issues */
 .grad-services-section {
     padding: 120px 0;
     min-height: 100vh;
@@ -3574,8 +3974,7 @@ File: D:\gradb\css\components\services.css
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     margin-top: -210px;
-  
-   
+    margin-bottom: -280px;
 }
 
 .grad-services-section h3 {
@@ -3607,7 +4006,7 @@ File: D:\gradb\css\components\services.css
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    background: #ffffff;
+    background: #ffffff; /* Default white background */
     border-right: 1px solid #e0e0e0;
     display: flex;
     justify-content: center;
@@ -3625,6 +4024,7 @@ File: D:\gradb\css\components\services.css
 .grad-service-column:first-child {
     flex: 1 1 100% !important;
     min-width: 200px !important;
+    background: #ffffff !important; /* Ensure white background when expanded */
 }
 
 .grad-service-column:first-child .grad-vertical-text {
@@ -3640,6 +4040,7 @@ File: D:\gradb\css\components\services.css
 /* COLLAPSED state for non-expanded services */
 .grad-service-column:not(:first-child) {
     flex: 0 0 80px;
+    background-color: #f8f9fa !important; /* Gray background when collapsed */
 }
 
 .grad-service-column:not(:first-child) .grad-vertical-text {
@@ -3654,29 +4055,42 @@ File: D:\gradb\css\components\services.css
 .grad-services-container:hover .grad-service-column:not(:hover) {
     flex: 0 0 60px !important;
     min-width: 60px !important;
+    background-color: #f8f9fa !important; /* Gray background when collapsed */
+}
+
+/* FIXED: When Architectural Design shrinks, apply same styling as others */
+.grad-services-container:hover .grad-service-column:first-child:not(:hover) {
+    flex: 0 0 60px !important;
+    min-width: 60px !important;
+    background-color: #f8f9fa !important; /* Gray background when collapsed */
 }
 
 .grad-services-container:hover .grad-service-column:hover {
     flex: 1 1 100% !important;
     min-width: 200px !important;
+    background-color: #ffffff !important; /* White background when expanded */
 }
 
 .grad-services-container:hover .grad-service-column:hover .grad-vertical-text {
     opacity: 0 !important;
+    transform: rotate(180deg) scale(0.8) !important;
 }
 
 .grad-services-container:hover .grad-service-column:hover .grad-service-content {
     opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
-/* The vertical text label */
+/* ================================
+   DESKTOP VERTICAL TEXT STYLING - FIXED TEXT SIZE
+   ================================ */
 .grad-vertical-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     white-space: nowrap;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Consistent text size for ALL */
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #2c3e50;
@@ -3688,6 +4102,32 @@ File: D:\gradb\css\components\services.css
     background: rgba(255, 255, 255, 0.9);
     padding: 10px 5px;
     border-radius: 5px;
+}
+
+/* FIXED: Enhanced styling for ALL collapsed services - SAME TEXT SIZE */
+.grad-service-column .grad-vertical-text {
+    color: #3498db !important;
+    transform: rotate(180deg) scale(1.1) !important;
+    background: rgba(255, 255, 255, 1) !important;
+    font-size: 1.1rem !important; /* Force same text size */
+    font-weight: 600 !important;
+    letter-spacing: 3px !important;
+}
+
+/* FIXED: When Architectural Design shrinks, show vertical text with same styling */
+.grad-services-container:hover .grad-service-column:first-child:not(:hover) .grad-vertical-text {
+    opacity: 1 !important;
+    color: #3498db !important;
+    transform: rotate(180deg) scale(1.1) !important;
+    background: rgba(255, 255, 255, 1) !important;
+    font-size: 1.1rem !important;
+}
+
+/* Hide vertical text for expanded service */
+.grad-service-column:first-child .grad-vertical-text,
+.grad-services-container:hover .grad-service-column:hover .grad-vertical-text {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.8);
 }
 
 /* The content that appears when a column is expanded or hovered */
@@ -3755,46 +4195,85 @@ File: D:\gradb\css\components\services.css
     text-align: left;
 }
 
-/* Column effects for non-expanded services */
-.grad-service-column:not(:first-child) {
-    background-color: #f8f9fa;
-}
-
-.grad-service-column:not(:first-child) .grad-vertical-text {
-    color: #3498db;
-    transform: rotate(180deg) scale(1.1);
-    background: rgba(255, 255, 255, 1);
-}
-
 /* Hover effects for non-expanded services */
 .grad-service-column:not(:first-child):hover {
     background-color: #e9ecef;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .grad-services-container {
-        height: 75vh;
-        max-height: 650px;
-    }
-}
-
-@media (max-width: 992px) {
-    .grad-services-section {
-        padding: 100px 0;
-    }
-    
-    .grad-services-container {
-        height: 70vh;
-        max-height: 600px;
-    }
-}
-
+/* ================================
+   MOBILE OVERRIDES (≤768px)
+   ================================ */
 @media (max-width: 768px) {
+    /* Reset ALL vertical text for mobile */
+    .grad-service-column .grad-vertical-text {
+        opacity: 1 !important;
+        transform: none !important;
+        writing-mode: horizontal-tb !important;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        padding: 8px 12px !important;
+        margin-bottom: 10px !important;
+        border-radius: 4px !important;
+        font-size: 0.9rem !important;
+        letter-spacing: 2px !important;
+        text-align: center !important;
+        width: 100% !important;
+        height: auto !important;
+        white-space: nowrap !important;
+        color: #2c3e50 !important;
+    }
+
+    /* Ensure first service matches others on mobile */
+    .grad-service-column:first-child .grad-vertical-text {
+        opacity: 1 !important;
+        transform: none !important;
+        writing-mode: horizontal-tb !important;
+        font-size: 0.9rem !important; /* Same size as others */
+    }
+
+    /* Mobile container behavior */
+    .grad-service-column {
+        flex: 0 0 70px !important;
+        min-width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid #e0e0e0 !important;
+        background-color: #f8f9fa !important; /* All gray on mobile by default */
+    }
+
+    .grad-service-column:last-child {
+        border-bottom: none !important;
+    }
+
+    /* First service should behave like others on mobile */
+    .grad-service-column:first-child {
+        flex: 0 0 70px !important;
+        background-color: #f8f9fa !important; /* Gray background like others */
+    }
+
+    .grad-service-column:first-child .grad-service-content {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Hide content for ALL services by default on mobile */
+    .grad-service-column .grad-service-content {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Only show content when service is hovered or active */
+    .grad-services-container:hover .grad-service-column:hover .grad-service-content,
+    .grad-service-column.grad-expanded .grad-service-content {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
     .grad-services-section {
         padding: 80px 0;
-        margin-top: 10px;
         margin-top: -120px;
+        margin-bottom: 20px;
     }
     
     .grad-services-container {
@@ -3804,49 +4283,20 @@ File: D:\gradb\css\components\services.css
         max-height: none;
     }
     
-    .grad-service-column {
-        flex: 0 0 70px !important;
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
-        min-width: 100% !important;
-    }
-    
     .grad-service-column:first-child {
-        flex: 1 1 350px !important;
-    }
-    
-    .grad-service-column:last-child {
-        border-bottom: none;
+        flex: 0 0 70px !important;
     }
     
     /* Disable hover effects on mobile */
     .grad-services-container:hover .grad-service-column:not(:hover) {
         flex: 0 0 70px !important;
         min-width: 100% !important;
+        background-color: #f8f9fa !important;
     }
     
     .grad-services-container:hover .grad-service-column:hover {
         flex: 1 1 350px !important;
-    }
-    
-    .grad-vertical-text {
-        writing-mode: horizontal-tb;
-        transform: none;
-        font-size: 1rem;
-        letter-spacing: 2px;
-        padding: 5px 10px;
-    }
-    
-    .grad-service-column:not(:first-child) .grad-vertical-text {
-        transform: none;
-    }
-    
-    .grad-service-column:first-child .grad-vertical-text {
-        transform: scale(0.8);
-    }
-    
-    .grad-service-column:not(:first-child) .grad-vertical-text {
-        transform: scale(1.05);
+        background-color: #ffffff !important; /* White when expanded on mobile */
     }
     
     .grad-content-overlay {
@@ -3867,16 +4317,12 @@ File: D:\gradb\css\components\services.css
 @media (max-width: 576px) {
     .grad-services-section {
         padding: 60px 0;
-        margin-top: 10px;
         margin-top: -80px;
+        margin-bottom: 20px;
     }
     
     .grad-services-container {
         min-height: 500px;
-    }
-    
-    .grad-service-column:first-child {
-        flex: 1 1 300px !important;
     }
     
     .grad-services-container:hover .grad-service-column:hover {
@@ -3899,6 +4345,12 @@ File: D:\gradb\css\components\services.css
     
     .grad-service-description {
         font-size: 0.9rem;
+    }
+
+    .grad-service-column .grad-vertical-text {
+        font-size: 0.8rem !important;
+        letter-spacing: 1.5px !important;
+        padding: 6px 10px !important;
     }
 }
 
@@ -4383,88 +4835,218 @@ img {
 ==================================================
 File: D:\gradb\js\careers.js
 ==================================================
-// ✅ Single DOMContentLoaded Block
-document.addEventListener('DOMContentLoaded', function () {
-    console.log("✅ Careers JS Loaded");
+// // ✅ Careers JavaScript - Enhanced version
+// document.addEventListener('DOMContentLoaded', function () {
+//     console.log("✅ Careers JS Loaded");
+//     initializeCareersForm();
+// });
 
-    const form = document.getElementById('careerForm');
+// function initializeCareersForm() {
+//     const form = document.getElementById('careerForm');
 
-    if (!form) {
-        console.error("❌ Form not found. Check ID.");
-        return;
-    }
+//     if (!form) {
+//         console.error("❌ Career form not found. Check ID.");
+//         // Try again after a delay in case of dynamic loading
+//         setTimeout(initializeCareersForm, 500);
+//         return;
+//     }
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
+//     console.log("✅ Career form found, attaching event listener");
 
-        console.log("✅ Submit Clicked");
+//     // Remove any existing event listeners to prevent duplicates
+//     form.replaceWith(form.cloneNode(true));
+//     const newForm = document.getElementById('careerForm');
 
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
+//     newForm.addEventListener('submit', function (e) {
+//         e.preventDefault();
+//         console.log("✅ Form submit triggered");
 
-        if (!name || !phone || !email || !message) {
-            alert("Please fill in all fields.");
-            return;
-        }
+//         // Get form values
+//         const name = document.getElementById('name').value.trim();
+//         const phone = document.getElementById('phone').value.trim();
+//         const email = document.getElementById('email').value.trim();
+//         const message = document.getElementById('message').value.trim();
 
-        const mailto = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent("Career Application - " + name)}&body=${encodeURIComponent(
-            `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`
-        )}`;
+//         // Validation
+//         if (!name || !phone || !email || !message) {
+//             showAlert("Please fill in all fields.", "error");
+//             return;
+//         }
 
-        console.log("📨 Mailto: ", mailto);
+//         // Email validation
+//         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//         if (!emailRegex.test(email)) {
+//             showAlert("Please enter a valid email address.", "error");
+//             return;
+//         }
 
-        window.location.href = mailto;
-    });
-});
+//         // Phone validation
+//         const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+//         if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
+//             showAlert("Please enter a valid phone number.", "error");
+//             return;
+//         }
+
+//         // Create mailto link
+//         const subject = `Career Application - ${name}`;
+//         const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Careers page.`;
+        
+//         const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+//         console.log("📨 Opening mail client:", mailtoLink);
+        
+//         // Show loading state
+//         const submitBtn = newForm.querySelector('.grad-careers-submit-btn');
+//         const originalText = submitBtn.innerHTML;
+//         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+//         submitBtn.disabled = true;
+
+//         // Open default email client
+//         setTimeout(() => {
+//             window.location.href = mailtoLink;
+            
+//             // Reset button after a delay
+//             setTimeout(() => {
+//                 submitBtn.innerHTML = originalText;
+//                 submitBtn.disabled = false;
+//                 showAlert("Thank you for your application! Please check your email client to complete the submission.", "success");
+//             }, 2000);
+//         }, 1000);
+//     });
+
+//     console.log("✅ Careers form handler attached successfully");
+// }
+
+// function showAlert(message, type = "info") {
+//     // Remove any existing alerts
+//     const existingAlert = document.querySelector('.custom-alert');
+//     if (existingAlert) {
+//         existingAlert.remove();
+//     }
+
+//     // Create alert element
+//     const alertDiv = document.createElement('div');
+//     alertDiv.className = `custom-alert alert alert-${type === 'error' ? 'danger' : 'success'} fade show`;
+//     alertDiv.style.cssText = `
+//         position: fixed;
+//         top: 100px;
+//         right: 20px;
+//         z-index: 9999;
+//         min-width: 300px;
+//         max-width: 500px;
+//     `;
+//     alertDiv.innerHTML = `
+//         <strong>${type === 'error' ? 'Error!' : 'Success!'}</strong> ${message}
+//         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+//     `;
+
+//     document.body.appendChild(alertDiv);
+
+//     // Auto remove after 5 seconds
+//     setTimeout(() => {
+//         if (alertDiv.parentNode) {
+//             alertDiv.remove();
+//         }
+//     }, 5000);
+// }
+
+// // Make function available globally for dynamic loading
+// window.initializeCareersForm = initializeCareersForm;
+
+// // Initialize if careers section is loaded dynamically
+// if (document.readyState === 'loading') {
+//     document.addEventListener('DOMContentLoaded', initializeCareersForm);
+// } else {
+//     initializeCareersForm();
+// }
 
 
 
 ==================================================
 File: D:\gradb\js\contact.js
 ==================================================
-// Contact Form JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
+// // Contact Form JavaScript - Enhanced version
+// document.addEventListener('DOMContentLoaded', function() {
+//     console.log("✅ Contact JS Loaded");
+//     initializeContactForm();
+// });
+
+// function initializeContactForm() {
+//     const contactForm = document.getElementById('contactForm');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-            
-            if (name && email && phone && service && message) {
-                // Here you would typically send the form data to a server
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        });
-    }
+//     if (!contactForm) {
+//         console.error("❌ Contact form not found");
+//         setTimeout(initializeContactForm, 500);
+//         return;
+//     }
     
-    // Add social media link handlers
-    const socialLinks = document.querySelectorAll('.social-link');
-    socialLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (this.getAttribute('href').startsWith('mailto:')) {
-                // Mail link - let it work naturally
-                return true;
-            }
-            if (this.getAttribute('href').startsWith('tel:')) {
-                // Phone link - let it work naturally
-                return true;
-            }
-            // For other links, you might want to track analytics
-            console.log('Social link clicked:', this.getAttribute('href'));
-        });
-    });
-});
+//     console.log("✅ Contact form found, attaching event listener");
+
+//     // Remove any existing event listeners
+//     contactForm.replaceWith(contactForm.cloneNode(true));
+//     const newForm = document.getElementById('contactForm');
+
+//     newForm.addEventListener('submit', function(e) {
+//         e.preventDefault();
+//         console.log("✅ Contact form submit triggered");
+        
+//         const name = document.getElementById('name').value.trim();
+//         const email = document.getElementById('email').value.trim();
+//         const phone = document.getElementById('phone').value.trim();
+//         const message = document.getElementById('message').value.trim();
+        
+//         // Validation
+//         if (!name || !email || !phone || !message) {
+//             alert('Please fill in all required fields.');
+//             return;
+//         }
+
+//         // Email validation
+//         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//         if (!emailRegex.test(email)) {
+//             alert('Please enter a valid email address.');
+//             return;
+//         }
+
+//         // Create mailto link for contact form
+//         const subject = `Contact Form Submission - ${name}`;
+//         const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Contact page.`;
+        
+//         const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+//         console.log("📨 Opening mail client for contact:", mailtoLink);
+        
+//         // Show loading state
+//         const submitBtn = newForm.querySelector('.grad-contact-submit-btn');
+//         const originalText = submitBtn.innerHTML;
+//         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+//         submitBtn.disabled = true;
+
+//         // Open default email client
+//         setTimeout(() => {
+//             window.location.href = mailtoLink;
+            
+//             // Reset button after a delay
+//             setTimeout(() => {
+//                 submitBtn.innerHTML = originalText;
+//                 submitBtn.disabled = false;
+//                 alert("Thank you for your message! Please check your email client to complete the submission.");
+//             }, 2000);
+//         }, 1000);
+//     });
+    
+//     console.log("✅ Contact form handler attached successfully");
+// }
+
+// // Make function available globally
+// window.initializeContactForm = initializeContactForm;
+
+// // Initialize if contact section is loaded dynamically
+// if (document.readyState === 'loading') {
+//     document.addEventListener('DOMContentLoaded', initializeContactForm);
+// } else {
+//     initializeContactForm();
+// }
 
 
 
@@ -4948,6 +5530,9 @@ document.head.appendChild(style);
 ==================================================
 File: D:\gradb\js\script.js
 ==================================================
+// ================================
+// Main Initialization
+// ================================
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded, starting to load components...");
 
@@ -4960,35 +5545,123 @@ document.addEventListener("DOMContentLoaded", () => {
     preserveImageSizes();
     forceLogoSizeReduction();
 
-    // Load components
-    loadComponent("home", "components/home.html");
-    loadComponent("about", "components/about.html");
-    loadComponent("philosophy", "components/philosophy.html");
-    loadComponent("services", "components/services.html");
-    loadComponent("careers", "components/careers.html", () => {
-        console.log("Careers component loaded successfully");
-    });
-    loadComponent("projects", "components/projects.html", () => {
-        console.log("Projects component loaded successfully");
-        setTimeout(initializeProjects, 100);
-    });
-    loadComponent("contact", "components/contact.html", () => {
-        console.log("Contact component loaded successfully");
-    });
+    // Load components with proper sequencing
+    const loadSequence = [
+        { id: "home", file: "components/home.html" },
+        { id: "about", file: "components/about.html" },
+        { id: "philosophy", file: "components/philosophy.html" },
+        { 
+            id: "services", 
+            file: "components/services.html", 
+            callback: () => {
+                console.log("✅ Services component loaded successfully");
+                
+                // Force services initialization with multiple fallbacks
+                const initServices = () => {
+                    console.log("🔄 Force initializing services...");
+                    
+                    if (typeof ServicesManager !== 'undefined') {
+                        console.log("🎯 Using ServicesManager class");
+                        window.servicesManager = new ServicesManager();
+                    } else if (typeof initializeServices !== 'undefined') {
+                        console.log("🎯 Using initializeServices function");
+                        window.servicesManager = initializeServices();
+                    } else if (typeof initializeGradServices !== 'undefined') {
+                        console.log("🎯 Using initializeGradServices function");
+                        window.servicesManager = initializeGradServices();
+                    } else {
+                        console.log("❌ Services functions not found, retrying...");
+                        setTimeout(initServices, 500);
+                    }
+                };
+                
+                // Try multiple times with increasing delays
+                setTimeout(initServices, 300);
+                setTimeout(initServices, 1000);
+                setTimeout(initServices, 2000);
+            }
+        },
+        {
+            id: "projects", 
+            file: "components/projects.html", 
+            callback: () => {
+                console.log("Projects component loaded successfully");
+                setTimeout(initializeProjects, 100);
+            }
+        },
+        {
+            id: "careers", 
+            file: "components/careers.html", 
+            callback: () => {
+                console.log("Careers component loaded successfully");
+                // Initialize careers form with retry mechanism
+                const initCareers = () => {
+                    if (typeof initializeCareersForm === 'function') {
+                        console.log("✅ Initializing careers form");
+                        initializeCareersForm();
+                    } else {
+                        console.log("🔄 Careers form function not ready, retrying...");
+                        setTimeout(initCareers, 300);
+                    }
+                };
+                setTimeout(initCareers, 200);
+            }
+        },
+        {
+            id: "contact", 
+            file: "components/contact.html", 
+            callback: () => {
+                console.log("Contact component loaded successfully");
+                // Initialize contact form with retry mechanism
+                const initContact = () => {
+                    if (typeof initializeContactForm === 'function') {
+                        console.log("✅ Initializing contact form");
+                        initializeContactForm();
+                    } else {
+                        console.log("🔄 Contact form function not ready, retrying...");
+                        setTimeout(initContact, 300);
+                    }
+                };
+                setTimeout(initContact, 200);
+            }
+        },
 
-    // Initialize features after components are loaded
-    setTimeout(() => {
-        initScrollFeatures();
-        console.log("All components loaded and features initialized");
-    }, 800);
-});
+        {
+            id: "footer", 
+            file: "components/footer.html",
+            callback: () => {
+                console.log("Footer component loaded successfully");
+            }
+            
+
+        }
+    ];
+      
+    
 
 
+    // Load components sequentially to avoid race conditions
+    function loadNextComponent(index) {
+        if (index >= loadSequence.length) {
+            console.log("All components loaded");
+            // Final initialization after all components are loaded
+            setTimeout(() => {
+                initScrollFeatures();
+                enhanceResponsiveDesign();
+                initializeAllForms(); // Ensure all forms are initialized
+            }, 500);
+            return;
+        }
 
+        const item = loadSequence[index];
+        loadComponent(item.id, item.file, item.callback);
 
-// Add this to the loadComponent calls
-loadComponent("careers", "components/careers.html", () => {
-    console.log("Careers component loaded successfully");
+        // Load next component after a short delay
+        setTimeout(() => loadNextComponent(index + 1), 100);
+    }
+
+    // Start loading sequence
+    loadNextComponent(0);
 });
 
 // ================================
@@ -5026,6 +5699,11 @@ function loadComponent(sectionId, filePath, callback) {
             setTimeout(() => {
                 initScrollFeatures();
                 navbarShrink();
+                
+                // Initialize forms for this section
+                if (sectionId === 'careers' || sectionId === 'contact') {
+                    initializeFormsForSection(sectionId);
+                }
             }, 100);
 
             if (callback) callback();
@@ -5036,88 +5714,215 @@ function loadComponent(sectionId, filePath, callback) {
             section.innerHTML = `<div class="alert alert-warning">Failed to load content. Please refresh the page.</div>`;
         });
 }
+
 // ================================
-// Load all components on page load
+// Form Initialization Functions
 // ================================
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded, starting to load components...");
+function initializeAllForms() {
+    console.log("🔄 Initializing all forms...");
+    initializeCareersForm();
+    initializeContactForm();
+}
 
-    // Initialize core features first
-    navbarShrink();
-    initMobileNavigation();
-    preserveImageSizes();
-    forceLogoSizeReduction();
-
-    // Load components with proper sequencing
-    const loadSequence = [
-        { id: "home", file: "components/home.html" },
-        { id: "about", file: "components/about.html" },
-        { id: "philosophy", file: "components/philosophy.html" },
-{ id: "services", file: "components/services.html", callback: () => {
-    console.log("✅ Services component loaded successfully");
+function initializeFormsForSection(sectionId) {
+    console.log(`🔄 Initializing forms for section: ${sectionId}`);
     
-    // Force services initialization with multiple fallbacks
-    const initServices = () => {
-        console.log("🔄 Force initializing services...");
-        
-        if (typeof ServicesManager !== 'undefined') {
-            console.log("🎯 Using ServicesManager class");
-            window.servicesManager = new ServicesManager();
-        } else if (typeof initializeServices !== 'undefined') {
-            console.log("🎯 Using initializeServices function");
-            window.servicesManager = initializeServices();
-        } else {
-            console.log("❌ Services functions not found, retrying...");
-            setTimeout(initServices, 500);
-        }
-    };
-    
-    // Try multiple times with increasing delays
-    setTimeout(initServices, 300);
-    setTimeout(initServices, 1000);
-    setTimeout(initServices, 2000);
-}},
-        {
-            id: "projects", file: "components/projects.html", callback: () => {
-                console.log("Projects component loaded successfully");
-                setTimeout(initializeProjects, 100);
-            }
-        },
-        {
-            id: "careers", file: "components/careers.html", callback: () => {
-                console.log("Careers component loaded successfully");
-            }
-        },
-        {
-            id: "contact", file: "components/contact.html", callback: () => {
-                console.log("Contact component loaded successfully");
-            }
-        }
-    ];
+    if (sectionId === 'careers') {
+        initializeCareersForm();
+    } else if (sectionId === 'contact') {
+        initializeContactForm();
+    }
+}
 
-    // Load components sequentially to avoid race conditions
-    function loadNextComponent(index) {
-        if (index >= loadSequence.length) {
-            console.log("All components loaded");
-            // Final initialization after all components are loaded
-            setTimeout(() => {
-                initScrollFeatures();
-                enhanceResponsiveDesign();
-            }, 500);
+// ================================
+// Careers Form Handler (Email)
+// ================================
+function initializeCareersForm() {
+    const form = document.getElementById('careerForm');
+
+    if (!form) {
+        console.log("❌ Career form not found (may not be on current page)");
+        return;
+    }
+
+    console.log("✅ Career form found, attaching event listener");
+
+    // Remove any existing event listeners to prevent duplicates
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    const currentForm = document.getElementById('careerForm');
+
+    currentForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        console.log("✅ Careers form submit triggered");
+
+        // Get form values
+        const name = document.getElementById('careerName') ? document.getElementById('careerName').value.trim() : '';
+        const phone = document.getElementById('careerPhone') ? document.getElementById('careerPhone').value.trim() : '';
+        const email = document.getElementById('careerEmail') ? document.getElementById('careerEmail').value.trim() : '';
+        const message = document.getElementById('careerMessage') ? document.getElementById('careerMessage').value.trim() : '';
+
+        // Validation
+        if (!name || !phone || !email || !message) {
+            showAlert("Please fill in all fields.", "error");
             return;
         }
 
-        const item = loadSequence[index];
-        loadComponent(item.id, item.file, item.callback);
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showAlert("Please enter a valid email address.", "error");
+            return;
+        }
 
-        // Load next component after a short delay
-        setTimeout(() => loadNextComponent(index + 1), 100);
+        // Phone validation
+        const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+        if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
+            showAlert("Please enter a valid phone number.", "error");
+            return;
+        }
+
+        // Create mailto link
+        const subject = `Career Application - ${name}`;
+        const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Careers page.`;
+        
+        const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        console.log("📨 Opening mail client:", mailtoLink);
+        
+        // Show loading state
+        const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening Email...';
+        submitBtn.disabled = true;
+
+        // Open default email client in new tab
+        setTimeout(() => {
+            window.open(mailtoLink, '_blank');
+            
+            // Reset form and button after a delay
+            setTimeout(() => {
+                currentForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                showAlert("Thank you for your application! Please send the pre-filled email to complete your application.", "success");
+            }, 2000);
+        }, 1000);
+    });
+
+    console.log("✅ Careers form handler attached successfully");
+}
+
+// ================================
+// Contact Form Handler (WhatsApp)
+// ================================
+function initializeContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (!contactForm) {
+        console.log("❌ Contact form not found (may not be on current page)");
+        return;
+    }
+    
+    console.log("✅ Contact form found, attaching event listener");
+
+    // Remove any existing event listeners
+    const newForm = contactForm.cloneNode(true);
+    contactForm.parentNode.replaceChild(newForm, contactForm);
+    const currentForm = document.getElementById('contactForm');
+
+    currentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log("✅ Contact form submit triggered");
+        
+        const name = document.getElementById('contactName') ? document.getElementById('contactName').value.trim() : '';
+        const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
+        const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
+        const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
+        
+        // Validation
+        if (!name || !email || !phone || !message) {
+            showAlert('Please fill in all required fields.', 'error');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showAlert('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Create WhatsApp message
+        const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
+        
+        // WhatsApp phone number (replace with your actual number)
+        const whatsappNumber = '919840904236'; // Remove any + or spaces
+        
+        // Create WhatsApp URL
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        console.log("📱 WhatsApp URL:", whatsappUrl);
+        
+        // Show loading state
+        const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening WhatsApp...';
+        submitBtn.disabled = true;
+
+        // Open WhatsApp in new tab
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form and button after a delay
+            setTimeout(() => {
+                currentForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                showAlert("Thank you for your message! WhatsApp should open with a pre-filled message. Please send it to complete your inquiry.", "success");
+            }, 2000);
+        }, 1000);
+    });
+    
+    console.log("✅ Contact form handler attached successfully");
+}
+
+// ================================
+// Alert System
+// ================================
+function showAlert(message, type = "info") {
+    // Remove any existing alerts
+    const existingAlert = document.querySelector('.custom-alert');
+    if (existingAlert) {
+        existingAlert.remove();
     }
 
-    // Start loading sequence
-    loadNextComponent(0);
-});
+    // Create alert element
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `custom-alert alert alert-${type === 'error' ? 'danger' : 'success'} fade show`;
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        z-index: 9999;
+        min-width: 300px;
+        max-width: 500px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    `;
+    alertDiv.innerHTML = `
+        <strong>${type === 'error' ? 'Error!' : 'Success!'}</strong> ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
 
+    document.body.appendChild(alertDiv);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (alertDiv.parentNode) {
+            alertDiv.remove();
+        }
+    }, 5000);
+}
 
 // ================================
 // FORCE LOGO SIZE REDUCTION
@@ -5274,6 +6079,7 @@ function initMobileNavigation() {
         });
     }
 }
+
 // ================================
 // Preserve Original Image Sizes
 // ================================
@@ -5303,6 +6109,9 @@ function initializeProjects() {
     });
 }
 
+// ================================
+// Scroll Features
+// ================================
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
 
@@ -5390,9 +6199,8 @@ function initScrollFeatures() {
             }
         });
     });
-
-    // REMOVED: The duplicate scroll event listener that was causing conflicts
 }
+
 // ================================
 // Handle page refresh and direct anchor links
 // ================================
@@ -5446,31 +6254,8 @@ window.addEventListener('hashchange', () => {
 });
 
 // ================================
-// Error handling for missing components
+// Enhanced Responsive Design
 // ================================
-window.addEventListener('error', (event) => {
-    console.error('Global error:', event.error);
-});
-
-// ================================
-// Mobile viewport height fix for iOS
-// ================================
-function setViewportHeight() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-// Listen for window resize to update logo sizes
-window.addEventListener('resize', () => {
-    forceLogoSizeReduction();
-    setViewportHeight();
-});
-
-window.addEventListener('orientationchange', setViewportHeight);
-setViewportHeight();
-
-
-// Enhanced responsive design for all sections
 function enhanceResponsiveDesign() {
     // Improve mobile navigation
     improveMobileNav();
@@ -5535,50 +6320,42 @@ function optimizeMobilePerformance() {
     }
 }
 
-// Call this function in your main initialization
-document.addEventListener('DOMContentLoaded', function () {
-    // ... your existing code ...
+// ================================
+// Mobile viewport height fix for iOS
+// ================================
+function setViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
 
-    // Add responsive enhancements
+// ================================
+// Event Listeners
+// ================================
+window.addEventListener('resize', () => {
+    forceLogoSizeReduction();
+    setViewportHeight();
     enhanceResponsiveDesign();
-
-    // Re-run on resize
-    window.addEventListener('resize', enhanceResponsiveDesign);
 });
 
-// Add to your loadComponent function to handle dynamically loaded content
-function loadComponent(sectionId, filePath, callback) {
-    fetch(filePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load ${filePath}: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.innerHTML = data;
+window.addEventListener('orientationchange', setViewportHeight);
 
-                // Add the section ID to the loaded content's main container
-                const container = section.querySelector('div[class*="section"], section[class*="section"]');
-                if (container && !container.id) {
-                    container.id = sectionId + '-content';
-                }
+// Initial viewport height setup
+setViewportHeight();
 
-                // Apply responsive enhancements to new content
-                setTimeout(() => {
-                    enhanceResponsiveDesign();
-                    // Trigger custom event for slider initialization
-                    const event = new CustomEvent('componentLoaded', { detail: { sectionId } });
-                    document.dispatchEvent(event);
-                }, 100);
+// ================================
+// Error handling for missing components
+// ================================
+window.addEventListener('error', (event) => {
+    console.error('Global error:', event.error);
+});
 
-                if (callback) callback();
-            }
-        })
-        .catch(error => console.error("Error loading " + filePath, error));
-}
+// ================================
+// Make functions available globally
+// ================================
+window.initializeCareersForm = initializeCareersForm;
+window.initializeContactForm = initializeContactForm;
+window.initializeAllForms = initializeAllForms;
+window.initializeFormsForSection = initializeFormsForSection;
 
 
 
@@ -5681,6 +6458,7 @@ File: D:\gradb\index.html
                 <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#careers">CAREERS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="#footer">FOOTER</a></li>
             </ul>
         </div>
     </div>
@@ -5698,8 +6476,16 @@ File: D:\gradb\index.html
   <section id="philosophy" class="section">
     <!-- Content loaded dynamically -->
   </section>
+  
+  <section id="footer" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
 
   <section id="services" class="section">
+    <!-- Content loaded dynamically -->
+  </section>
+
+  <section id="footer" class="section">
     <!-- Content loaded dynamically -->
   </section>
 
@@ -5715,12 +6501,14 @@ File: D:\gradb\index.html
     <!-- Content loaded dynamically -->
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4">
+
+
+
+  <!-- <footer class="bg-dark text-white text-center py-4">
     <div class="container">
       <p>&copy; 2025 Grad Architects. All Rights Reserved.</p>
     </div>
-  </footer>
+  </footer> -->
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -15,7 +15,7 @@
     min-height: 100vh;
     padding: 80px 20px;
     background-color: var(--background-color);
-    margin-top: -140px;
+    margin-top: -160px;
     margin-bottom: -150px;
 }
 
@@ -39,11 +39,11 @@
 
 .main-heading-stacked {
     font-size: 3.5rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.1;
     letter-spacing: 2px;
     margin: 0;
-    color: var(--primary-color);
+    color:black;
     text-align: left;
     flex-shrink: 0;
 }
@@ -51,22 +51,25 @@
 .philosophy-content {
     flex: 1;
     padding-top: 0;
+    
 }
 
 .section-title {
-    font-size: 1.6rem;
-    font-weight: 400;
+    font-size: 1.7rem;
+    font-weight: 450;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--primary-color);
+    letter-spacing: 2px;
+    color:black;
     margin-bottom: 2rem;
     text-align: left;
+
+    
 }
 
 .philosophy-text {
     font-size: 1rem;
     line-height: 1.8;
-    color: #000000; /* CHANGED: From var(--secondary-color) to black */
+    color: grey;
     margin-bottom: 2.5rem;
     max-width: 100%;
     text-align: justify;
@@ -75,7 +78,7 @@
 .content-divider {
     border: 0;
     height: 1.5px;
-    background-color: var(--primary-color);
+    background-color: grey;
     width: 300px;
     margin: 0 0 2.5rem 0;
 }
@@ -128,8 +131,8 @@
 .values-title {
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    color: black;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: left;
@@ -138,7 +141,7 @@
 
 .value-row {
     font-size: 0.9rem;
-    color: #000000; /* CHANGED: From var(--secondary-color) to black */
+    color: grey;
     font-weight: 500;
     text-align: left;
     width: 500px;
@@ -146,7 +149,7 @@
 
 .value-divider {
     height: 1px;
-    background-color: var(--border-color);
+    background-color: grey;
     margin: 1rem 0;
     opacity: 0.5;
     width: 100%;
@@ -297,7 +300,7 @@
     
     .value-row {
         padding: 0 10px;
-        line-height: 1.5;
+        line-height: 0.1;
         text-align: center;
         color: #000000; /* CHANGED: Maintain black color on mobile */
     }

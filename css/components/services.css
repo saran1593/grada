@@ -1,4 +1,4 @@
-/* services.css - Updated for hover functionality with single expanded service */
+/* services.css - Fixed text size and background issues */
 .grad-services-section {
     padding: 120px 0;
     min-height: 100vh;
@@ -8,9 +8,7 @@
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     margin-top: -210px;
-    margin-bottom: -100px;
-  
-   
+    margin-bottom: -280px;
 }
 
 .grad-services-section h3 {
@@ -42,7 +40,7 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    background: #ffffff;
+    background: #ffffff; /* Default white background */
     border-right: 1px solid #e0e0e0;
     display: flex;
     justify-content: center;
@@ -60,6 +58,7 @@
 .grad-service-column:first-child {
     flex: 1 1 100% !important;
     min-width: 200px !important;
+    background: #ffffff !important; /* Ensure white background when expanded */
 }
 
 .grad-service-column:first-child .grad-vertical-text {
@@ -75,6 +74,7 @@
 /* COLLAPSED state for non-expanded services */
 .grad-service-column:not(:first-child) {
     flex: 0 0 80px;
+    background-color: #f8f9fa !important; /* Gray background when collapsed */
 }
 
 .grad-service-column:not(:first-child) .grad-vertical-text {
@@ -89,29 +89,42 @@
 .grad-services-container:hover .grad-service-column:not(:hover) {
     flex: 0 0 60px !important;
     min-width: 60px !important;
+    background-color: #f8f9fa !important; /* Gray background when collapsed */
+}
+
+/* FIXED: When Architectural Design shrinks, apply same styling as others */
+.grad-services-container:hover .grad-service-column:first-child:not(:hover) {
+    flex: 0 0 60px !important;
+    min-width: 60px !important;
+    background-color: #f8f9fa !important; /* Gray background when collapsed */
 }
 
 .grad-services-container:hover .grad-service-column:hover {
     flex: 1 1 100% !important;
     min-width: 200px !important;
+    background-color: #ffffff !important; /* White background when expanded */
 }
 
 .grad-services-container:hover .grad-service-column:hover .grad-vertical-text {
     opacity: 0 !important;
+    transform: rotate(180deg) scale(0.8) !important;
 }
 
 .grad-services-container:hover .grad-service-column:hover .grad-service-content {
     opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
-/* The vertical text label */
+/* ================================
+   DESKTOP VERTICAL TEXT STYLING - FIXED TEXT SIZE
+   ================================ */
 .grad-vertical-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     white-space: nowrap;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Consistent text size for ALL */
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #2c3e50;
@@ -123,6 +136,32 @@
     background: rgba(255, 255, 255, 0.9);
     padding: 10px 5px;
     border-radius: 5px;
+}
+
+/* FIXED: Enhanced styling for ALL collapsed services - SAME TEXT SIZE */
+.grad-service-column .grad-vertical-text {
+    color: #3498db !important;
+    transform: rotate(180deg) scale(1.1) !important;
+    background: rgba(255, 255, 255, 1) !important;
+    font-size: 1.1rem !important; /* Force same text size */
+    font-weight: 600 !important;
+    letter-spacing: 3px !important;
+}
+
+/* FIXED: When Architectural Design shrinks, show vertical text with same styling */
+.grad-services-container:hover .grad-service-column:first-child:not(:hover) .grad-vertical-text {
+    opacity: 1 !important;
+    color: #3498db !important;
+    transform: rotate(180deg) scale(1.1) !important;
+    background: rgba(255, 255, 255, 1) !important;
+    font-size: 1.1rem !important;
+}
+
+/* Hide vertical text for expanded service */
+.grad-service-column:first-child .grad-vertical-text,
+.grad-services-container:hover .grad-service-column:hover .grad-vertical-text {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.8);
 }
 
 /* The content that appears when a column is expanded or hovered */
@@ -190,45 +229,83 @@
     text-align: left;
 }
 
-/* Column effects for non-expanded services */
-.grad-service-column:not(:first-child) {
-    background-color: #f8f9fa;
-}
-
-.grad-service-column:not(:first-child) .grad-vertical-text {
-    color: #3498db;
-    transform: rotate(180deg) scale(1.1);
-    background: rgba(255, 255, 255, 1);
-}
-
 /* Hover effects for non-expanded services */
 .grad-service-column:not(:first-child):hover {
     background-color: #e9ecef;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .grad-services-container {
-        height: 75vh;
-        max-height: 650px;
-    }
-}
-
-@media (max-width: 992px) {
-    .grad-services-section {
-        padding: 100px 0;
-    }
-    
-    .grad-services-container {
-        height: 70vh;
-        max-height: 600px;
-    }
-}
-
+/* ================================
+   MOBILE OVERRIDES (≤768px)
+   ================================ */
 @media (max-width: 768px) {
+    /* Reset ALL vertical text for mobile */
+    .grad-service-column .grad-vertical-text {
+        opacity: 1 !important;
+        transform: none !important;
+        writing-mode: horizontal-tb !important;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        padding: 8px 12px !important;
+        margin-bottom: 10px !important;
+        border-radius: 4px !important;
+        font-size: 0.9rem !important;
+        letter-spacing: 2px !important;
+        text-align: center !important;
+        width: 100% !important;
+        height: auto !important;
+        white-space: nowrap !important;
+        color: #2c3e50 !important;
+    }
+
+    /* Ensure first service matches others on mobile */
+    .grad-service-column:first-child .grad-vertical-text {
+        opacity: 1 !important;
+        transform: none !important;
+        writing-mode: horizontal-tb !important;
+        font-size: 0.9rem !important; /* Same size as others */
+    }
+
+    /* Mobile container behavior */
+    .grad-service-column {
+        flex: 0 0 70px !important;
+        min-width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid #e0e0e0 !important;
+        background-color: #f8f9fa !important; /* All gray on mobile by default */
+    }
+
+    .grad-service-column:last-child {
+        border-bottom: none !important;
+    }
+
+    /* First service should behave like others on mobile */
+    .grad-service-column:first-child {
+        flex: 0 0 70px !important;
+        background-color: #f8f9fa !important; /* Gray background like others */
+    }
+
+    .grad-service-column:first-child .grad-service-content {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Hide content for ALL services by default on mobile */
+    .grad-service-column .grad-service-content {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Only show content when service is hovered or active */
+    .grad-services-container:hover .grad-service-column:hover .grad-service-content,
+    .grad-service-column.grad-expanded .grad-service-content {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
     .grad-services-section {
         padding: 80px 0;
-        margin-top: 10px;
         margin-top: -120px;
         margin-bottom: 20px;
     }
@@ -240,49 +317,20 @@
         max-height: none;
     }
     
-    .grad-service-column {
-        flex: 0 0 70px !important;
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
-        min-width: 100% !important;
-    }
-    
     .grad-service-column:first-child {
-        flex: 1 1 350px !important;
-    }
-    
-    .grad-service-column:last-child {
-        border-bottom: none;
+        flex: 0 0 70px !important;
     }
     
     /* Disable hover effects on mobile */
     .grad-services-container:hover .grad-service-column:not(:hover) {
         flex: 0 0 70px !important;
         min-width: 100% !important;
+        background-color: #f8f9fa !important;
     }
     
     .grad-services-container:hover .grad-service-column:hover {
         flex: 1 1 350px !important;
-    }
-    
-    .grad-vertical-text {
-        writing-mode: horizontal-tb;
-        transform: none;
-        font-size: 1rem;
-        letter-spacing: 2px;
-        padding: 5px 10px;
-    }
-    
-    .grad-service-column:not(:first-child) .grad-vertical-text {
-        transform: none;
-    }
-    
-    .grad-service-column:first-child .grad-vertical-text {
-        transform: scale(0.8);
-    }
-    
-    .grad-service-column:not(:first-child) .grad-vertical-text {
-        transform: scale(1.05);
+        background-color: #ffffff !important; /* White when expanded on mobile */
     }
     
     .grad-content-overlay {
@@ -303,17 +351,12 @@
 @media (max-width: 576px) {
     .grad-services-section {
         padding: 60px 0;
-        margin-top: 10px;
         margin-top: -80px;
         margin-bottom: 20px;
     }
     
     .grad-services-container {
         min-height: 500px;
-    }
-    
-    .grad-service-column:first-child {
-        flex: 1 1 300px !important;
     }
     
     .grad-services-container:hover .grad-service-column:hover {
@@ -336,5 +379,11 @@
     
     .grad-service-description {
         font-size: 0.9rem;
+    }
+
+    .grad-service-column .grad-vertical-text {
+        font-size: 0.8rem !important;
+        letter-spacing: 1.5px !important;
+        padding: 6px 10px !important;
     }
 }

@@ -92,8 +92,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
                 setTimeout(initContact, 200);
             }
+        },
+
+        {
+            id: "footer", 
+            file: "components/footer.html",
+            callback: () => {
+                console.log("Footer component loaded successfully");
+            }
+            
+
         }
     ];
+      
+    
+
 
     // Load components sequentially to avoid race conditions
     function loadNextComponent(index) {
