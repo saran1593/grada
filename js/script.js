@@ -18,16 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "home", file: "components/home.html" },
         { id: "about", file: "components/about.html" },
         { id: "philosophy", file: "components/philosophy.html" },
-        { 
-            id: "services", 
-            file: "components/services.html", 
+        {
+            id: "services",
+            file: "components/services.html",
             callback: () => {
                 console.log("✅ Services component loaded successfully");
-                
+
                 // Force services initialization with multiple fallbacks
                 const initServices = () => {
                     console.log("🔄 Force initializing services...");
-                    
+
                     if (typeof ServicesManager !== 'undefined') {
                         console.log("🎯 Using ServicesManager class");
                         window.servicesManager = new ServicesManager();
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(initServices, 500);
                     }
                 };
-                
+
                 // Try multiple times with increasing delays
                 setTimeout(initServices, 300);
                 setTimeout(initServices, 1000);
@@ -50,16 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         },
         {
-            id: "projects", 
-            file: "components/projects.html", 
+            id: "projects",
+            file: "components/projects.html",
             callback: () => {
                 console.log("Projects component loaded successfully");
                 setTimeout(initializeProjects, 100);
             }
         },
         {
-            id: "careers", 
-            file: "components/careers.html", 
+            id: "careers",
+            file: "components/careers.html",
             callback: () => {
                 console.log("Careers component loaded successfully");
                 // Initialize careers form with retry mechanism
@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         },
         {
-            id: "contact", 
-            file: "components/contact.html", 
+            id: "contact",
+            file: "components/contact.html",
             callback: () => {
                 console.log("Contact component loaded successfully");
                 // Initialize contact form with retry mechanism
@@ -95,17 +95,17 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         {
-            id: "footer", 
+            id: "footer",
             file: "components/footer.html",
             callback: () => {
                 console.log("Footer component loaded successfully");
             }
-            
+
 
         }
     ];
-      
-    
+
+
 
 
     // Load components sequentially to avoid race conditions
@@ -158,16 +158,20 @@ function loadComponent(sectionId, filePath, callback) {
             section.classList.add('loaded');
 
             // Add the section ID to the loaded content's main container
-            const container = section.querySelector('div[class*="section"], section[class*="section"]');
-            if (container && !container.id) {
-                container.id = sectionId + '-content';
+            // const container = section.querySelector('div[class*="section"], section[class*="section"]');
+            // if (container && !container.id) {
+            //     container.id = sectionId + '-content';
+            // }
+
+            if (!section.id) {
+                section.id = sectionId;
             }
 
             // Re-initialize navigation after content loads
             setTimeout(() => {
                 initScrollFeatures();
                 navbarShrink();
-                
+
                 // Initialize forms for this section
                 if (sectionId === 'careers' || sectionId === 'contact') {
                     initializeFormsForSection(sectionId);
@@ -194,7 +198,7 @@ function initializeAllForms() {
 
 function initializeFormsForSection(sectionId) {
     console.log(`🔄 Initializing forms for section: ${sectionId}`);
-    
+
     if (sectionId === 'careers') {
         initializeCareersForm();
     } else if (sectionId === 'contact') {
@@ -253,11 +257,11 @@ function initializeCareersForm() {
         // Create mailto link
         const subject = `Career Application - ${name}`;
         const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Careers page.`;
-        
+
         const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        
+
         console.log("📨 Opening mail client:", mailtoLink);
-        
+
         // Show loading state
         const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');
         const originalText = submitBtn.innerHTML;
@@ -267,7 +271,7 @@ function initializeCareersForm() {
         // Open default email client in new tab
         setTimeout(() => {
             window.open(mailtoLink, '_blank');
-            
+
             // Reset form and button after a delay
             setTimeout(() => {
                 currentForm.reset();
@@ -286,12 +290,12 @@ function initializeCareersForm() {
 // ================================
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
-    
+
     if (!contactForm) {
         console.log("❌ Contact form not found (may not be on current page)");
         return;
     }
-    
+
     console.log("✅ Contact form found, attaching event listener");
 
     // Remove any existing event listeners
@@ -299,15 +303,15 @@ function initializeContactForm() {
     contactForm.parentNode.replaceChild(newForm, contactForm);
     const currentForm = document.getElementById('contactForm');
 
-    currentForm.addEventListener('submit', function(e) {
+    currentForm.addEventListener('submit', function (e) {
         e.preventDefault();
         console.log("✅ Contact form submit triggered");
-        
+
         const name = document.getElementById('contactName') ? document.getElementById('contactName').value.trim() : '';
         const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
         const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
         const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
-        
+
         // Validation
         if (!name || !email || !phone || !message) {
             showAlert('Please fill in all required fields.', 'error');
@@ -323,15 +327,15 @@ function initializeContactForm() {
 
         // Create WhatsApp message
         const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
-        
+
         // WhatsApp phone number (replace with your actual number)
         const whatsappNumber = '919840904236'; // Remove any + or spaces
-        
+
         // Create WhatsApp URL
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-        
+
         console.log("📱 WhatsApp URL:", whatsappUrl);
-        
+
         // Show loading state
         const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
         const originalText = submitBtn.innerHTML;
@@ -341,7 +345,7 @@ function initializeContactForm() {
         // Open WhatsApp in new tab
         setTimeout(() => {
             window.open(whatsappUrl, '_blank');
-            
+
             // Reset form and button after a delay
             setTimeout(() => {
                 currentForm.reset();
@@ -351,7 +355,7 @@ function initializeContactForm() {
             }, 2000);
         }, 1000);
     });
-    
+
     console.log("✅ Contact form handler attached successfully");
 }
 
@@ -596,6 +600,13 @@ function initScrollFeatures() {
         console.warn("No sections found for intersection observer");
         return;
     }
+    const projectSubSections = [
+        'project-categories',
+        'in-residence',
+        'soft-minimal',
+        'objects-of-desire',
+        'projects-content'
+    ];
 
     // SINGLE IntersectionObserver to avoid conflicts
     const observer = new IntersectionObserver(
@@ -604,19 +615,30 @@ function initScrollFeatures() {
             let highestRatio = 0;
 
             entries.forEach((entry) => {
+                let sectionId = entry.target.id;
+                if (sectionId.endsWith('-content')) {
+                    sectionId = sectionId.replace('-content', '');
+                }
                 if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
                     highestRatio = entry.intersectionRatio;
                     mostVisibleSection = entry.target.id;
                 }
             });
 
-            if (mostVisibleSection && highestRatio > 0.3) {
-                console.log("Most visible section:", mostVisibleSection);
+             if (mostVisibleSection && highestRatio > 0.1) {
+                console.log("Most visible section:", mostVisibleSection, "Ratio:", highestRatio);
 
+                let activeNavId = mostVisibleSection;
+                
+                if (projectSubSections.includes(mostVisibleSection)) {
+                    activeNavId = 'projects';
+                    console.log("Project sub-section detected, activating projects nav");
+                }
                 navLinks.forEach(link => {
                     const linkHref = link.getAttribute("href");
-                    if (linkHref === `#${mostVisibleSection}`) {
-                        // Remove active from all links
+                    const linkTarget = linkHref.substring(1);
+                    
+                    if (activeNavId === linkTarget) {
                         navLinks.forEach(l => l.classList.remove("active"));
                         // Add active to current link
                         link.classList.add("active");
@@ -624,6 +646,7 @@ function initScrollFeatures() {
                     }
                 });
             }
+
         },
         {
             threshold: [0.1, 0.3, 0.5, 0.7],
@@ -641,32 +664,35 @@ function initScrollFeatures() {
 
     // Smooth scroll for nav links - SIMPLIFIED
     navLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            console.log("Nav link clicked, target:", targetId);
-
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                // Update active class immediately
-                navLinks.forEach(l => l.classList.remove("active"));
-                this.classList.add("active");
-
-                // Smooth scroll to section
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
-
-                // Update URL hash
-                window.history.pushState(null, null, `#${targetId}`);
-            }
-        });
+        // Remove any existing event listeners to prevent duplicates
+        link.removeEventListener('click', handleNavClick);
+        link.addEventListener("click", handleNavClick);
     });
+    function handleNavClick(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        console.log("Nav link clicked, target:", targetId);
+
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            // Update active class immediately
+            navLinks.forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
+
+            // Smooth scroll to section
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetSection.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+
+            // Update URL hash
+            window.history.pushState(null, null, `#${targetId}`);
+        }
+    }
 }
 
 // ================================
