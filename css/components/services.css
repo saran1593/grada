@@ -98,6 +98,10 @@
     min-width: 60px !important;
     background-color: #f8f9fa !important; /* Gray background when collapsed */
 }
+.grad-services-container:hover .grad-service-column:first-child:not(:hover) .grad-service-content {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
 
 .grad-services-container:hover .grad-service-column:hover {
     flex: 1 1 100% !important;
