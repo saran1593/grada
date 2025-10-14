@@ -76,7 +76,7 @@
 
 .grad-contact-image {
     width: 80%;
-    height: 70vh;
+    height: 85vh !important;
     object-fit: cover;
     border-radius: 15px;
     

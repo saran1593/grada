@@ -1,13 +1,13 @@
 /* css/components/careers.css - UPDATED WITH VALIDATION STYLES */
 .grad-careers-section {
-    min-height: 100vh;
+    min-height:60vh;
     width: 100%;
     display: flex;
     align-items: center;
     background-color: #ffffff;
     color: #000000;
     font-family: 'Inter', sans-serif;
-    margin-top: -140px;
+    margin-top: -100px;
 }
 
 .grad-careers-form-container {
@@ -131,13 +131,15 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* UPDATED: Careers image styles */
+/* UPDATED: Careers image styles - REDUCED HEIGHT */
 .grad-careers-image {
     width: 80%;
-    height: 70vh;
+    height: 85vh !important;
     object-fit: cover;
     border-radius: 15px;
     margin-left: 90px;
+    margin-top: 18px !important;
+    
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -155,7 +157,7 @@
     }
     
     .grad-careers-image {
-        height: 70vh;
+        height: 50vh; /* REDUCED from 70vh to 50vh */
     }
     
     .grad-careers-eyebrow {
@@ -192,14 +194,14 @@
     }
     
     .grad-careers-submit-btn {
-        width: 100%;
+        width: auto;
         max-width: 250px;
         padding: 0.7rem 2rem;
-        margin: 1.5rem auto 0;
+        margin: 1.5rem 0 0 0; /* Updated margin for left alignment */
     }
     
     .grad-careers-image {
-        height: 50vh;
+        height: 40vh; /* REDUCED from 50vh to 40vh */
         margin-left: 30px;
     }
 }
@@ -232,15 +234,15 @@
     }
     
     .grad-careers-submit-btn {
-        width: 100%;
+        width: auto;
         max-width: 220px;
         padding: 0.6rem 1.5rem;
         font-size: 0.85rem;
-        margin: 1rem auto 0;
+        margin: 1rem 0 0 0; /* Updated margin for left alignment */
     }
     
     .grad-careers-image {
-        height: 40vh;
+        height: 35vh; /* REDUCED from 40vh to 35vh */
         margin-left: 15px;
     }
 }
@@ -272,7 +274,7 @@
     }
     
     .grad-careers-image {
-        height: 35vh;
+        height: 30vh; /* REDUCED from 35vh to 30vh */
         margin-left: 0;
         border-radius: 10px;
     }
