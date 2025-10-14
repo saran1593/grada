@@ -75,15 +75,15 @@
 }
 
 .grad-contact-image {
-    width: 80%;
+    width: 85%;
     height: 85vh !important;
     object-fit: cover;
     border-radius: 15px;
     
     position: relative;
     text-align: center;
-    margin-left: -60px;
-    margin-right: 60px;
+    margin-left: -20px!important;
+    margin-right: 80px;
 
 }
 

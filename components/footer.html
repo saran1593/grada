@@ -8,23 +8,43 @@
         /* Footer Styles */
         .grad-footer {
             background-color: #ffffff;
-            padding: 60px 0 30px;
+            padding: 10px 0 30px;
             font-family: 'Montserrat', sans-serif;
             color: #333;
             border-top: 1px solid #f0f0f0;
+            margin-top: 0px;
         }
 
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 10px;
         }
 
         .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 0px;
+        }
+
+        .footer-main {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        /* Right column - Grouped sections */
+        .footer-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 110px;
+            align-items: start;
+        }
+
+        .footer-section {
+            margin-left: 0;
+            text-align: left; /* Center align all content */
         }
 
         .footer-section h3 {
@@ -32,7 +52,42 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        /* Contact info on right side */
+        .footer-contact-right {
+        
+            margin-top: 80px;
+            padding-top: 10px;
+            border-top: 1px solid grey;
+            text-align: center; /* Center align contact info */
+            margin-left: -445px;
+         
+        }
+
+        .footer-contact-right p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 3px;
+        }
+
+        .footer-contact-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            justify-content: center; /* Center align social icons */
+        }
+
+        .footer-contact-social a {
+            color: #666;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-social a:hover {
             color: #000;
         }
 
@@ -52,7 +107,7 @@
         }
 
         .form-group {
-            margin-bottom: 15px; /* Reduced from 25px */
+            margin-bottom: 5px;
         }
 
         .footer-input {
@@ -62,10 +117,10 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
             border-radius: 0 !important;
             box-shadow: none !important;
-            padding: 0.5rem 0 !important; /* Reduced padding */
+            padding: 0.5rem 0 !important;
             transition: all 0.3s ease;
             font-size: 14px;
-            width: 100%;
+            width: 50%;
             resize: none;
             font-family: 'Montserrat', sans-serif;
         }
@@ -86,7 +141,7 @@
         /* Textarea specific styles */
         .footer-input.textarea {
             resize: vertical;
-            min-height: 60px; /* Reduced height */
+            min-height: 60px;
             line-height: 1.5;
         }
 
@@ -97,13 +152,14 @@
             letter-spacing: 2px;
             transition: all 0.3s ease;
             width: auto;
-            padding: 0.7rem 1.5rem; /* Reduced padding */
+            padding: 0.7rem 1.5rem;
             font-size: 0.8rem;
             text-transform: uppercase;
-            margin-top: 0.5rem; /* Reduced margin */
+            margin-top: 0.5rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             cursor: pointer;
+            
         }
 
         .footer-submit-btn:hover {
@@ -136,7 +192,8 @@
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 10px;
+            justify-content: center; /* Center align social links */
         }
 
         .social-icon {
@@ -150,23 +207,74 @@
         }
 
         .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
+            text-align: left;
+            padding-top: 0px;
+            border-bottom: 1px solid grey;
             font-size: 12px;
             color: #999;
+            margin-top: 0px;
+        }
+
+        /* Horizontal divider and contact info section */
+        .footer-divider {
+            border-top: 1px solid grey;
+            margin: 40px 0 30px;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .footer-address {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social-icon {
+            color: #666;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .footer-social-icon:hover {
+            color: #000;
         }
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .footer-content {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-right {
                 grid-template-columns: 1fr 1fr;
                 gap: 30px;
+            }
+
+            .footer-contact-info {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
             }
         }
 
         @media (max-width: 576px) {
-            .footer-content {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-right {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
@@ -182,13 +290,17 @@
             }
             
             .footer-logo img {
-                height: 22px; /* Smaller for mobile */
+                height: 22px;
+            }
+
+            .footer-input {
+                width: 100%;
             }
         }
 
         @media (max-width: 400px) {
             .footer-logo img {
-                height: 20px; /* Even smaller for extra small screens */
+                height: 20px;
             }
         }
     </style>
@@ -197,66 +309,133 @@
     <footer class="grad-footer">
         <div class="footer-container">
             <div class="footer-content">
-                <!-- GET IN TOUCH Section -->
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="/images/logo.png" alt="Great Architects Logo">
+                <div class="footer-main">
+                    <!-- Left column - GET IN TOUCH Section -->
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <img src="/images/logo.png" alt="Great Architects Logo">
+                        </div>
+                        <h3>GET IN TOUCH</h3>
+                        <form class="footer-form" id="projectForm">
+                            <div class="form-group">
+                                <input type="text" class="footer-input" id="projectName" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="footer-input" id="projectPhone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="footer-input textarea" id="projectMessage" placeholder="Message" rows="2" required></textarea>
+                            </div>
+                            <button type="submit" class="footer-submit-btn">START YOUR PROJECT</button>
+                        </form>
                     </div>
-                    <h3>GET IN TOUCH</h3>
-                    <form class="footer-form">
-                        <div class="form-group">
-                            <input type="text" class="footer-input" placeholder="Name" required>
+
+                    <!-- Right column - Grouped sections -->
+                    <div class="footer-right">
+                        <!-- PROJECTS Section -->
+                        <div class="footer-section">
+                            <h3>PROJECTS</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Architecture</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Center</a></li>
+                                <li><a href="#">Videos</a></li>
+                            </ul>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" class="footer-input" placeholder="Phone Number" required>
+
+                        <!-- STUDIO Section -->
+                        <div class="footer-section">
+                            <h3>STUDIO</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Courses</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
                         </div>
-                        <div class="form-group">
-                            <textarea class="footer-input textarea" placeholder="Message" rows="2" required></textarea>
+
+                        <!-- FOLLOW Section -->
+                        <div class="footer-section">
+                            <h3>FOLLOW</h3>
+                            <ul class="footer-links">
+                                <li><a href="https://www.instagram.com/gradarchitects" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.facebook.com/gradarchitects" target="_blank">Facebook</a></li>
+                                <li><a href="https://www.linkedin.com/company/gradarchitects" target="_blank">LinkedIn</a></li>
+                            </ul>
+                            
+                            <!-- Contact info on right side -->
+                            <div class="footer-contact-right">
+                                <p>123 Architecture Street, Chennai.</p>
+                                <p>+91 98765 43210 | info@gradarchitects.com</p>
+                                <div class="footer-contact-social">
+                                    <a href="mailto:info@gradarchitects.com">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                    <a href="https://wa.me/919876543210" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href="tel:+919876543210">
+                                        <i class="fas fa-phone"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit" class="footer-submit-btn">START YOUR PROJECT</button>
-                    </form>
+                    </div>
                 </div>
 
-                <!-- PROJECTS Section -->
-                <div class="footer-section">
-                    <h3>PROJECTS</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Architecture</a></li>
-                        <li><a href="#">Design</a></li>
-                        <li><a href="#">Center</a></li>
-                        <li><a href="#">Videos</a></li>
-                    </ul>
-                </div>
 
-                <!-- STUDIO Section -->
-                <div class="footer-section">
-                    <h3>STUDIO</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- FOLLOW Section -->
-                <div class="footer-section">
-                    <h3>FOLLOW</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
 
             <div class="copyright">
-                <p>© 2023 Great Architects</p>
+                <p>© 2025 Great Architects</p>
             </div>
         </div>
     </footer>
 
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Form submission handler for "START YOUR PROJECT" button
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('projectName').value;
+            const phone = document.getElementById('projectPhone').value;
+            const message = document.getElementById('projectMessage').value;
+            
+            // Validate form
+            if (!name || !phone || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Create email content
+            const subject = `New Project Inquiry from ${name}`;
+            const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Optional: Reset form after submission
+            setTimeout(() => {
+                document.getElementById('projectForm').reset();
+            }, 1000);
+        });
+        
+        // Social links functionality
+        document.querySelectorAll('.footer-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // If it's a placeholder link, prevent default and show message
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('This page is under construction. Please check back later.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
