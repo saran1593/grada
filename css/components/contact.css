@@ -6,8 +6,8 @@
     align-items: center;
     background-color: #ffffff;
     color: #000000;
-    font-family: 'Inter', sans-serif;
-    margin-top: -140px;
+    font-family: 'Inter', sans-serif !important;
+    margin-top: -45px;
 }
 
 .grad-contact-form-container {
@@ -59,15 +59,17 @@
     background-color: #000000 !important;
     color: #ffffff !important;
     border: 1px solid #000000 !important;
-    letter-spacing: 2px;
+    letter-spacing: 2px !important;
     transition: all 0.3s ease;
     width: auto;
-    padding: 0.8rem 3rem;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    margin-top: 1rem;
-    font-style: sans-serif;
+    padding: 0.8rem 3rem !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    margin-top: 1rem !important;
+    font-weight: 1px !important;
+
 }
+
 
 .grad-contact-submit-btn:hover {
     background-color: #ffffff !important;

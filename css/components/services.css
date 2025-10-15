@@ -7,7 +7,7 @@
     justify-content: center;
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    margin-top: -210px;
+    margin-top: -140px;
     margin-bottom: -200px;
 }
 
@@ -41,7 +41,7 @@
     overflow: hidden;
     cursor: pointer;
     background: #ffffff; /* Default white background */
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +74,7 @@
 /* COLLAPSED state for non-expanded services */
 .grad-service-column:not(:first-child) {
     flex: 0 0 80px;
-    background-color: #f8f9fa !important; /* Gray background when collapsed */
+    background-color: #ffffff !important; /* Gray background when collapsed */
 }
 
 .grad-service-column:not(:first-child) .grad-vertical-text {
@@ -89,14 +89,14 @@
 .grad-services-container:hover .grad-service-column:not(:hover) {
     flex: 0 0 60px !important;
     min-width: 60px !important;
-    background-color: #f8f9fa !important; /* Gray background when collapsed */
+    background-color: #ffffff !important; /* Gray background when collapsed */
 }
 
 /* FIXED: When Architectural Design shrinks, apply same styling as others */
 .grad-services-container:hover .grad-service-column:first-child:not(:hover) {
     flex: 0 0 60px !important;
     min-width: 60px !important;
-    background-color: #f8f9fa !important; /* Gray background when collapsed */
+    background-color: #ffffff !important; /* Gray background when collapsed */
 }
 .grad-services-container:hover .grad-service-column:first-child:not(:hover) .grad-service-content {
     opacity: 0 !important;
@@ -131,7 +131,7 @@
     font-size: 1.1rem; /* Consistent text size for ALL */
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #2c3e50;
+    color: #000000;
     transition: all 0.4s ease-in-out;
     z-index: 100;
     position: absolute;
@@ -144,7 +144,7 @@
 
 /* FIXED: Enhanced styling for ALL collapsed services - SAME TEXT SIZE */
 .grad-service-column .grad-vertical-text {
-    color: #3498db !important;
+    color: #000000 !important;
     transform: rotate(180deg) scale(1.1) !important;
     background: rgba(255, 255, 255, 1) !important;
     font-size: 1.1rem !important; /* Force same text size */
@@ -155,7 +155,7 @@
 /* FIXED: When Architectural Design shrinks, show vertical text with same styling */
 .grad-services-container:hover .grad-service-column:first-child:not(:hover) .grad-vertical-text {
     opacity: 1 !important;
-    color: #3498db !important;
+    color: #000000 !important;
     transform: rotate(180deg) scale(1.1) !important;
     background: rgba(255, 255, 255, 1) !important;
     font-size: 1.1rem !important;

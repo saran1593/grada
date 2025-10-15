@@ -13,18 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
     preserveImageSizes();
     forceLogoSizeReduction();
 
-    // Define section types
-    const staticSections = ['home', 'about', 'philosophy', 'footer'];
-    const hiddenSections = ['services', 'projects', 'careers', 'contact'];
-
     // Load components with proper sequencing
     const loadSequence = [
-        { id: "home", file: "components/home.html" },
-        { id: "about", file: "components/about.html" },
-        { id: "philosophy", file: "components/philosophy.html" },
+        { id: "home", file: "components/home.html", type: "static" },
+        { id: "about", file: "components/about.html", type: "static" },
+        { id: "philosophy", file: "components/philosophy.html", type: "static" },
         {
             id: "services",
             file: "components/services.html",
+            type: "hidden",
             callback: () => {
                 console.log("✅ Services component loaded successfully");
                 hideSection('services');
@@ -47,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             id: "projects",
             file: "components/projects.html",
+            type: "hidden",
             callback: () => {
                 console.log("Projects component loaded successfully");
                 hideSection('projects');
@@ -56,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             id: "careers",
             file: "components/careers.html",
+            type: "hidden",
             callback: () => {
                 console.log("Careers component loaded successfully");
                 hideSection('careers');
@@ -73,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             id: "contact",
             file: "components/contact.html",
+            type: "hidden",
             callback: () => {
                 console.log("Contact component loaded successfully");
                 hideSection('contact');
@@ -90,8 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             id: "footer",
             file: "components/footer.html",
+            type: "static",
             callback: () => {
                 console.log("Footer component loaded successfully");
+            }
+        },
+        {
+            id: "footer1",
+            file: "components/footer1.html",
+            type: "hidden",
+            callback: () => {
+                console.log("Footer1 component loaded successfully");
+                hideSection('footer1');
             }
         }
     ];
@@ -105,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 initScrollFeatures();
                 enhanceResponsiveDesign();
                 initializeAllForms();
+                removeEmptySpace(); // Remove extra space at bottom
             }, 500);
             return;
         }
@@ -117,6 +128,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start loading sequence
     loadNextComponent(0);
 });
+
+// ================================
+// NEW: Remove empty space at bottom
+// ================================
+function removeEmptySpace() {
+    // Set body and html to full height
+    document.body.style.minHeight = '100vh';
+    document.documentElement.style.minHeight = '100vh';
+    
+    // Ensure footer is at bottom
+    const footer = document.getElementById('footer');
+    if (footer) {
+        footer.style.marginTop = 'auto';
+    }
+    
+    // Remove any extra padding/margin from main sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.minHeight = 'auto';
+    });
+    
+    console.log("✅ Removed empty space at bottom");
+}
 
 // ================================
 // SECTION VISIBILITY FUNCTIONS
@@ -143,9 +177,29 @@ function showSection(sectionId) {
 }
 
 function hideAllHiddenSections() {
-    const hiddenSections = ['services', 'projects', 'careers', 'contact'];
+    const hiddenSections = ['services', 'projects', 'careers', 'contact', 'footer1'];
     hiddenSections.forEach(sectionId => {
         hideSection(sectionId);
+    });
+}
+
+function hideStaticSections() {
+    const staticSections = ['home', 'about', 'philosophy', 'footer'];
+    staticSections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.style.display = 'none';
+        }
+    });
+}
+
+function showStaticSections() {
+    const staticSections = ['home', 'about', 'philosophy', 'footer'];
+    staticSections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.style.display = 'block';
+        }
     });
 }
 
@@ -169,23 +223,72 @@ function handleNavigationClick(targetId, clickedLink) {
     console.log("Navigation clicked:", targetId);
     
     const staticSections = ['home', 'about', 'philosophy', 'footer'];
-    const hiddenSections = ['services', 'projects', 'careers', 'contact'];
+    const hiddenSections = ['services', 'projects', 'careers', 'contact', 'footer1'];
     
-    // If clicking a STATIC section (HOME, ABOUT, PHILOSOPHY, FOOTER)
-    if (staticSections.includes(targetId)) {
-        // Hide ALL hidden sections
+    // If clicking a STATIC section (HOME, ABOUT, PHILOSOPHY)
+    if (['home', 'about', 'philosophy'].includes(targetId)) {
+        // Show all static sections, hide all hidden sections
+        showStaticSections();
         hideAllHiddenSections();
         setActiveNavLink(clickedLink);
         scrollToSection(targetId);
     }
-    // If clicking a HIDDEN section (SERVICES, PROJECTS, CAREERS, CONTACT)
-    else if (hiddenSections.includes(targetId)) {
-        // Hide all other hidden sections first
+    // If clicking SERVICES - Show SERVICES + PROJECTS + FOOTER1 (combined page)
+    else if (targetId === 'services') {
+        // Hide static sections and other hidden sections
+        hideStaticSections();
         hideAllHiddenSections();
-        // Show only the clicked section
-        showSection(targetId);
+        
+        // Show the combined services page
+        showSection('services');
+        showSection('projects');
+        showSection('footer1');
+        
         setActiveNavLink(clickedLink);
-        scrollToSection(targetId);
+        scrollToSection('services');
+    }
+    // If clicking PROJECTS - Also show combined page (same as services)
+    else if (targetId === 'projects') {
+        // Hide static sections and other hidden sections
+        hideStaticSections();
+        hideAllHiddenSections();
+        
+        // Show the combined services page
+        showSection('services');
+        showSection('projects');
+        showSection('footer1');
+        
+        setActiveNavLink(clickedLink);
+        scrollToSection('projects');
+    }
+    // If clicking CAREERS - Show only careers page
+    else if (targetId === 'careers') {
+        // Hide static sections and other hidden sections
+        hideStaticSections();
+        hideAllHiddenSections();
+        
+        // Show only careers
+        showSection('careers');
+        
+        setActiveNavLink(clickedLink);
+        scrollToSection('careers');
+    }
+    // If clicking CONTACT - Show only contact page
+    else if (targetId === 'contact') {
+        // Hide static sections and other hidden sections
+        hideStaticSections();
+        hideAllHiddenSections();
+        
+        // Show only contact
+        showSection('contact');
+        
+        setActiveNavLink(clickedLink);
+        scrollToSection('contact');
+    }
+    // If clicking FOOTER (from static pages)
+    else if (targetId === 'footer') {
+        setActiveNavLink(clickedLink);
+        scrollToSection('footer');
     }
 }
 
@@ -523,70 +626,7 @@ function initializeProjects() {
 
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-
-    navLinks.forEach(link => link.classList.remove("active"));
-
-    if (sections.length === 0) {
-        console.warn("No sections found for intersection observer");
-        return;
-    }
-
-    const projectSubSections = [
-        'project-categories',
-        'in-residence',
-        'soft-minimal',
-        'objects-of-desire',
-        'projects-content'
-    ];
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            let mostVisibleSection = null;
-            let highestRatio = 0;
-
-            entries.forEach((entry) => {
-                let sectionId = entry.target.id;
-                if (sectionId.endsWith('-content')) {
-                    sectionId = sectionId.replace('-content', '');
-                }
-                if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
-                    highestRatio = entry.intersectionRatio;
-                    mostVisibleSection = entry.target.id;
-                }
-            });
-
-            if (mostVisibleSection && highestRatio > 0.1) {
-                let activeNavId = mostVisibleSection;
-                
-                if (projectSubSections.includes(mostVisibleSection)) {
-                    activeNavId = 'projects';
-                }
-                
-                if (!document.getElementById(activeNavId)?.classList.contains('hidden-section')) {
-                    navLinks.forEach(link => {
-                        const linkHref = link.getAttribute('href').substring(1);
-                        if (linkHref === activeNavId) {
-                            link.classList.add('active');
-                        } else {
-                            link.classList.remove('active');
-                        }
-                    });
-                }
-            }
-        },
-        {
-            threshold: [0, 0.1, 0.5, 1],
-            rootMargin: '-20% 0px -20% 0px'
-        }
-    );
-
-    sections.forEach(section => {
-        if (section.id) {
-            observer.observe(section);
-        }
-    });
+    // Modified to only work with visible sections
 }
 
 function enhanceResponsiveDesign() {

@@ -1,8 +1,9 @@
 .about-section {
   padding: 100px 0;
   background-color: var(--white);
-  margin-top: -120px;
-  margin-bottom: -200px;
+  margin-top: -180px;
+  margin-bottom: -150px;
+ 
   display: flex;
   align-items: center;
   min-height: 100vh;
