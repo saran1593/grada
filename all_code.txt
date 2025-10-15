@@ -36,7 +36,7 @@ File: D:\gradb\components\about.html
 ==================================================
 File: D:\gradb\components\careers.html
 ==================================================
-<!-- <link rel="stylesheet" href="/css/components/careers.css"> -->
+<link rel="stylesheet" href="/css/components/careers.css">
 
 <section class="grad-careers-section">
     <div class="container-fluid">
@@ -67,8 +67,8 @@ File: D:\gradb\components\careers.html
                             <textarea class="form-control grad-careers-input" id="careerMessage" placeholder="Write your message" rows="4" required></textarea>
                         </div>
                         
-                        <!-- Centered Submit Button -->
-                        <div class="text-center">
+                        <!-- Left Aligned Submit Button -->
+                        <div class="text-start">
                             <button type="submit" class="btn btn-dark grad-careers-submit-btn text-uppercase fw-bold">Submit</button>
                         </div>
                     </form>
@@ -195,8 +195,8 @@ File: D:\gradb\components\contact.html
                                 rows="4" required></textarea>
                         </div>
 
-                        <!-- Centered Submit Button -->
-                        <div class="text-center">
+                        <!-- Left Aligned Submit Button -->
+                        <div class="text-start">
                             <button type="submit"
                                 class="btn btn-dark grad-contact-submit-btn text-uppercase fw-bold">
                                 <i class="fab fa-whatsapp me-2"></i>Send via WhatsApp
@@ -319,233 +319,887 @@ File: D:\gradb\components\footer.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Architects Footer</title>
+    <title>Grad Architects Footer</title>
     <style>
-        
-        .main-content {
-            flex: 1;
-            padding: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
+        /* Footer Styles */
+        .grad-footer {
+            background-color: #ffffff;
+            padding: 10px 0 30px;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 0px;
         }
-        
-        .footer {
-            width: 100%;
-            background-color: #fff;
-            padding: 5px;
-            height: auto;
-            min-height: 5vh;
-            margin-bottom: -150px;
 
-        }
-        
         .footer-container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            display: flex;
+            padding: 0 10px;
         }
-        
-        .footer-logo {
-            flex: 0 0 200px;
-            margin-right: 60px;
-        }
-        
-        .logo-container {
+
+        .footer-content {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 0px;
         }
-        
-        .logo-img {
-            width: 120px;
-            height: auto;
-            margin-bottom: 5px;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            color: grey;
-            margin-bottom: 5px;
-        }
-        
-        .logo-subtitle {
-            font-size: 12px;
-            color: rgb(0, 0, 0);
-            letter-spacing: 0.5px;
-        }
-        
-        .footer-content {
-            flex: 1;
+
+        .footer-main {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
         }
-        
+
+        /* Right column - Grouped sections */
+        .footer-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 110px;
+            align-items: start;
+        }
+
+        .footer-section {
+            margin-left: 0;
+            text-align: left; /* Center align all content */
+        }
+
         .footer-section h3 {
-            font-size: 12px;
+            font-size: 14px;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 10px;
-            color: #000000;
-            font-weight: 500;
+            color: #000;
         }
+
+        /* Contact info on right side */
+        .footer-contact-right {
         
-        .footer-links {
-            list-style: none;
+            margin-top: 80px;
+            padding-top: 10px;
+            border-top: 1px solid grey;
+            text-align: center; /* Center align contact info */
+            margin-left: -445px;
+         
         }
-        
-        .footer-links li {
+
+        .footer-contact-right p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 3px;
+        }
+
+        .footer-contact-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            justify-content: center; /* Center align social icons */
+        }
+
+        .footer-contact-social a {
+            color: #666;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-social a:hover {
+            color: #000;
+        }
+
+        /* Logo above form - MATCHING NAVBAR SIZE */
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            height: 40px !important;
+            width: auto;
+        }
+
+        /* EXACT FORM STYLING FROM CONTACT/CAREERS PAGES */
+        .footer-form {
+            margin-top: 0;
+        }
+
+        .form-group {
             margin-bottom: 5px;
         }
-        
+
+        .footer-input {
+            background-color: transparent !important;
+            color: #000 !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 0.5rem 0 !important;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            width: 50%;
+            resize: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-input:focus {
+            border-bottom-color: #000 !important;
+            background: transparent !important;
+            color: #000 !important;
+            outline: none;
+        }
+
+        .footer-input::placeholder {
+            color: rgba(0, 0, 0, 0.7) !important;
+            opacity: 1;
+            font-size: 14px;
+        }
+
+        /* Textarea specific styles */
+        .footer-input.textarea {
+            resize: vertical;
+            min-height: 60px;
+            line-height: 1.5;
+        }
+
+        .footer-submit-btn {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border: 1px solid #000000 !important;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            width: auto;
+            padding: 0.7rem 1.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            
+        }
+
+        .footer-submit-btn:hover {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border: 1px solid #000000 !important;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
         .footer-links a {
             text-decoration: none;
-            color: grey;
-            font-size: 15px;
-            font-weight: 400;
-            letter-spacing: 0.2px;
-            transition: color 0.3s ease;
+            color: #666;
+            font-size: 14px;
+            transition: color 0.3s;
         }
-        
+
         .footer-links a:hover {
-            color: #000000;
+            color: #000;
         }
-        
+
         .social-links {
             display: flex;
-            gap: 12px;
-            margin-top: 5px;
+            gap: 15px;
+            margin-top: 10px;
+            justify-content: center; /* Center align social links */
         }
-        
+
         .social-icon {
-            width: 25px;
-            height: 25px;
-            border-spacing: 10%;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #555;
-            transition: all 0.3s ease;
+            color: #666;
+            font-size: 16px;
+            transition: color 0.3s;
         }
-        
+
         .social-icon:hover {
-            background-color: #e0e0e0;
-            color: #222;
+            color: #000;
         }
-        
+
         .copyright {
-            margin-top: 0px;
-            padding-top: 0px;
-            border-top: 0px solid #eee;
-            font-size: 12px;
-            color: #888;
             text-align: left;
+            padding-top: 0px;
+            border-bottom: 1px solid grey;
+            font-size: 12px;
+            color: #999;
+            margin-top: 0px;
         }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .footer-container {
+
+        /* Horizontal divider and contact info section */
+        .footer-divider {
+            border-top: 1px solid grey;
+            margin: 40px 0 30px;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .footer-address {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social-icon {
+            color: #666;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .footer-social-icon:hover {
+            color: #000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-right {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .footer-contact-info {
                 flex-direction: column;
+                gap: 20px;
+                text-align: center;
             }
-            
-            .footer-logo {
-                margin-right: 0;
-                margin-bottom: 30px;
-                flex: 0 0 auto;
-            }
-            
-            .logo-container {
-                flex-direction: row;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .logo-img {
-                width: 80px;
-                margin-bottom: 0;
-            }
-            
-            .footer-content {
+        }
+
+        @media (max-width: 576px) {
+            .footer-main {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
             
-            .footer {
-                padding: 30px 20px;
-                min-height: 40vh;
+            .footer-right {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .grad-footer {
+                padding: 40px 0 20px;
+            }
+            
+            .footer-submit-btn {
+                width: 100%;
+                max-width: 250px;
+                padding: 0.7rem 1.5rem;
+            }
+            
+            .footer-logo img {
+                height: 22px;
+            }
+
+            .footer-input {
+                width: 100%;
             }
         }
-        
-        @media (max-width: 480px) {
-            .logo-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .logo-img {
-                width: 70px;
-            }
-            
-            .footer {
-                min-height: 50vh;
+
+        @media (max-width: 400px) {
+            .footer-logo img {
+                height: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <footer class="footer">
+    <footer class="grad-footer">
         <div class="footer-container">
-            <div class="footer-logo">
-                <div class="logo-container">
-                    <!-- Logo image added here -->
-                    <img src="/images/logo.png" alt="Great Architects Logo" class="logo-img">
-                </div>
-            </div>
-            
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Work</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Architecture</a></li>
-                        <li><a href="#">Design</a></li>
-                        <li><a href="#">Creative</a></li>
-                        <li><a href="#">Ethics</a></li>
-                    </ul>
+                <div class="footer-main">
+                    <!-- Left column - GET IN TOUCH Section -->
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <img src="/images/logo.png" alt="Great Architects Logo">
+                        </div>
+                        <h3>GET IN TOUCH</h3>
+                        <form class="footer-form" id="projectForm">
+                            <div class="form-group">
+                                <input type="text" class="footer-input" id="projectName" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="footer-input" id="projectPhone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="footer-input textarea" id="projectMessage" placeholder="Message" rows="2" required></textarea>
+                            </div>
+                            <button type="submit" class="footer-submit-btn">START YOUR PROJECT</button>
+                        </form>
+                    </div>
+
+                    <!-- Right column - Grouped sections -->
+                    <div class="footer-right">
+                        <!-- PROJECTS Section -->
+                        <div class="footer-section">
+                            <h3>PROJECTS</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Architecture</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Center</a></li>
+                                <li><a href="#">Videos</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- STUDIO Section -->
+                        <div class="footer-section">
+                            <h3>STUDIO</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Courses</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- FOLLOW Section -->
+                        <div class="footer-section">
+                            <h3>FOLLOW</h3>
+                            <ul class="footer-links">
+                                <li><a href="https://www.instagram.com/gradarchitects" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.facebook.com/gradarchitects" target="_blank">Facebook</a></li>
+                                <li><a href="https://www.linkedin.com/company/gradarchitects" target="_blank">LinkedIn</a></li>
+                            </ul>
+                            
+                            <!-- Contact info on right side -->
+                            <div class="footer-contact-right">
+                                <p>123 Architecture Street, Chennai.</p>
+                                <p>+91 98765 43210 | info@gradarchitects.com</p>
+                                <div class="footer-contact-social">
+                                    <a href="mailto:info@gradarchitects.com">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                    <a href="https://wa.me/919876543210" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href="tel:+919876543210">
+                                        <i class="fas fa-phone"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Studio</h3>
-                    <ul class="footer-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#">Payup</a></li>
-                        <li><a href="#">Newsletter</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Prints</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Follow</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
-                </div>
+
+
+
+            <div class="copyright">
+                <p>© 2025 Great Architects</p>
             </div>
-        </div>
-        
-        <div class="copyright">
-            &copy; 2023 Great Architects. All rights reserved.
         </div>
     </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Form submission handler for "START YOUR PROJECT" button
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('projectName').value;
+            const phone = document.getElementById('projectPhone').value;
+            const message = document.getElementById('projectMessage').value;
+            
+            // Validate form
+            if (!name || !phone || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Create email content
+            const subject = `New Project Inquiry from ${name}`;
+            const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Optional: Reset form after submission
+            setTimeout(() => {
+                document.getElementById('projectForm').reset();
+            }, 1000);
+        });
+        
+        // Social links functionality
+        document.querySelectorAll('.footer-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // If it's a placeholder link, prevent default and show message
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('This page is under construction. Please check back later.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+==================================================
+File: D:\gradb\components\footer1.html
+==================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grad Architects Footer</title>
+    <style>
+        /* Footer Styles */
+        .grad-footer {
+            background-color: #ffffff;
+            padding: 10px 0 30px;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 0px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 0px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        /* Right column - Grouped sections */
+        .footer-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 110px;
+            align-items: start;
+        }
+
+        .footer-section {
+            margin-left: 0;
+            text-align: left; /* Center align all content */
+        }
+
+        .footer-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        /* Contact info on right side */
+        .footer-contact-right {
+        
+            margin-top: 80px;
+            padding-top: 10px;
+            border-top: 1px solid grey;
+            text-align: center; /* Center align contact info */
+            margin-left: -445px;
+         
+        }
+
+        .footer-contact-right p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 3px;
+        }
+
+        .footer-contact-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            justify-content: center; /* Center align social icons */
+        }
+
+        .footer-contact-social a {
+            color: #666;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-social a:hover {
+            color: #000;
+        }
+
+        /* Logo above form - MATCHING NAVBAR SIZE */
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            height: 40px !important;
+            width: auto;
+        }
+
+        /* EXACT FORM STYLING FROM CONTACT/CAREERS PAGES */
+        .footer-form {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        .footer-input {
+            background-color: transparent !important;
+            color: #000 !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 0.5rem 0 !important;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            width: 50%;
+            resize: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-input:focus {
+            border-bottom-color: #000 !important;
+            background: transparent !important;
+            color: #000 !important;
+            outline: none;
+        }
+
+        .footer-input::placeholder {
+            color: rgba(0, 0, 0, 0.7) !important;
+            opacity: 1;
+            font-size: 14px;
+        }
+
+        /* Textarea specific styles */
+        .footer-input.textarea {
+            resize: vertical;
+            min-height: 60px;
+            line-height: 1.5;
+        }
+
+        .footer-submit-btn {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border: 1px solid #000000 !important;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            width: auto;
+            padding: 0.7rem 1.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            
+        }
+
+        .footer-submit-btn:hover {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border: 1px solid #000000 !important;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #000;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            justify-content: center; /* Center align social links */
+        }
+
+        .social-icon {
+            color: #666;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #000;
+        }
+
+        .copyright {
+            text-align: left;
+            padding-top: 0px;
+            border-bottom: 1px solid grey;
+            font-size: 12px;
+            color: #999;
+            margin-top: 0px;
+        }
+
+        /* Horizontal divider and contact info section */
+        .footer-divider {
+            border-top: 1px solid grey;
+            margin: 40px 0 30px;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .footer-address {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social-icon {
+            color: #666;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .footer-social-icon:hover {
+            color: #000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-right {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .footer-contact-info {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-right {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .grad-footer {
+                padding: 40px 0 20px;
+            }
+            
+            .footer-submit-btn {
+                width: 100%;
+                max-width: 250px;
+                padding: 0.7rem 1.5rem;
+            }
+            
+            .footer-logo img {
+                height: 22px;
+            }
+
+            .footer-input {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .footer-logo img {
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="grad-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <!-- Left column - GET IN TOUCH Section -->
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <img src="/images/logo.png" alt="Great Architects Logo">
+                        </div>
+                        <h3>GET IN TOUCH</h3>
+                        <form class="footer-form" id="projectForm">
+                            <div class="form-group">
+                                <input type="text" class="footer-input" id="projectName" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="footer-input" id="projectPhone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="footer-input textarea" id="projectMessage" placeholder="Message" rows="2" required></textarea>
+                            </div>
+                            <button type="submit" class="footer-submit-btn">START YOUR PROJECT</button>
+                        </form>
+                    </div>
+
+                    <!-- Right column - Grouped sections -->
+                    <div class="footer-right">
+                        <!-- PROJECTS Section -->
+                        <div class="footer-section">
+                            <h3>PROJECTS</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Architecture</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Center</a></li>
+                                <li><a href="#">Videos</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- STUDIO Section -->
+                        <div class="footer-section">
+                            <h3>STUDIO</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Courses</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- FOLLOW Section -->
+                        <div class="footer-section">
+                            <h3>FOLLOW</h3>
+                            <ul class="footer-links">
+                                <li><a href="https://www.instagram.com/gradarchitects" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.facebook.com/gradarchitects" target="_blank">Facebook</a></li>
+                                <li><a href="https://www.linkedin.com/company/gradarchitects" target="_blank">LinkedIn</a></li>
+                            </ul>
+                            
+                            <!-- Contact info on right side -->
+                            <div class="footer-contact-right">
+                                <p>123 Architecture Street, Chennai.</p>
+                                <p>+91 98765 43210 | info@gradarchitects.com</p>
+                                <div class="footer-contact-social">
+                                    <a href="mailto:info@gradarchitects.com">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                    <a href="https://wa.me/919876543210" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href="tel:+919876543210">
+                                        <i class="fas fa-phone"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            <div class="copyright">
+                <p>© 2025 Great Architects</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Form submission handler for "START YOUR PROJECT" button
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('projectName').value;
+            const phone = document.getElementById('projectPhone').value;
+            const message = document.getElementById('projectMessage').value;
+            
+            // Validate form
+            if (!name || !phone || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Create email content
+            const subject = `New Project Inquiry from ${name}`;
+            const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Optional: Reset form after submission
+            setTimeout(() => {
+                document.getElementById('projectForm').reset();
+            }, 1000);
+        });
+        
+        // Social links functionality
+        document.querySelectorAll('.footer-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // If it's a placeholder link, prevent default and show message
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('This page is under construction. Please check back later.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
@@ -1843,14 +2497,14 @@ File: D:\gradb\css\components\careers.css
 ==================================================
 /* css/components/careers.css - UPDATED WITH VALIDATION STYLES */
 .grad-careers-section {
-    min-height: 100vh;
+    min-height:60vh;
     width: 100%;
     display: flex;
     align-items: center;
     background-color: #ffffff;
     color: #000000;
     font-family: 'Inter', sans-serif;
-    margin-top: -140px;
+    margin-top: -100px;
 }
 
 .grad-careers-form-container {
@@ -1974,13 +2628,15 @@ File: D:\gradb\css\components\careers.css
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* UPDATED: Careers image styles */
+/* UPDATED: Careers image styles - REDUCED HEIGHT */
 .grad-careers-image {
     width: 80%;
-    height: 70vh;
+    height: 85vh !important;
     object-fit: cover;
     border-radius: 15px;
     margin-left: 90px;
+    margin-top: 18px !important;
+    
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -1998,7 +2654,7 @@ File: D:\gradb\css\components\careers.css
     }
     
     .grad-careers-image {
-        height: 70vh;
+        height: 50vh; /* REDUCED from 70vh to 50vh */
     }
     
     .grad-careers-eyebrow {
@@ -2035,14 +2691,14 @@ File: D:\gradb\css\components\careers.css
     }
     
     .grad-careers-submit-btn {
-        width: 100%;
+        width: auto;
         max-width: 250px;
         padding: 0.7rem 2rem;
-        margin: 1.5rem auto 0;
+        margin: 1.5rem 0 0 0; /* Updated margin for left alignment */
     }
     
     .grad-careers-image {
-        height: 50vh;
+        height: 40vh; /* REDUCED from 50vh to 40vh */
         margin-left: 30px;
     }
 }
@@ -2075,15 +2731,15 @@ File: D:\gradb\css\components\careers.css
     }
     
     .grad-careers-submit-btn {
-        width: 100%;
+        width: auto;
         max-width: 220px;
         padding: 0.6rem 1.5rem;
         font-size: 0.85rem;
-        margin: 1rem auto 0;
+        margin: 1rem 0 0 0; /* Updated margin for left alignment */
     }
     
     .grad-careers-image {
-        height: 40vh;
+        height: 35vh; /* REDUCED from 40vh to 35vh */
         margin-left: 15px;
     }
 }
@@ -2115,7 +2771,7 @@ File: D:\gradb\css\components\careers.css
     }
     
     .grad-careers-image {
-        height: 35vh;
+        height: 30vh; /* REDUCED from 35vh to 30vh */
         margin-left: 0;
         border-radius: 10px;
     }
@@ -2175,7 +2831,7 @@ File: D:\gradb\css\components\contact.css
     border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    padding: 0.75rem 0 !important;
+    padding: 0.30rem 0 !important;
     transition: border-color 0.3s ease;
     font-size: 1rem;
     width: 100%;
@@ -2210,6 +2866,7 @@ File: D:\gradb\css\components\contact.css
     font-size: 0.9rem;
     text-transform: uppercase;
     margin-top: 1rem;
+    font-style: sans-serif;
 }
 
 .grad-contact-submit-btn:hover {
@@ -2219,15 +2876,15 @@ File: D:\gradb\css\components\contact.css
 }
 
 .grad-contact-image {
-    width: 80%;
-    height: 70vh;
+    width: 85%;
+    height: 85vh !important;
     object-fit: cover;
     border-radius: 15px;
     
     position: relative;
     text-align: center;
-    margin-left: -60px;
-    margin-right: 60px;
+    margin-left: -20px!important;
+    margin-right: 80px;
 
 }
 
@@ -3632,7 +4289,7 @@ File: D:\gradb\css\components\projects.css
 
 /* Final Section */
 .final-section {
-    margin-bottom: 4rem;
+    margin-bottom: 0rem;
 }
 
 /* Responsive Design - IMPROVED MOBILE COVERAGE */
@@ -3974,7 +4631,7 @@ File: D:\gradb\css\components\services.css
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     margin-top: -210px;
-    margin-bottom: -280px;
+    margin-bottom: -200px;
 }
 
 .grad-services-section h3 {
@@ -4063,6 +4720,10 @@ File: D:\gradb\css\components\services.css
     flex: 0 0 60px !important;
     min-width: 60px !important;
     background-color: #f8f9fa !important; /* Gray background when collapsed */
+}
+.grad-services-container:hover .grad-service-column:first-child:not(:hover) .grad-service-content {
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 .grad-services-container:hover .grad-service-column:hover {
@@ -5550,16 +6211,16 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "home", file: "components/home.html" },
         { id: "about", file: "components/about.html" },
         { id: "philosophy", file: "components/philosophy.html" },
-        { 
-            id: "services", 
-            file: "components/services.html", 
+        {
+            id: "services",
+            file: "components/services.html",
             callback: () => {
                 console.log("✅ Services component loaded successfully");
-                
+
                 // Force services initialization with multiple fallbacks
                 const initServices = () => {
                     console.log("🔄 Force initializing services...");
-                    
+
                     if (typeof ServicesManager !== 'undefined') {
                         console.log("🎯 Using ServicesManager class");
                         window.servicesManager = new ServicesManager();
@@ -5574,7 +6235,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(initServices, 500);
                     }
                 };
-                
+
                 // Try multiple times with increasing delays
                 setTimeout(initServices, 300);
                 setTimeout(initServices, 1000);
@@ -5582,16 +6243,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         },
         {
-            id: "projects", 
-            file: "components/projects.html", 
+            id: "projects",
+            file: "components/projects.html",
             callback: () => {
                 console.log("Projects component loaded successfully");
                 setTimeout(initializeProjects, 100);
             }
         },
         {
-            id: "careers", 
-            file: "components/careers.html", 
+            id: "careers",
+            file: "components/careers.html",
             callback: () => {
                 console.log("Careers component loaded successfully");
                 // Initialize careers form with retry mechanism
@@ -5608,8 +6269,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         },
         {
-            id: "contact", 
-            file: "components/contact.html", 
+            id: "contact",
+            file: "components/contact.html",
             callback: () => {
                 console.log("Contact component loaded successfully");
                 // Initialize contact form with retry mechanism
@@ -5627,17 +6288,27 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         {
-            id: "footer", 
+            id: "footer",
             file: "components/footer.html",
             callback: () => {
                 console.log("Footer component loaded successfully");
             }
-            
+
+
+        },
+
+            {
+            id: "footer1",
+            file: "components/footer.html",
+            callback: () => {
+                console.log("Footer component loaded successfully");
+            }
+
 
         }
     ];
-      
-    
+
+
 
 
     // Load components sequentially to avoid race conditions
@@ -5690,16 +6361,20 @@ function loadComponent(sectionId, filePath, callback) {
             section.classList.add('loaded');
 
             // Add the section ID to the loaded content's main container
-            const container = section.querySelector('div[class*="section"], section[class*="section"]');
-            if (container && !container.id) {
-                container.id = sectionId + '-content';
+            // const container = section.querySelector('div[class*="section"], section[class*="section"]');
+            // if (container && !container.id) {
+            //     container.id = sectionId + '-content';
+            // }
+
+            if (!section.id) {
+                section.id = sectionId;
             }
 
             // Re-initialize navigation after content loads
             setTimeout(() => {
                 initScrollFeatures();
                 navbarShrink();
-                
+
                 // Initialize forms for this section
                 if (sectionId === 'careers' || sectionId === 'contact') {
                     initializeFormsForSection(sectionId);
@@ -5726,7 +6401,7 @@ function initializeAllForms() {
 
 function initializeFormsForSection(sectionId) {
     console.log(`🔄 Initializing forms for section: ${sectionId}`);
-    
+
     if (sectionId === 'careers') {
         initializeCareersForm();
     } else if (sectionId === 'contact') {
@@ -5785,11 +6460,11 @@ function initializeCareersForm() {
         // Create mailto link
         const subject = `Career Application - ${name}`;
         const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Careers page.`;
-        
+
         const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        
+
         console.log("📨 Opening mail client:", mailtoLink);
-        
+
         // Show loading state
         const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');
         const originalText = submitBtn.innerHTML;
@@ -5799,7 +6474,7 @@ function initializeCareersForm() {
         // Open default email client in new tab
         setTimeout(() => {
             window.open(mailtoLink, '_blank');
-            
+
             // Reset form and button after a delay
             setTimeout(() => {
                 currentForm.reset();
@@ -5818,12 +6493,12 @@ function initializeCareersForm() {
 // ================================
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
-    
+
     if (!contactForm) {
         console.log("❌ Contact form not found (may not be on current page)");
         return;
     }
-    
+
     console.log("✅ Contact form found, attaching event listener");
 
     // Remove any existing event listeners
@@ -5831,15 +6506,15 @@ function initializeContactForm() {
     contactForm.parentNode.replaceChild(newForm, contactForm);
     const currentForm = document.getElementById('contactForm');
 
-    currentForm.addEventListener('submit', function(e) {
+    currentForm.addEventListener('submit', function (e) {
         e.preventDefault();
         console.log("✅ Contact form submit triggered");
-        
+
         const name = document.getElementById('contactName') ? document.getElementById('contactName').value.trim() : '';
         const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
         const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
         const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
-        
+
         // Validation
         if (!name || !email || !phone || !message) {
             showAlert('Please fill in all required fields.', 'error');
@@ -5855,15 +6530,15 @@ function initializeContactForm() {
 
         // Create WhatsApp message
         const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
-        
+
         // WhatsApp phone number (replace with your actual number)
         const whatsappNumber = '919840904236'; // Remove any + or spaces
-        
+
         // Create WhatsApp URL
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-        
+
         console.log("📱 WhatsApp URL:", whatsappUrl);
-        
+
         // Show loading state
         const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
         const originalText = submitBtn.innerHTML;
@@ -5873,7 +6548,7 @@ function initializeContactForm() {
         // Open WhatsApp in new tab
         setTimeout(() => {
             window.open(whatsappUrl, '_blank');
-            
+
             // Reset form and button after a delay
             setTimeout(() => {
                 currentForm.reset();
@@ -5883,7 +6558,7 @@ function initializeContactForm() {
             }, 2000);
         }, 1000);
     });
-    
+
     console.log("✅ Contact form handler attached successfully");
 }
 
@@ -6128,6 +6803,13 @@ function initScrollFeatures() {
         console.warn("No sections found for intersection observer");
         return;
     }
+    const projectSubSections = [
+        'project-categories',
+        'in-residence',
+        'soft-minimal',
+        'objects-of-desire',
+        'projects-content'
+    ];
 
     // SINGLE IntersectionObserver to avoid conflicts
     const observer = new IntersectionObserver(
@@ -6136,19 +6818,30 @@ function initScrollFeatures() {
             let highestRatio = 0;
 
             entries.forEach((entry) => {
+                let sectionId = entry.target.id;
+                if (sectionId.endsWith('-content')) {
+                    sectionId = sectionId.replace('-content', '');
+                }
                 if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
                     highestRatio = entry.intersectionRatio;
                     mostVisibleSection = entry.target.id;
                 }
             });
 
-            if (mostVisibleSection && highestRatio > 0.3) {
-                console.log("Most visible section:", mostVisibleSection);
+             if (mostVisibleSection && highestRatio > 0.1) {
+                console.log("Most visible section:", mostVisibleSection, "Ratio:", highestRatio);
 
+                let activeNavId = mostVisibleSection;
+                
+                if (projectSubSections.includes(mostVisibleSection)) {
+                    activeNavId = 'projects';
+                    console.log("Project sub-section detected, activating projects nav");
+                }
                 navLinks.forEach(link => {
                     const linkHref = link.getAttribute("href");
-                    if (linkHref === `#${mostVisibleSection}`) {
-                        // Remove active from all links
+                    const linkTarget = linkHref.substring(1);
+                    
+                    if (activeNavId === linkTarget) {
                         navLinks.forEach(l => l.classList.remove("active"));
                         // Add active to current link
                         link.classList.add("active");
@@ -6156,6 +6849,7 @@ function initScrollFeatures() {
                     }
                 });
             }
+
         },
         {
             threshold: [0.1, 0.3, 0.5, 0.7],
@@ -6173,32 +6867,35 @@ function initScrollFeatures() {
 
     // Smooth scroll for nav links - SIMPLIFIED
     navLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            console.log("Nav link clicked, target:", targetId);
-
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                // Update active class immediately
-                navLinks.forEach(l => l.classList.remove("active"));
-                this.classList.add("active");
-
-                // Smooth scroll to section
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
-
-                // Update URL hash
-                window.history.pushState(null, null, `#${targetId}`);
-            }
-        });
+        // Remove any existing event listeners to prevent duplicates
+        link.removeEventListener('click', handleNavClick);
+        link.addEventListener("click", handleNavClick);
     });
+    function handleNavClick(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        console.log("Nav link clicked, target:", targetId);
+
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            // Update active class immediately
+            navLinks.forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
+
+            // Smooth scroll to section
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetSection.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+
+            // Update URL hash
+            window.history.pushState(null, null, `#${targetId}`);
+        }
+    }
 }
 
 // ================================
@@ -6458,7 +7155,7 @@ File: D:\gradb\index.html
                 <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#careers">CAREERS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
-                <li class="nav-item"><a class="nav-link" href="#footer">FOOTER</a></li>
+
             </ul>
         </div>
     </div>
@@ -6482,23 +7179,24 @@ File: D:\gradb\index.html
   </section>
 
   <section id="services" class="section">
-    <!-- Content loaded dynamically -->
+
   </section>
 
-  <section id="footer" class="section">
-    <!-- Content loaded dynamically -->
-  </section>
 
   <section id="projects" class="section">
-    <!-- Content loaded dynamically -->
+
+  </section>
+
+  <section id="footer1" class="section">
+
   </section>
 
   <section id="careers" class="section">
-    <!-- Content loaded dynamically -->
+
   </section>
 
   <section id="contact" class="section">
-    <!-- Content loaded dynamically -->
+
   </section>
 
 

@@ -31,7 +31,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    padding: 0.75rem 0 !important;
+    padding: 0.30rem 0 !important;
     transition: border-color 0.3s ease;
     font-size: 1rem;
     width: 100%;
@@ -66,6 +66,7 @@
     font-size: 0.9rem;
     text-transform: uppercase;
     margin-top: 1rem;
+    font-style: sans-serif;
 }
 
 .grad-contact-submit-btn:hover {

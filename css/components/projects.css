@@ -9,10 +9,9 @@
     --projects-link-hover-color: #000000;
 }
 
-
-  .project-item-description {
-        color: white;
-    }
+.project-item-description {
+    color: white;
+}
 
 /* Reset margins and padding for full-width sections */
 * {
@@ -195,7 +194,6 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-
 }
 
 .project-item-card:hover {
@@ -268,7 +266,6 @@
     max-width: 800px;
 }
 
-
 .project-item-tags {
     font-size: 0.85rem;
     color: #888888;
@@ -283,11 +280,96 @@
     margin: 0 0.15rem;
 }
 
+/* ================================
+   Asymmetrical Grid Layout - EXACT 2+1 / 1+2
+   ================================ */
+
+/* Asymmetrical Grid Container */
+.asymmetrical-grid-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.asymmetrical-grid-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Left and Right Halves - Equal 50% width */
+.asym-left-half,
+.asym-right-half {
+    flex: 1; /* Each takes 50% width */
+    display: flex;
+}
+
+/* Small Items Container - Two items side-by-side */
+.small-items-container {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Individual Small Items - Each takes 50% width of container */
+.small-items-container .small-item {
+    flex: 1; /* Each small item takes 50% width */
+    min-height: 400px;
+}
+
+/* Large Items - Full width of their container */
+.large-item {
+    width: 100%;
+    min-height: 400px;
+}
+
+/* Image Heights */
+.large-item .project-item-image {
+    height: 350px;
+    min-height: 350px;
+}
+
+.small-item .project-item-image {
+    height: 200px;
+    min-height: 200px;
+}
+
+/* Content adjustments */
+.small-item .project-item-content {
+    padding: 1.5rem;
+}
+
+.small-item .project-item-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.small-item .project-item-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.small-item .project-item-tags {
+    font-size: 0.75rem;
+}
+
+/* Ensure proper card behavior */
+.asymmetrical-grid-row .project-item-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.asymmetrical-grid-row .project-item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
 /* Row 2: Project Categories */
 .project-categories-section {
     padding: 3rem 0;
-    border-bottom: 1px solid var(--projects-border-color);
-    margin-bottom: -160px;
+    border-bottom: 0px solid var(--projects-border-color);
+    margin-bottom: -300px;
 
 }
 
@@ -345,34 +427,13 @@
 .latest-work-section {
     padding: 4rem 0;
     position: relative;
-    
-}
-
-.latest-work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-/* Grid item image heights */
-.grid-item .project-item-image {
-    height: 400px;
-    min-height: 400px;
-}
-
-.grid-item .project-item-content {
-    padding: 1.5rem;
-    text-align: center;
 }
 
 /* Vertical Text Styles */
 .vertical-text-left,
 .vertical-text-right {
     position: absolute;
-    top: 50%;
+    top: 16%;
     transform: translateY(-50%);
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -383,6 +444,8 @@
     text-transform: uppercase;
     z-index: 0;
     pointer-events: none;
+    white-space: nowrap;  /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
 }
 
 .vertical-text-left {
@@ -438,6 +501,9 @@
     flex-direction: column;
     align-items: center;
 }
+
+
+
 
 .full-width-section .project-item-title,
 .full-width-section .project-item-tags {
@@ -588,8 +654,34 @@
     margin-bottom: 0rem;
 }
 
-/* Responsive Design - IMPROVED MOBILE COVERAGE */
+/* ================================
+   Responsive Design for Asymmetrical Grid
+   ================================ */
+
 @media (max-width: 1200px) {
+    .asymmetrical-grid-row {
+        gap: 1.5rem;
+    }
+    
+    .small-items-container {
+        gap: 1.5rem;
+    }
+    
+    .large-item .project-item-image {
+        height: 300px;
+        min-height: 300px;
+    }
+    
+    .small-item .project-item-image {
+        height: 180px;
+        min-height: 180px;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 350px;
+    }
+    
     .latest-work-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -636,6 +728,41 @@
 }
 
 @media (max-width: 992px) {
+    .asymmetrical-grid-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    /* On tablet, halves become full width */
+    .asym-left-half,
+    .asym-right-half {
+        width: 100%;
+    }
+    
+    /* Small items remain side-by-side on tablet */
+    .small-items-container {
+        gap: 2rem;
+    }
+    
+    .small-items-container .small-item {
+        flex: 1;
+    }
+    
+    .large-item .project-item-image {
+        height: 280px;
+        min-height: 280px;
+    }
+    
+    .small-item .project-item-image {
+        height: 160px;
+        min-height: 160px;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 320px;
+    }
+    
     .vertical-text-left,
     .vertical-text-right {
         display: none;
@@ -671,17 +798,57 @@
 }
 
 @media (max-width: 768px) {
+    .asymmetrical-grid-row {
+        gap: 1.5rem;
+    }
+    
+    .small-items-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    /* On mobile, small items become full width */
+    .small-items-container .small-item {
+        width: 100%;
+    }
+    
+    .large-item .project-item-image {
+        height: 250px;
+        min-height: 250px;
+    }
+    
+    .small-item .project-item-image {
+        height: 180px;
+        min-height: 180px;
+    }
+    
+    .small-item .project-item-content {
+        padding: 1.25rem;
+    }
+    
+    .small-item .project-item-title {
+        font-size: 0.75rem;
+    }
+    
+    .small-item .project-item-description {
+        font-size: 0.8rem;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 300px;
+    }
+    
     .latest-work-grid,
     .five-images-grid,
     .four-images-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+    
     .project-categories-section{
         margin-bottom: -160px;
     }
-
-
 
     /* IMPROVED: Mobile image heights for full coverage */
     .grid-item .project-item-image {
@@ -783,6 +950,45 @@
 }
 
 @media (max-width: 576px) {
+    .asymmetrical-grid-row {
+        gap: 1rem;
+    }
+    
+    .small-items-container {
+        gap: 1rem;
+    }
+    
+    .large-item .project-item-image {
+        height: 200px;
+        min-height: 200px;
+    }
+    
+    .small-item .project-item-image {
+        height: 150px;
+        min-height: 150px;
+    }
+    
+    .small-item .project-item-content {
+        padding: 1rem;
+    }
+    
+    .small-item .project-item-title {
+        font-size: 0.7rem;
+    }
+    
+    .small-item .project-item-description {
+        font-size: 0.75rem;
+    }
+    
+    .small-item .project-item-tags {
+        font-size: 0.7rem;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 280px;
+    }
+    
     /* IMPROVED: Mobile image heights */
     .grid-item .project-item-image {
         height: 300px;
@@ -856,6 +1062,33 @@
 
 /* Extra small devices */
 @media (max-width: 400px) {
+    .large-item .project-item-image {
+        height: 180px;
+        min-height: 180px;
+    }
+    
+    .small-item .project-item-image {
+        height: 130px;
+        min-height: 130px;
+    }
+    
+    .small-item .project-item-content {
+        padding: 0.8rem;
+    }
+    
+    .small-item .project-item-title {
+        font-size: 0.65rem;
+    }
+    
+    .small-item .project-item-description {
+        font-size: 0.7rem;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 250px;
+    }
+    
     /* IMPROVED: Extra small mobile image heights */
     .grid-item .project-item-image {
         height: 250px;

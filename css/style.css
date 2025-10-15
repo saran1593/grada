@@ -1,4 +1,33 @@
 /* ================================
+   Hidden Sections Styling
+   ================================ */
+.hidden-section {
+    display: none !important;
+}
+
+/* Ensure proper layout when sections are shown */
+#services,
+#projects, 
+#careers,
+#contact {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Loading states */
+.component-loading {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+
+
+
+/* ================================
    Mobile Navigation Enhancements
    ================================ */
 
