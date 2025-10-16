@@ -13,99 +13,99 @@ document.addEventListener("DOMContentLoaded", () => {
     preserveImageSizes();
     forceLogoSizeReduction();
 
-    // Load components with proper sequencing
     const loadSequence = [
-        { id: "home", file: "components/home.html", type: "static" },
-        { id: "about", file: "components/about.html", type: "static" },
-        { id: "philosophy", file: "components/philosophy.html", type: "static" },
-        {
-            id: "services",
-            file: "components/services.html",
-            type: "hidden",
-            callback: () => {
-                console.log("✅ Services component loaded successfully");
-                hideSection('services');
-                
-                const initServices = () => {
-                    console.log("🔄 Force initializing services...");
-                    if (typeof ServicesManager !== 'undefined') {
-                        window.servicesManager = new ServicesManager();
-                    } else if (typeof initializeServices !== 'undefined') {
-                        window.servicesManager = initializeServices();
-                    } else if (typeof initializeGradServices !== 'undefined') {
-                        window.servicesManager = initializeGradServices();
-                    } else {
-                        setTimeout(initServices, 500);
-                    }
-                };
-                setTimeout(initServices, 300);
-            }
-        },
-        {
-            id: "projects",
-            file: "components/projects.html",
-            type: "hidden",
-            callback: () => {
-                console.log("Projects component loaded successfully");
-                hideSection('projects');
-                setTimeout(initializeProjects, 100);
-            }
-        },
-        {
-            id: "careers",
-            file: "components/careers.html",
-            type: "hidden",
-            callback: () => {
-                console.log("Careers component loaded successfully");
-                hideSection('careers');
-                
-                const initCareers = () => {
-                    if (typeof initializeCareersForm === 'function') {
-                        initializeCareersForm();
-                    } else {
-                        setTimeout(initCareers, 300);
-                    }
-                };
-                setTimeout(initCareers, 200);
-            }
-        },
-        {
-            id: "contact",
-            file: "components/contact.html",
-            type: "hidden",
-            callback: () => {
-                console.log("Contact component loaded successfully");
-                hideSection('contact');
-                
-                const initContact = () => {
-                    if (typeof initializeContactForm === 'function') {
-                        initializeContactForm();
-                    } else {
-                        setTimeout(initContact, 300);
-                    }
-                };
-                setTimeout(initContact, 200);
-            }
-        },
-        {
-            id: "footer",
-            file: "components/footer.html",
-            type: "static",
-            callback: () => {
-                console.log("Footer component loaded successfully");
-            }
-        },
-        {
-            id: "footer1",
-            file: "components/footer1.html",
-            type: "hidden",
-            callback: () => {
-                console.log("Footer1 component loaded successfully");
-                hideSection('footer1');
-            }
+    { id: "home", file: "components/home.html", type: "static" },
+    { id: "about", file: "components/about.html", type: "static" },
+    { id: "philosophy", file: "components/philosophy.html", type: "static" },
+    {
+        id: "services",
+        file: "components/services.html",
+        type: "hidden",
+        callback: () => {
+            console.log("✅ Services component loaded successfully");
+            hideSection('services');
+            
+            const initServices = () => {
+                console.log("🔄 Force initializing services...");
+                if (typeof ServicesManager !== 'undefined') {
+                    window.servicesManager = new ServicesManager();
+                } else if (typeof initializeServices !== 'undefined') {
+                    window.servicesManager = initializeServices();
+                } else if (typeof initializeGradServices !== 'undefined') {
+                    window.servicesManager = initializeGradServices();
+                } else {
+                    setTimeout(initServices, 500);
+                }
+            };
+            setTimeout(initServices, 300);
         }
-    ];
+    },
 
+{
+    id: "projects",
+    file: "components/projects1.html", // Changed from projects.html to projects1.html
+    type: "hidden",
+    callback: () => {
+        console.log("Projects component loaded successfully");
+        hideSection('projects');
+        // Remove this line if it causes issues: setTimeout(initializeProjects, 100);
+    }
+},
+    {
+        id: "careers",
+        file: "components/careers.html",
+        type: "hidden",
+        callback: () => {
+            console.log("Careers component loaded successfully");
+            hideSection('careers');
+            
+            const initCareers = () => {
+                if (typeof initializeCareersForm === 'function') {
+                    initializeCareersForm();
+                } else {
+                    setTimeout(initCareers, 300);
+                }
+            };
+            setTimeout(initCareers, 200);
+        }
+    },
+    {
+        id: "contact",
+        file: "components/contact.html",
+        type: "hidden",
+        callback: () => {
+            console.log("Contact component loaded successfully");
+            hideSection('contact');
+            
+            const initContact = () => {
+                if (typeof initializeContactForm === 'function') {
+                    initializeContactForm();
+                } else {
+                    setTimeout(initContact, 300);
+                }
+            };
+            setTimeout(initContact, 200);
+        }
+    },
+    {
+        id: "footer",
+        file: "components/footer.html",
+        type: "static",
+        callback: () => {
+            console.log("Footer component loaded successfully");
+        }
+    },
+    {
+        id: "footer1",
+        file: "components/footer1.html",
+        type: "hidden",
+        callback: () => {
+            console.log("Footer1 component loaded successfully");
+            hideSection('footer1');
+        }
+    },
+
+];
     // Load components sequentially
     function loadNextComponent(index) {
         if (index >= loadSequence.length) {
@@ -194,7 +194,7 @@ function hideStaticSections() {
 }
 
 function showStaticSections() {
-    const staticSections = ['home', 'about', 'philosophy', 'footer'];
+    const staticSections = ['home', 'about', 'philosophy', 'footer' ];
     staticSections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) {

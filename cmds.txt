@@ -12,3 +12,6 @@ Get-ChildItem -Recurse -Include *.html, *.css, *.js | ForEach-Object {
 
 git config --global user.name "Bala9840"
 git config --global user.email "barathbalaji9840@gmail.com"
+
+
+in this site, i already given for project section -> "projects.html".....now i have a new corrected file "projects1.html & css ".....i want to load the projects1.html page instead project.html, changes on all place..update and give the entire code 

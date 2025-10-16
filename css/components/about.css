@@ -1,8 +1,9 @@
 .about-section {
   padding: 100px 0;
   background-color: var(--white);
-  margin-top: -180px;
-  margin-bottom: -150px;
+  margin-top: -145px;
+  margin-bottom: -100px;
+ 
  
   display: flex;
   align-items: center;
@@ -56,9 +57,9 @@
   background-color: #c5d92f !important;
   color: #ffffff !important;
   border: 2px solid #c5d92f !important;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 300;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;

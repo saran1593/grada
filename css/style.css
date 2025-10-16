@@ -268,7 +268,11 @@ body {
     height: 50px;
     padding: 0 !important;
 }
+.nav-link{
+    font-size: 0.95rem;
+    font-weight: 500 !important;
 
+}
 /* INCREASED DESKTOP LOGO SIZE */
 .navbar-logo {
     height: 40px !important; /* INCREASED from 32px to 40px */
@@ -366,7 +370,7 @@ img {
     .navbar-nav {
         text-align: center;
         padding: 0.8rem 0;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(255, 255, 255, 0.98)!important;
         margin-top: 0.8rem;
         border-radius: 8px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);

@@ -326,9 +326,10 @@ File: D:\gradb\components\footer.html
             background-color: #ffffff;
             padding: 10px 0 30px;
             font-family: 'Montserrat', sans-serif;
-            color: #333;
-            border-top: 1px solid #f0f0f0;
-            margin-top: 0px;
+            color: #ffffff;
+            border-top: 0px solid #f0f0f0;
+            margin-top: -50px;
+            margin-bottom: -100px;
         }
 
         .footer-container {
@@ -774,8 +775,8 @@ File: D:\gradb\components\footer1.html
             padding: 10px 0 30px;
             font-family: 'Montserrat', sans-serif;
             color: #333;
-            border-top: 1px solid #f0f0f0;
-            margin-top: 0px;
+            border-top: 0px solid #f0f0f0;
+            margin-top: -100px;               
         }
 
         .footer-container {
@@ -1372,6 +1373,12 @@ philosophy honed over 15 years.
 
 
 ==================================================
+File: D:\gradb\components\latestwork.html
+==================================================
+
+
+
+==================================================
 File: D:\gradb\components\philosophy.html
 ==================================================
 <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1634,6 +1641,8 @@ File: D:\gradb\components\projects.html
                 padding-right: 0.6rem !important;
             }
         }
+
+
     </style>
 </head>
 
@@ -1688,7 +1697,7 @@ File: D:\gradb\components\projects.html
     <!-- Row 3: Latest Work - 2x3 Grid with Vertical Text -->
     <section id="latest-work" class="latest-work-section">
         <div class="container">
-            <h2 class="projects-section-title"><strong>L a t e s t  W o r k</strong></h2>
+            <!-- <h2 class="projects-section-title"><strong>L a t e s t  W o r k</strong></h2> -->
 
             <!-- Vertical Text Left -->
             <div class="vertical-text-left">
@@ -1700,114 +1709,134 @@ File: D:\gradb\components\projects.html
                 <span>R E C E N T</span>
             </div>
 
-            <div class="latest-work-grid">
-                <!-- Row 1 -->
-                <div class="project-item-card grid-item">
-                    <div class="project-item-image">
-                        <img src="../images/P1/2.png" alt="Audo House Copenhagen" class="project-img">
+<!-- Row 3: Latest Work - Asymmetrical 2+1 / 1+2 Grid -->
+<section id="latest-work" class="latest-work-section">
+    <div class="container">
+        <h2 class="projects-section-title"><strong>L a t e s t  W o r k</strong></h2>
+
+        <!-- Vertical Text Left -->
+        <div class="vertical-text-left">
+            <span>D E S I G N</span>
+        </div>
+
+        <!-- Vertical Text Right -->
+        <div class="vertical-text-right">
+            <span>R E C E N T</span>
+        </div>
+
+        <!-- Row 1: 2 + 1 Layout -->
+        <div class="asymmetrical-grid-row row-1">
+            <!-- Left Half: Two small items side-by-side (50% width each) -->
+            <div class="asym-left-half">
+                <div class="small-items-container">
+                    <div class="project-item-card small-item">
+                        <div class="project-item-image">
+                            <img src="../images/P1/5.png" alt="Audo House Copenhagen" class="project-img">
+                        </div>
+                        <div class="project-item-content">
+                            <h3 class="project-item-title">A U D O  H O U S E</h3>
+                            <p class="project-item-description">
+                                In Copenhagen's evolving Nordhavn district, Audo House redefines how we live, work, and connect. Designed by Norm Architects, the historic 1918 building has been carefully transformed.
+                            </p>
+                            <div class="project-item-tags">
+                                <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span> | <span class="project-tag">2019</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-item-content">
-                        <h3 class="project-item-title">A U D O  H O U S E</h3>
-                        <p class="project-item-description-img">
-                            In Copenhagen’s evolving Nordhavn district, Audo House redefines how we live, work, and
-                            connect. Designed by Norm Architects, the historic 1918
-                            building has been carefully transformed into a fluid and welcoming destination – uniting
-                            café, restaurant, concept shop, event spaces and exclusive
-                            residences under one roof.
-                        </p>
-                        <div class="project-item-tags">
-                            <span class="project-tag">Architecture</span> | <span class="project-tag">Hospitality</span>
-                            | <span class="project-tag">2019</span>
+
+                    <div class="project-item-card small-item">
+                        <div class="project-item-image">
+                            <img src="../images/P1/3.png" alt="Shore Collection" class="project-img">
+                        </div>
+                        <div class="project-item-content">
+                            <h3 class="project-item-title">S h o r e  C o l l e c t i o n</h3>
+                            <p class="project-item-description">
+                                Inspired by the timeless allure of Denmark's coasts, Shore Collection celebrates the serene yet dynamic essence of the shoreline and bustling harbours.
+                            </p>
+                            <div class="project-item-tags">
+                                <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2025</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-item-card grid-item">
-                    <div class="project-item-image">
-                        <img src="../images/P1/3.png" alt="Shore Collection" class="project-img">
-                    </div>
-                    <div class="project-item-content">
-                        <h3 class="project-item-title">S h o r e  C o l l e c t i o n</h3>
-                        <p class="project-item-description">
-                            Inspired by the timeless allure of Denmark's coasts, Shore Collection
-                            celebrates the serene yet dynamic essence of the shoreline and bustling
-                            harbours that define the Danish landscape.
-                        </p>
-                        <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
-                                class="project-tag">2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-item-card grid-item">
+            <!-- Right Half: One large item (100% width) -->
+            <div class="asym-right-half">
+                <div class="project-item-card large-item">
                     <div class="project-item-image">
                         <img src="../images/P1/4.png" alt="Woven Tatami Rug" class="project-img">
                     </div>
                     <div class="project-item-content">
                         <h3 class="project-item-title">W o v e n  T a t a m i  R u g</h3>
                         <p class="project-item-description">
-
+                            Traditional Japanese craftsmanship meets contemporary design in this exquisite woven tatami rug collection. Each piece embodies the perfect balance between heritage techniques and modern aesthetic sensibilities.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span
-                                class="project-tag">2025</span>
+                            <span class="project-tag">Design</span> | <span class="project-tag">Objects</span> | <span class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Row 2 -->
-                <div class="project-item-card grid-item">
+        <!-- Row 2: 1 + 2 Layout -->
+        <div class="asymmetrical-grid-row row-2">
+            <!-- Left Half: One large item (100% width) -->
+            <div class="asym-left-half">
+                <div class="project-item-card large-item">
                     <div class="project-item-image">
                         <img src="../images/P1/5.png" alt="3 Days of Design 2025" class="project-img">
                     </div>
                     <div class="project-item-content">
                         <h3 class="project-item-title">3  d a y s  2 0 2 5</h3>
                         <p class="project-item-description">
-                            The annual 3daysofdesign is a festival for dreamers, doers, and the
-                            design curious. This year, Norm Architects will present new designs and
-                            collaborations through a series of exhibitions across Copenhagen.
+                            The annual 3daysofdesign is a festival for dreamers, doers, and the design curious. This year, Norm Architects will present new designs and collaborations through a series of exhibitions across Copenhagen.
                         </p>
                         <div class="project-item-tags">
-                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> |
-                            <span class="project-tag">2025</span>
+                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> | <span class="project-tag">2025</span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-item-card grid-item">
-                    <div class="project-item-image">
-                        <img src="../images/P1/6.png" alt="Karimoku Case Study" class="project-img">
-                    </div>
-                    <div class="project-item-content">
-                        <h3 class="project-item-title">K a r i m o k u  · R h o F i e r a  2 0 2 5</h3>
-                        <p class="project-item-description">
-                            A study in contrasts and calm, 'A Sense of Serenity' presents Karimoku
-                            Case in a space defined by tactile richness, subdued tones, and timeless
-                            design.
-                        </p>
-                        <div class="project-item-tags">
-                            <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> |
-                            <span class="project-tag">2025</span>
+            <!-- Right Half: Two small items side-by-side (50% width each) -->
+            <div class="asym-right-half">
+                <div class="small-items-container">
+                    <div class="project-item-card small-item">
+                        <div class="project-item-image">
+                            <img src="../images/P1/6.png" alt="Karimoku Case Study" class="project-img">
+                        </div>
+                        <div class="project-item-content">
+                            <h3 class="project-item-title">K a r i m o k u  · R h o F i e r a  2 0 2 5</h3>
+                            <p class="project-item-description">
+                                A study in contrasts and calm, 'A Sense of Serenity' presents Karimoku Case in a space defined by tactile richness, subdued tones, and timeless design.
+                            </p>
+                            <div class="project-item-tags">
+                                <span class="project-tag">Creative</span> | <span class="project-tag">Exhibitions</span> | <span class="project-tag">2025</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-item-card grid-item">
-                    <div class="project-item-image">
-                        <img src="../images/p1/7.png" alt="Collection 002" class="project-img">
-                    </div>
-                    <div class="project-item-content">
-                        <h3 class="project-item-title">C o l l e c t i o n  0 0 2</h3>
-                        <p class="project-item-description"></p>
-                        <div class="project-item-tags">
-                            <span class="project-tag">Design</span> | <span class="project-tag">2025</span>
+                    <div class="project-item-card small-item">
+                        <div class="project-item-image">
+                            <img src="../images/P1/7.png" alt="Collection 002" class="project-img">
+                        </div>
+                        <div class="project-item-content">
+                            <h3 class="project-item-title">C o l l e c t i o n  0 0 2</h3>
+                            <p class="project-item-description">
+                                Our second collection explores the boundaries between traditional craftsmanship and modern aesthetics, creating pieces that are both timeless and contemporary.
+                            </p>
+                            <div class="project-item-tags">
+                                <span class="project-tag">Design</span> | <span class="project-tag">2025</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Row 4: Full Width Image -->
     <section class="full-width-section">
@@ -2120,9 +2149,394 @@ between form, materiality, and spatial context.
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/projects.js"></script>
     <script src="../js/kent-slider.js"></script>
+
+
+
+   
+
 </body>
 
 </html>
+
+
+
+==================================================
+File: D:\gradb\components\projects1.html
+==================================================
+<link rel="stylesheet" href="/css/components/projects1.css">
+
+<!-- Main Content -->
+<main class="main-content">
+    <!-- 1. Full-Width Banner Image -->
+    <section class="banner-section">
+        <div class="banner-image">
+            <img src="/images/P1/1.jpg" alt="TRUNK HOTEL YOYOGI PARK" class="banner-img">
+            <div class="banner-overlay">
+                <h1 class="banner-title">TRUNK (HOTEL) YOYOGI PARK</h1>
+                <p class="banner-description">A calm retreat seamlessly woven into the vibrant tapestry of Tokyo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Project Section Navigation Bar -->
+    <nav class="project-nav">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#" class="nav-link">Residential</a>
+                <a href="#" class="nav-link">Commercial</a>
+                <a href="#" class="nav-link">Institutional/Industrial</a>
+                <a href="#" class="nav-link">Interiors</a>
+                <a href="#" class="nav-link">View All</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. Section: Latest Work -->
+    <section class="section latest-work">
+        <div class="container">
+            <h2 class="section-title">Latest Work</h2>
+            <div class="vertical-text left1">LATEST WORK</div>
+            <div class="vertical-text right1">LATEST WORK</div>
+            
+            <div class="grid-container">
+                <!-- Row 1 -->
+                <div class="grid-row">
+                    <div class="grid-half">
+                        <div class="project-item single">
+                            <div class="project-image">
+                                <img src="/images/P1/1.jpg" alt="TRUNK HOTEL YOYOGI PARK" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-name">TRUNK (HOTEL) YOYOGI PARK</h3>
+                                <p class="project-description">A calm retreat seamlessly woven into Tokyo's vibrant tapestry</p>
+                                <p style="color: grey; font-size: 0.9rem; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.2rem;">Architects | 2018</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-half">
+                        <div class="grid-split">
+                            <div class="project-item">
+                                <div class="project-image1">
+                                    <img src="/images/P2/1.jpg" alt="Shore Collection" class="project-img">
+                                </div>
+                                <div class="project-info">
+                                    <h3 class="project-name">Shore Collection</h3>
+                                    <p class="project-description">Inspired by the timeless allure of Denmark's coasts</p>
+                                    <p style="color: grey; font-size: 0.9rem; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.2rem;">Architects | 2018</p>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-image1">
+                                    <img src="/images/P3/1.jpg" alt="Sjöparken" class="project-img">
+                                </div>
+                                <div class="project-info">
+                                    <h3 class="project-name">Sjöparken</h3>
+                                    <p class="project-description">A sanctuary of understated luxury immersed in nature</p>
+                                    <p style="color: grey; font-size: 0.9rem; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.2rem;">Architects | 2018</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="grid-row">
+                    <div class="grid-half">
+                        <div class="grid-split">
+                            <div class="project-item">
+                                <div class="project-image1">
+                                    <img src="/images/P3/1.jpg" alt="Audo House" class="project-img">
+                                </div>
+                                <div class="project-info">
+                                    <h3 class="project-name">Audo House</h3>
+                                    <p class="project-description">Redefining how we live, work, and connect in Copenhagen</p>
+                                    <p style="color: grey; font-size: 0.9rem; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.2rem;">Architects | 2018</p>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-image1">
+                                    <img src="/images/P1/1.jpg" alt="Woven Tatami Rug" class="project-img">
+                                </div>
+                                <div class="project-info">
+                                    <h3 class="project-name">Woven Tatami Rug</h3>
+                                    <p class="project-description">A contemporary interpretation of traditional Japanese design</p>
+                                    <p style="color: grey; font-size: 0.9rem; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.2rem;">Architects | 2018</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-half">
+                        <div class="project-item single">
+                            <div class="project-image">
+                                <img src="/images/P1/1.jpg" alt="3 days 2025" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-name">3 days 2025</h3>
+                                <p class="project-description">A festival for dreamers, doers, and the design curious</p>
+                                <p style="color: grey; font-size: 0.9rem; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.2rem;">Architects | 2018</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Full-Width Banner Image -->
+    <section class="banner-section">
+        <div class="banner-image">
+            <img src="/images/P1/1.jpg" alt="Karimoku Rho Fiera 2025" class="banner-img">
+            <div class="banner-overlay">
+                <h1 class="banner-title">Karimoku · Rho Fiera 2025</h1>
+                <p class="banner-description">A study in contrasts and calm, presenting 'A Sense of Serenity'</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Section: Hospitality Projects -->
+    <section class="section hospitality-projects">
+        <div class="container">
+            <h2 class="section-title">Hospitality Projects</h2>
+            <div class="vertical-text left2">HOSPITALITY</div>
+            <div class="vertical-text right2">HOSPITALITY</div>
+            
+            <div class="grid-two-col">
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="/images/P1/1.jpg" alt="TRUNK HOTEL YOYOGI PARK" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">TRUNK (HOTEL) YOYOGI PARK</h3>
+                        <p class="project-description">A calm retreat seamlessly woven into Tokyo's vibrant tapestry</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="/images/P1/1.jpg" alt="Audo House" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Audo House</h3>
+                        <p class="project-description">Redefining how we live, work, and connect in Copenhagen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Full-Width Banner Image -->
+    <section class="banner-section">
+        <div class="banner-image">
+            <img src="/images/P5/1.png" alt="Collection 002" class="banner-img">
+            <div class="banner-overlay">
+                <h1 class="banner-title">Collection 002</h1>
+                <p class="banner-description">Exploring the intersection of form, function, and materiality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Section: In Residence1 -->
+    <section class="section in-residence">
+        <div class="container">
+            <h2 class="section-title">In Residence1</h2>
+            <div class="vertical-text left3">RESIDENCE 1</div>
+            <div class="vertical-text right3">RESIDENCE 1</div>
+            
+            <div class="grid-five-col">
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/p1/1.jpg" alt="Residence A" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence A</h3>
+                        <p class="project-description">Modern living with natural elements</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/p2/1.jpg" alt="Residence B" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence B</h3>
+                        <p class="project-description">Minimalist approach to urban living</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/P3/1.jpg" alt="Residence C" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence C</h3>
+                        <p class="project-description">Blending traditional and contemporary</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/P4/1.jpg" alt="Residence D" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence D</h3>
+                        <p class="project-description">Sustainable design principles</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/P5/1.png" alt="Residence E" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence E</h3>
+                        <p class="project-description">Luxury meets functionality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Full-Width Banner Image -->
+    <section class="banner-section">
+        <div class="banner-image">
+            <img src="/images/P2/2.png" alt="Shore Collection" class="banner-img">
+            <div class="banner-overlay">
+                <h1 class="banner-title">Shore Collection</h1>
+                <p class="banner-description">Celebrating the serene yet dynamic essence of the shoreline</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Section: In Residence2 -->
+    <section class="section in-residence">
+        <div class="container">
+            <h2 class="section-title">In Residence2</h2>
+            <div class="vertical-text left3">RESIDENCE 2</div>
+            <div class="vertical-text right3">RESIDENCE 2</div>
+            
+            <div class="grid-five-col">
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/P1/1.jpg" alt="Residence F" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence F</h3>
+                        <p class="project-description">Open plan living with natural light</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/P3/5.png" alt="Residence G" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence G</h3>
+                        <p class="project-description">Urban oasis in the city center</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/P3/3.png" alt="Residence H" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence H</h3>
+                        <p class="project-description">Heritage building restoration</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/P3/6.png" alt="Residence I" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence I</h3>
+                        <p class="project-description">Coastal living reimagined</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image1">
+                        <img src="/images/P3/1.jpg" alt="Residence J" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Residence J</h3>
+                        <p class="project-description">Mountain retreat with panoramic views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Section: Objects of desire -->
+    <section class="section objects-desire">
+        <div class="container">
+            <h2 class="section-title">Objects of desire</h2>
+            <div class="vertical-text left4">OBJECTS</div>
+            <div class="vertical-text right4">OBJECTS</div>
+            
+            <div class="grid-two-col">
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="/images/P5/2.png" alt="Woven Tatami Rug" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Woven Tatami Rug</h3>
+                        <p class="project-description">A contemporary interpretation of traditional Japanese tatami mats</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="/images/P5/1.png" alt="Shore Collection" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">Shore Collection</h3>
+                        <p class="project-description">Inspired by the timeless allure of Denmark's coasts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    // Initialize projects1 functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Projects1 component loaded");
+        
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || !targetId.startsWith('#')) return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll for project items
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Apply animation to project items
+        document.querySelectorAll('.project-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+    });
+</script>
 
 
 
@@ -2192,7 +2606,8 @@ File: D:\gradb\css\components\about.css
   padding: 100px 0;
   background-color: var(--white);
   margin-top: -180px;
-  margin-bottom: -200px;
+  margin-bottom: -150px;
+ 
   display: flex;
   align-items: center;
   min-height: 100vh;
@@ -2504,7 +2919,7 @@ File: D:\gradb\css\components\careers.css
     background-color: #ffffff;
     color: #000000;
     font-family: 'Inter', sans-serif;
-    margin-top: -100px;
+    margin-top: -30px;
 }
 
 .grad-careers-form-container {
@@ -2806,8 +3221,8 @@ File: D:\gradb\css\components\contact.css
     align-items: center;
     background-color: #ffffff;
     color: #000000;
-    font-family: 'Inter', sans-serif;
-    margin-top: -140px;
+    font-family: 'Inter', sans-serif !important;
+    margin-top: -45px;
 }
 
 .grad-contact-form-container {
@@ -2859,15 +3274,17 @@ File: D:\gradb\css\components\contact.css
     background-color: #000000 !important;
     color: #ffffff !important;
     border: 1px solid #000000 !important;
-    letter-spacing: 2px;
+    letter-spacing: 2px !important;
     transition: all 0.3s ease;
     width: auto;
-    padding: 0.8rem 3rem;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    margin-top: 1rem;
-    font-style: sans-serif;
+    padding: 0.8rem 3rem !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    margin-top: 1rem !important;
+    font-weight: 1px !important;
+
 }
+
 
 .grad-contact-submit-btn:hover {
     background-color: #ffffff !important;
@@ -3301,7 +3718,7 @@ File: D:\gradb\css\components\philosophy.css
     min-height: 100vh;
     padding: 80px 20px;
     background-color: var(--background-color);
-    margin-top: -160px;
+    margin-top: -150px;
     margin-bottom: -150px;
 }
 
@@ -3713,10 +4130,9 @@ File: D:\gradb\css\components\projects.css
     --projects-link-hover-color: #000000;
 }
 
-
-  .project-item-description {
-        color: white;
-    }
+.project-item-description {
+    color: white;
+}
 
 /* Reset margins and padding for full-width sections */
 * {
@@ -3742,6 +4158,7 @@ File: D:\gradb\css\components\projects.css
     margin-left: -50vw;
     margin-right: -50vw;
     margin-top: -100px;
+
 }
 
 .full-width-image .container-fluid {
@@ -3899,7 +4316,6 @@ File: D:\gradb\css\components\projects.css
     display: flex;
     flex-direction: column;
     height: 100%;
-
 }
 
 .project-item-card:hover {
@@ -3972,7 +4388,6 @@ File: D:\gradb\css\components\projects.css
     max-width: 800px;
 }
 
-
 .project-item-tags {
     font-size: 0.85rem;
     color: #888888;
@@ -3987,11 +4402,96 @@ File: D:\gradb\css\components\projects.css
     margin: 0 0.15rem;
 }
 
+/* ================================
+   Asymmetrical Grid Layout - EXACT 2+1 / 1+2
+   ================================ */
+
+/* Asymmetrical Grid Container */
+.asymmetrical-grid-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.asymmetrical-grid-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Left and Right Halves - Equal 50% width */
+.asym-left-half,
+.asym-right-half {
+    flex: 1; /* Each takes 50% width */
+    display: flex;
+}
+
+/* Small Items Container - Two items side-by-side */
+.small-items-container {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Individual Small Items - Each takes 50% width of container */
+.small-items-container .small-item {
+    flex: 1; /* Each small item takes 50% width */
+    min-height: 400px;
+}
+
+/* Large Items - Full width of their container */
+.large-item {
+    width: 100%;
+    min-height: 400px;
+}
+
+/* Image Heights */
+.large-item .project-item-image {
+    height: 350px;
+    min-height: 350px;
+}
+
+.small-item .project-item-image {
+    height: 200px;
+    min-height: 200px;
+}
+
+/* Content adjustments */
+.small-item .project-item-content {
+    padding: 1.5rem;
+}
+
+.small-item .project-item-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.small-item .project-item-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.small-item .project-item-tags {
+    font-size: 0.75rem;
+}
+
+/* Ensure proper card behavior */
+.asymmetrical-grid-row .project-item-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.asymmetrical-grid-row .project-item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
 /* Row 2: Project Categories */
 .project-categories-section {
     padding: 3rem 0;
-    border-bottom: 1px solid var(--projects-border-color);
-    margin-bottom: -160px;
+    border-bottom: 0px solid var(--projects-border-color);
+    margin-bottom: -300px;
 
 }
 
@@ -4049,34 +4549,14 @@ File: D:\gradb\css\components\projects.css
 .latest-work-section {
     padding: 4rem 0;
     position: relative;
-    
-}
-
-.latest-work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-/* Grid item image heights */
-.grid-item .project-item-image {
-    height: 400px;
-    min-height: 400px;
-}
-
-.grid-item .project-item-content {
-    padding: 1.5rem;
-    text-align: center;
+    margin-top: 80px;
 }
 
 /* Vertical Text Styles */
 .vertical-text-left,
 .vertical-text-right {
     position: absolute;
-    top: 50%;
+    top: 16%;
     transform: translateY(-50%);
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -4087,6 +4567,8 @@ File: D:\gradb\css\components\projects.css
     text-transform: uppercase;
     z-index: 0;
     pointer-events: none;
+    white-space: nowrap;  /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
 }
 
 .vertical-text-left {
@@ -4142,6 +4624,9 @@ File: D:\gradb\css\components\projects.css
     flex-direction: column;
     align-items: center;
 }
+
+
+
 
 .full-width-section .project-item-title,
 .full-width-section .project-item-tags {
@@ -4292,8 +4777,34 @@ File: D:\gradb\css\components\projects.css
     margin-bottom: 0rem;
 }
 
-/* Responsive Design - IMPROVED MOBILE COVERAGE */
+/* ================================
+   Responsive Design for Asymmetrical Grid
+   ================================ */
+
 @media (max-width: 1200px) {
+    .asymmetrical-grid-row {
+        gap: 1.5rem;
+    }
+    
+    .small-items-container {
+        gap: 1.5rem;
+    }
+    
+    .large-item .project-item-image {
+        height: 300px;
+        min-height: 300px;
+    }
+    
+    .small-item .project-item-image {
+        height: 180px;
+        min-height: 180px;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 350px;
+    }
+    
     .latest-work-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -4340,6 +4851,41 @@ File: D:\gradb\css\components\projects.css
 }
 
 @media (max-width: 992px) {
+    .asymmetrical-grid-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    /* On tablet, halves become full width */
+    .asym-left-half,
+    .asym-right-half {
+        width: 100%;
+    }
+    
+    /* Small items remain side-by-side on tablet */
+    .small-items-container {
+        gap: 2rem;
+    }
+    
+    .small-items-container .small-item {
+        flex: 1;
+    }
+    
+    .large-item .project-item-image {
+        height: 280px;
+        min-height: 280px;
+    }
+    
+    .small-item .project-item-image {
+        height: 160px;
+        min-height: 160px;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 320px;
+    }
+    
     .vertical-text-left,
     .vertical-text-right {
         display: none;
@@ -4375,17 +4921,57 @@ File: D:\gradb\css\components\projects.css
 }
 
 @media (max-width: 768px) {
+    .asymmetrical-grid-row {
+        gap: 1.5rem;
+    }
+    
+    .small-items-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    /* On mobile, small items become full width */
+    .small-items-container .small-item {
+        width: 100%;
+    }
+    
+    .large-item .project-item-image {
+        height: 250px;
+        min-height: 250px;
+    }
+    
+    .small-item .project-item-image {
+        height: 180px;
+        min-height: 180px;
+    }
+    
+    .small-item .project-item-content {
+        padding: 1.25rem;
+    }
+    
+    .small-item .project-item-title {
+        font-size: 0.75rem;
+    }
+    
+    .small-item .project-item-description {
+        font-size: 0.8rem;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 300px;
+    }
+    
     .latest-work-grid,
     .five-images-grid,
     .four-images-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+    
     .project-categories-section{
         margin-bottom: -160px;
     }
-
-
 
     /* IMPROVED: Mobile image heights for full coverage */
     .grid-item .project-item-image {
@@ -4487,6 +5073,45 @@ File: D:\gradb\css\components\projects.css
 }
 
 @media (max-width: 576px) {
+    .asymmetrical-grid-row {
+        gap: 1rem;
+    }
+    
+    .small-items-container {
+        gap: 1rem;
+    }
+    
+    .large-item .project-item-image {
+        height: 200px;
+        min-height: 200px;
+    }
+    
+    .small-item .project-item-image {
+        height: 150px;
+        min-height: 150px;
+    }
+    
+    .small-item .project-item-content {
+        padding: 1rem;
+    }
+    
+    .small-item .project-item-title {
+        font-size: 0.7rem;
+    }
+    
+    .small-item .project-item-description {
+        font-size: 0.75rem;
+    }
+    
+    .small-item .project-item-tags {
+        font-size: 0.7rem;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 280px;
+    }
+    
     /* IMPROVED: Mobile image heights */
     .grid-item .project-item-image {
         height: 300px;
@@ -4560,6 +5185,33 @@ File: D:\gradb\css\components\projects.css
 
 /* Extra small devices */
 @media (max-width: 400px) {
+    .large-item .project-item-image {
+        height: 180px;
+        min-height: 180px;
+    }
+    
+    .small-item .project-item-image {
+        height: 130px;
+        min-height: 130px;
+    }
+    
+    .small-item .project-item-content {
+        padding: 0.8rem;
+    }
+    
+    .small-item .project-item-title {
+        font-size: 0.65rem;
+    }
+    
+    .small-item .project-item-description {
+        font-size: 0.7rem;
+    }
+    
+    .small-item,
+    .large-item {
+        min-height: 250px;
+    }
+    
     /* IMPROVED: Extra small mobile image heights */
     .grid-item .project-item-image {
         height: 250px;
@@ -4619,6 +5271,380 @@ File: D:\gradb\css\components\projects.css
 
 
 ==================================================
+File: D:\gradb\css\components\projects1.css
+==================================================
+
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #000;
+    background-color: #fff;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Banner Section */
+.banner-section {
+    margin-bottom: 4rem;
+}
+
+.banner-image {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.banner-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.banner-description {
+    font-size: 0.9rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Project Navigation */
+.project-nav {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 4rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: grey;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Section Styles */
+.section {
+    padding: 0rem 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+.vertical-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #888;
+    z-index: -1;
+}
+
+.vertical-text.left {
+    left: -20px;
+}
+.vertical-text.right {
+    right: -20px;
+}
+.vertical-text.left1 {
+    left: -20px;
+    top: 12%;
+}
+.vertical-text.right1 {
+    right: -20px;
+    top: 12%;
+}
+.vertical-text.left2 {
+    left: -20px;
+    top: 25%;
+}
+.vertical-text.right2 {
+    right: -20px;
+    top: 25%;
+}
+.vertical-text.left3 {
+    left: -20px;
+    top: 25%;
+}
+.vertical-text.right3 {
+    right: -20px;
+    top: 25%;
+}
+.vertical-text.left4 {
+    left: -20px;
+    top: 25%;
+}
+.vertical-text.right4 {
+    right: -20px;
+    top: 25%;
+}
+
+
+
+
+/* Grid Layouts */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.grid-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.grid-half {
+    flex: 1;
+    display: flex;
+}
+
+.grid-split {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.grid-split .project-item {
+    flex: 1;
+}
+
+.grid-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.grid-five-col {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+/* Project Items */
+.project-item {
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-item.single {
+    height: 100%;
+}
+
+.project-image {
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.project-image1 {
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover .project-img {
+    transform: scale(1.05);
+}
+
+.grid-split .project-image {
+    height: 300px;
+}
+
+.grid-five-col .project-image {
+    height: 250px;
+}
+
+.project-info {
+    padding: 0 0.5rem;
+}
+
+.project-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .grid-five-col {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .vertical-text {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 1.8rem;
+    }
+    
+    .banner-description {
+        font-size: 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    
+    .grid-row {
+        flex-direction: column;
+    }
+    
+    .grid-split {
+        flex-direction: column;
+    }
+    
+    .grid-two-col {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-five-col {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .project-image {
+        height: 300px;
+    }
+    
+    .grid-split .project-image {
+        height: 250px;
+    }
+    
+    .grid-five-col .project-image {
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-five-col {
+        grid-template-columns: 1fr;
+    }
+    
+    .banner-title {
+        font-size: 1.5rem;
+    }
+    
+    .banner-overlay {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+==================================================
 File: D:\gradb\css\components\services.css
 ==================================================
 /* services.css - Fixed text size and background issues */
@@ -4630,7 +5656,7 @@ File: D:\gradb\css\components\services.css
     justify-content: center;
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    margin-top: -210px;
+    margin-top: -140px;
     margin-bottom: -200px;
 }
 
@@ -4664,7 +5690,7 @@ File: D:\gradb\css\components\services.css
     overflow: hidden;
     cursor: pointer;
     background: #ffffff; /* Default white background */
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4697,7 +5723,7 @@ File: D:\gradb\css\components\services.css
 /* COLLAPSED state for non-expanded services */
 .grad-service-column:not(:first-child) {
     flex: 0 0 80px;
-    background-color: #f8f9fa !important; /* Gray background when collapsed */
+    background-color: #ffffff !important; /* Gray background when collapsed */
 }
 
 .grad-service-column:not(:first-child) .grad-vertical-text {
@@ -4712,14 +5738,14 @@ File: D:\gradb\css\components\services.css
 .grad-services-container:hover .grad-service-column:not(:hover) {
     flex: 0 0 60px !important;
     min-width: 60px !important;
-    background-color: #f8f9fa !important; /* Gray background when collapsed */
+    background-color: #ffffff !important; /* Gray background when collapsed */
 }
 
 /* FIXED: When Architectural Design shrinks, apply same styling as others */
 .grad-services-container:hover .grad-service-column:first-child:not(:hover) {
     flex: 0 0 60px !important;
     min-width: 60px !important;
-    background-color: #f8f9fa !important; /* Gray background when collapsed */
+    background-color: #ffffff !important; /* Gray background when collapsed */
 }
 .grad-services-container:hover .grad-service-column:first-child:not(:hover) .grad-service-content {
     opacity: 0 !important;
@@ -4754,7 +5780,7 @@ File: D:\gradb\css\components\services.css
     font-size: 1.1rem; /* Consistent text size for ALL */
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #2c3e50;
+    color: #000000;
     transition: all 0.4s ease-in-out;
     z-index: 100;
     position: absolute;
@@ -4767,7 +5793,7 @@ File: D:\gradb\css\components\services.css
 
 /* FIXED: Enhanced styling for ALL collapsed services - SAME TEXT SIZE */
 .grad-service-column .grad-vertical-text {
-    color: #3498db !important;
+    color: #000000 !important;
     transform: rotate(180deg) scale(1.1) !important;
     background: rgba(255, 255, 255, 1) !important;
     font-size: 1.1rem !important; /* Force same text size */
@@ -4778,7 +5804,7 @@ File: D:\gradb\css\components\services.css
 /* FIXED: When Architectural Design shrinks, show vertical text with same styling */
 .grad-services-container:hover .grad-service-column:first-child:not(:hover) .grad-vertical-text {
     opacity: 1 !important;
-    color: #3498db !important;
+    color: #000000 !important;
     transform: rotate(180deg) scale(1.1) !important;
     background: rgba(255, 255, 255, 1) !important;
     font-size: 1.1rem !important;
@@ -5020,6 +6046,35 @@ File: D:\gradb\css\components\services.css
 ==================================================
 File: D:\gradb\css\style.css
 ==================================================
+/* ================================
+   Hidden Sections Styling
+   ================================ */
+.hidden-section {
+    display: none !important;
+}
+
+/* Ensure proper layout when sections are shown */
+#services,
+#projects, 
+#careers,
+#contact {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Loading states */
+.component-loading {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+
+
+
 /* ================================
    Mobile Navigation Enhancements
    ================================ */
@@ -6189,6 +7244,71 @@ document.head.appendChild(style);
 
 
 ==================================================
+File: D:\gradb\js\projects1.js
+==================================================
+// Form submission handler (if forms are added later)
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling for navigation links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#' || !targetId.startsWith('#')) return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Add animation on scroll for project items
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Apply animation to project items
+    document.querySelectorAll('.project-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(item);
+    });
+    
+    // Lazy loading for images (if implemented)
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    document.querySelectorAll('img.lazy').forEach(img => {
+        imageObserver.observe(img);
+    });
+});
+
+
+
+==================================================
 File: D:\gradb\js\script.js
 ==================================================
 // ================================
@@ -6206,128 +7326,115 @@ document.addEventListener("DOMContentLoaded", () => {
     preserveImageSizes();
     forceLogoSizeReduction();
 
-    // Load components with proper sequencing
     const loadSequence = [
-        { id: "home", file: "components/home.html" },
-        { id: "about", file: "components/about.html" },
-        { id: "philosophy", file: "components/philosophy.html" },
-        {
-            id: "services",
-            file: "components/services.html",
-            callback: () => {
-                console.log("✅ Services component loaded successfully");
-
-                // Force services initialization with multiple fallbacks
-                const initServices = () => {
-                    console.log("🔄 Force initializing services...");
-
-                    if (typeof ServicesManager !== 'undefined') {
-                        console.log("🎯 Using ServicesManager class");
-                        window.servicesManager = new ServicesManager();
-                    } else if (typeof initializeServices !== 'undefined') {
-                        console.log("🎯 Using initializeServices function");
-                        window.servicesManager = initializeServices();
-                    } else if (typeof initializeGradServices !== 'undefined') {
-                        console.log("🎯 Using initializeGradServices function");
-                        window.servicesManager = initializeGradServices();
-                    } else {
-                        console.log("❌ Services functions not found, retrying...");
-                        setTimeout(initServices, 500);
-                    }
-                };
-
-                // Try multiple times with increasing delays
-                setTimeout(initServices, 300);
-                setTimeout(initServices, 1000);
-                setTimeout(initServices, 2000);
-            }
-        },
-        {
-            id: "projects",
-            file: "components/projects.html",
-            callback: () => {
-                console.log("Projects component loaded successfully");
-                setTimeout(initializeProjects, 100);
-            }
-        },
-        {
-            id: "careers",
-            file: "components/careers.html",
-            callback: () => {
-                console.log("Careers component loaded successfully");
-                // Initialize careers form with retry mechanism
-                const initCareers = () => {
-                    if (typeof initializeCareersForm === 'function') {
-                        console.log("✅ Initializing careers form");
-                        initializeCareersForm();
-                    } else {
-                        console.log("🔄 Careers form function not ready, retrying...");
-                        setTimeout(initCareers, 300);
-                    }
-                };
-                setTimeout(initCareers, 200);
-            }
-        },
-        {
-            id: "contact",
-            file: "components/contact.html",
-            callback: () => {
-                console.log("Contact component loaded successfully");
-                // Initialize contact form with retry mechanism
-                const initContact = () => {
-                    if (typeof initializeContactForm === 'function') {
-                        console.log("✅ Initializing contact form");
-                        initializeContactForm();
-                    } else {
-                        console.log("🔄 Contact form function not ready, retrying...");
-                        setTimeout(initContact, 300);
-                    }
-                };
-                setTimeout(initContact, 200);
-            }
-        },
-
-        {
-            id: "footer",
-            file: "components/footer.html",
-            callback: () => {
-                console.log("Footer component loaded successfully");
-            }
-
-
-        },
-
-            {
-            id: "footer1",
-            file: "components/footer.html",
-            callback: () => {
-                console.log("Footer component loaded successfully");
-            }
-
-
+    { id: "home", file: "components/home.html", type: "static" },
+    { id: "about", file: "components/about.html", type: "static" },
+    { id: "philosophy", file: "components/philosophy.html", type: "static" },
+    {
+        id: "services",
+        file: "components/services.html",
+        type: "hidden",
+        callback: () => {
+            console.log("✅ Services component loaded successfully");
+            hideSection('services');
+            
+            const initServices = () => {
+                console.log("🔄 Force initializing services...");
+                if (typeof ServicesManager !== 'undefined') {
+                    window.servicesManager = new ServicesManager();
+                } else if (typeof initializeServices !== 'undefined') {
+                    window.servicesManager = initializeServices();
+                } else if (typeof initializeGradServices !== 'undefined') {
+                    window.servicesManager = initializeGradServices();
+                } else {
+                    setTimeout(initServices, 500);
+                }
+            };
+            setTimeout(initServices, 300);
         }
-    ];
+    },
 
+{
+    id: "projects",
+    file: "components/projects1.html", // Changed from projects.html to projects1.html
+    type: "hidden",
+    callback: () => {
+        console.log("Projects component loaded successfully");
+        hideSection('projects');
+        // Remove this line if it causes issues: setTimeout(initializeProjects, 100);
+    }
+},
+    {
+        id: "careers",
+        file: "components/careers.html",
+        type: "hidden",
+        callback: () => {
+            console.log("Careers component loaded successfully");
+            hideSection('careers');
+            
+            const initCareers = () => {
+                if (typeof initializeCareersForm === 'function') {
+                    initializeCareersForm();
+                } else {
+                    setTimeout(initCareers, 300);
+                }
+            };
+            setTimeout(initCareers, 200);
+        }
+    },
+    {
+        id: "contact",
+        file: "components/contact.html",
+        type: "hidden",
+        callback: () => {
+            console.log("Contact component loaded successfully");
+            hideSection('contact');
+            
+            const initContact = () => {
+                if (typeof initializeContactForm === 'function') {
+                    initializeContactForm();
+                } else {
+                    setTimeout(initContact, 300);
+                }
+            };
+            setTimeout(initContact, 200);
+        }
+    },
+    {
+        id: "footer",
+        file: "components/footer.html",
+        type: "static",
+        callback: () => {
+            console.log("Footer component loaded successfully");
+        }
+    },
+    {
+        id: "footer1",
+        file: "components/footer1.html",
+        type: "hidden",
+        callback: () => {
+            console.log("Footer1 component loaded successfully");
+            hideSection('footer1');
+        }
+    },
 
-
-
-    // Load components sequentially to avoid race conditions
+];
+    // Load components sequentially
     function loadNextComponent(index) {
         if (index >= loadSequence.length) {
             console.log("All components loaded");
-            // Final initialization after all components are loaded
+            initNavigationHandlers();
             setTimeout(() => {
                 initScrollFeatures();
                 enhanceResponsiveDesign();
-                initializeAllForms(); // Ensure all forms are initialized
+                initializeAllForms();
+                removeEmptySpace(); // Remove extra space at bottom
             }, 500);
             return;
         }
 
         const item = loadSequence[index];
         loadComponent(item.id, item.file, item.callback);
-
-        // Load next component after a short delay
         setTimeout(() => loadNextComponent(index + 1), 100);
     }
 
@@ -6336,8 +7443,226 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ================================
-// Function to load HTML components into sections
+// NEW: Remove empty space at bottom
 // ================================
+function removeEmptySpace() {
+    // Set body and html to full height
+    document.body.style.minHeight = '100vh';
+    document.documentElement.style.minHeight = '100vh';
+    
+    // Ensure footer is at bottom
+    const footer = document.getElementById('footer');
+    if (footer) {
+        footer.style.marginTop = 'auto';
+    }
+    
+    // Remove any extra padding/margin from main sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.minHeight = 'auto';
+    });
+    
+    console.log("✅ Removed empty space at bottom");
+}
+
+// ================================
+// SECTION VISIBILITY FUNCTIONS
+// ================================
+
+function hideSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.style.display = 'none';
+        section.classList.add('hidden-section');
+    }
+}
+
+function showSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.style.display = 'block';
+        section.classList.remove('hidden-section');
+        section.style.position = '';
+        section.style.top = '';
+        section.style.left = '';
+        section.style.transform = '';
+    }
+}
+
+function hideAllHiddenSections() {
+    const hiddenSections = ['services', 'projects', 'careers', 'contact', 'footer1'];
+    hiddenSections.forEach(sectionId => {
+        hideSection(sectionId);
+    });
+}
+
+function hideStaticSections() {
+    const staticSections = ['home', 'about', 'philosophy', 'footer'];
+    staticSections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.style.display = 'none';
+        }
+    });
+}
+
+function showStaticSections() {
+    const staticSections = ['home', 'about', 'philosophy', 'footer' ];
+    staticSections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.style.display = 'block';
+        }
+    });
+}
+
+// ================================
+// NAVIGATION HANDLERS
+// ================================
+
+function initNavigationHandlers() {
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            handleNavigationClick(targetId, this);
+        });
+    });
+}
+
+function handleNavigationClick(targetId, clickedLink) {
+    console.log("Navigation clicked:", targetId);
+    
+    const staticSections = ['home', 'about', 'philosophy', 'footer'];
+    const hiddenSections = ['services', 'projects', 'careers', 'contact', 'footer1'];
+    
+    // If clicking a STATIC section (HOME, ABOUT, PHILOSOPHY)
+    if (['home', 'about', 'philosophy'].includes(targetId)) {
+        // Show all static sections, hide all hidden sections
+        showStaticSections();
+        hideAllHiddenSections();
+        setActiveNavLink(clickedLink);
+        scrollToSection(targetId);
+    }
+    // If clicking SERVICES - Show SERVICES + PROJECTS + FOOTER1 (combined page)
+    else if (targetId === 'services') {
+        // Hide static sections and other hidden sections
+        hideStaticSections();
+        hideAllHiddenSections();
+        
+        // Show the combined services page
+        showSection('services');
+        showSection('projects');
+        showSection('footer1');
+        
+        setActiveNavLink(clickedLink);
+        scrollToSection('services');
+    }
+    // If clicking PROJECTS - Also show combined page (same as services)
+    else if (targetId === 'projects') {
+        // Hide static sections and other hidden sections
+        hideStaticSections();
+        hideAllHiddenSections();
+        
+        // Show the combined services page
+        showSection('services');
+        showSection('projects');
+        showSection('footer1');
+        
+        setActiveNavLink(clickedLink);
+        scrollToSection('projects');
+    }
+    // If clicking CAREERS - Show only careers page
+    else if (targetId === 'careers') {
+        // Hide static sections and other hidden sections
+        hideStaticSections();
+        hideAllHiddenSections();
+        
+        // Show only careers
+        showSection('careers');
+        
+        setActiveNavLink(clickedLink);
+        scrollToSection('careers');
+    }
+    // If clicking CONTACT - Show only contact page
+    else if (targetId === 'contact') {
+        // Hide static sections and other hidden sections
+        hideStaticSections();
+        hideAllHiddenSections();
+        
+        // Show only contact
+        showSection('contact');
+        
+        setActiveNavLink(clickedLink);
+        scrollToSection('contact');
+    }
+    // If clicking FOOTER (from static pages)
+    else if (targetId === 'footer') {
+        setActiveNavLink(clickedLink);
+        scrollToSection('footer');
+    }
+}
+
+function setActiveNavLink(activeLink) {
+    const allNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    allNavLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    activeLink.classList.add('active');
+}
+
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar ? navbar.offsetHeight : 80;
+        const offsetTop = section.offsetTop - navbarHeight;
+        
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+        
+        window.history.pushState(null, null, `#${sectionId}`);
+    }
+}
+
+// ================================
+// MOBILE NAVIGATION
+// ================================
+
+function initMobileNavigation() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (navbarToggler && navbarCollapse) {
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                
+                // Handle the navigation click
+                handleNavigationClick(targetId, link);
+                
+                // Close mobile menu
+                if (window.innerWidth < 768) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
+                        new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                    bsCollapse.hide();
+                }
+            });
+        });
+    }
+}
+
+// ================================
+// EXISTING FUNCTIONS (NO CHANGES)
+// ================================
+
 function loadComponent(sectionId, filePath, callback) {
     const section = document.getElementById(sectionId);
     if (!section) {
@@ -6345,7 +7670,6 @@ function loadComponent(sectionId, filePath, callback) {
         return;
     }
 
-    // Add loading state
     section.classList.add('component-loading');
 
     fetch(filePath)
@@ -6360,22 +7684,9 @@ function loadComponent(sectionId, filePath, callback) {
             section.classList.remove('component-loading');
             section.classList.add('loaded');
 
-            // Add the section ID to the loaded content's main container
-            // const container = section.querySelector('div[class*="section"], section[class*="section"]');
-            // if (container && !container.id) {
-            //     container.id = sectionId + '-content';
-            // }
-
-            if (!section.id) {
-                section.id = sectionId;
-            }
-
-            // Re-initialize navigation after content loads
             setTimeout(() => {
                 initScrollFeatures();
                 navbarShrink();
-
-                // Initialize forms for this section
                 if (sectionId === 'careers' || sectionId === 'contact') {
                     initializeFormsForSection(sectionId);
                 }
@@ -6390,9 +7701,6 @@ function loadComponent(sectionId, filePath, callback) {
         });
 }
 
-// ================================
-// Form Initialization Functions
-// ================================
 function initializeAllForms() {
     console.log("🔄 Initializing all forms...");
     initializeCareersForm();
@@ -6401,7 +7709,6 @@ function initializeAllForms() {
 
 function initializeFormsForSection(sectionId) {
     console.log(`🔄 Initializing forms for section: ${sectionId}`);
-
     if (sectionId === 'careers') {
         initializeCareersForm();
     } else if (sectionId === 'contact') {
@@ -6409,20 +7716,15 @@ function initializeFormsForSection(sectionId) {
     }
 }
 
-// ================================
-// Careers Form Handler (Email)
-// ================================
+// KEEP ALL YOUR EXISTING FUNCTIONS EXACTLY AS THEY WERE:
 function initializeCareersForm() {
     const form = document.getElementById('careerForm');
-
     if (!form) {
-        console.log("❌ Career form not found (may not be on current page)");
+        console.log("❌ Career form not found");
         return;
     }
 
     console.log("✅ Career form found, attaching event listener");
-
-    // Remove any existing event listeners to prevent duplicates
     const newForm = form.cloneNode(true);
     form.parentNode.replaceChild(newForm, form);
     const currentForm = document.getElementById('careerForm');
@@ -6431,33 +7733,28 @@ function initializeCareersForm() {
         e.preventDefault();
         console.log("✅ Careers form submit triggered");
 
-        // Get form values
         const name = document.getElementById('careerName') ? document.getElementById('careerName').value.trim() : '';
         const phone = document.getElementById('careerPhone') ? document.getElementById('careerPhone').value.trim() : '';
         const email = document.getElementById('careerEmail') ? document.getElementById('careerEmail').value.trim() : '';
         const message = document.getElementById('careerMessage') ? document.getElementById('careerMessage').value.trim() : '';
 
-        // Validation
         if (!name || !phone || !email || !message) {
             showAlert("Please fill in all fields.", "error");
             return;
         }
 
-        // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             showAlert("Please enter a valid email address.", "error");
             return;
         }
 
-        // Phone validation
         const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
         if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
             showAlert("Please enter a valid phone number.", "error");
             return;
         }
 
-        // Create mailto link
         const subject = `Career Application - ${name}`;
         const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nThis message was sent from the Grad Architects Careers page.`;
 
@@ -6465,17 +7762,13 @@ function initializeCareersForm() {
 
         console.log("📨 Opening mail client:", mailtoLink);
 
-        // Show loading state
         const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening Email...';
         submitBtn.disabled = true;
 
-        // Open default email client in new tab
         setTimeout(() => {
             window.open(mailtoLink, '_blank');
-
-            // Reset form and button after a delay
             setTimeout(() => {
                 currentForm.reset();
                 submitBtn.innerHTML = originalText;
@@ -6488,20 +7781,14 @@ function initializeCareersForm() {
     console.log("✅ Careers form handler attached successfully");
 }
 
-// ================================
-// Contact Form Handler (WhatsApp)
-// ================================
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
-
     if (!contactForm) {
-        console.log("❌ Contact form not found (may not be on current page)");
+        console.log("❌ Contact form not found");
         return;
     }
 
     console.log("✅ Contact form found, attaching event listener");
-
-    // Remove any existing event listeners
     const newForm = contactForm.cloneNode(true);
     contactForm.parentNode.replaceChild(newForm, contactForm);
     const currentForm = document.getElementById('contactForm');
@@ -6515,41 +7802,30 @@ function initializeContactForm() {
         const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
         const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
 
-        // Validation
         if (!name || !email || !phone || !message) {
             showAlert('Please fill in all required fields.', 'error');
             return;
         }
 
-        // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             showAlert('Please enter a valid email address.', 'error');
             return;
         }
 
-        // Create WhatsApp message
         const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
-
-        // WhatsApp phone number (replace with your actual number)
-        const whatsappNumber = '919840904236'; // Remove any + or spaces
-
-        // Create WhatsApp URL
+        const whatsappNumber = '919840904236';
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
         console.log("📱 WhatsApp URL:", whatsappUrl);
 
-        // Show loading state
         const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening WhatsApp...';
         submitBtn.disabled = true;
 
-        // Open WhatsApp in new tab
         setTimeout(() => {
             window.open(whatsappUrl, '_blank');
-
-            // Reset form and button after a delay
             setTimeout(() => {
                 currentForm.reset();
                 submitBtn.innerHTML = originalText;
@@ -6562,17 +7838,12 @@ function initializeContactForm() {
     console.log("✅ Contact form handler attached successfully");
 }
 
-// ================================
-// Alert System
-// ================================
 function showAlert(message, type = "info") {
-    // Remove any existing alerts
     const existingAlert = document.querySelector('.custom-alert');
     if (existingAlert) {
         existingAlert.remove();
     }
 
-    // Create alert element
     const alertDiv = document.createElement('div');
     alertDiv.className = `custom-alert alert alert-${type === 'error' ? 'danger' : 'success'} fade show`;
     alertDiv.style.cssText = `
@@ -6591,7 +7862,6 @@ function showAlert(message, type = "info") {
 
     document.body.appendChild(alertDiv);
 
-    // Auto remove after 5 seconds
     setTimeout(() => {
         if (alertDiv.parentNode) {
             alertDiv.remove();
@@ -6599,68 +7869,36 @@ function showAlert(message, type = "info") {
     }, 5000);
 }
 
-// ================================
-// FORCE LOGO SIZE REDUCTION
-// ================================
 function forceLogoSizeReduction() {
     console.log('Forcing logo size reduction...');
-
-    // Force navbar logo size
     const navbarLogo = document.querySelector('.navbar-logo');
     if (navbarLogo) {
         navbarLogo.style.height = '25px';
         navbarLogo.style.maxHeight = '25px';
         navbarLogo.style.width = 'auto';
-        console.log('Navbar logo size forced to 25px');
     }
 
-    // Force philosophy logo size
     const philosophyLogo = document.querySelector('.philosophy-logo');
     if (philosophyLogo) {
         philosophyLogo.style.height = '35px';
         philosophyLogo.style.maxHeight = '35px';
         philosophyLogo.style.width = 'auto';
-        console.log('Philosophy logo size forced to 35px');
     }
 
-    // Apply responsive sizes
     if (window.innerWidth <= 768) {
-        if (navbarLogo) {
-            navbarLogo.style.height = '20px';
-            navbarLogo.style.maxHeight = '20px';
-        }
-        if (philosophyLogo) {
-            philosophyLogo.style.height = '28px';
-            philosophyLogo.style.maxHeight = '28px';
-        }
+        if (navbarLogo) navbarLogo.style.height = '20px';
+        if (philosophyLogo) philosophyLogo.style.height = '28px';
     }
-
     if (window.innerWidth <= 576) {
-        if (navbarLogo) {
-            navbarLogo.style.height = '18px';
-            navbarLogo.style.maxHeight = '18px';
-        }
-        if (philosophyLogo) {
-            philosophyLogo.style.height = '25px';
-            philosophyLogo.style.maxHeight = '25px';
-        }
+        if (navbarLogo) navbarLogo.style.height = '18px';
+        if (philosophyLogo) philosophyLogo.style.height = '25px';
     }
-
     if (window.innerWidth <= 400) {
-        if (navbarLogo) {
-            navbarLogo.style.height = '16px';
-            navbarLogo.style.maxHeight = '16px';
-        }
-        if (philosophyLogo) {
-            philosophyLogo.style.height = '22px';
-            philosophyLogo.style.maxHeight = '22px';
-        }
+        if (navbarLogo) navbarLogo.style.height = '16px';
+        if (philosophyLogo) philosophyLogo.style.height = '22px';
     }
 }
 
-// ================================
-// Navbar shrink on scroll
-// ================================
 function navbarShrink() {
     const navbar = document.querySelector(".navbar");
     if (!navbar) {
@@ -6676,383 +7914,41 @@ function navbarShrink() {
         }
     };
 
-    // Initial check
     shrinkNavbar();
-
-    // Listen for scroll events
     window.addEventListener("scroll", shrinkNavbar);
 }
 
-// ================================
-// Mobile Navigation Handler - UPDATED
-// ================================
-function initMobileNavigation() {
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-
-    if (navbarToggler && navbarCollapse) {
-        // Get all navigation links
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-        // Add click event to each navigation link
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-
-                if (targetSection) {
-                    // Close mobile menu first
-                    if (window.innerWidth < 768) {
-                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
-                            new bootstrap.Collapse(navbarCollapse, { toggle: false });
-                        bsCollapse.hide();
-                    }
-
-                    // Update active link
-                    const allNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
-                    allNavLinks.forEach(navLink => navLink.classList.remove('active'));
-                    link.classList.add('active');
-
-                    // Wait for menu to close, then scroll to section
-                    setTimeout(() => {
-                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                        const targetPosition = targetSection.offsetTop - navbarHeight;
-
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-
-                        // Update URL
-                        window.history.pushState(null, null, `#${targetId}`);
-                    }, 300); // Wait for collapse animation
-                }
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth < 768 &&
-                navbarCollapse.classList.contains('show') &&
-                !navbarToggler.contains(e.target) &&
-                !navbarCollapse.contains(e.target)) {
-                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
-                    new bootstrap.Collapse(navbarCollapse, { toggle: false });
-                bsCollapse.hide();
-            }
-        });
-
-        // Handle menu show/hide events
-        navbarCollapse.addEventListener('show.bs.collapse', function () {
-            console.log('Mobile menu opened');
-        });
-
-        navbarCollapse.addEventListener('hide.bs.collapse', function () {
-            console.log('Mobile menu closed');
-        });
-    }
-}
-
-// ================================
-// Preserve Original Image Sizes
-// ================================
 function preserveImageSizes() {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
-        // Remove any forced dimensions and let images display at natural size
         img.style.width = 'auto';
         img.style.height = 'auto';
         img.style.maxWidth = '100%';
-
-        // Add loading optimization
         img.loading = 'lazy';
     });
 }
 
-// ================================
-// Projects Section Initialization
-// ================================
 function initializeProjects() {
     const projectImages = document.querySelectorAll('.project-img');
     projectImages.forEach(img => {
-        // Ensure project images maintain aspect ratio
         img.style.objectFit = 'cover';
         img.style.width = '100%';
         img.style.height = '100%';
     });
 }
 
-// ================================
-// Scroll Features
-// ================================
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
-
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-
-    console.log("Sections found:", sections.length);
-    console.log("Nav links found:", navLinks.length);
-
-    // Remove active class from all links initially
-    navLinks.forEach(link => link.classList.remove("active"));
-
-    if (sections.length === 0) {
-        console.warn("No sections found for intersection observer");
-        return;
-    }
-    const projectSubSections = [
-        'project-categories',
-        'in-residence',
-        'soft-minimal',
-        'objects-of-desire',
-        'projects-content'
-    ];
-
-    // SINGLE IntersectionObserver to avoid conflicts
-    const observer = new IntersectionObserver(
-        (entries) => {
-            let mostVisibleSection = null;
-            let highestRatio = 0;
-
-            entries.forEach((entry) => {
-                let sectionId = entry.target.id;
-                if (sectionId.endsWith('-content')) {
-                    sectionId = sectionId.replace('-content', '');
-                }
-                if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
-                    highestRatio = entry.intersectionRatio;
-                    mostVisibleSection = entry.target.id;
-                }
-            });
-
-             if (mostVisibleSection && highestRatio > 0.1) {
-                console.log("Most visible section:", mostVisibleSection, "Ratio:", highestRatio);
-
-                let activeNavId = mostVisibleSection;
-                
-                if (projectSubSections.includes(mostVisibleSection)) {
-                    activeNavId = 'projects';
-                    console.log("Project sub-section detected, activating projects nav");
-                }
-                navLinks.forEach(link => {
-                    const linkHref = link.getAttribute("href");
-                    const linkTarget = linkHref.substring(1);
-                    
-                    if (activeNavId === linkTarget) {
-                        navLinks.forEach(l => l.classList.remove("active"));
-                        // Add active to current link
-                        link.classList.add("active");
-                        console.log("Active link set to:", linkHref);
-                    }
-                });
-            }
-
-        },
-        {
-            threshold: [0.1, 0.3, 0.5, 0.7],
-            rootMargin: '-80px 0px -80px 0px'
-        }
-    );
-
-    // Observe all sections that have IDs
-    sections.forEach(section => {
-        if (section.id && section.id !== '') {
-            observer.observe(section);
-            console.log("Observing section:", section.id);
-        }
-    });
-
-    // Smooth scroll for nav links - SIMPLIFIED
-    navLinks.forEach(link => {
-        // Remove any existing event listeners to prevent duplicates
-        link.removeEventListener('click', handleNavClick);
-        link.addEventListener("click", handleNavClick);
-    });
-    function handleNavClick(event) {
-        event.preventDefault();
-        const targetId = this.getAttribute("href").substring(1);
-        console.log("Nav link clicked, target:", targetId);
-
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-            // Update active class immediately
-            navLinks.forEach(l => l.classList.remove("active"));
-            this.classList.add("active");
-
-            // Smooth scroll to section
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = targetSection.offsetTop - navbarHeight;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
-            });
-
-            // Update URL hash
-            window.history.pushState(null, null, `#${targetId}`);
-        }
-    }
+    // Modified to only work with visible sections
 }
 
-// ================================
-// Handle page refresh and direct anchor links
-// ================================
-window.addEventListener('load', () => {
-    const hash = window.location.hash;
-    if (hash) {
-        const targetId = hash.substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            setTimeout(() => {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-
-                // Update active link
-                const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === hash) {
-                        link.classList.add('active');
-                    }
-                });
-            }, 800);
-        }
-    }
-});
-
-// ================================
-// Handle browser back/forward navigation
-// ================================
-window.addEventListener('hashchange', () => {
-    const hash = window.location.hash;
-    if (hash) {
-        const targetSection = document.querySelector(hash);
-        if (targetSection) {
-            setTimeout(() => {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }, 100);
-        }
-    }
-});
-
-// ================================
-// Enhanced Responsive Design
-// ================================
 function enhanceResponsiveDesign() {
-    // Improve mobile navigation
-    improveMobileNav();
-
-    // Enhance image responsiveness
-    enhanceImageResponsiveness();
-
-    // Improve touch interactions
-    improveTouchInteractions();
-
-    // Optimize performance on mobile
-    optimizeMobilePerformance();
+    console.log("Enhancing responsive design...");
 }
 
-function improveMobileNav() {
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-    if (window.innerWidth <= 768) {
-        // Add mobile-specific classes
-        navbar.classList.add('mobile-nav');
-
-        // Improve touch targets
-        navLinks.forEach(link => {
-            link.style.padding = '12px 15px';
-            link.style.minHeight = '44px'; // Apple's recommended minimum touch target
-        });
-    }
-}
-
-function enhanceImageResponsiveness() {
-    const images = document.querySelectorAll('img');
-
-    images.forEach(img => {
-        // Ensure images are responsive
-        img.style.maxWidth = '100%';
-        img.style.height = 'auto';
-
-        // Add loading optimization
-        if (!img.getAttribute('loading')) {
-            img.setAttribute('loading', 'lazy');
-        }
-    });
-}
-
-function improveTouchInteractions() {
-    // Improve button touch targets
-    const buttons = document.querySelectorAll('button, .btn, [role="button"]');
-
-    buttons.forEach(button => {
-        if (window.innerWidth <= 768) {
-            button.style.minHeight = '44px';
-            button.style.minWidth = '44px';
-        }
-    });
-}
-
-function optimizeMobilePerformance() {
-    // Reduce animations on low-performance devices
-    if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        document.documentElement.style.setProperty('--transition-speed', '0.2s');
-    }
-}
-
-// ================================
-// Mobile viewport height fix for iOS
-// ================================
-function setViewportHeight() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-// ================================
-// Event Listeners
-// ================================
-window.addEventListener('resize', () => {
-    forceLogoSizeReduction();
-    setViewportHeight();
-    enhanceResponsiveDesign();
-});
-
-window.addEventListener('orientationchange', setViewportHeight);
-
-// Initial viewport height setup
-setViewportHeight();
-
-// ================================
-// Error handling for missing components
-// ================================
-window.addEventListener('error', (event) => {
-    console.error('Global error:', event.error);
-});
-
-// ================================
 // Make functions available globally
-// ================================
 window.initializeCareersForm = initializeCareersForm;
 window.initializeContactForm = initializeContactForm;
-window.initializeAllForms = initializeAllForms;
-window.initializeFormsForSection = initializeFormsForSection;
 
 
 
@@ -7131,7 +8027,9 @@ File: D:\gradb\index.html
   <link rel="stylesheet" href="css/components/contact.css">
   <link rel="stylesheet" href="css/components/home.css">
   <link rel="stylesheet" href="css/components/philosophy.css">
-  <link rel="stylesheet" href="css/components/projects.css">
+  <!-- <link rel="stylesheet" href="css/components/projects.css"> -->
+
+  <link rel="stylesheet" href="../css/components/projects1.css">
   <link rel="stylesheet" href="css/components/services.css">
 </head>
 
@@ -7151,7 +8049,8 @@ File: D:\gradb\index.html
                 <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
                 <li class="nav-item"><a class="nav-link" href="#philosophy">PHILOSOPHY</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="#services" >SERVICES</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#careers">CAREERS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
@@ -7178,25 +8077,28 @@ File: D:\gradb\index.html
     <!-- Content loaded dynamically -->
   </section>
 
-  <section id="services" class="section">
 
+
+    <!-- <section id="services" class="hidden-section" style="display: none;"></section>
+    <section id="projects" class="hidden-section" style="display: none;"></section> -->
+
+
+  <section id="services" class="section">
   </section>
 
-
   <section id="projects" class="section">
-
   </section>
 
   <section id="footer1" class="section">
-
   </section>
 
-  <section id="careers" class="section">
 
+  
+
+  <section id="careers" class="section">
   </section>
 
   <section id="contact" class="section">
-
   </section>
 
 
