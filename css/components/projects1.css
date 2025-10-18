@@ -82,10 +82,12 @@ body {
 }
 
 .nav-links {
+
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 8rem;
 }
+
 
 .nav-link {
     text-decoration: none;
@@ -157,7 +159,7 @@ body {
     bottom: 90px;
 }
 .vertical-text.right1 {
-    right: -20px;
+    right: -40px;
     bottom: 90px;
 }
 .vertical-text.left2 {
@@ -165,7 +167,7 @@ body {
     top: 25%;
 }
 .vertical-text.right2 {
-    right: -20px;
+    right: -40px;
     top: 25%;
 }
 .vertical-text.left3 {
@@ -173,7 +175,7 @@ body {
     top: 25%;
 }
 .vertical-text.right3 {
-    right: -20px;
+    right: -40px;
     top: 25%;
 }
 .vertical-text.left4 {
@@ -181,7 +183,7 @@ body {
     top: 25%;
 }
 .vertical-text.right4 {
-    right: -20px;
+    right: -40px;
     top: 25%;
 }
 
