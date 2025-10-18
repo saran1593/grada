@@ -148,8 +148,8 @@
     transform: rotate(180deg) scale(1.1) !important;
     background: rgba(255, 255, 255, 1) !important;
     font-size: 1.1rem !important; /* Force same text size */
-    font-weight: 600 !important;
-    letter-spacing: 3px !important;
+    font-weight: 400 !important;
+    letter-spacing: 5px !important;
 }
 
 /* FIXED: When Architectural Design shrinks, show vertical text with same styling */
