@@ -21,7 +21,6 @@
 
 .philosophy-container {
     display: flex;
-    gap: 80px;
     width: 100%;
     max-width: 1200px;
     align-items: flex-start;
@@ -33,8 +32,11 @@
 .philosophy-left {
     flex: 1;
     display: flex;
-    gap: 50px;
+    gap: 10px;
     align-items: flex-start;
+    width: 100%;
+    min-width: 700px;
+    padding-right: 10px;
 }
 
 .main-heading-stacked {
@@ -42,7 +44,7 @@
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: 2px;
-    margin: 0;
+    margin-right: 50px;
     color:black;
     text-align: left;
     flex-shrink: 0;
@@ -56,9 +58,9 @@
 
 .section-title {
     font-size: 1.7rem;
-    font-weight: 450;
+    font-weight: 100;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 8px;
     color:black;
     margin-bottom: 2rem;
     text-align: left;
@@ -111,11 +113,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 50px;
 }
 
 .philosophy-image-container {
-    width: 100%;
     display: flex;
     justify-content: center;
 }

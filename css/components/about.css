@@ -3,21 +3,21 @@
   background-color: var(--white);
   margin-top: -145px;
   margin-bottom: -100px;
- 
- 
   display: flex;
   align-items: center;
   min-height: 100vh;
 }
 
 .about-section .section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 4rem;
+  font-size: 2.7rem;
+  font-weight: 100;
+  margin-bottom: 2rem;
   color: var(--primary-color);
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 8px;
+  display: flex;
+  justify-content: left;
 }
 
 .about-content {
@@ -39,8 +39,9 @@
 }
 /* Apply !important to ensure styles are not overridden */
 .about-image img {
-  max-width: 600px !important; /* Ensures the max-width is applied */
-  width: 100% !important;
+  max-width: 700px !important;
+  width: 100%;
+  /* Ensures the max-width is applied */
   height: 590px !important;
   object-fit: cover !important;
   border-radius: 16px !important;
@@ -75,27 +76,12 @@
   text-decoration: none;
 }
 
-/* VERTICAL TEXT POSITIONED TO LEFT OF IMAGE */
-.vertical-text {
-  position: absolute;
-  left: -250px;
-  top: 42%;
-  transform: translateY(-50%) rotate(-90deg);
-  transform-origin: center;
-  white-space: nowrap;
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: grey;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
 /* Responsive */
 @media (max-width: 1200px) {
   .vertical-text {
     left: -120px;
   }
-  
+
   .about-image img {
     height: 380px;
     max-width: 450px;
@@ -117,16 +103,16 @@
   .vertical-text::before {
     display: none;
   }
-  
+
   .about-content {
     text-align: center;
     margin-left: 0;
   }
-  
+
   .about-content p {
     text-align: center;
   }
-  
+
   .about-image img {
     height: 350px;
     max-width: 400px;
@@ -165,14 +151,16 @@
     margin-left: 0;
   }
 
-.about-content p {
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: #555;
-  margin-bottom: 2rem;
-  text-align: justify; /* This ensures the text is justified */
-  text-justify: inter-word; /* This is optional and improves justification on some browsers */
-}
+  .about-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 2rem;
+    text-align: justify;
+    /* This ensures the text is justified */
+    text-justify: inter-word;
+    /* This is optional and improves justification on some browsers */
+  }
 
 
   .about-image {
@@ -245,14 +233,16 @@
     text-align: center;
   }
 
-.about-content p {
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: #555;
-  margin-bottom: 2rem;
-  text-align: justify; /* This ensures the text is justified */
-  text-justify: inter-word; /* This is optional and improves justification on some browsers */
-}
+  .about-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 2rem;
+    text-align: justify;
+    /* This ensures the text is justified */
+    text-justify: inter-word;
+    /* This is optional and improves justification on some browsers */
+  }
 
 
   .about-image img {
@@ -300,4 +290,20 @@
     font-size: 1rem;
     letter-spacing: 1.5px;
   }
+}
+
+.vertical-text {
+  position: absolute !important;
+  right: calc(100% + 10px);
+  top:50% !important;
+  transform: translateY(-50%) !important;
+  transform-origin: right center;
+  writing-mode: vertical-rl !important;
+  white-space: nowrap;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 1.5rem !important;
+  z-index: 9999 !important;
+  letter-spacing: 8px;
 }
