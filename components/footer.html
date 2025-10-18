@@ -23,7 +23,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0;
-            
+
         }
 
         .footer-content {
@@ -334,8 +334,7 @@
             <div class="footer-content">
                 <div class="footer-main">
                     <!-- Left column - GET IN TOUCH Section -->
-                    <div class="footer-left"
-                        style="padding-right: 90px; margin-right: 50px; ">
+                    <div class="footer-left" style="padding-right: 90px; margin-right: 50px; ">
                         <div class="footer-logo">
                             <img src="/images/logo.png" alt="Great Architects Logo">
                         </div>
@@ -357,15 +356,16 @@
                     </div>
 
                     <!-- Right column - Grouped sections -->
-                    <div class="footer-right" style="margin-left: 70px; margin-bottom: 30px;">
+                    <div class="footer-right" style="margin-left: 95px; margin-bottom: 30px;">
                         <!-- PROJECTS Section -->
                         <div class="footer-section">
                             <h3>PROJECTS</h3>
                             <ul class="footer-links">
                                 <li><a href="../components/project/residential.html">Residential</a></li>
                                 <li><a href="../components/project/commercial.html">Commercial</a></li>
-                                <li><a href="#"><span>Institutional</span><br/><span>/Industrial</span></a></li>
-                                <li><a href="#">Interiors</a></li>
+                                <li><a href="../components/project/industrial.html"><span>Industrial
+                                            /</span><br /><span>Institutional</span></a></li>
+                                <li><a href="../components/project/interiors.html">Interiors</a></li>
                             </ul>
                         </div>
 
@@ -374,8 +374,8 @@
                             <h3>STUDIO</h3>
                             <ul class="footer-links">
                                 <li><a href="../index.html#about">ABOUT US</a></li>
-                                <li><a href="">SERVICES</a></li>
-                                <li><a href="">CAREERS</a></li>
+                                <li><a href="../index.html#services">SERVICES</a></li>
+                                <li><a href="../index.html#careers">CAREERS</a></li>
                                 <li><a href="../index.html#contact">CONTACT US</a></li>
                             </ul>
                         </div>
@@ -462,6 +462,79 @@
                     e.preventDefault();
                     alert('This page is under construction. Please check back later.');
                 }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Form submission handler for "START YOUR PROJECT" button
+            document.getElementById('projectForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('projectName').value;
+                const phone = document.getElementById('projectPhone').value;
+                const message = document.getElementById('projectMessage').value;
+
+                if (!name || !phone || !message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+
+                const subject = `New Project Inquiry from ${name}`;
+                const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
+                const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+                window.location.href = mailtoLink;
+
+                setTimeout(() => {
+                    document.getElementById('projectForm').reset();
+                }, 1000);
+            });
+
+            // Handle footer navigation links
+            document.querySelectorAll('.footer-links a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+
+                    // Skip external links and placeholder links
+                    if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+                        if (href === '#') {
+                            e.preventDefault();
+                            alert('This page is under construction. Please check back later.');
+                        }
+                        return;
+                    }
+
+                    // Handle internal navigation links (about, services, careers, contact)
+                    if (href.includes('index.html#')) {
+                        e.preventDefault();
+                        const section = href.split('#')[1];
+
+                        // Check if we're on a project page or index page
+                        const currentPath = window.location.pathname;
+                        const isOnProjectPage = currentPath.includes('/project/') || currentPath.includes('/components/');
+
+                        if (isOnProjectPage) {
+                            // Store section and navigate to index
+                            sessionStorage.setItem('scrollToSection', section);
+                            window.location.href = '../../index.html';
+                        } else {
+                            // Already on index page, just scroll
+                            const element = document.getElementById(section);
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                                // Update active nav link in main navbar if it exists
+                                const mainNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                                if (mainNavLinks.length > 0) {
+                                    mainNavLinks.forEach(navLink => navLink.classList.remove('active'));
+                                    const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${section}"]`);
+                                    if (activeLink) {
+                                        activeLink.classList.add('active');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
             });
         });
     </script>

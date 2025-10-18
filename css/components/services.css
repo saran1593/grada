@@ -21,6 +21,17 @@
     text-align: center;
 }
 
+.section-title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  display: flex;
+  justify-content: center;
+}
 /* Flex container for all service columns */
 .grad-services-container {
     display: flex;

@@ -19,6 +19,17 @@ body {
     background-color: #fff;
     font-weight: 400;
 }
+.section-title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  display: flex;
+  justify-content: center;
+}
 
 .container {
     max-width: 1300px;
