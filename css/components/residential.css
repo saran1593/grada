@@ -175,7 +175,7 @@ body {
 .sidebar {
     position: fixed;
     left: 0;
-    top: 80px; /* Match navbar height from style.css */
+    top: 70px; /* Match navbar height from style.css */
     width: 320px;
     height: calc(100vh - 80px);
     background-color: #f8f8f8;
@@ -186,6 +186,7 @@ body {
     z-index: 1000;
     overflow-y: auto;
     overflow-x: hidden;
+    
 }
 
 /* Search Container */

@@ -37,6 +37,7 @@
     width: 100%;
     min-width: 700px;
     padding-right: 10px;
+
 }
 
 .main-heading-stacked {
@@ -323,7 +324,7 @@
     
     .philosophy-container {
         gap: 35px;
-        text-align: center;
+        text-align: start;
     }
     
     .main-heading-stacked {
