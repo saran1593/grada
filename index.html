@@ -116,6 +116,43 @@
       });
     }
   });
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if there's a stored section to scroll to
+    const targetSection = sessionStorage.getItem('scrollToSection');
+    
+    if (targetSection) {
+        // Clear the stored value
+        sessionStorage.removeItem('scrollToSection');
+        
+        // Wait a bit for content to load, then scroll
+        setTimeout(function() {
+            const element = document.getElementById(targetSection);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active nav link
+                document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${targetSection}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }, 500); // Adjust timeout if needed based on your content loading speed
+    }
+    
+    // Also handle direct hash navigation (when page loads with #section in URL)
+    else if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        setTimeout(function() {
+            const element = document.getElementById(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 500);
+    }
+});
 </script>
 
   <!-- Load ALL JavaScript files upfront -->
