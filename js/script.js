@@ -639,7 +639,7 @@ function initializeFooterNavigation() {
 
             const subject = `New Project Inquiry from ${name}`;
             const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
-            const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            const mailtoLink = `mailto:vishnu@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
             window.location.href = mailtoLink;
 

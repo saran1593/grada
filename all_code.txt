@@ -209,16 +209,16 @@ File: D:\gradb\components\contact.html
                             <a href="mailto:info@gradarchitects.com" class="social-icon">
                                 <i class="fas fa-envelope fa-lg"></i>
                             </a>
-                            <a href="https://wa.me/919876543210" class="social-icon">
+                            <a href="https://wa.me/919047856555" class="social-icon">
                                 <i class="fab fa-whatsapp fa-lg"></i>
                             </a>
-                            <a href="tel:+919876543210" class="social-icon">
+                            <a href="tel:+919047856555" class="social-icon">
                                 <i class="fas fa-phone fa-lg"></i>
                             </a>
                         </div>
                         <div class="contact-info text-center">
                             <p class="mb-0">123 Architecture Street, Chennai.</p>
-                            <p class="mb-1">+91 98765 43210 | info@gradarchitects.com</p>
+                            <p class="mb-1">+91 90478 56555 | info@gradarchitects.com</p>
                         </div>
                     </div>
                 </div>
@@ -675,7 +675,7 @@ File: D:\gradb\components\footer.html
                         <div class="footer-section">
                             <h3>FOLLOW</h3>
                             <ul class="footer-links">
-                                <li><a href="https://www.instagram.com/gradarchitects" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.instagram.com/gradarchitects?igsh=MTVoZjNubWluZ2JobQ==" target="_blank">Instagram</a></li>
                                 <li><a href="https://www.facebook.com/gradarchitects" target="_blank">Facebook</a></li>
                                 <li><a href="https://www.linkedin.com/company/gradarchitects" target="_blank">LinkedIn</a></li>
                             </ul>
@@ -683,15 +683,15 @@ File: D:\gradb\components\footer.html
                             <!-- Contact info on right side -->
                             <div class="footer-contact-right">
                                 <p>123 Architecture Street, Chennai.</p>
-                                <p>+91 98765 43210 | info@gradarchitects.com</p>
+                                <p>+91 90478 56555 | info@gradarchitects.com</p>
                                 <div class="footer-contact-social">
                                     <a href="mailto:info@gradarchitects.com">
                                         <i class="fas fa-envelope"></i>
                                     </a>
-                                    <a href="https://wa.me/919876543210" target="_blank">
+                                    <a href="https://wa.me/919047856555" target="_blank">
                                         <i class="fab fa-whatsapp"></i>
                                     </a>
-                                    <a href="tel:+919876543210">
+                                    <a href="tel:+919047856555">
                                         <i class="fas fa-phone"></i>
                                     </a>
                                 </div>
@@ -1122,7 +1122,7 @@ File: D:\gradb\components\footer1.html
                         <div class="footer-section">
                             <h3>FOLLOW</h3>
                             <ul class="footer-links">
-                                <li><a href="https://www.instagram.com/gradarchitects" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.instagram.com/gradarchitects?igsh=MTVoZjNubWluZ2JobQ==" target="_blank">Instagram</a></li>
                                 <li><a href="https://www.facebook.com/gradarchitects" target="_blank">Facebook</a></li>
                                 <li><a href="https://www.linkedin.com/company/gradarchitects" target="_blank">LinkedIn</a></li>
                             </ul>
@@ -1130,15 +1130,15 @@ File: D:\gradb\components\footer1.html
                             <!-- Contact info on right side -->
                             <div class="footer-contact-right">
                                 <p>123 Architecture Street, Chennai.</p>
-                                <p>+91 98765 43210 | info@gradarchitects.com</p>
+                                <p>+91 90478 56555 | info@gradarchitects.com</p>
                                 <div class="footer-contact-social">
                                     <a href="mailto:info@gradarchitects.com">
                                         <i class="fas fa-envelope"></i>
                                     </a>
-                                    <a href="https://wa.me/919876543210" target="_blank">
+                                    <a href="https://wa.me/919047856555" target="_blank">
                                         <i class="fab fa-whatsapp"></i>
                                     </a>
-                                    <a href="tel:+919876543210">
+                                    <a href="tel:+919047856555">
                                         <i class="fas fa-phone"></i>
                                     </a>
                                 </div>
