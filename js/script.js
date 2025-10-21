@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (index >= loadSequence.length) {
             console.log("All components loaded");
             initNavigationHandlers();
+            initScrollSpy();
             setTimeout(() => {
                 initScrollFeatures();
                 enhanceResponsiveDesign();
@@ -208,6 +209,53 @@ function showStaticSections() {
         }
     });
 }
+function initScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    let isScrolling = false;
+    
+    function updateActiveNavLink() {
+        if (isScrolling) return;
+        
+        isScrolling = true;
+
+        const scrollPosition = window.scrollY + 200;
+        let currentSectionId = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSectionId = section.id;
+            }
+        });
+        if (currentSectionId) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            if (window.location.hash !== `#${currentSectionId}`) {
+                history.replaceState(null, null, `#${currentSectionId}`);
+            }
+        }
+        
+        isScrolling = false;
+    }
+    
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveNavLink, 50);
+    });
+    updateActiveNavLink();
+}
+
 
 // ================================
 // NAVIGATION HANDLERS
