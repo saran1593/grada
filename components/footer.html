@@ -374,7 +374,7 @@
                             <h3>STUDIO</h3>
                             <ul class="footer-links">
                                 <li><a href="../index.html#about">ABOUT US</a></li>
-                                <li><a href="../index.html#services">SERVICES</a></li>
+                                <li><a href="#services">SERVICES</a></li>
                                 <li><a href="../index.html#careers">CAREERS</a></li>
                                 <li><a href="../index.html#contact">CONTACT US</a></li>
                             </ul>
@@ -422,122 +422,6 @@
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <script>
-        // Form submission handler for "START YOUR PROJECT" button
-        document.getElementById('projectForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form values
-            const name = document.getElementById('projectName').value;
-            const phone = document.getElementById('projectPhone').value;
-            const message = document.getElementById('projectMessage').value;
-
-            // Validate form
-            if (!name || !phone || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            // Create email content
-            const subject = `New Project Inquiry from ${name}`;
-            const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
-
-            // Create mailto link
-            const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-            // Open email client
-            window.location.href = mailtoLink;
-
-            // Optional: Reset form after submission
-            setTimeout(() => {
-                document.getElementById('projectForm').reset();
-            }, 1000);
-        });
-
-        // Social links functionality
-        document.querySelectorAll('.footer-links a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                // If it's a placeholder link, prevent default and show message
-                if (this.getAttribute('href') === '#') {
-                    e.preventDefault();
-                    alert('This page is under construction. Please check back later.');
-                }
-            });
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            // Form submission handler for "START YOUR PROJECT" button
-            document.getElementById('projectForm').addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const name = document.getElementById('projectName').value;
-                const phone = document.getElementById('projectPhone').value;
-                const message = document.getElementById('projectMessage').value;
-
-                if (!name || !phone || !message) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
-
-                const subject = `New Project Inquiry from ${name}`;
-                const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
-                const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-                window.location.href = mailtoLink;
-
-                setTimeout(() => {
-                    document.getElementById('projectForm').reset();
-                }, 1000);
-            });
-
-            // Handle footer navigation links
-            document.querySelectorAll('.footer-links a').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-
-                    // Skip external links and placeholder links
-                    if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
-                        if (href === '#') {
-                            e.preventDefault();
-                            alert('This page is under construction. Please check back later.');
-                        }
-                        return;
-                    }
-
-                    // Handle internal navigation links (about, services, careers, contact)
-                    if (href.includes('index.html#')) {
-                        e.preventDefault();
-                        const section = href.split('#')[1];
-
-                        // Check if we're on a project page or index page
-                        const currentPath = window.location.pathname;
-                        const isOnProjectPage = currentPath.includes('/project/') || currentPath.includes('/components/');
-
-                        if (isOnProjectPage) {
-                            // Store section and navigate to index
-                            sessionStorage.setItem('scrollToSection', section);
-                            window.location.href = '../../index.html';
-                        } else {
-                            // Already on index page, just scroll
-                            const element = document.getElementById(section);
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-                                // Update active nav link in main navbar if it exists
-                                const mainNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
-                                if (mainNavLinks.length > 0) {
-                                    mainNavLinks.forEach(navLink => navLink.classList.remove('active'));
-                                    const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${section}"]`);
-                                    if (activeLink) {
-                                        activeLink.classList.add('active');
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

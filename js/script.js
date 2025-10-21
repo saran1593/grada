@@ -14,98 +14,104 @@ document.addEventListener("DOMContentLoaded", () => {
     forceLogoSizeReduction();
 
     const loadSequence = [
-    { id: "home", file: "components/home.html", type: "static" },
-    { id: "about", file: "components/about.html", type: "static" },
-    { id: "philosophy", file: "components/philosophy.html", type: "static" },
-    {
-        id: "services",
-        file: "components/services.html",
-        type: "hidden",
-        callback: () => {
-            console.log("✅ Services component loaded successfully");
-            hideSection('services');
-            
-            const initServices = () => {
-                console.log("🔄 Force initializing services...");
-                if (typeof ServicesManager !== 'undefined') {
-                    window.servicesManager = new ServicesManager();
-                } else if (typeof initializeServices !== 'undefined') {
-                    window.servicesManager = initializeServices();
-                } else if (typeof initializeGradServices !== 'undefined') {
-                    window.servicesManager = initializeGradServices();
-                } else {
-                    setTimeout(initServices, 500);
-                }
-            };
-            setTimeout(initServices, 300);
-        }
-    },
+        { id: "home", file: "components/home.html", type: "static" },
+        { id: "about", file: "components/about.html", type: "static" },
+        { id: "philosophy", file: "components/philosophy.html", type: "static" },
+        {
+            id: "services",
+            file: "components/services.html",
+            type: "hidden",
+            callback: () => {
+                console.log("✅ Services component loaded successfully");
+                hideSection('services');
 
-{
-    id: "projects",
-    file: "components/projects1.html", // Changed from projects.html to projects1.html
-    type: "hidden",
-    callback: () => {
-        console.log("Projects component loaded successfully");
-        hideSection('projects');
-        // Remove this line if it causes issues: setTimeout(initializeProjects, 100);
-    }
-},
-    {
-        id: "careers",
-        file: "components/careers.html",
-        type: "hidden",
-        callback: () => {
-            console.log("Careers component loaded successfully");
-            hideSection('careers');
-            
-            const initCareers = () => {
-                if (typeof initializeCareersForm === 'function') {
-                    initializeCareersForm();
-                } else {
-                    setTimeout(initCareers, 300);
-                }
-            };
-            setTimeout(initCareers, 200);
-        }
-    },
-    {
-        id: "contact",
-        file: "components/contact.html",
-        type: "hidden",
-        callback: () => {
-            console.log("Contact component loaded successfully");
-            hideSection('contact');
-            
-            const initContact = () => {
-                if (typeof initializeContactForm === 'function') {
-                    initializeContactForm();
-                } else {
-                    setTimeout(initContact, 300);
-                }
-            };
-            setTimeout(initContact, 200);
-        }
-    },
-    {
-        id: "footer",
-        file: "components/footer.html",
-        type: "static",
-        callback: () => {
-            console.log("Footer component loaded successfully");
-        }
-    },
-    {
-        id: "footer1",
-        file: "components/footer1.html",
-        type: "hidden",
-        callback: () => {
-            console.log("Footer1 component loaded successfully");
-            hideSection('footer1');
-        }
-    },
+                const initServices = () => {
+                    console.log("🔄 Force initializing services...");
+                    if (typeof ServicesManager !== 'undefined') {
+                        window.servicesManager = new ServicesManager();
+                    } else if (typeof initializeServices !== 'undefined') {
+                        window.servicesManager = initializeServices();
+                    } else if (typeof initializeGradServices !== 'undefined') {
+                        window.servicesManager = initializeGradServices();
+                    } else {
+                        setTimeout(initServices, 500);
+                    }
+                };
+                setTimeout(initServices, 300);
+            }
+        },
 
-];
+        {
+            id: "projects",
+            file: "components/projects1.html", // Changed from projects.html to projects1.html
+            type: "hidden",
+            callback: () => {
+                console.log("Projects component loaded successfully");
+                hideSection('projects');
+                // Remove this line if it causes issues: setTimeout(initializeProjects, 100);
+            }
+        },
+        {
+            id: "careers",
+            file: "components/careers.html",
+            type: "hidden",
+            callback: () => {
+                console.log("Careers component loaded successfully");
+                hideSection('careers');
+
+                const initCareers = () => {
+                    if (typeof initializeCareersForm === 'function') {
+                        initializeCareersForm();
+                    } else {
+                        setTimeout(initCareers, 300);
+                    }
+                };
+                setTimeout(initCareers, 200);
+            }
+        },
+        {
+            id: "contact",
+            file: "components/contact.html",
+            type: "hidden",
+            callback: () => {
+                console.log("Contact component loaded successfully");
+                hideSection('contact');
+
+                const initContact = () => {
+                    if (typeof initializeContactForm === 'function') {
+                        initializeContactForm();
+                    } else {
+                        setTimeout(initContact, 300);
+                    }
+                };
+                setTimeout(initContact, 200);
+            }
+        },
+        {
+            id: "footer",
+            file: "components/footer.html",
+            type: "static",
+            callback: () => {
+                console.log("Footer component loaded successfully");
+                setTimeout(() => {
+                    initializeFooterNavigation();
+                }, 200);
+            }
+        },
+        {
+            id: "footer1",
+            file: "components/footer1.html",
+            type: "hidden",
+            callback: () => {
+                console.log("Footer1 component loaded successfully");
+                hideSection('footer1');
+                setTimeout(() => {
+                    initializeFooterNavigation();
+                }, 200);
+            }
+        },
+
+    ];
     // Load components sequentially
     function loadNextComponent(index) {
         if (index >= loadSequence.length) {
@@ -136,19 +142,19 @@ function removeEmptySpace() {
     // Set body and html to full height
     document.body.style.minHeight = '100vh';
     document.documentElement.style.minHeight = '100vh';
-    
+
     // Ensure footer is at bottom
     const footer = document.getElementById('footer');
     if (footer) {
         footer.style.marginTop = 'auto';
     }
-    
+
     // Remove any extra padding/margin from main sections
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.style.minHeight = 'auto';
     });
-    
+
     console.log("✅ Removed empty space at bottom");
 }
 
@@ -194,7 +200,7 @@ function hideStaticSections() {
 }
 
 function showStaticSections() {
-    const staticSections = ['home', 'about', 'philosophy', 'footer' ];
+    const staticSections = ['home', 'about', 'philosophy', 'footer'];
     staticSections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -209,9 +215,9 @@ function showStaticSections() {
 
 function initNavigationHandlers() {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    
+
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             handleNavigationClick(targetId, this);
@@ -221,10 +227,10 @@ function initNavigationHandlers() {
 
 function handleNavigationClick(targetId, clickedLink) {
     console.log("Navigation clicked:", targetId);
-    
+
     const staticSections = ['home', 'about', 'philosophy', 'footer'];
     const hiddenSections = ['services', 'projects', 'careers', 'contact', 'footer1'];
-    
+
     // If clicking a STATIC section (HOME, ABOUT, PHILOSOPHY)
     if (['home', 'about', 'philosophy'].includes(targetId)) {
         // Show all static sections, hide all hidden sections
@@ -238,12 +244,12 @@ function handleNavigationClick(targetId, clickedLink) {
         // Hide static sections and other hidden sections
         hideStaticSections();
         hideAllHiddenSections();
-        
+
         // Show the combined services page
         showSection('services');
         showSection('projects');
         showSection('footer1');
-        
+
         setActiveNavLink(clickedLink);
         scrollToSection('services');
     }
@@ -252,12 +258,12 @@ function handleNavigationClick(targetId, clickedLink) {
         // Hide static sections and other hidden sections
         hideStaticSections();
         hideAllHiddenSections();
-        
+
         // Show the combined services page
         showSection('services');
         showSection('projects');
         showSection('footer1');
-        
+
         setActiveNavLink(clickedLink);
         scrollToSection('projects');
     }
@@ -266,10 +272,10 @@ function handleNavigationClick(targetId, clickedLink) {
         // Hide static sections and other hidden sections
         hideStaticSections();
         hideAllHiddenSections();
-        
+
         // Show only careers
         showSection('careers');
-        
+
         setActiveNavLink(clickedLink);
         scrollToSection('careers');
     }
@@ -278,10 +284,10 @@ function handleNavigationClick(targetId, clickedLink) {
         // Hide static sections and other hidden sections
         hideStaticSections();
         hideAllHiddenSections();
-        
+
         // Show only contact
         showSection('contact');
-        
+
         setActiveNavLink(clickedLink);
         scrollToSection('contact');
     }
@@ -306,12 +312,12 @@ function scrollToSection(sectionId) {
         const navbar = document.querySelector('.navbar');
         const navbarHeight = navbar ? navbar.offsetHeight : 80;
         const offsetTop = section.offsetTop - navbarHeight;
-        
+
         window.scrollTo({
             top: offsetTop,
             behavior: 'smooth'
         });
-        
+
         window.history.pushState(null, null, `#${sectionId}`);
     }
 }
@@ -331,10 +337,10 @@ function initMobileNavigation() {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
-                
+
                 // Handle the navigation click
                 handleNavigationClick(targetId, link);
-                
+
                 // Close mobile menu
                 if (window.innerWidth < 768) {
                     const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
@@ -555,6 +561,110 @@ function showAlert(message, type = "info") {
         }
     }, 5000);
 }
+// Add this new function to script.js (add it after initializeContactForm function)
+
+function initializeFooterNavigation() {
+    console.log("🔄 Initializing footer navigation...");
+
+    // Initialize project form in footer
+    const projectForm = document.getElementById('projectForm');
+    if (projectForm) {
+        console.log("✅ Footer project form found");
+
+        // Remove any existing event listeners by cloning
+        const newForm = projectForm.cloneNode(true);
+        projectForm.parentNode.replaceChild(newForm, projectForm);
+        const currentForm = document.getElementById('projectForm');
+
+        currentForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            console.log("✅ Footer project form submit triggered");
+
+            const name = document.getElementById('projectName')?.value.trim() || '';
+            const phone = document.getElementById('projectPhone')?.value.trim() || '';
+            const message = document.getElementById('projectMessage')?.value.trim() || '';
+
+            if (!name || !phone || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const subject = `New Project Inquiry from ${name}`;
+            const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
+            const mailtoLink = `mailto:info@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            window.location.href = mailtoLink;
+
+            setTimeout(() => {
+                currentForm.reset();
+            }, 1000);
+        });
+
+        console.log("✅ Footer project form handler attached");
+    } else {
+        console.log("❌ Footer project form not found");
+    }
+
+    // Initialize footer navigation links
+    const footerLinks = document.querySelectorAll('.footer-links a');
+    console.log(`📍 Found ${footerLinks.length} footer links`);
+
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            console.log('🔗 Footer link clicked:', href);
+
+            // Skip external links
+            if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+                console.log('⏭️ External link, allowing default behavior');
+                return;
+            }
+
+            // Handle placeholder links
+            if (href === '#') {
+                e.preventDefault();
+                alert('This page is under construction. Please check back later.');
+                return;
+            }
+
+            // Handle section navigation
+            if (href.includes('#')) {
+                e.preventDefault();
+                const section = href.split('#')[1];
+                console.log('📍 Navigating to section:', section);
+
+                // Check if on project page
+                const currentPath = window.location.pathname;
+                const isOnProjectPage = currentPath.includes('/project/') ||
+                    (currentPath.includes('/components/') &&
+                        !currentPath.includes('index.html'));
+
+                if (isOnProjectPage) {
+                    console.log('📄 On project page, redirecting to index');
+                    sessionStorage.setItem('scrollToSection', section);
+                    window.location.href = '../../index.html#' + section;
+                } else {
+                    console.log('🏠 On index page, triggering navigation');
+
+                    // Find the navbar link
+                    const mainNavLink = document.querySelector(`.navbar-nav .nav-link[href="#${section}"]`);
+
+                    if (mainNavLink) {
+                        console.log('✅ Found navbar link, triggering handleNavigationClick');
+                        handleNavigationClick(section, mainNavLink);
+                    } else {
+                        console.error('❌ Could not find navbar link for section:', section);
+                    }
+                }
+            }
+        });
+    });
+
+    console.log('✅ Footer navigation initialized');
+}
+
+// Make it globally available
+window.initializeFooterNavigation = initializeFooterNavigation;
 
 function forceLogoSizeReduction() {
     console.log('Forcing logo size reduction...');
@@ -636,3 +746,13 @@ function enhanceResponsiveDesign() {
 // Make functions available globally
 window.initializeCareersForm = initializeCareersForm;
 window.initializeContactForm = initializeContactForm;
+window.handleNavigationClick = handleNavigationClick;
+window.hideSection = hideSection;
+window.showSection = showSection;
+window.hideAllHiddenSections = hideAllHiddenSections;
+window.hideStaticSections = hideStaticSections;
+window.showStaticSections = showStaticSections;
+window.setActiveNavLink = setActiveNavLink;
+window.scrollToSection = scrollToSection;
+
+console.log('✅ Navigation functions made globally accessible');
