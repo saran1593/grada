@@ -52,7 +52,7 @@
     overflow: hidden;
     cursor: pointer;
     background: #ffffff; /* Default white background */
-    border-right: 1px solid #ffffff;
+    border-right: 1px solid #0e0c0c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,6 +151,7 @@
     background: rgba(255, 255, 255, 0.9);
     padding: 10px 5px;
     border-radius: 5px;
+    top:3%;
 }
 
 /* FIXED: Enhanced styling for ALL collapsed services - SAME TEXT SIZE */
