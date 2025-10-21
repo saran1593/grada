@@ -334,7 +334,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // projects.js - Handles projects section functionality
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Projects component loaded");
     
     // Initialize projects functionality when projects section is loaded
     function initializeProjects() {

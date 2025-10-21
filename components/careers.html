@@ -43,7 +43,6 @@
 <script>
 // Careers form handler - embedded directly in the component
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("✅ Careers component loaded");
     initializeCareersForm();
 });
 
@@ -55,7 +54,6 @@ function initializeCareersForm() {
         return;
     }
     
-    console.log("✅ Career form found, attaching event listener");
     
     // Remove any existing event listeners
     const newForm = form.cloneNode(true);
@@ -64,7 +62,6 @@ function initializeCareersForm() {
     
     currentForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log("✅ Form submit triggered");
 
         // Get form values
         const name = document.getElementById('careerName').value.trim();
@@ -84,7 +81,6 @@ function initializeCareersForm() {
         
         const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
-        console.log("📨 Mailto link:", mailtoLink);
         
         // Show loading state
         const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');

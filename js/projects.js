@@ -6,10 +6,8 @@ class ProjectsManager {
         this.isMainPage = window.location.pathname.includes('index.html') || 
                          document.querySelector('section#projects') !== null;
         
-        console.log('ProjectsManager initialized - Main page:', this.isMainPage);
         
         if (this.isMainPage) {
-            console.log('Projects manager running in main page context - limiting scope to image optimization only');
             // On main page, only optimize images, don't initialize full projects functionality
             this.optimizeImageContainers();
             return;
@@ -33,7 +31,6 @@ class ProjectsManager {
     }
     
     init() {
-        console.log('Initializing full ProjectsManager functionality');
         this.setupCategoryNavigation();
         this.setupAnimations();
         this.setupScrollSpy();
@@ -55,7 +52,6 @@ class ProjectsManager {
     // Optimize image container sizes based on actual image dimensions
     optimizeImageContainers() {
         const projectImages = document.querySelectorAll('.project-img');
-        console.log('Optimizing image containers:', projectImages.length);
         
         projectImages.forEach(img => {
             // Check if image is already loaded
@@ -119,7 +115,6 @@ class ProjectsManager {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const category = link.dataset.category;
-                console.log('Category navigation clicked:', category);
                 this.navigateToCategory(category);
                 this.setActiveCategoryLink(link);
             });
@@ -130,7 +125,6 @@ class ProjectsManager {
     navigateToCategory(category) {
         const targetSectionId = this.sections[category];
         if (targetSectionId) {
-            console.log('Navigating to section:', targetSectionId);
             this.scrollToSection(targetSectionId);
         } else {
             console.warn('No section found for category:', category);
@@ -157,7 +151,6 @@ class ProjectsManager {
     // Automatically highlights the category link corresponding to the section in view
     setupScrollSpy() {
         const sections = document.querySelectorAll('.latest-work-section, .residence-section, .objects-section');
-        console.log('Setting up scroll spy for sections:', sections.length);
         
         const observerOptions = {
             rootMargin: '-20% 0px -70% 0px',
@@ -168,7 +161,6 @@ class ProjectsManager {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const sectionId = entry.target.id;
-                    console.log('Section in view:', sectionId);
                     this.updateActiveNavLink(sectionId);
                 }
             });
@@ -189,14 +181,12 @@ class ProjectsManager {
             key => this.sections[key] === activeSectionId
         );
 
-        console.log('Active section:', activeSectionId, 'Corresponding categories:', correspondingCategories);
 
         // Activate the link for each corresponding category
         correspondingCategories.forEach(category => {
             const activeLink = document.querySelector(`.project-category-link[data-category="${category}"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
-                console.log('Activated category link:', category);
             }
         });
         
@@ -213,7 +203,6 @@ class ProjectsManager {
     setActiveCategoryLink(activeLink) {
         this.resetActiveCategoryLinks();
         activeLink.classList.add('active');
-        console.log('Manually activated link:', activeLink.textContent);
     }
     
     // Removes the "active" class from all category links
@@ -271,17 +260,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         document.querySelector('.project-categories-section') !== null;
     
     if (projectsSection || projectsPage) {
-        console.log('Initializing ProjectsManager');
         window.projectsManager = new ProjectsManager();
-    } else {
-        console.log('ProjectsManager not needed on this page');
     }
 });
 
 // Handle dynamic loading in main site
 document.addEventListener('componentLoaded', function(event) {
     if (event.detail.sectionId === 'projects') {
-        console.log('Projects component loaded dynamically');
         setTimeout(() => {
             window.projectsManager = new ProjectsManager();
         }, 100);

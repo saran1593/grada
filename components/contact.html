@@ -75,7 +75,6 @@
 <script>
 // Contact form handler - embedded directly in the component for WhatsApp
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("✅ Contact component loaded");
     initializeContactForm();
 });
 
@@ -87,7 +86,6 @@ function initializeContactForm() {
         return;
     }
     
-    console.log("✅ Contact form found, attaching event listener");
     
     // Remove any existing event listeners
     const newForm = form.cloneNode(true);
@@ -96,7 +94,6 @@ function initializeContactForm() {
     
     currentForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log("✅ Contact form submit triggered");
         
         const name = document.getElementById('contactName').value.trim();
         const email = document.getElementById('contactEmail').value.trim();
@@ -118,7 +115,6 @@ function initializeContactForm() {
         // Create WhatsApp URL
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
         
-        console.log("📱 WhatsApp URL:", whatsappUrl);
         
         // Show loading state
         const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
