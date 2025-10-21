@@ -292,10 +292,10 @@ body {
 }
 
 .project-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 3px;
     margin-bottom: 0.5rem;
 }
 
