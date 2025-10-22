@@ -46,7 +46,7 @@
     line-height: 1.1;
     letter-spacing: 2px;
     margin-right: 50px;
-    color:black;
+    color: black;
     text-align: left;
     flex-shrink: 0;
 }
@@ -54,7 +54,7 @@
 .philosophy-content {
     flex: 1;
     padding-top: 0;
-    
+
 }
 
 .section-title {
@@ -62,11 +62,11 @@
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 8px;
-    color:black;
+    color: black;
     margin-bottom: 2rem;
     text-align: left;
 
-    
+
 }
 
 .philosophy-text {
@@ -126,7 +126,13 @@
     max-width: 500px;
     height: auto;
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+.philosophy-image img:hover{
+     transform: scale(1.02);
 }
 
 .values-title {
@@ -162,11 +168,11 @@
         gap: 60px;
         max-width: 1100px;
     }
-    
+
     .main-heading-stacked {
         font-size: 3rem;
     }
-    
+
     .value-row {
         width: 400px;
     }
@@ -179,7 +185,7 @@
         text-align: center;
         align-items: center;
     }
-    
+
     .philosophy-left {
         flex-direction: column;
         gap: 30px;
@@ -187,13 +193,13 @@
         text-align: center;
         width: 100%;
     }
-    
+
     .main-heading-stacked {
         font-size: 2.5rem;
         text-align: center;
         width: 100%;
     }
-    
+
     .philosophy-content {
         text-align: center;
         width: 100%;
@@ -202,25 +208,26 @@
         flex-direction: column;
         align-items: center;
     }
-    
+
     .philosophy-text {
         max-width: 100%;
         text-align: center;
-        color: #000000; /* CHANGED: Maintain black color on tablet */
+        color: #000000;
+        /* CHANGED: Maintain black color on tablet */
     }
-    
+
     .section-title {
         text-align: center;
     }
-    
+
     .content-divider {
         margin: 2rem auto;
     }
-    
+
     .logo-container {
         justify-content: center;
     }
-    
+
     .philosophy-right {
         align-items: center;
         text-align: center;
@@ -228,23 +235,24 @@
         max-width: 600px;
         margin-left: 0;
     }
-    
+
     .philosophy-image {
         width: 100%;
         max-width: 400px;
         margin: 0 auto 30px;
     }
-    
+
     .values-title {
         text-align: center;
     }
-    
+
     .value-row {
         text-align: center;
         width: 100%;
-        color: #000000; /* CHANGED: Maintain black color on tablet */
+        color: #000000;
+        /* CHANGED: Maintain black color on tablet */
     }
-    
+
     .philosophy-logo {
         height: 60px !important;
         max-height: 60px !important;
@@ -258,18 +266,18 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     .philosophy-container {
         gap: 40px;
         text-align: center;
         align-items: center;
     }
-    
+
     .philosophy-left {
         gap: 25px;
         align-items: center;
     }
-    
+
     .main-heading-stacked {
         font-size: 2.2rem;
         line-height: 1.2;
@@ -277,19 +285,21 @@
         /* FIXED: Add margin top for mobile */
         margin-top: 30px;
     }
-    
-    .philosophy-text, .value-row {
+
+    .philosophy-text,
+    .value-row {
         font-size: 0.9rem;
         text-align: center;
-        color: #000000; /* CHANGED: Maintain black color on mobile */
+        color: #000000;
+        /* CHANGED: Maintain black color on mobile */
     }
-    
+
     .philosophy-image {
         width: 100%;
         margin: 0 auto 25px;
         max-width: 350px;
     }
-    
+
     .key-values {
         text-align: center;
         width: 100%;
@@ -298,19 +308,20 @@
         align-items: center;
         color: var(--primary-color);
     }
-    
+
     .value-row {
         padding: 0 10px;
         line-height: 0.1;
         text-align: center;
-        color: #000000; /* CHANGED: Maintain black color on mobile */
+        color: #000000;
+        /* CHANGED: Maintain black color on mobile */
     }
-    
+
     .philosophy-logo {
         height: 55px !important;
         max-height: 55px !important;
     }
-    
+
     .content-divider {
         margin: 1.5rem auto;
     }
@@ -321,62 +332,65 @@
         padding: 50px 15px;
         text-align: center;
     }
-    
+
     .philosophy-container {
         gap: 35px;
         text-align: start;
     }
-    
+
     .main-heading-stacked {
         font-size: 2rem;
         text-align: center;
         /* FIXED: Add margin top for small mobile */
         margin-top: 30px;
     }
-    
+
     .section-title {
         font-size: 0.9rem;
         margin-bottom: 1.5rem;
         text-align: center;
     }
-    
+
     .philosophy-text {
         font-size: 0.85rem;
         margin-bottom: 2rem;
         text-align: center;
-        color: #000000; /* CHANGED: Maintain black color on small mobile */
+        color: #000000;
+        /* CHANGED: Maintain black color on small mobile */
     }
-    
+
     .philosophy-image {
         margin-bottom: 20px;
         max-width: 300px;
     }
-    
+
     .values-title {
         font-size: 0.75rem;
         text-align: center;
     }
-    
+
     .value-row {
         font-size: 0.85rem;
         text-align: center;
-        color: #000000; /* CHANGED: Maintain black color on small mobile */
+        color: #000000;
+        /* CHANGED: Maintain black color on small mobile */
     }
-    
+
     .logo-container {
         justify-content: center;
     }
-    
+
     .philosophy-content {
         text-align: center;
         align-items: center;
     }
-    
+
     .philosophy-logo {
         height: 50px !important;
         max-height: 50px !important;
     }
-    .key-values{
+
+    .key-values {
         color: var(--primary-color);
     }
 }
@@ -385,29 +399,31 @@
     .philosophy-section {
         padding: 40px 10px;
     }
-    
+
     .main-heading-stacked {
         font-size: 1.8rem;
         /* FIXED: Add margin top for extra small mobile */
         margin-top: 30px;
     }
-    
+
     .philosophy-text {
         font-size: 0.8rem;
-        color: #000000; /* CHANGED: Maintain black color on extra small mobile */
+        color: #000000;
+        /* CHANGED: Maintain black color on extra small mobile */
     }
-    
+
     .philosophy-logo {
         height: 45px !important;
         max-height: 45px !important;
     }
-    
+
     .philosophy-image {
         max-width: 280px;
     }
-    
+
     .value-row {
         font-size: 0.8rem;
-        color: #000000; /* CHANGED: Maintain black color on extra small mobile */
+        color: #000000;
+        /* CHANGED: Maintain black color on extra small mobile */
     }
 }
