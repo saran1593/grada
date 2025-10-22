@@ -67,8 +67,7 @@
         .footer-contact-right {
 
             margin-top: 100px;
-            text-align: center;
-            /* Center align contact info */
+            text-align: left;
             margin-left: -445px;
 
         }
@@ -80,18 +79,39 @@
             margin-top: 3px;
         }
 
+        .address-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+            margin-left: 35px;
+        }
+
+        .address-box {
+            padding: 0;
+            height: 60%;
+        }
+        .address-box:first-child {
+            padding-right: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .contact-details {
+            margin-top: 15px;
+        }
+
         .footer-contact-social {
             display: flex;
             gap: 15px;
             margin-top: 15px;
             justify-content: center;
-            /* Center align social icons */
         }
 
         .footer-contact-social a {
             color: #666;
             font-size: 16px;
             transition: color 0.3s;
+            text-decoration: none;
         }
 
         .footer-contact-social a:hover {
@@ -220,7 +240,10 @@
             border-bottom: 1px solid grey;
             font-size: 12px;
             color: #999;
-            margin-top: 0px;
+            width: 100%;
+            margin-left: 10px;
+            display: flex;
+            justify-content: center;
         }
 
         /* Horizontal divider and contact info section */
@@ -276,6 +299,13 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .address-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
         @media (max-width: 576px) {
             .footer-main {
                 grid-template-columns: 1fr;
@@ -320,7 +350,7 @@
             <div class="footer-content">
                 <div class="footer-main">
                     <!-- Left column - GET IN TOUCH Section -->
-                    <div class="footer-left" style="margin-right: 50px;">
+                    <div class="footer-left" style="padding-right: 90px; margin-right: 50px; ">
                         <div class="footer-logo">
                             <img src="/images/logo.png" alt="Great Architects Logo">
                         </div>
@@ -342,7 +372,7 @@
                     </div>
 
                     <!-- Right column - Grouped sections -->
-                    <div class="footer-right" style="margin-left: 70px; margin-bottom: 30px;">
+                    <div class="footer-right" style="margin-left: 95px; margin-bottom: 30px;">
                         <!-- PROJECTS Section -->
                         <div class="footer-section">
                             <h3>PROJECTS</h3>
@@ -378,36 +408,48 @@
                                         target="_blank">LinkedIn</a></li>
                             </ul>
 
-                            <!-- Contact info on right side -->
-                            <div class="footer-contact-right" style="margin-top: 100px;">
-                                <p><b>Regional Office Address:</b> No. 34, Ram Nagar, K.Karupur Via, Kumbakonam
-                                    -612002<br />
-                                    <b>Branch Office Address:</b>
-                                    Old No 34, New No 12, Besant Avenue, Adyar, Chennai -600020
-                                </p>
-                                <p>+91 90478 56555 | vishnu@gradarchitects.com</p>
-                                <div class="footer-contact-social">
-                                    <a href="mailto:vishnu@gradarchitects.com">
-                                        <i class="fas fa-envelope"></i>
-                                    </a>
-                                    <a href="https://wa.me/919047856555" target="_blank">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                    <a href="tel:+919047856555">
-                                        <i class="fas fa-phone"></i>
-                                    </a>
+                            <div class="footer-contact-right">
+                                <!-- Addresses in a grid -->
+                                <div class="address-container">
+                                    <div class="address-box">
+                                        <p>No. 34, Ram Nagar, K.Karupur<br />
+                                            Kumbakonam-612 002</p>
+                                    </div>
+                                    <div class="address-box">
+                                        <p>Old No 34, New No 12, Besant Avenue, Adyar<br />
+                                            Chennai -600 020</p>
+                                    </div>
+                                </div>
+
+                                <!-- Contact details below addresses -->
+                                <div class="contact-details">
+                                    <p style="margin-left: 60px;">+91 90478 56555 | <a href="mailto:vishnu@gradarchitects.com" title="Email">vishnu@gradarchitects.com</a></p>
+
+                                    <div class="footer-contact-social">
+                                        <a href="mailto:vishnu@gradarchitects.com" title="Email">
+                                            <i class="fas fa-envelope"></i>
+                                        </a>
+                                        <a href="https://wa.me/919047856555" target="_blank" title="WhatsApp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                        <a href="tel:+919047856555" title="Phone">
+                                            <i class="fas fa-phone"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-
-
-                <div class="copyright">
-                    <p>© 2025 Great Architects</p>
-                </div>
             </div>
+            <div class="copyright">
+                <p>© 2025 Great Architects</p>
+            </div>
+        </div>
+
+
     </footer>
 
     <!-- Font Awesome for icons -->
