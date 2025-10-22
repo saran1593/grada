@@ -417,10 +417,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="../../js/sidebar-navigation.js"></script>
-    <script>
-        // Replace the existing navigation script with this improved version
-
+        <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // ===== NAVBAR HANDLING =====
             // Mark Projects link as active on residential page
             document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
                 link.classList.remove('active');
@@ -430,7 +429,7 @@
                 projectsLink.classList.add('active');
             }
 
-            // Handle navigation clicks to ensure proper page loading
+            // Handle navbar navigation clicks
             document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
                 link.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
@@ -443,6 +442,62 @@
                         const section = href.split('#')[1];
 
                         // Navigate to index.html and store the target section
+                        sessionStorage.setItem('scrollToSection', section);
+                        window.location.href = '../../index.html';
+                    }
+                });
+            });
+
+            // ===== FOOTER HANDLING =====
+            // Handle footer form submission
+            const footerForm = document.getElementById('projectForm');
+            if (footerForm) {
+                footerForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('projectName').value;
+                    const phone = document.getElementById('projectPhone').value;
+                    const message = document.getElementById('projectMessage').value;
+
+                    if (!name || !phone || !message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+
+                    const subject = `New Project Inquiry from ${name}`;
+                    const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
+                    const mailtoLink = `mailto:vishnu@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+                    window.location.href = mailtoLink;
+
+                    setTimeout(() => {
+                        footerForm.reset();
+                    }, 1000);
+                });
+            }
+
+            // Handle footer navigation links
+            document.querySelectorAll('.footer-links a, .grad-footer a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+
+                    // Skip external links, mailto, tel, and empty links
+                    if (!href || href === '#' || href.startsWith('http') ||
+                        href.startsWith('mailto:') || href.startsWith('tel:') ||
+                        href.startsWith('https://wa.me/')) {
+                        if (href === '#') {
+                            e.preventDefault();
+                            alert('This page is under construction. Please check back later.');
+                        }
+                        return;
+                    }
+
+                    // Handle links to index.html with sections
+                    if (href.includes('index.html#')) {
+                        e.preventDefault();
+                        const section = href.split('#')[1];
+
+                        // Store section and navigate to index
                         sessionStorage.setItem('scrollToSection', section);
                         window.location.href = '../../index.html';
                     }

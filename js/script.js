@@ -1,13 +1,13 @@
 // ================================
 // Main Initialization
 // ================================
+window.ignoreHashReplace = false;
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded, starting to load components...");
-
-    // Mark HTML as loaded to prevent FOUC
+    const targetSection = sessionStorage.getItem('scrollToSection');
+    if (targetSection) {
+        console.log('🎯 Found target section in sessionStorage:', targetSection);
+    }
     document.documentElement.classList.add('loaded');
-
-    // Initialize core features first
     navbarShrink();
     initMobileNavigation();
     preserveImageSizes();
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             file: "components/services.html",
             type: "hidden",
             callback: () => {
-                console.log("✅ Services component loaded successfully");
                 hideSection('services');
 
                 const initServices = () => {
@@ -34,21 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else if (typeof initializeGradServices !== 'undefined') {
                         window.servicesManager = initializeGradServices();
                     } else {
-                        setTimeout(initServices, 500);
+                        setTimeout(initServices, 200);
                     }
                 };
-                setTimeout(initServices, 300);
+                setTimeout(initServices, 50);
             }
         },
-
         {
             id: "projects",
-            file: "components/projects1.html", // Changed from projects.html to projects1.html
+            file: "components/projects1.html",
             type: "hidden",
             callback: () => {
-                console.log("Projects component loaded successfully");
                 hideSection('projects');
-                // Remove this line if it causes issues: setTimeout(initializeProjects, 100);
             }
         },
         {
@@ -56,17 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
             file: "components/careers.html",
             type: "hidden",
             callback: () => {
-                console.log("Careers component loaded successfully");
                 hideSection('careers');
 
                 const initCareers = () => {
                     if (typeof initializeCareersForm === 'function') {
                         initializeCareersForm();
                     } else {
-                        setTimeout(initCareers, 300);
+                        setTimeout(initCareers, 200);
                     }
                 };
-                setTimeout(initCareers, 200);
+                setTimeout(initCareers, 50);
             }
         },
         {
@@ -74,17 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
             file: "components/contact.html",
             type: "hidden",
             callback: () => {
-                console.log("Contact component loaded successfully");
                 hideSection('contact');
 
                 const initContact = () => {
                     if (typeof initializeContactForm === 'function') {
                         initializeContactForm();
                     } else {
-                        setTimeout(initContact, 300);
+                        setTimeout(initContact, 200);
                     }
                 };
-                setTimeout(initContact, 200);
+                setTimeout(initContact, 20);
             }
         },
         {
@@ -92,10 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
             file: "components/footer.html",
             type: "static",
             callback: () => {
-                console.log("Footer component loaded successfully");
                 setTimeout(() => {
                     initializeFooterNavigation();
-                }, 200);
+                }, 100);
             }
         },
         {
@@ -103,65 +96,71 @@ document.addEventListener("DOMContentLoaded", () => {
             file: "components/footer1.html",
             type: "hidden",
             callback: () => {
-                console.log("Footer1 component loaded successfully");
                 hideSection('footer1');
                 setTimeout(() => {
                     initializeFooterNavigation();
-                }, 200);
+                }, 100);
             }
         },
-
     ];
-    // Load components sequentially
     function loadNextComponent(index) {
         if (index >= loadSequence.length) {
-            console.log("All components loaded");
             initNavigationHandlers();
-            initScrollSpy();
+            const storedSection = sessionStorage.getItem('scrollToSection');
+            if (storedSection) {
+                sessionStorage.removeItem('scrollToSection');
+                window.ignoreHashReplace = true;
+                setTimeout(() => {
+                    const navLink = document.querySelector(`.navbar-nav .nav-link[href="#${storedSection}"]`);
+                    
+                    if (navLink) {
+                        handleNavigationClick(storedSection, navLink);
+                        setTimeout(() => {
+                            scrollToSection(storedSection);
+                            setTimeout(() => {
+                                window.ignoreHashReplace = false;
+                                if (typeof initScrollSpy === 'function') {
+                                    initScrollSpy();
+                                }
+                            }, 50);
+                        }, 50);
+                    } else {
+                        window.ignoreHashReplace = false;
+                    }
+                }, 50);
+            } else {
+                initScrollSpy();
+            }
+            
             setTimeout(() => {
                 initScrollFeatures();
                 enhanceResponsiveDesign();
                 initializeAllForms();
-                removeEmptySpace(); // Remove extra space at bottom
-            }, 500);
+                removeEmptySpace();
+            }, 100);
             return;
         }
 
         const item = loadSequence[index];
         loadComponent(item.id, item.file, item.callback);
-        setTimeout(() => loadNextComponent(index + 1), 100);
+        setTimeout(() => loadNextComponent(index + 1), 50);
     }
-
-    // Start loading sequence
     loadNextComponent(0);
 });
-
-// ================================
-// NEW: Remove empty space at bottom
-// ================================
 function removeEmptySpace() {
-    // Set body and html to full height
     document.body.style.minHeight = '100vh';
     document.documentElement.style.minHeight = '100vh';
 
-    // Ensure footer is at bottom
     const footer = document.getElementById('footer');
     if (footer) {
         footer.style.marginTop = 'auto';
     }
 
-    // Remove any extra padding/margin from main sections
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.style.minHeight = 'auto';
     });
-
-    console.log("✅ Removed empty space at bottom");
 }
-
-// ================================
-// SECTION VISIBILITY FUNCTIONS
-// ================================
 
 function hideSection(sectionId) {
     const section = document.getElementById(sectionId);
@@ -209,6 +208,7 @@ function showStaticSections() {
         }
     });
 }
+
 function initScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -224,6 +224,8 @@ function initScrollSpy() {
         let currentSectionId = '';
         
         sections.forEach(section => {
+            if (section.style.display === 'none') return;
+            
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             
@@ -231,6 +233,7 @@ function initScrollSpy() {
                 currentSectionId = section.id;
             }
         });
+        
         if (currentSectionId) {
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -240,8 +243,10 @@ function initScrollSpy() {
                 }
             });
             
-            if (window.location.hash !== `#${currentSectionId}`) {
-                history.replaceState(null, null, `#${currentSectionId}`);
+            if (!window.ignoreHashReplace) {
+                if (window.location.hash !== `#${currentSectionId}`) {
+                    history.replaceState(null, null, `#${currentSectionId}`);
+                }
             }
         }
         
@@ -256,11 +261,6 @@ function initScrollSpy() {
     updateActiveNavLink();
 }
 
-
-// ================================
-// NAVIGATION HANDLERS
-// ================================
-
 function initNavigationHandlers() {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
@@ -274,72 +274,74 @@ function initNavigationHandlers() {
 }
 
 function handleNavigationClick(targetId, clickedLink) {
-    console.log("Navigation clicked:", targetId);
 
-    const staticSections = ['home', 'about', 'philosophy', 'footer'];
-    const hiddenSections = ['services', 'projects', 'careers', 'contact', 'footer1'];
-
-    // If clicking a STATIC section (HOME, ABOUT, PHILOSOPHY)
     if (['home', 'about', 'philosophy'].includes(targetId)) {
-        // Show all static sections, hide all hidden sections
         showStaticSections();
         hideAllHiddenSections();
         setActiveNavLink(clickedLink);
-        scrollToSection(targetId);
+
+        setTimeout(() => {
+            initScrollSpy();
+            scrollToSection(targetId);
+        }, 100);
     }
-    // If clicking SERVICES - Show SERVICES + PROJECTS + FOOTER1 (combined page)
+
     else if (targetId === 'services') {
-        // Hide static sections and other hidden sections
         hideStaticSections();
         hideAllHiddenSections();
-
-        // Show the combined services page
+        
         showSection('services');
         showSection('projects');
         showSection('footer1');
 
         setActiveNavLink(clickedLink);
-        scrollToSection('services');
+        
+        setTimeout(() => {
+            scrollToSection('services');
+        }, 50);
     }
-    // If clicking PROJECTS - Also show combined page (same as services)
+
     else if (targetId === 'projects') {
-        // Hide static sections and other hidden sections
         hideStaticSections();
         hideAllHiddenSections();
-
-        // Show the combined services page
+        
         showSection('services');
         showSection('projects');
         showSection('footer1');
 
         setActiveNavLink(clickedLink);
-        scrollToSection('projects');
+        
+        setTimeout(() => {
+            scrollToSection('projects');
+        }, 50);
     }
-    // If clicking CAREERS - Show only careers page
+
     else if (targetId === 'careers') {
-        // Hide static sections and other hidden sections
         hideStaticSections();
         hideAllHiddenSections();
-
-        // Show only careers
+        
         showSection('careers');
 
         setActiveNavLink(clickedLink);
-        scrollToSection('careers');
+        
+        setTimeout(() => {
+            scrollToSection('careers');
+        }, 50);
     }
-    // If clicking CONTACT - Show only contact page
+
     else if (targetId === 'contact') {
-        // Hide static sections and other hidden sections
         hideStaticSections();
         hideAllHiddenSections();
-
-        // Show only contact
+        
         showSection('contact');
 
         setActiveNavLink(clickedLink);
-        scrollToSection('contact');
+        
+        setTimeout(() => {
+            scrollToSection('contact');
+        }, 50);
     }
-    // If clicking FOOTER (from static pages)
+
     else if (targetId === 'footer') {
         setActiveNavLink(clickedLink);
         scrollToSection('footer');
@@ -351,7 +353,9 @@ function setActiveNavLink(activeLink) {
     allNavLinks.forEach(link => {
         link.classList.remove('active');
     });
-    activeLink.classList.add('active');
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
 }
 
 function scrollToSection(sectionId) {
@@ -366,13 +370,14 @@ function scrollToSection(sectionId) {
             behavior: 'smooth'
         });
 
-        window.history.pushState(null, null, `#${sectionId}`);
+        try {
+            window.history.pushState(null, null, `#${sectionId}`);
+        } catch (e) {
+            window.location.hash = `#${sectionId}`;
+        }
     }
 }
 
-// ================================
-// MOBILE NAVIGATION
-// ================================
 
 function initMobileNavigation() {
     const navbarToggler = document.querySelector('.navbar-toggler');
@@ -386,10 +391,8 @@ function initMobileNavigation() {
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
 
-                // Handle the navigation click
                 handleNavigationClick(targetId, link);
 
-                // Close mobile menu
                 if (window.innerWidth < 768) {
                     const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
                         new bootstrap.Collapse(navbarCollapse, { toggle: false });
@@ -400,14 +403,10 @@ function initMobileNavigation() {
     }
 }
 
-// ================================
-// EXISTING FUNCTIONS (NO CHANGES)
-// ================================
 
 function loadComponent(sectionId, filePath, callback) {
     const section = document.getElementById(sectionId);
     if (!section) {
-        console.error(`Section ${sectionId} not found`);
         return;
     }
 
@@ -443,13 +442,11 @@ function loadComponent(sectionId, filePath, callback) {
 }
 
 function initializeAllForms() {
-    console.log("🔄 Initializing all forms...");
     initializeCareersForm();
     initializeContactForm();
 }
 
 function initializeFormsForSection(sectionId) {
-    console.log(`🔄 Initializing forms for section: ${sectionId}`);
     if (sectionId === 'careers') {
         initializeCareersForm();
     } else if (sectionId === 'contact') {
@@ -457,22 +454,17 @@ function initializeFormsForSection(sectionId) {
     }
 }
 
-// KEEP ALL YOUR EXISTING FUNCTIONS EXACTLY AS THEY WERE:
 function initializeCareersForm() {
     const form = document.getElementById('careerForm');
     if (!form) {
-        console.log("❌ Career form not found");
         return;
     }
-
-    console.log("✅ Career form found, attaching event listener");
     const newForm = form.cloneNode(true);
     form.parentNode.replaceChild(newForm, form);
     const currentForm = document.getElementById('careerForm');
 
     currentForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        console.log("✅ Careers form submit triggered");
 
         const name = document.getElementById('careerName') ? document.getElementById('careerName').value.trim() : '';
         const phone = document.getElementById('careerPhone') ? document.getElementById('careerPhone').value.trim() : '';
@@ -501,8 +493,6 @@ function initializeCareersForm() {
 
         const mailtoLink = `mailto:barathbalag@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        console.log("📨 Opening mail client:", mailtoLink);
-
         const submitBtn = currentForm.querySelector('.grad-careers-submit-btn');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening Email...';
@@ -519,24 +509,19 @@ function initializeCareersForm() {
         }, 1000);
     });
 
-    console.log("✅ Careers form handler attached successfully");
 }
 
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) {
-        console.log("❌ Contact form not found");
         return;
     }
-
-    console.log("✅ Contact form found, attaching event listener");
     const newForm = contactForm.cloneNode(true);
     contactForm.parentNode.replaceChild(newForm, contactForm);
     const currentForm = document.getElementById('contactForm');
 
     currentForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        console.log("✅ Contact form submit triggered");
 
         const name = document.getElementById('contactName') ? document.getElementById('contactName').value.trim() : '';
         const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
@@ -558,7 +543,6 @@ function initializeContactForm() {
         const whatsappNumber = '919840904236';
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-        console.log("📱 WhatsApp URL:", whatsappUrl);
 
         const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
         const originalText = submitBtn.innerHTML;
@@ -575,8 +559,6 @@ function initializeContactForm() {
             }, 2000);
         }, 1000);
     });
-
-    console.log("✅ Contact form handler attached successfully");
 }
 
 function showAlert(message, type = "info") {
@@ -609,24 +591,18 @@ function showAlert(message, type = "info") {
         }
     }, 5000);
 }
-// Add this new function to script.js (add it after initializeContactForm function)
 
 function initializeFooterNavigation() {
-    console.log("🔄 Initializing footer navigation...");
 
-    // Initialize project form in footer
     const projectForm = document.getElementById('projectForm');
     if (projectForm) {
-        console.log("✅ Footer project form found");
 
-        // Remove any existing event listeners by cloning
         const newForm = projectForm.cloneNode(true);
         projectForm.parentNode.replaceChild(newForm, projectForm);
         const currentForm = document.getElementById('projectForm');
 
         currentForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            console.log("✅ Footer project form submit triggered");
 
             const name = document.getElementById('projectName')?.value.trim() || '';
             const phone = document.getElementById('projectPhone')?.value.trim() || '';
@@ -647,58 +623,43 @@ function initializeFooterNavigation() {
                 currentForm.reset();
             }, 1000);
         });
-
-        console.log("✅ Footer project form handler attached");
     } else {
         console.log("❌ Footer project form not found");
     }
 
-    // Initialize footer navigation links
     const footerLinks = document.querySelectorAll('.footer-links a');
-    console.log(`📍 Found ${footerLinks.length} footer links`);
 
     footerLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            console.log('🔗 Footer link clicked:', href);
 
-            // Skip external links
             if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
-                console.log('⏭️ External link, allowing default behavior');
                 return;
             }
 
-            // Handle placeholder links
             if (href === '#') {
                 e.preventDefault();
                 alert('This page is under construction. Please check back later.');
                 return;
             }
 
-            // Handle section navigation
             if (href.includes('#')) {
                 e.preventDefault();
                 const section = href.split('#')[1];
-                console.log('📍 Navigating to section:', section);
 
-                // Check if on project page
                 const currentPath = window.location.pathname;
                 const isOnProjectPage = currentPath.includes('/project/') ||
                     (currentPath.includes('/components/') &&
                         !currentPath.includes('index.html'));
 
                 if (isOnProjectPage) {
-                    console.log('📄 On project page, redirecting to index');
                     sessionStorage.setItem('scrollToSection', section);
-                    window.location.href = '../../index.html#' + section;
+                    window.location.href = '../../index.html';
                 } else {
-                    console.log('🏠 On index page, triggering navigation');
 
-                    // Find the navbar link
                     const mainNavLink = document.querySelector(`.navbar-nav .nav-link[href="#${section}"]`);
 
                     if (mainNavLink) {
-                        console.log('✅ Found navbar link, triggering handleNavigationClick');
                         handleNavigationClick(section, mainNavLink);
                     } else {
                         console.error('❌ Could not find navbar link for section:', section);
@@ -708,14 +669,11 @@ function initializeFooterNavigation() {
         });
     });
 
-    console.log('✅ Footer navigation initialized');
 }
 
-// Make it globally available
 window.initializeFooterNavigation = initializeFooterNavigation;
 
 function forceLogoSizeReduction() {
-    console.log('Forcing logo size reduction...');
     const navbarLogo = document.querySelector('.navbar-logo');
     if (navbarLogo) {
         navbarLogo.style.height = '25px';
@@ -747,7 +705,6 @@ function forceLogoSizeReduction() {
 function navbarShrink() {
     const navbar = document.querySelector(".navbar");
     if (!navbar) {
-        console.log("Navbar not found");
         return;
     }
 
@@ -784,7 +741,6 @@ function initializeProjects() {
 
 function initScrollFeatures() {
     console.log("Initializing scroll features...");
-    // Modified to only work with visible sections
 }
 
 function enhanceResponsiveDesign() {
@@ -802,5 +758,3 @@ window.hideStaticSections = hideStaticSections;
 window.showStaticSections = showStaticSections;
 window.setActiveNavLink = setActiveNavLink;
 window.scrollToSection = scrollToSection;
-
-console.log('✅ Navigation functions made globally accessible');

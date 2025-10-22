@@ -108,83 +108,21 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var myCarousel = document.getElementById('homeCarousel');
-      if (myCarousel) {
-        var carousel = new bootstrap.Carousel(myCarousel, {
-          interval: 3000,
-          wrap: true
-        });
-      }
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-      // Check if there's a stored section to scroll to
-      const targetSection = sessionStorage.getItem('scrollToSection');
 
-      if (targetSection) {
-        // Clear the stored value
-        sessionStorage.removeItem('scrollToSection');
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialize carousel if present; do NOT touch sessionStorage.hash here.
+    const myCarousel = document.getElementById('homeCarousel');
+    if (myCarousel) {
+      new bootstrap.Carousel(myCarousel, {
+        interval: 3000,
+        wrap: true
+      });
+    }
+    // NOTE: scroll-to-section / hash handling is performed exclusively in js/script.js
+  });
+</script>
 
-        // Wait a bit for content to load, then scroll
-        setTimeout(function () {
-          const element = document.getElementById(targetSection);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-            // Update active nav link
-            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-              link.classList.remove('active');
-            });
-            const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${targetSection}"]`);
-            if (activeLink) {
-              activeLink.classList.add('active');
-            }
-          }
-        }, 500); // Adjust timeout if needed based on your content loading speed
-      }
-
-      // Also handle direct hash navigation (when page loads with #section in URL)
-      else if (window.location.hash) {
-        const hash = window.location.hash.substring(1);
-        setTimeout(function () {
-          const element = document.getElementById(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 500);
-      }
-    });
-  </script>
-  <script>
-    // Handle navigation from project pages
-    document.addEventListener('DOMContentLoaded', function () {
-      // Check if there's a stored section to scroll to
-      const targetSection = sessionStorage.getItem('scrollToSection');
-
-      if (targetSection) {
-        // Clear the stored value
-        sessionStorage.removeItem('scrollToSection');
-
-        // Wait for content to load, then scroll
-        setTimeout(function () {
-          const element = document.getElementById(targetSection);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-            // Update active nav link
-            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-              link.classList.remove('active');
-            });
-            const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${targetSection}"]`);
-            if (activeLink) {
-              activeLink.classList.add('active');
-            }
-          }
-        }, 800);
-      }
-    });
-  </script>
 
   <!-- Load ALL JavaScript files upfront -->
   <script src="js/home.js"></script>
@@ -195,5 +133,4 @@
   <script src="js/contact.js"></script>
   <script src="js/script.js"></script>
 </body>
-
 </html>
