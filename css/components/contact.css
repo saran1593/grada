@@ -70,6 +70,32 @@
 
 }
 
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: rgb(103, 189, 103);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 12px 20px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+}
+
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+
 
 .grad-contact-submit-btn:hover {
     background-color: #ffffff !important;

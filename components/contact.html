@@ -76,7 +76,8 @@
                         <h4
                             style="letter-spacing: 3px;font-size: 1.5rem; color: #666;margin-left: 5px;text-transform: uppercase;">
                             Kumbakonam</h4>
-                        <h6 style="font-size: 1rem; color: #666; margin-left: 5px;text-align: left;">No. 34, Ram Nagar,
+                        <h6 style="font-size: 1rem; color: #111111; margin-left: 5px;text-align: left;">No. 34, Ram
+                            Nagar,
                             K.Karupur Via,
                             <br />Kumbakonam - 612 002
                         </h6>
@@ -91,7 +92,8 @@
                         <h4
                             style="letter-spacing: 3px;font-size: 1.5rem; color: #666;margin-left: 5px; text-transform: uppercase;">
                             Chennai</h4>
-                        <h6 style="font-size: 1rem; color: #666; margin-left: 5px;text-align: left;">Old No 34, New No
+                        <h6 style="font-size: 1rem; color: #111111; margin-left: 5px;text-align: left;">Old No 34, New
+                            No
                             12, Besant Avenue, Adyar,
                             <br />Chennai - 600 020
                         </h6>
@@ -100,13 +102,21 @@
             </div>
         </div>
     </div>
+    <div id="toast" class="toast"></div>
 </section>
 
 <script>
-    // Contact form handler - embedded directly in the component for WhatsApp
     document.addEventListener('DOMContentLoaded', function () {
         initializeContactForm();
     });
+    function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3000);
+    }
 
     function initializeContactForm() {
         const form = document.getElementById('contactForm');
@@ -116,13 +126,11 @@
             return;
         }
 
-
-        // Remove any existing event listeners
         const newForm = form.cloneNode(true);
         form.parentNode.replaceChild(newForm, form);
         const currentForm = document.getElementById('contactForm');
 
-        currentForm.addEventListener('submit', function (e) {
+        currentForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const name = document.getElementById('contactName').value.trim();
@@ -136,38 +144,44 @@
                 return;
             }
 
-            // Create WhatsApp message
-            const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
-
-            // WhatsApp phone number (replace with your actual number)
-            const whatsappNumber = '919840904236'; // Remove any + or spaces
-
-            // Create WhatsApp URL
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-
             // Show loading state
             const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening WhatsApp...';
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
             submitBtn.disabled = true;
 
-            // Open WhatsApp
-            setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
+            try {
+                await saveToGoogleSheets({ name, email, phone, message });
 
-                // Reset form and button
-                setTimeout(() => {
-                    currentForm.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    alert("Thank you for your message! WhatsApp should open with a pre-filled message. Please send it to complete your inquiry.");
-                }, 2000);
-            }, 1000);
+                // Success message
+                alert('Thank you for your message! We will get back to you soon.');
+                currentForm.reset();
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting your form. Please try again or contact us directly.');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 
-    // Also initialize when component is loaded dynamically
+    async function saveToGoogleSheets(formData) {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx0NylMw9o6v3LhJbrgc9yy-63GtAENElbt3f75FyNgy1R-F94i0Ujq-WD_7ZBJkno/exec';
+
+        const response = await fetch(scriptURL, {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            mode: "no-cors"
+        });
+        showToast("data saved!");
+        return true;
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializeContactForm);
     } else {

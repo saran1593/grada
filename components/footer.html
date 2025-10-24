@@ -96,6 +96,7 @@
             padding: 0;
             height: 60%;
         }
+
         .address-box:first-child {
             padding-right: 20px;
             border-right: 1px solid #ddd;
@@ -355,6 +356,31 @@
                 height: 20px;
             }
         }
+
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: rgb(103, 189, 103);
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 12px 20px;
+            position: fixed;
+            z-index: 9999;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.5s, bottom 0.5s;
+        }
+
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
     </style>
 </head>
 
@@ -376,6 +402,9 @@
                             <div class="form-group">
                                 <input type="tel" class="footer-input" id="projectPhone" placeholder="Phone Number"
                                     required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="footer-input" id="projectEmail" placeholder="Email" required>
                             </div>
                             <div class="form-group">
                                 <textarea class="footer-input textarea" id="projectMessage" placeholder="Message"
@@ -437,7 +466,9 @@
 
                                 <!-- Contact details below addresses -->
                                 <div class="contact-details">
-                                    <p style="margin-left: 60px;">+91 90478 56555 | <a href="mailto:vishnu@gradarchitects.com" title="Email">vishnu@gradarchitects.com</a></p>
+                                    <p style="margin-left: 60px;">+91 90478 56555 | <a
+                                            href="mailto:vishnu@gradarchitects.com"
+                                            title="Email">vishnu@gradarchitects.com</a></p>
 
                                     <div class="footer-contact-social">
                                         <a href="mailto:vishnu@gradarchitects.com" title="Email">
@@ -463,7 +494,7 @@
             </div>
         </div>
 
-
+        <div id="toast" class="toast"></div>
     </footer>
 
 

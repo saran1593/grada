@@ -97,7 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
             type: "hidden",
             callback: () => {
                 hideSection('footer1');
+                console.log("🔄 Loading footer1, initializing form...");
                 setTimeout(() => {
+                    initializeFooterForm();
                     initializeFooterNavigation();
                 }, 100);
             }
@@ -112,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.ignoreHashReplace = true;
                 setTimeout(() => {
                     const navLink = document.querySelector(`.navbar-nav .nav-link[href="#${storedSection}"]`);
-                    
+
                     if (navLink) {
                         handleNavigationClick(storedSection, navLink);
                         setTimeout(() => {
@@ -131,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 initScrollSpy();
             }
-            
+
             setTimeout(() => {
                 initScrollFeatures();
                 enhanceResponsiveDesign();
@@ -212,28 +214,28 @@ function showStaticSections() {
 function initScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    
+
     let isScrolling = false;
-    
+
     function updateActiveNavLink() {
         if (isScrolling) return;
-        
+
         isScrolling = true;
 
         const scrollPosition = window.scrollY + 200;
         let currentSectionId = '';
-        
+
         sections.forEach(section => {
             if (section.style.display === 'none') return;
-            
+
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
-            
+
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 currentSectionId = section.id;
             }
         });
-        
+
         if (currentSectionId) {
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -242,17 +244,17 @@ function initScrollSpy() {
                     link.classList.add('active');
                 }
             });
-            
+
             if (!window.ignoreHashReplace) {
                 if (window.location.hash !== `#${currentSectionId}`) {
                     history.replaceState(null, null, `#${currentSectionId}`);
                 }
             }
         }
-        
+
         isScrolling = false;
     }
-    
+
     let scrollTimeout;
     window.addEventListener('scroll', () => {
         clearTimeout(scrollTimeout);
@@ -289,13 +291,13 @@ function handleNavigationClick(targetId, clickedLink) {
     else if (targetId === 'services') {
         hideStaticSections();
         hideAllHiddenSections();
-        
+
         showSection('services');
         showSection('projects');
         showSection('footer1');
 
         setActiveNavLink(clickedLink);
-        
+
         setTimeout(() => {
             scrollToSection('services');
         }, 50);
@@ -304,13 +306,13 @@ function handleNavigationClick(targetId, clickedLink) {
     else if (targetId === 'projects') {
         hideStaticSections();
         hideAllHiddenSections();
-        
+
         showSection('services');
         showSection('projects');
         showSection('footer1');
 
         setActiveNavLink(clickedLink);
-        
+
         setTimeout(() => {
             scrollToSection('projects');
         }, 50);
@@ -319,11 +321,11 @@ function handleNavigationClick(targetId, clickedLink) {
     else if (targetId === 'careers') {
         hideStaticSections();
         hideAllHiddenSections();
-        
+
         showSection('careers');
 
         setActiveNavLink(clickedLink);
-        
+
         setTimeout(() => {
             scrollToSection('careers');
         }, 50);
@@ -332,11 +334,11 @@ function handleNavigationClick(targetId, clickedLink) {
     else if (targetId === 'contact') {
         hideStaticSections();
         hideAllHiddenSections();
-        
+
         showSection('contact');
 
         setActiveNavLink(clickedLink);
-        
+
         setTimeout(() => {
             scrollToSection('contact');
         }, 50);
@@ -444,6 +446,56 @@ function loadComponent(sectionId, filePath, callback) {
 function initializeAllForms() {
     initializeCareersForm();
     initializeContactForm();
+
+}
+function initializeFooterForm() {
+    const form = document.getElementById('projectForm');
+
+    if (!form) {
+        console.error("❌ Footer form not found in initializeFooterForm");
+        setTimeout(initializeFooterForm, 200);
+        return;
+    }
+
+    // Remove existing event listeners
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    const currentForm = document.getElementById('projectForm');
+
+    currentForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        console.log("📝 Footer form submitted");
+
+        const name = document.getElementById('projectName').value.trim();
+        const email = document.getElementById('projectEmail').value.trim();
+        const phone = document.getElementById('projectPhone').value.trim();
+        const message = document.getElementById('projectMessage').value.trim();
+
+        if (!name || !email || !phone || !message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        const submitBtn = currentForm.querySelector('.footer-submit-btn');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+        submitBtn.disabled = true;
+
+        try {
+            await saveToGoogleSheets({ name, email, phone, message });
+            showToast('Thank you for your message! We will get back to you soon.');
+            currentForm.reset();
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error submitting your form. Please try again or contact us directly.');
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+
+    console.log("✅ Footer form initialized successfully");
 }
 
 function initializeFormsForSection(sectionId) {
@@ -511,54 +563,76 @@ function initializeCareersForm() {
 
 }
 
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
+
 function initializeContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    if (!contactForm) {
+    const form = document.getElementById('contactForm');
+
+    if (!form) {
+        console.error("❌ Contact form not found");
         return;
     }
-    const newForm = contactForm.cloneNode(true);
-    contactForm.parentNode.replaceChild(newForm, contactForm);
+
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
     const currentForm = document.getElementById('contactForm');
 
-    currentForm.addEventListener('submit', function (e) {
+    currentForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const name = document.getElementById('contactName') ? document.getElementById('contactName').value.trim() : '';
-        const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
-        const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
-        const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const phone = document.getElementById('contactPhone').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
 
+        // Validation
         if (!name || !email || !phone || !message) {
-            showAlert('Please fill in all required fields.', 'error');
+            alert('Please fill in all required fields.');
             return;
         }
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showAlert('Please enter a valid email address.', 'error');
-            return;
-        }
-
-        const whatsappMessage = `Hello Grad Architects!\n\nI would like to get in touch with you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n---\nThis message was sent from your website contact form.`;
-        const whatsappNumber = '919840904236';
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-
+        // Show loading state
         const submitBtn = currentForm.querySelector('.grad-contact-submit-btn');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Opening WhatsApp...';
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
-            window.open(whatsappUrl, '_blank');
-            setTimeout(() => {
-                currentForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                showAlert("Thank you for your message! WhatsApp should open with a pre-filled message. Please send it to complete your inquiry.", "success");
-            }, 2000);
-        }, 1000);
+        try {
+            await saveToGoogleSheets({ name, email, phone, message });
+            showToast('Thank you for your message! We will get back to you soon.');
+            currentForm.reset();
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error submitting your form. Please try again or contact us directly.');
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
     });
+}
+
+async function saveToGoogleSheets(formData) {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx0NylMw9o6v3LhJbrgc9yy-63GtAENElbt3f75FyNgy1R-F94i0Ujq-WD_7ZBJkno/exec';
+
+    const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        mode: "no-cors"
+    });
+    showToast("data saved!");
+    return true;
 }
 
 function showAlert(message, type = "info") {
@@ -594,38 +668,49 @@ function showAlert(message, type = "info") {
 
 function initializeFooterNavigation() {
 
-    const projectForm = document.getElementById('projectForm');
-    if (projectForm) {
+    const form = document.getElementById('projectForm');
 
-        const newForm = projectForm.cloneNode(true);
-        projectForm.parentNode.replaceChild(newForm, projectForm);
-        const currentForm = document.getElementById('projectForm');
-
-        currentForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const name = document.getElementById('projectName')?.value.trim() || '';
-            const phone = document.getElementById('projectPhone')?.value.trim() || '';
-            const message = document.getElementById('projectMessage')?.value.trim() || '';
-
-            if (!name || !phone || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            const subject = `New Project Inquiry from ${name}`;
-            const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
-            const mailtoLink = `mailto:vishnu@gradarchitects.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-            window.location.href = mailtoLink;
-
-            setTimeout(() => {
-                currentForm.reset();
-            }, 1000);
-        });
-    } else {
-        console.log("❌ Footer project form not found");
+    if (!form) {
+        console.error("❌ Contact form not found");
+        return;
     }
+
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+    const currentForm = document.getElementById('projectForm');
+
+    currentForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('projectName').value.trim();
+        const email = document.getElementById('projectEmail').value.trim();
+        const phone = document.getElementById('projectPhone').value.trim();
+        const message = document.getElementById('projectMessage').value.trim();
+
+        if (!name || !email || !phone || !message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        const submitBtn = currentForm.querySelector('.footer-submit-btn');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+        submitBtn.disabled = true;
+
+        try {
+            await saveToGoogleSheets({ name, email, phone, message });
+
+            showToast('Thank you for your message! We will get back to you soon.');
+            currentForm.reset();
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error submitting your form. Please try again or contact us directly.');
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
 
     const footerLinks = document.querySelectorAll('.footer-links a');
 
@@ -671,7 +756,6 @@ function initializeFooterNavigation() {
 
 }
 
-window.initializeFooterNavigation = initializeFooterNavigation;
 
 function forceLogoSizeReduction() {
     const navbarLogo = document.querySelector('.navbar-logo');
@@ -747,7 +831,7 @@ function enhanceResponsiveDesign() {
     console.log("Enhancing responsive design...");
 }
 
-// Make functions available globally
+window.initializeFooterNavigation = initializeFooterNavigation;
 window.initializeCareersForm = initializeCareersForm;
 window.initializeContactForm = initializeContactForm;
 window.handleNavigationClick = handleNavigationClick;
