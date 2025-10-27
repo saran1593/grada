@@ -2009,7 +2009,7 @@ functionality with an architecture…
 
                 <div class="project-item-card five-grid-item">
                     <div class="project-item-image">
-                        <img src="../images/p3/6.png" alt="Coastal Residence" class="project-img">
+                        <img src="../images/P3/6.png" alt="Coastal Residence" class="project-img">
                     </div>
                     <div class="project-item-content">
                         <h3 class="project-item-title">Pavillion  House</h3>
@@ -2344,7 +2344,7 @@ File: D:\gradb\components\projects1.html
             <div class="grid-five-col">
                 <div class="project-item">
                     <div class="project-image1">
-                        <img src="/images/p1/1.jpg" alt="Residence A" class="project-img">
+                        <img src="/images/P1/1.jpg" alt="Residence A" class="project-img">
                     </div>
                     <div class="project-info">
                         <h3 class="project-name">Residence A</h3>
@@ -2353,7 +2353,7 @@ File: D:\gradb\components\projects1.html
                 </div>
                 <div class="project-item">
                     <div class="project-image1">
-                        <img src="/images/p2/1.jpg" alt="Residence B" class="project-img">
+                        <img src="/images/P2/1.jpg" alt="Residence B" class="project-img">
                     </div>
                     <div class="project-info">
                         <h3 class="project-name">Residence B</h3>

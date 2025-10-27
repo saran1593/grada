@@ -1,256 +1,124 @@
 // Shared Sidebar Navigation for All Category Pages
 document.addEventListener('DOMContentLoaded', function() {
-    const sidebarCategories = document.getElementById('sidebarCategories');
-    const categories = document.querySelectorAll('.sidebar-category');
-    
-    // Get current page to determine active category
-    const currentPage = window.location.pathname.split('/').pop();
-    
-    // Category navigation with page switching
-    categories.forEach(category => {
-        category.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get the target page
-            const targetPage = this.getAttribute('data-page');
-            
-            // Navigate to the new page
-            if (targetPage && targetPage !== currentPage) {
-                window.location.href = targetPage;
-            }
-        });
-        
-        // Hover effects management
-        category.addEventListener('mouseenter', function() {
-            if (this.classList.contains('active')) {
-                sidebarCategories.classList.add('hovering-active');
-            }
-        });
-        
-        category.addEventListener('mouseleave', function() {
-            sidebarCategories.classList.remove('hovering-active');
-        });
-    });
-    
-    // Add animation on scroll for project items
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Apply animation to project items
-    document.querySelectorAll('.project-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(item);
-    });
-
-    // Search functionality
-    const searchInput = document.querySelector('.search-input');
-    let allProjectItems = [];
-    
-    // Collect all project items once the page loads
-    function initializeSearch() {
-        allProjectItems = document.querySelectorAll('.project-item');
-    }
-    
-    // Clear search function
-    function clearSearch() {
-        searchInput.value = '';
-        showAllProjects();
-    }
-    
-    // Show all projects
-    function showAllProjects() {
-        allProjectItems.forEach(item => {
-            item.style.display = 'block';
-            // Remove highlight
-            const projectName = item.querySelector('.project-name');
-            const projectDescription = item.querySelector('.project-description');
-            
-            if (projectName) {
-                projectName.innerHTML = projectName.textContent;
-            }
-            if (projectDescription) {
-                projectDescription.innerHTML = projectDescription.textContent;
-            }
-        });
-        
-        // Remove any no-results message
-        const noResults = document.querySelector('.no-results');
-        if (noResults) {
-            noResults.remove();
-        }
-    }
-    
-    // Highlight search term in text
-    function highlightText(text, searchTerm) {
-        const regex = new RegExp(`(${searchTerm})`, 'gi');
-        return text.replace(regex, '<span class="search-highlight">$1</span>');
-    }
-    
-    // Search functionality
-    searchInput.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase().trim();
-        
-        if (searchTerm.length > 0) {
-            let foundResults = false;
-            
-            allProjectItems.forEach(item => {
-                const projectName = item.querySelector('.project-name');
-                const projectDescription = item.querySelector('.project-description');
-                
-                if (projectName && projectDescription) {
-                    const nameText = projectName.textContent.toLowerCase();
-                    const descText = projectDescription.textContent.toLowerCase();
-                    
-                    if (nameText.includes(searchTerm) || descText.includes(searchTerm)) {
-                        item.style.display = 'block';
-                        foundResults = true;
-                        
-                        // Highlight matching text
-                        projectName.innerHTML = highlightText(projectName.textContent, searchTerm);
-                        projectDescription.innerHTML = highlightText(projectDescription.textContent, searchTerm);
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
-            });
-            
-            // Show no results message if no matches found
-            const mainContent = document.querySelector('.main-content');
-            let noResults = mainContent.querySelector('.no-results');
-            
-            if (!foundResults) {
-                if (!noResults) {
-                    noResults = document.createElement('div');
-                    noResults.className = 'no-results';
-                    noResults.textContent = `No projects found matching "${searchTerm}"`;
-                    mainContent.appendChild(noResults);
-                }
-            } else if (noResults) {
-                noResults.remove();
-            }
-            
-        } else {
-            showAllProjects();
-        }
-    });
-    
-    // Initialize search when page loads
-    initializeSearch();
+    initializeSidebarNavigation();
 });
 
-// Fixed Sidebar functionality with Active Selection
-document.addEventListener('DOMContentLoaded', function() {
+// Main initialization function
+function initializeSidebarNavigation() {
     const sidebarCategories = document.getElementById('sidebarCategories');
     const categories = document.querySelectorAll('.sidebar-category');
+    const searchInput = document.querySelector('.search-input');
     
-    // Set Residential as default active category
-    let activeCategory = 'residential';
+    // Initialize category navigation if elements exist
+    if (categories.length > 0 && sidebarCategories) {
+        initializeCategoryNavigation(categories, sidebarCategories);
+    }
     
-    // Category switching with active state management
+    // Initialize search functionality if search input exists
+    if (searchInput) {
+        initializeSearchFunctionality(searchInput);
+    }
+    
+    // Initialize project animations
+    initializeProjectAnimations();
+    
+    // Initialize smooth scrolling
+    initializeSmoothScrolling();
+}
+
+// Category navigation functionality
+function initializeCategoryNavigation(categories, sidebarCategories) {
+    const currentPage = window.location.pathname.split('/').pop();
+    
     categories.forEach(category => {
+        // Click event for navigation
         category.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Get the category type
+            const targetPage = this.getAttribute('data-page');
             const categoryType = this.getAttribute('data-category');
             
-            // Only proceed if clicking a different category
-            if (categoryType !== activeCategory) {
-                // Remove active class from all categories
-                categories.forEach(cat => cat.classList.remove('active'));
-                
-                // Add active class to clicked category
-                this.classList.add('active');
-                
-                // Update active category
-                activeCategory = categoryType;
-                
-                // Hide all category contents
-                document.querySelectorAll('.category-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                
-                // Show the selected category content
-                const categoryContent = document.getElementById(categoryType);
-                if (categoryContent) {
-                    categoryContent.classList.add('active');
-                }
-                
-                // Clear search when switching categories
-                clearSearch();
-                
-                // Scroll to top when changing categories
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+            if (targetPage && targetPage !== currentPage) {
+                window.location.href = targetPage;
+            } else if (categoryType) {
+                // Handle category switching within same page
+                switchCategory(categoryType, categories);
             }
         });
         
-        // Hover effects management
+        // Hover effects
         category.addEventListener('mouseenter', function() {
-            if (this.classList.contains('active')) {
+            if (this.classList.contains('active') && sidebarCategories) {
                 sidebarCategories.classList.add('hovering-active');
             }
         });
         
         category.addEventListener('mouseleave', function() {
-            sidebarCategories.classList.remove('hovering-active');
-        });
-    });
-    
-    // Add animation on scroll for project items
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+            if (sidebarCategories) {
+                sidebarCategories.classList.remove('hovering-active');
             }
         });
-    }, observerOptions);
-    
-    // Apply animation to project items
-    document.querySelectorAll('.project-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(item);
     });
+}
 
-    // Search functionality
-    const searchInput = document.querySelector('.search-input');
+// Category switching logic
+function switchCategory(categoryType, categories) {
+    const activeCategory = document.querySelector('.sidebar-category.active');
+    
+    // Only proceed if clicking a different category
+    if (!activeCategory || activeCategory.getAttribute('data-category') !== categoryType) {
+        // Remove active class from all categories
+        categories.forEach(cat => cat.classList.remove('active'));
+        
+        // Add active class to clicked category
+        const clickedCategory = document.querySelector(`[data-category="${categoryType}"]`);
+        if (clickedCategory) {
+            clickedCategory.classList.add('active');
+        }
+        
+        // Hide all category contents
+        document.querySelectorAll('.category-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Show the selected category content
+        const categoryContent = document.getElementById(categoryType);
+        if (categoryContent) {
+            categoryContent.classList.add('active');
+        }
+        
+        // Clear search when switching categories
+        clearSearch();
+        
+        // Scroll to top when changing categories
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Re-initialize animations for new content
+        setTimeout(initializeProjectAnimations, 100);
+    }
+}
+
+// Search functionality
+function initializeSearchFunctionality(searchInput) {
     let allProjectItems = [];
     
-    // Collect all project items once the page loads
     function initializeSearch() {
-        allProjectItems = document.querySelectorAll('.project-item');
+        const activeCategory = document.querySelector('.category-content.active');
+        allProjectItems = activeCategory ? 
+            activeCategory.querySelectorAll('.project-item') : 
+            document.querySelectorAll('.project-item');
     }
     
-    // Clear search function
     function clearSearch() {
-        searchInput.value = '';
+        if (searchInput) {
+            searchInput.value = '';
+        }
         showAllProjects();
     }
     
-    // Show all projects
     function showAllProjects() {
         allProjectItems.forEach(item => {
             item.style.display = 'block';
@@ -273,14 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Highlight search term in text
     function highlightText(text, searchTerm) {
         const regex = new RegExp(`(${searchTerm})`, 'gi');
         return text.replace(regex, '<span class="search-highlight">$1</span>');
     }
     
-    // Search functionality
-    searchInput.addEventListener('input', function(e) {
+    function handleSearchInput(e) {
         const searchTerm = e.target.value.toLowerCase().trim();
         
         if (searchTerm.length > 0) {
@@ -309,41 +175,77 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Show no results message if no matches found
             const activeCategoryContent = document.querySelector('.category-content.active');
-            let noResults = activeCategoryContent.querySelector('.no-results');
+            const mainContent = document.querySelector('.main-content');
+            const container = activeCategoryContent || mainContent;
             
-            if (!foundResults) {
+            if (container && !foundResults) {
+                let noResults = container.querySelector('.no-results');
                 if (!noResults) {
                     noResults = document.createElement('div');
                     noResults.className = 'no-results';
                     noResults.textContent = `No projects found matching "${searchTerm}"`;
-                    activeCategoryContent.appendChild(noResults);
+                    container.appendChild(noResults);
                 }
-            } else if (noResults) {
-                noResults.remove();
+            } else {
+                const noResults = document.querySelector('.no-results');
+                if (noResults) {
+                    noResults.remove();
+                }
             }
             
         } else {
             showAllProjects();
         }
-    });
+    }
     
     // Initialize search when page loads
     initializeSearch();
-});
-
-// projects.js - Handles projects section functionality
-
-document.addEventListener('DOMContentLoaded', function() {
     
-    // Initialize projects functionality when projects section is loaded
-    function initializeProjects() {
-        // Add smooth scrolling for navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
+    // Add event listener only if searchInput exists
+    searchInput.addEventListener('input', handleSearchInput);
+    
+    // Re-initialize search when categories change
+    document.addEventListener('categoryChanged', initializeSearch);
+}
+
+// Project animations
+function initializeProjectAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Apply animation to project items
+    const projectItems = document.querySelectorAll('.project-item');
+    projectItems.forEach(item => {
+        // Only initialize if not already animated
+        if (!item.hasAttribute('data-animation-initialized')) {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.setAttribute('data-animation-initialized', 'true');
+            observer.observe(item);
+        }
+    });
+}
+
+// Smooth scrolling
+function initializeSmoothScrolling() {
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            
+            if (targetId && targetId.startsWith('#')) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#' || !targetId.startsWith('#')) return;
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
@@ -352,51 +254,42 @@ document.addEventListener('DOMContentLoaded', function() {
                         behavior: 'smooth'
                     });
                 }
-            });
+            }
         });
-        
-        // Add animation on scroll for project items
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Apply animation to project items
-        document.querySelectorAll('.project-item').forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(item);
+    });
+    
+    // Handle Residential link click in project navigation
+    const residentialLinks = document.querySelectorAll('.residential-link');
+    residentialLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show interior section
+            if (window.interiorModule) {
+                window.interiorModule.showInteriorSection();
+            }
         });
-        
-        // Handle Residential link click in project navigation
-        const residentialLinks = document.querySelectorAll('.residential-link');
-        residentialLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Show interior section
-                if (window.interiorModule) {
-                    window.interiorModule.showInteriorSection();
-                }
-            });
-        });
+    });
+}
+
+// Export functions for global access
+window.sidebarNavigation = {
+    initialize: initializeSidebarNavigation,
+    switchCategory: switchCategory,
+    clearSearch: function() {
+        const searchInput = document.querySelector('.search-input');
+        if (searchInput) {
+            searchInput.value = '';
+            const event = new Event('input', { bubbles: true });
+            searchInput.dispatchEvent(event);
+        }
     }
-    
-    // Initialize when DOM is ready
-    initializeProjects();
-    
-    // Export initialization function for dynamic loading
-    window.projectsModule = {
-        initialize: initializeProjects
-    };
-});
+};
+
+// Custom event for category changes
+function dispatchCategoryChangeEvent(categoryType) {
+    const event = new CustomEvent('categoryChanged', {
+        detail: { category: categoryType }
+    });
+    document.dispatchEvent(event);
+}
