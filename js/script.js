@@ -428,7 +428,7 @@ function initializeServicesManager() {
         } else if (typeof initializeGradServices !== 'undefined') {
             window.servicesManager = initializeGradServices();
         } else {
-            setTimeout(initServices, 200);
+            setTimeout(initServices, 100);
         }
     };
     setTimeout(initServices, 100);
