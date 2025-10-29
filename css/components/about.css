@@ -1,59 +1,50 @@
 .about-section {
-  padding: 100px 0;
-  background-color: var(--white);
-  margin-top: -145px;
-  margin-bottom: -100px;
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
+  width: 100% !important;
+  right: 20px;
 }
 
-.about-section .section-title {
-  font-size: 2.7rem;
-  font-weight: 100;
-  margin-bottom: 2rem;
-  color: var(--primary-color);
-  text-align: center;
-  text-transform: uppercase;
+.about-vertical-text-section {
+  margin-left: 20px;
+}
+
+.sub-title {
   letter-spacing: 8px;
-  display: flex;
-  justify-content: left;
+  writing-mode: vertical-lr;
+  font-size: 1.5rem;
+  color: gray;
 }
 
-.about-content {
-  margin-left: 30px;
-  text-align: justify;
+.image-wrapper {
+  float: left;
+  width: 140%;
 }
 
-.about-content p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #555;
-  margin-bottom: 2rem;
-  text-align: justify;
-}
-
-.about-content strong {
-  color: var(--primary-color);
-  font-weight: 600;
-}
-/* Apply !important to ensure styles are not overridden */
-.about-image img {
-  max-width: 700px !important;
-  width: 100%;
-  /* Ensures the max-width is applied */
+.image-wrapper img {
+  max-width: 100% !important;
+  width: 100% !important;
   height: 590px !important;
   object-fit: cover !important;
   border-radius: 16px !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
-
-
-.about-image img:hover {
-  transform: scale(1.02);
+.about-section-title {
+  position: absolute;
+  right: 24.6%;
+  top: 8%;
+}
+.about-section-title h3 {
+  font-size: 2.5rem;
+  letter-spacing: 8px;
+}
+.about-description-section p {
+  text-align: justify;
+  font-size: 0.8rem;
 }
 
-/* Updated Button Styles with unique class */
+.description {
+  margin-top: 110px;
+}
+
 .btn-view-projects {
   background-color: #c5d92f !important;
   color: #ffffff !important;
@@ -68,242 +59,67 @@
   display: inline-block;
 }
 
-.btn-view-projects:hover {
-  background-color: #e0a800 !important;
-  border-color: #e0a800 !important;
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  text-decoration: none;
-}
-
-/* Responsive */
-@media (max-width: 1200px) {
-  .vertical-text {
-    left: -120px;
-  }
-
-  .about-image img {
-    height: 380px;
-    max-width: 450px;
-  }
-}
-
-@media (max-width: 992px) {
-  .vertical-text {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    text-align: center;
-    margin: 2rem auto 1rem;
-    display: block;
-    width: 100%;
-  }
-
-  .vertical-text::before {
-    display: none;
-  }
-
-  .about-content {
-    text-align: center;
-    margin-left: 0;
-  }
-
-  .about-content p {
-    text-align: center;
-  }
-
-  .about-image img {
-    height: 350px;
-    max-width: 400px;
-    margin-left: 0;
-  }
-}
-
-/* FIXED: Mobile Responsive - Perfect Centering */
 @media (max-width: 768px) {
+  #about-container {
+    display: flex;
+    flex-direction: row;
+  }
   .about-section {
-    padding: 80px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: -150px;
-    margin-bottom: -180px;
+    margin-right: 80px;
   }
-
-  .about-section .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .about-content {
-    margin-bottom: 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0 15px;
-    margin-left: 0;
-  }
-
-  .about-content p {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 2rem;
-    text-align: justify;
-    /* This ensures the text is justified */
-    text-justify: inter-word;
-    /* This is optional and improves justification on some browsers */
-  }
-
-
-  .about-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0 15px;
-    margin-left: 0;
-  }
-
-  .about-image img {
-    width: 100%;
-    max-width: 400px;
-    height: 300px;
-    margin: 0 auto;
-  }
-
-  .btn-view-projects {
-    display: block;
-    margin: 0 auto;
-  }
-
-  /* Ensure the row and columns are perfectly centered */
-  .about-section .row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-  }
-
-  .about-section .col-lg-6 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    padding: 0 15px;
-  }
-
-  /* Fixed vertical text centering */
-  .vertical-text {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none !important;
-    text-align: center;
-    margin: 2rem auto 1rem;
-    display: block;
-    width: 100%;
-    white-space: nowrap;
-    order: -1;
+  .sub-title {
+    letter-spacing: 14px;
+    writing-mode: vertical-lr;
     font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .about-section {
-    padding: 60px 0;
-    margin-top: -100px;
-    margin-bottom: -100px;
+    color: gray;
+    transform: rotate(180deg);
   }
 
-  .about-section .section-title {
-    font-size: 2rem;
-    text-align: center;
+  .image-wrapper {
+    float: left;
+    margin-right: 20px;
+    width: 65%;
   }
 
-  .about-content p {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 2rem;
-    text-align: justify;
-    /* This ensures the text is justified */
-    text-justify: inter-word;
-    /* This is optional and improves justification on some browsers */
+  .image-wrapper img {
+    float: left;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 350px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+  .about-section-title {
+    position: static;
+    margin-left: 50px;
+  }
+  .about-section-title h3 {
+    font-size: 2.5rem;
+    letter-spacing: 8px;
+  }
+  .about-description-section p {
+    text-align: start;
   }
 
-
-  .about-image img {
-    width: 100%;
-    max-width: 350px;
-    height: 250px;
+  .description-wrapper {
+    gap: 2px;
   }
-
-  .btn-view-projects {
-    width: 80%;
-    max-width: 250px;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  /* Ensure vertical text is perfectly centered */
-  .vertical-text {
-    margin: 1.5rem auto;
-    font-size: 1.2rem;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 400px) {
-  .about-section .section-title {
-    font-size: 1.8rem;
-  }
-
-  .about-content p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  .about-image img {
-    height: 220px;
-    max-width: 300px;
+  .description {
+    margin-top: 0px;
   }
 
   .btn-view-projects {
-    padding: 10px 25px;
-    font-size: 0.9rem;
+    background-color: #c5d92f !important;
+    color: #ffffff !important;
+    border: 2px solid #c5d92f !important;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
   }
-
-  .vertical-text {
-    font-size: 1rem;
-    letter-spacing: 1.5px;
-  }
-}
-
-.vertical-text {
-  position: absolute !important;
-  right: calc(100% + 10px);
-  top:35% !important;
-  transform: translateY(-50%) !important;
-  transform-origin: right center;
-  writing-mode: vertical-rl !important;
-  white-space: nowrap;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 1.5rem !important;
-  z-index: 9999 !important;
-  letter-spacing: 8px;
 }

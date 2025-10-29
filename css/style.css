@@ -27,6 +27,12 @@
 
 
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
 /* ================================
    Mobile Navigation Enhancements
    ================================ */
@@ -481,10 +487,10 @@ img {
 }
 
 /* Consistent Layout */
-.container {
+/* .container {
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 
 .container-fluid {
     padding-left: 15px;
