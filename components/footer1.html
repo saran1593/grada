@@ -5,24 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grad Architects Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
     <style>
-        /* Footer Styles */
+        /* Reset only for footer elements */
+        .grad-footer,
+        .grad-footer * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Footer Styles - Isolated */
         .grad-footer {
             background-color: #ffffff;
             padding: 10px 0 30px;
-            font-family: 'Montserrat', sans-serif;
             color: #ffffff;
             border-top: 0px solid #f0f0f0;
-            margin-top: -50px;
-            margin-bottom: -100px;
             display: flex;
             justify-content: start;
+            width: 100%;
         }
 
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 10px;
+            padding: 0 20px;
+            width: 100%;
         }
 
         .footer-content {
@@ -30,12 +41,14 @@
             flex-direction: column;
             gap: 10px;
             margin-bottom: 0px;
+            width: 100%;
         }
 
         .footer-main {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
+            width: 100%;
         }
 
         /* Right column - Grouped sections */
@@ -51,7 +64,6 @@
         .footer-section {
             margin-left: 0;
             text-align: left;
-            /* Center align all content */
         }
 
         .footer-section h3 {
@@ -65,11 +77,9 @@
 
         /* Contact info on right side */
         .footer-contact-right {
-
             margin-top: 100px;
             text-align: left;
             margin-left: -445px;
-
         }
 
         .footer-contact-right p {
@@ -91,6 +101,7 @@
             padding: 0;
             height: 60%;
         }
+
         .address-box:first-child {
             padding-right: 20px;
             border-right: 1px solid #ddd;
@@ -186,7 +197,6 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             cursor: pointer;
-
         }
 
         .footer-submit-btn:hover {
@@ -210,27 +220,10 @@
             color: #666;
             font-size: 14px;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .footer-links a:hover {
-            color: #000;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-            justify-content: center;
-            /* Center align social links */
-        }
-
-        .social-icon {
-            color: #666;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .social-icon:hover {
             color: #000;
         }
 
@@ -246,102 +239,7 @@
             justify-content: start;
         }
 
-        /* Horizontal divider and contact info section */
-        .footer-divider {
-            border-top: 1px solid grey;
-            margin: 40px 0 30px;
-        }
-
-        .footer-contact-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .footer-address {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .footer-social-icons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-social-icon {
-            color: #666;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        .footer-social-icon:hover {
-            color: #000;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-right {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-
-            .footer-contact-info {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .address-container {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-right {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .grad-footer {
-                padding: 40px 0 20px;
-            }
-
-            .footer-submit-btn {
-                width: 100%;
-                max-width: 250px;
-                padding: 0.7rem 1.5rem;
-            }
-
-            .footer-logo img {
-                height: 22px;
-            }
-
-            .footer-input {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .footer-logo img {
-                height: 20px;
-            }
-        }
-
+        /* Toast notification */
         .toast {
             visibility: hidden;
             min-width: 250px;
@@ -360,22 +258,65 @@
             transition: opacity 0.5s, bottom 0.5s;
         }
 
-
         .toast.show {
             visibility: visible;
             opacity: 1;
             bottom: 50px;
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .grad-footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-right {
+                display: none !important;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-left {
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .footer-input {
+                width: 100%;
+            }
+
+            .footer-submit-btn {
+                width: 100%;
+                max-width: 250px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-logo img {
+                height: 35px !important;
+            }
+
+            .footer-container {
+                padding: 0 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+
+    <!-- Footer -->
     <footer class="grad-footer">
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-main">
                     <!-- Left column - GET IN TOUCH Section -->
-                    <div class="footer-left" style="padding-right: 90px; margin-right: 50px; ">
+                    <div class="footer-left" style="padding-right: 90px; margin-right: 50px;">
                         <div class="footer-logo">
                             <img src="/images/logo.png" alt="Great Architects Logo">
                         </div>
@@ -405,11 +346,15 @@
                         <div class="footer-section">
                             <h3>PROJECTS</h3>
                             <ul class="footer-links">
-                                <li><a href="../components/project/residential.html">Residential</a></li>
-                                <li><a href="../components/project/commercial.html">Commercial</a></li>
-                                <li><a href="../components/project/industrial.html"><span>Industrial
-                                            /</span><br /><span>Institutional</span></a></li>
-                                <li><a href="../components/project/interiors.html">Interiors</a></li>
+                                <li><a href="../components/project/residential.html"
+                                        onclick="handleLinkClick('Residential')">Residential</a></li>
+                                <li><a href="../components/project/commercial.html"
+                                        onclick="handleLinkClick('Commercial')">Commercial</a></li>
+                                <li><a href="../components/project/industrial.html"
+                                        onclick="handleLinkClick('Industrial/Institutional')"><span>Industrial
+                                            /</span><br><span>Institutional</span></a></li>
+                                <li><a href="../components/project/interiors.html"
+                                        onclick="handleLinkClick('Interiors')">Interiors</a></li>
                             </ul>
                         </div>
 
@@ -417,10 +362,13 @@
                         <div class="footer-section">
                             <h3>STUDIO</h3>
                             <ul class="footer-links">
-                                <li><a href="../index.html#about">ABOUT US</a></li>
-                                <li><a href="#services">SERVICES</a></li>
-                                <li><a href="../index.html#careers">CAREERS</a></li>
-                                <li><a href="../index.html#contact">CONTACT US</a></li>
+                                <li><a href="../index.html#about" onclick="handleLinkClick('About Us')">ABOUT US</a>
+                                </li>
+                                <li><a href="#services" onclick="handleLinkClick('Services')">SERVICES</a></li>
+                                <li><a href="../index.html#careers" onclick="handleLinkClick('Careers')">CAREERS</a>
+                                </li>
+                                <li><a href="../index.html#contact" onclick="handleLinkClick('Contact Us')">CONTACT
+                                        US</a></li>
                             </ul>
                         </div>
 
@@ -428,8 +376,7 @@
                         <div class="footer-section">
                             <h3>FOLLOW</h3>
                             <ul class="footer-links">
-                                <li><a href="https://www.instagram.com/gradarchitects?igsh=MTVoZjNubWluZ2JobQ=="
-                                        target="_blank">Instagram</a>
+                                <li><a href="https://www.instagram.com/gradarchitects" target="_blank">Instagram</a>
                                 </li>
                                 <li><a href="https://www.facebook.com/gradarchitects" target="_blank">Facebook</a></li>
                                 <li><a href="https://www.linkedin.com/company/gradarchitects"
@@ -440,20 +387,21 @@
                                 <!-- Addresses in a grid -->
                                 <div class="address-container">
                                     <div class="address-box">
-                                        <p>No. 34, Ram Nagar, K.Karupur<br />
+                                        <p>No. 34, Ram Nagar, K.Karupur<br>
                                             Kumbakonam-612 002</p>
                                     </div>
                                     <div class="address-box">
-                                        <p>Old No 34, New No 12, Besant Avenue, Adyar<br />
+                                        <p>Old No 34, New No 12, Besant Avenue, Adyar<br>
                                             Chennai -600 020</p>
                                     </div>
                                 </div>
-
                                 <!-- Contact details below addresses -->
-                                <div class="contact-details">
-                                    <p style="margin-left: 60px;">+91 90478 56555 | <a
-                                            href="mailto:vishnu@gradarchitects.com"
-                                            title="Email">vishnu@gradarchitects.com</a></p>
+                                <div class="contact-details mt-5">
+                                    <p style="display: flex; justify-content: center">
+                                        +91 90478 56555 |
+                                        <a href="mailto:vishnu@gradarchitects.com"
+                                            title="Email">vishnu@gradarchitects.com</a>
+                                    </p>
 
                                     <div class="footer-contact-social">
                                         <a href="mailto:vishnu@gradarchitects.com" title="Email">
@@ -470,20 +418,54 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
             <div class="copyright">
                 <p>© 2025 Grad Architects</p>
             </div>
         </div>
-
-        <div id="toast" class="toast"></div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('projectForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('projectName').value;
+            const phone = document.getElementById('projectPhone').value;
+            const email = document.getElementById('projectEmail').value;
+            const message = document.getElementById('projectMessage').value;
+
+            // Validate form
+            if (name && phone && email && message) {
+                showToast('Thank you! We will contact you soon.');
+                this.reset();
+            } else {
+                showToast('Please fill all fields.');
+            }
+        });
+
+        // Handle link clicks for demonstration
+        function handleLinkClick(page) {
+            showToast(`Navigating to ${page} page`);
+            // In a real implementation, the href will handle navigation
+        }
+
+        // Toast notification function
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+
+            setTimeout(function () {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
 </body>
 
 </html>
