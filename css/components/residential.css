@@ -983,6 +983,15 @@ body {
     align-items: center;
   }
 
+  .second-nav-link[data-active="true"] {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    transition: border-bottom 0.3s ease;
+  }
+
+  .second-nav-link[data-active="false"] {
+    border-bottom: none;
+    transition: border-bottom 0.3s ease;
+  }
   .navbar-nav .nav-link {
     margin: 0.4rem 0;
     padding: 0.6rem 0.8rem !important;
@@ -1080,7 +1089,7 @@ body {
     display: flex;
     overflow-x: scroll;
     padding: 10px;
-    scrollbar-width: none;
+    gap: 8px;
   }
 
   .project-image {
